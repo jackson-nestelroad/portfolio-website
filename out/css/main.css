@@ -1,0 +1,20 @@
+body {
+  background-color: white;
+  color: #1E1E26;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; }
+
+main {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background-image: linear-gradient(#F4F4F9 2px, transparent 2px), linear-gradient(90deg, #F4F4F9 2px, transparent 2px);
+  background-size: 32px 32px;
+  animation: grid-animate 60s linear infinite; }
+
+@keyframes grid-animate {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 100% 100%; } }
