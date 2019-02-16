@@ -1,0 +1,16 @@
+// Custom scrollbar on right side of page
+
+@import "_Theme";
+
+body::-webkit-scrollbar {
+    width: 7px;
+    max-width: 0.75vw;
+}
+
+body::-webkit-scrollbar-track {
+    background: $bg-primary;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: $font-normal;
+}
