@@ -1,0 +1,34 @@
+// Styling for <bg> tag
+
+@import "_Theme";
+
+$line-width: 2px;
+$grid-size: 32px;
+
+bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    margin: 0;
+    // background-image: linear-gradient($line-color $line-width, transparent $line-width), 
+    //     linear-gradient(90deg, $line-color $line-width, transparent $line-width);
+    // background-size: $grid-size $grid-size;
+}
+
+#pattern-hex polygon {
+    fill: white;
+    stroke: #F4F4F9;
+    stroke-width: 5;
+}
+
+// bg rect { 
+//     animation: animate-bg 2s linear infinite;
+// }
+
+@keyframes animate-bg {
+    from { transform: translate(0, 0); }
+    to { transform: translate(129px, 111px); }
+}

@@ -16,12 +16,34 @@
         <meta property="og:url" content="">
         <meta name="twitter:card" content="">
         <meta property="og:site_name" content="Jackson Nestelroad">
-        <meta name="twitter:image:alt" content="e">
+        <meta name="twitter:image:alt" content="">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
         <link href="./out/css/main.css" rel="stylesheet">
+        <script type="text/javascript">
+            // IE <9 Support 
+            document.createElement("bg");
+        </script>
     </head>
     <body>
+        <!-- &#x2B22; -->
+        <bg>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
+                <defs>
+                    <pattern id="pattern-hex" x="0" y="0" width="150" height="86.6025403784" patternUnits="userSpaceOnUse" patternTransform="scale(0.75) translate(0) rotate(30)">
+                        <polygon id="hexagon" points="125,43.3012701892 100,86.6025403784 50,86.6025403784 25,43.3012701892 50,0 100,0" />
+                        <use xlink:href="#hexagon" x="75" y="-43.3012701892" />
+                        <use xlink:href="#hexagon" x="75" y="43.3012701892" />
+                        <use xlink:href="#hexagon" x="-75" y="43.3012701892" />
+                        <use xlink:href="#hexagon" x="-75" y="-43.3012701892" />
+                    </pattern>
+                </defs>
+            
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-hex)" />
+            </svg>
+        </bg>
         <main>
             <p>Hello world!</p>
+            <p style="margin: 1000px 0">Hello from below</p>
         </main>
     </body>
     <script type="text/javascript" src="./out/js/scripts.js"></script>
