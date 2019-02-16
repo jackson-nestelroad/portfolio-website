@@ -1,20 +1,42 @@
+bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  margin: 0; }
+
+#pattern-hex polygon {
+  fill: white;
+  stroke: #F4F4F9;
+  stroke-width: 5; }
+
+@keyframes animate-bg {
+  from {
+    transform: translate(0, 0); }
+  to {
+    transform: translate(129px, 111px); } }
+
 body {
   background-color: white;
-  color: #1E1E26;
+  color: #3C3C60;
   padding: 0;
   margin: 0;
   overflow-x: hidden; }
 
 main {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   text-align: center;
-  background-image: linear-gradient(#F4F4F9 2px, transparent 2px), linear-gradient(90deg, #F4F4F9 2px, transparent 2px);
-  background-size: 32px 32px;
-  animation: grid-animate 60s linear infinite; }
+  font-family: "Open Sans"; }
 
-@keyframes grid-animate {
-  from {
-    background-position: 0 0; }
-  to {
-    background-position: 100% 100%; } }
+body::-webkit-scrollbar {
+  width: 7px;
+  max-width: 0.75vw; }
+
+body::-webkit-scrollbar-track {
+  background: white; }
+
+body::-webkit-scrollbar-thumb {
+  background: #3C3C60; }
