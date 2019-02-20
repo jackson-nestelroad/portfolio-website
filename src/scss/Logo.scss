@@ -1,0 +1,48 @@
+// Styling for logo in the page's header
+
+@import "_Theme";
+
+header.logo {
+    padding: 8px 32px;
+    background-color: white;
+}
+
+header.logo div.info {
+    float: left;
+}
+
+header.logo div.image {
+    float: left;
+    text-align: left;
+}
+
+header.logo div.image img {
+    max-width: 75px;
+    height: auto;
+    margin-right: 10px;
+}
+
+header.logo a {
+    text-decoration: none;
+}
+
+header.logo .info {
+    margin-top: 14px;
+    font-weight: $font-weight-bold;
+    font-family: $font-family;
+    text-transform: uppercase;
+
+    @media screen and (max-width: get-size(1)) {
+        display: none;
+    }
+}
+
+header.logo .info .name {
+    color: $font-color-dark;
+    font-size: 16pt;
+}
+
+header.logo .info .title {
+    color: $font-color-light;
+    font-size: 9.4pt;
+}

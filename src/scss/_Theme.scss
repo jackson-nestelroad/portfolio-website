@@ -1,9 +1,25 @@
 // Variables for the page's overall theme
 
+$bg-base: #F4F4F9;
 $bg-primary: white;
 $bg-secondary: green;
 
-$font-normal: #3C3C60;
-$font-white: white;
+$font-color-dark: #3C3C60;
+$font-color-light: #6A6A87;
+$font-color-white: white;
 
 $font-family: "Open Sans";
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$sizes:
+    sm 30rem,
+    md 60rem,
+    lg 90rem;
+
+@function get-size($size) {
+    @if $size != '' {
+        @return nth(nth($sizes,$size),2);
+    }
+}

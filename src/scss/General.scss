@@ -1,0 +1,13 @@
+// A few general-purpose classes
+
+// Styling for any div with the "row" class
+// Used to keep things in a row with each other
+div.row {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+// Container holding floating content
+div.float-container {
+    overflow: hidden;
+}
