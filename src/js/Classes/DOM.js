@@ -9,6 +9,11 @@ const DOM = {
     // Get first element only by query
     getFirstElement: function(query) {
         return this.getElements(query)[0];
+    },
+
+    // Remove class from element
+    removeClass: function(element, className) {
+        return element.classList.remove(className);
     }
 }
 
