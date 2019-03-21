@@ -1,0 +1,145 @@
+// Styling for canvas at top of page
+
+@import "_Theme";
+
+div.canvas {
+    position: relative;
+}
+
+div.canvas canvas#particles {
+    width: 100%;
+    height: 90vh;
+    background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%)
+}
+
+div.canvas div.starry-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 80%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    min-width: 300px;
+}
+
+div.canvas div.starry-text {
+    font-family: "Nunito Sans";
+    font-weight: $font-weight-light;
+    color: white;
+    opacity: 0.75;
+    word-wrap: break-word;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: opacity 1s;
+}
+
+div.canvas div.starry-text.gradient { 
+    background: -webkit-linear-gradient(white, #052342);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+div.canvas div.starry-text.preload {
+    opacity: 0 !important;
+}
+
+div.canvas div.starry-text.bold {
+    opacity: 1;
+}
+
+div.canvas div.starry-text.thin {
+    opacity: 0.5;
+}
+
+div.canvas div.starry-text.lg {
+    @include for-mobile {
+        font-size: 32pt;
+    }
+    @include for-tablet-portrait-up {
+        font-size: 48pt;
+    }
+    @include for-tablet-landscape-up {
+        font-size: 64pt;
+    }
+    @include for-desktop-up {
+        font-size: 96pt;
+    }
+}
+
+div.canvas div.starry-text.sm {
+    @include for-mobile {
+        font-size: 12pt;
+    }
+    @include for-tablet-portrait-up {
+        font-size: 18pt;
+    }
+    @include for-tablet-landscape-up {
+        font-size: 24pt;
+    }
+    @include for-desktop-up {
+        font-size: 32pt;
+    }
+}
+
+
+div.canvas div.starry-text.design {
+    position: absolute;
+    $vertical: 0%;
+    top: $vertical;
+
+    @include for-mobile {
+        left: 50%;
+        transform: translate(-50%, -$vertical);
+    }
+    @include for-tablet-portrait-up {
+        left: 10%;
+        transform: translate(-10%, -$vertical);
+    }
+}
+
+div.canvas div.starry-text.develop {
+    position: absolute;
+    $vertical: 33%;
+    top: $vertical;
+
+    @include for-mobile {
+        left: 50%;
+        transform: translate(-50%, -$vertical);
+    }
+    @include for-tablet-portrait-up {
+        left: 36%;
+        transform: translate(-36%, -$vertical);
+    }
+}
+
+div.canvas div.starry-text.deploy {
+    position: absolute;
+    $vertical: 66%;
+    top: $vertical;
+
+    @include for-mobile {
+        left: 50%;
+        transform: translate(-50%, -$vertical);
+    }
+    @include for-tablet-portrait-up {
+        left: 56%;
+        transform: translate(-56%, -$vertical);
+    }
+}
+
+div.canvas div.starry-text.discover {
+    position: absolute;
+    $vertical: 100%;
+    top: $vertical;
+
+    @include for-mobile {
+        left: 50%;
+        transform: translate(-50%, -$vertical);
+    }
+    @include for-tablet-portrait-up {
+        left: 90%;
+        transform: translate(-90%, -$vertical);
+    }
+}
