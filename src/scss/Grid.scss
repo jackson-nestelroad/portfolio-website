@@ -7,6 +7,12 @@ $grid-columns: 12;
 $gutter-width: 2rem;
 $gutter-margin: ($gutter-width / 2);
 
+// Sizes for the grid to follow
+$grid-sizes:
+    sm 30rem,
+    md 60rem,
+    lg 90rem;
+
 // Row for a grid
 .grid-row {
     text-align: left;
@@ -24,7 +30,7 @@ $gutter-margin: ($gutter-width / 2);
 }
 
 // Create columns of varying sizes
-@each $SIZE in $sizes {
+@each $SIZE in $grid-sizes {
     // Get name and size
     $name: nth($SIZE, 1);
     $size: nth($SIZE, 2);
