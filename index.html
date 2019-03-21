@@ -4,10 +4,18 @@
         <meta charset="UTF-8">
         <meta name="theme-color" content="#">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jackson Nestelroad</title>
-        <!-- <link rel="shortcut icon" href="/path/to/icons/favicon.ico">
-        <link rel="icon" type="image/png" href="/path/to/icons/favicon-192x192.png" sizes="192x192">
-        <link rel="apple-touch-icon" sizes="180x180" href="/path/to/icons/apple-touch-icon-180x180.png"> -->
+        <title>Jackson Nestelroad | Aspiring Web/Software Developer</title>
+        <!-- Icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/out/images/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/out/images/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/out/images/icons/favicon-16x16.png">
+        <link rel="manifest" href="/out/images/icons/site.webmanifest">
+        <link rel="mask-icon" href="/out/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/out/images/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="/out/images/icons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Meta Data -->
         <meta name="description" content="">
         <link rel="canonical" href="https://nestelroad.com">
         <meta property="og:title" content="Jackson Nestelroad">
@@ -18,6 +26,7 @@
         <meta property="og:site_name" content="Jackson Nestelroad">
         <meta name="twitter:image:alt" content="">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400,700" rel="stylesheet">
         <link href="./out/css/main.css" rel="stylesheet">
         <script type="text/javascript">
             // IE <9 Support 
@@ -32,18 +41,18 @@
                     <!-- Big hexagon pattern -->
                     <pattern id="pattern-hex" x="0" y="0" width="150" height="86.6025403784" patternUnits="userSpaceOnUse" patternTransform="scale(0.75) translate(0) rotate(30)">
                         <polygon id="hexagon" points="125,43.3012701892 100,86.6025403784 50,86.6025403784 25,43.3012701892 50,0 100,0" />
-                        <use xlink:href="#hexagon" x="75" y="-43.3012701892" />
-                        <use xlink:href="#hexagon" x="75" y="43.3012701892" />
-                        <use xlink:href="#hexagon" x="-75" y="43.3012701892" />
-                        <use xlink:href="#hexagon" x="-75" y="-43.3012701892" />
+                        <use href="#hexagon" x="75" y="-43.3012701892" />
+                        <use href="#hexagon" x="75" y="43.3012701892" />
+                        <use href="#hexagon" x="-75" y="43.3012701892" />
+                        <use href="#hexagon" x="-75" y="-43.3012701892" />
                     </pattern>
                     <!-- Little hexagon pattern -->
                     <pattern id="pattern-hex-small" x="0" y="0" width="150" height="86.6025403784" patternUnits="userSpaceOnUse" patternTransform="scale(0.09375) translate(0) rotate(30)">
                         <polygon id="hexagon-small" points="125,43.3012701892 100,86.6025403784 50,86.6025403784 25,43.3012701892 50,0 100,0" />
-                        <use xlink:href="#hexagon-small" x="75" y="-43.3012701892" />
-                        <use xlink:href="#hexagon-small" x="75" y="43.3012701892" />
-                        <use xlink:href="#hexagon-small" x="-75" y="43.3012701892" />
-                        <use xlink:href="#hexagon-small" x="-75" y="-43.3012701892" />
+                        <use href="#hexagon-small" x="75" y="-43.3012701892" />
+                        <use href="#hexagon-small" x="75" y="43.3012701892" />
+                        <use href="#hexagon-small" x="-75" y="43.3012701892" />
+                        <use href="#hexagon-small" x="-75" y="-43.3012701892" />
                     </pattern>
                 </defs>
                 <!-- Apply the two patterns to the whole page -->
@@ -61,11 +70,14 @@
                 <div class="float-container">
                     <a href="/">
                         <div class="image">
-                            <img alt="logo" src="out/images/Logo.svg" />
+                            <svg viewBox="0 0 455 463" xmlns="http://www.w3.org/2000/svg">
+                                <use class="inner preload" href="out/images/Logo.svg#inner" />
+                                <use class="outer preload" href="out/images/Logo.svg#outer" />
+                            </svg>             
                         </div>
                         <div class="info">
                             <div class="name">Jackson Nestelroad</div>
-                            <div class="title">Apsiring Web/Software Developer</div>
+                            <div class="title">Aspiring Web/Software Developer</div>
                         </div>
                     </a>
                 </div>
@@ -73,6 +85,18 @@
         </header>
         <!-- The site's content starts here -->
         <main>
+            <!-- Particles Canvas -->
+            <section class="canvas">
+                <div class="canvas">
+                        <div class="starry-text-container">
+                            <div class="starry-text design lg bold gradient preload">DESIGN</div>
+                            <div class="starry-text develop lg bold gradient preload">DEVELOP</div>
+                            <div class="starry-text deploy lg bold gradient preload">DEPLOY</div>
+                            <div class="starry-text discover lg bold gradient preload">DISCOVER</div>
+                        </div>
+                        <canvas id="particles"></canvas>
+                    </div>
+            </section>
             <p>Hello world!</p>
             <p style="margin: 1000px 0">Hello from below</p>
         </main>
