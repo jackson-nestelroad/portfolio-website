@@ -2,46 +2,82 @@
 
 @import "_Theme";
 
+// Working with the header itself
 header.logo {
     padding: 8px 32px;
     background-color: white;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-header.logo div.info {
-    float: left;
-}
-
+// Parts of the logo
+header.logo div.info,
 header.logo div.image {
     float: left;
     text-align: left;
 }
 
-header.logo div.image img {
-    max-width: 75px;
+// Positioning and size of svg
+header.logo div.image svg {
+    width: 75px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 5px;
+    -webkit-user-drag: none;
 }
 
+// Time for logo to animate in
+$animation-time: 1.5s;
+
+// Default positioning for logo
+header.logo div.image svg use:not(.preload) {
+    transition: transform $animation-time;
+    -webkit-transition: $animation-time;
+    transform: scale(1,1) rotate(0deg);
+    -webkit-transform: scale(1,1) rotate(0deg);
+    transform-origin: center;
+    -webkit-transform-origin: center;
+}
+
+// Preloaded svg position for outer svg
+header.logo div.image svg use.preload.outer {
+    transform: scale(0,0) rotate(360deg);
+    -webkit-transform: scale(0,0) rotate(360deg);
+    transform-origin: center;
+    -webkit-transform-origin: center;
+}
+
+// Preloaded svg position for inner svg
+header.logo div.image svg use.preload.inner {
+    transform: scale(0,0) rotate(-180deg);
+    -webkit-transform: scale(0,0) rotate(-180deg);
+    transform-origin: center;
+    -webkit-transform-origin: center;
+}
+
+// Remove text decoration from links
 header.logo a {
     text-decoration: none;
 }
 
+// Positioning for info next to logo
 header.logo .info {
     margin-top: 14px;
     font-weight: $font-weight-bold;
-    font-family: $font-family;
+    font-family: $logo-font-family;
     text-transform: uppercase;
 
-    @media screen and (max-width: get-size(1)) {
+    @include for-mobile {
         display: none;
     }
 }
 
+// Name styling
 header.logo .info .name {
     color: $font-color-dark;
     font-size: 16pt;
 }
 
+// Title styling
 header.logo .info .title {
     color: $font-color-light;
     font-size: 9.4pt;
