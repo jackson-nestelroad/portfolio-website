@@ -12,7 +12,7 @@ div.canvas canvas#particles {
     background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%)
 }
 
-div.canvas div.starry-text-container {
+div.canvas div.canvas-text-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -23,7 +23,7 @@ div.canvas div.starry-text-container {
     min-width: 300px;
 }
 
-div.canvas div.starry-text {
+div.canvas div.canvas-text {
     font-family: "Nunito Sans";
     font-weight: $font-weight-light;
     color: white;
@@ -34,26 +34,26 @@ div.canvas div.starry-text {
     transition: opacity 1s;
 }
 
-div.canvas div.starry-text.gradient { 
+div.canvas div.canvas-text.gradient { 
     background: -webkit-linear-gradient(white, #052342);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-div.canvas div.starry-text.preload {
+div.canvas div.canvas-text.preload {
     opacity: 0 !important;
 }
 
-div.canvas div.starry-text.bold {
+div.canvas div.canvas-text.bold {
     opacity: 1;
 }
 
-div.canvas div.starry-text.thin {
+div.canvas div.canvas-text.thin {
     opacity: 0.5;
 }
 
-div.canvas div.starry-text.lg {
+div.canvas div.canvas-text.lg {
     @include for-mobile {
         font-size: 32pt;
     }
@@ -68,7 +68,7 @@ div.canvas div.starry-text.lg {
     }
 }
 
-div.canvas div.starry-text.sm {
+div.canvas div.canvas-text.sm {
     @include for-mobile {
         font-size: 12pt;
     }
@@ -84,7 +84,7 @@ div.canvas div.starry-text.sm {
 }
 
 
-div.canvas div.starry-text.design {
+div.canvas div.canvas-text.design {
     position: absolute;
     $vertical: 0%;
     top: $vertical;
@@ -99,7 +99,7 @@ div.canvas div.starry-text.design {
     }
 }
 
-div.canvas div.starry-text.develop {
+div.canvas div.canvas-text.develop {
     position: absolute;
     $vertical: 33%;
     top: $vertical;
@@ -114,7 +114,7 @@ div.canvas div.starry-text.develop {
     }
 }
 
-div.canvas div.starry-text.deploy {
+div.canvas div.canvas-text.deploy {
     position: absolute;
     $vertical: 66%;
     top: $vertical;
@@ -129,7 +129,7 @@ div.canvas div.starry-text.deploy {
     }
 }
 
-div.canvas div.starry-text.discover {
+div.canvas div.canvas-text.discover {
     position: absolute;
     $vertical: 100%;
     top: $vertical;
