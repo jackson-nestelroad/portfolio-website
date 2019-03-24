@@ -1,18 +1,15 @@
-// This class represents a single (x, y) coordinate.
+// Class representing a single (x, y) coordinate
 
 export default class Coordinate {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
+    constructor(public x: number, public y: number) { }
 
-    distance(coord) {
+    distance(coord: Coordinate): number {
         let dx = coord.x - this.x;
         let dy = coord.y - this.y;
         return Math.sqrt(dx*dx + dy*dy);
     }
 
-    toString() {
+    toString(): string {
         return `${this.x}x${this.y}`;
     }
 }
