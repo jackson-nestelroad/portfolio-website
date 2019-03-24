@@ -34,7 +34,6 @@
         </script>
     </head>
     <body>
-        <!-- The background for the page -->
         <bg>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
                 <defs>
@@ -60,33 +59,33 @@
                 <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-hex-small)" />
             </svg>
         </bg>
-        <!-- Persistent header for menu -->
         <header class="menu">
-
-        </header>
-        <!-- Fixed header for showing the logo just at the top of the page -->
-        <header class="logo">
-            <div class="row">
-                <div class="float-container">
-                    <a href="/">
-                        <div class="image">
-                            <svg viewBox="0 0 455 463" xmlns="http://www.w3.org/2000/svg">
-                                <use class="inner preload" href="out/images/Logo.svg#inner" />
-                                <use class="outer preload" href="out/images/Logo.svg#outer" />
-                            </svg>             
-                        </div>
-                        <div class="info">
-                            <div class="name">Jackson Nestelroad</div>
-                            <div class="title">Aspiring Web/Software Developer</div>
-                        </div>
-                    </a>
-                </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
         </header>
-        <!-- The site's content starts here -->
         <main>
-            <!-- Particles Canvas -->
-            <section class="canvas">
+            <header class="logo">
+                <div class="row">
+                    <div class="float-container">
+                        <a href="/">
+                            <div class="image">
+                                <svg viewBox="0 0 455 463" xmlns="http://www.w3.org/2000/svg">
+                                    <use class="inner preload" href="out/images/Logo.svg#inner" />
+                                    <use class="outer preload" href="out/images/Logo.svg#outer" />
+                                </svg>             
+                            </div>
+                            <div class="info">
+                                <div class="name">Jackson Nestelroad</div>
+                                <div class="title">Aspiring Web/Software Developer</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <section id="canvas" class="no-menu">
                 <div class="canvas">
                         <div class="canvas-text-container">
                             <div class="canvas-text design lg bold gradient preload">DESIGN</div>
@@ -98,7 +97,10 @@
                     </div>
             </section>
             <p>Hello world!</p>
-            <p style="margin: 1000px 0">Hello from below</p>
+            <section id="about">
+                <p style="margin: 1000px 0">Hello from below</p>
+            </section>
+            
         </main>
     </body>
     <script type="text/javascript" src="./out/js/scripts.js"></script>
