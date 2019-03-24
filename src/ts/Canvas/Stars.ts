@@ -1,6 +1,8 @@
-// Particles configuration for stars
+// Configuration for Stars particles
 
-const Stars = {
+import { IParticlesConfig } from '../Particles/ParticleSettings'
+
+export const Stars: IParticlesConfig = {
     Particles: {
         number: 350,
         density: 200,
@@ -13,8 +15,8 @@ const Stars = {
             color: '#000000'
         },
         move: {
-            speed: 0.1,
-            direction: 'none',
+            speed: 0.2,
+            direction: 'random',
             straight: false,
             random: true,
             edgeBounce: false,
@@ -22,7 +24,8 @@ const Stars = {
         },
         events: {
             resize: true,
-            hover: 'bubble'
+            hover: 'bubble',
+            click: false
         },
         animate: {
             opacity: {
@@ -43,20 +46,7 @@ const Stars = {
                 distance: 75,
                 radius: 7,
                 opacity: 1
-            },
-            repulse: {
-                distance: 100,   
-            }
-        },
-        click: {
-            add: {
-                number: 4
-            },
-            remove: {
-                number: 2
             }
         }
     }
 }
-
-export default Stars;
