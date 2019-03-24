@@ -1,0 +1,50 @@
+// Styling for fixed menu
+
+@import "./_Theme";
+
+header.menu {
+    position: fixed;
+    top: 0;
+    right: 32px;
+    height: 98px;
+    width: 25px;
+    z-index: 1;
+}
+
+header.menu .hamburger {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateT(-50%);
+    cursor: pointer;
+}
+
+header.menu .hamburger .line {
+    height: 0px;
+    width: 100%;
+    margin: 4px auto;
+    border: 1px solid $font-color-dark;
+    transition: 0.25s;
+}
+
+header.menu .hamburger:hover:not(.open) .line {
+    margin: 6px auto;
+}
+
+header.menu .hamburger.open:hover .line {
+    width: 90%;
+}
+
+header.menu .hamburger.open .line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+header.menu .hamburger.open .line:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+header.menu .hamburger.open .line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
