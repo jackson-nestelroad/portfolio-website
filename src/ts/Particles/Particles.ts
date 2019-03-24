@@ -1,29 +1,52 @@
 // This class is a loose framework for creating particles
 // Based on particles.js by VincentGarreau
-// Re-imagined in ES6 JavaScript using classes and internal states
+// Re-imagined in TypeScript using classes and internal states
 
-import AnimationFrameFunctions from './AnimationFrameFunctions'
-import DOM from '../DOM'
+import { AnimationFrameFunctions } from './AnimationFrameFunctions'
+import { DOM } from '../Modules/DOM'
 import Coordinate from './Coordinate'
-import Color from './Color'
 import Particle from './Particle'
+import { IParticleSettings, IInteractiveSettings } from './ParticleSettings';
+import Mouse from './Mouse';
+import Stroke from './Stroke';
 
 export default class Particles {
-    constructor(htmlID, context) {
-        // Set up canvas and context objects
-        this.canvas = DOM.getFirstElement(htmlID);
 
-        if(this.canvas === null)
-            throw `Canvas ID ${htmlID} not found.`;
+    private running: boolean = false;
+
+    private canvas: HTMLCanvasElement;
+    private ctx: CanvasRenderingContext2D;
+
+    private width: number;
+    private height: number;
+
+    private pixelRatioLimit: number = 8;
+    private pixelRatio: number = 1;
+    private particles: Array<Particle> = new Array();
+    private mouse: Mouse = {
+        position: new Coordinate(0, 0),
+        over: false
+    };
+    private handleResize: () => void = null;
+    private animationFrame: number = null;
+    private mouseEventsAttached: boolean = false;
+
+    private particleSettings: IParticleSettings;
+    private interactiveSettings: IInteractiveSettings;
+
+    public constructor(cssQuery: string, context: '2d') {
+        this.canvas = <HTMLCanvasElement>DOM.getFirstElement(cssQuery);
+
+        if(this.canvas === null) {
+            throw `Canvas ID ${cssQuery} not found.`;
+        }
 
         this.ctx = this.canvas.getContext(context);
-        this.pixelRatioLimit = 8;
 
-        // Get which animation functions to use
         window.requestAnimationFrame = AnimationFrameFunctions.requestAnimationFrame();
         window.cancelAnimationFrame = AnimationFrameFunctions.cancelAnimationFrame();
 
-        // Particle settings
+        // Default settings
         this.particleSettings = {
             number: 350,
             density: 1000,
@@ -41,12 +64,12 @@ export default class Particles {
                 straight: true,
                 random: true,
                 edgeBounce: false,
-                bounce: false,
                 attract: false
             },
             events: {
                 resize: true,
-                hover: false
+                hover: false,
+                click: false
             },
             animate: {
                 opacity: false,
@@ -54,7 +77,7 @@ export default class Particles {
             }
         }
 
-        // Settings for interactive modes
+        // Default settings
         this.interactiveSettings = {
             hover: {
                 bubble: {
@@ -75,24 +98,12 @@ export default class Particles {
                 }
             }
         }
-        
-        // States
-        this.bg = null;
-        this.pixelRatio = 1;
-        this.particles = new Array();
-        this.mouse = {
-            position: new Coordinate(null, null),
-            over: false
-        }
-        this.handleResize = null;
-        this.animationFrame = null;
-        this.mouseEventsAttached = false;
     }
 
     /************************************************ INITIALIZERS ************************************************/
 
     // This function must be called to initialize the canvas
-    initialize() {
+    private initialize(): void {
         // console.log(`Initializing from ${this.pixelRatio} to ${window.devicePixelRatio}.`);
         this.trackMouse();
         this.initializePixelRatio(window.devicePixelRatio >= this.pixelRatioLimit ? this.pixelRatioLimit - 2 : window.devicePixelRatio);
@@ -104,7 +115,7 @@ export default class Particles {
     }
 
     // Adds event listeners to track the mouse
-    trackMouse() {
+    private trackMouse(): void {
         if(this.mouseEventsAttached) {
             return;
         }
@@ -129,7 +140,7 @@ export default class Particles {
     }
 
     // Scale the canvas and settings depending on the the user's screen size
-    initializePixelRatio(newRatio = window.devicePixelRatio) {
+    private initializePixelRatio(newRatio = window.devicePixelRatio): void {
         let multiplier = newRatio / this.pixelRatio;
 
         this.width = this.canvas.offsetWidth * multiplier;
@@ -139,21 +150,32 @@ export default class Particles {
             this.particleSettings.radius = this.particleSettings.radius.map(r => r * multiplier);
         }
         else {
-            this.particleSettings.radius *= multiplier;
+            if(typeof this.particleSettings.radius === 'number') {
+                this.particleSettings.radius *= multiplier;
+            }
         }
-        this.particleSettings.move.speed *= multiplier;
+        if(this.particleSettings.move) {
+            this.particleSettings.move.speed *= multiplier;
+        }
+    
         if(this.particleSettings.animate && this.particleSettings.animate.radius) {
             this.particleSettings.animate.radius.speed *= multiplier;
         }
-        this.interactiveSettings.hover.bubble.radius *= multiplier;
-        this.interactiveSettings.hover.bubble.distance *= multiplier;
-        this.interactiveSettings.hover.repulse.distance *= multiplier;
+        if(this.interactiveSettings.hover) {
+            if(this.interactiveSettings.hover.bubble) {
+                this.interactiveSettings.hover.bubble.radius *= multiplier;
+                this.interactiveSettings.hover.bubble.distance *= multiplier;
+            }
+            if(this.interactiveSettings.hover.repulse) {
+                this.interactiveSettings.hover.repulse.distance *= multiplier;
+            }
+        }
 
         this.pixelRatio = newRatio;
     }
 
     // Check if the window's zoom has changed and restart the canvas
-    checkZoom() {
+    private checkZoom(): void {
         // console.log(window.devicePixelRatio, this.pixelRatio);
         if(window.devicePixelRatio !== this.pixelRatio && window.devicePixelRatio < this.pixelRatioLimit) {
             this.stopDrawing();
@@ -163,7 +185,7 @@ export default class Particles {
     }
 
     // Set the canvas size, and reset it as the window resizes
-    setCanvasSize() {
+    private setCanvasSize(): void {
         this.canvas.width = this.width;
         this.canvas.height = this.height;
 
@@ -194,59 +216,37 @@ export default class Particles {
     /************************************************ CANVAS ************************************************/
 
     // Get the current fill color
-    getFill() {
+    private getFill(): string | CanvasGradient | CanvasPattern {
         return this.ctx.fillStyle;
     }
 
     // Set the fill color
-    setFill(color) {
-        if(color.constructor === Color)
-            this.ctx.fillStyle = color.toString();
-        else
-            this.ctx.fillStyle = color;
+    private setFill(color: string): void {
+        this.ctx.fillStyle = color;
     }
 
     // Set the stroke according to a Stroke object
-    setStroke(stroke) {
+    private setStroke(stroke: Stroke): void {
         this.ctx.strokeStyle = stroke.color.toString();
         this.ctx.lineWidth = stroke.width;
     }
 
     // Reset canvas
-    clear() {
-        if(!this.bg)
-            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        else {
-            this.setFill(this.bg);
-            this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        }
-    }
-
-    // Set the BG color
-    setBG(color) {
-        if(typeof(color) === 'object') {
-            this.bg = Color.fromObject(color);
-        }
-        else if(typeof(color) === 'string') {
-            this.bg = Color.fromHex(color);
-        }
-
-        if(this.bg === null) {
-            this.bg = new Color(0, 0, 0);
-        }
+    private clear(): void {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
     /************************************************ DRAWING ************************************************/
 
     // Set up the animation frames
-    draw() {
+    private draw(): void {
         this.drawParticles();
         if(this.particleSettings.move)
             this.animationFrame = window.requestAnimationFrame(this.draw.bind(this));
     }
 
     // Stop the canvas from redrawing
-    stopDrawing() {
+    private stopDrawing(): void {
         if(this.handleResize) {
             window.removeEventListener('resize', this.handleResize);
             this.handleResize = null;
@@ -258,7 +258,7 @@ export default class Particles {
     }
 
     // Draw a regular polygon
-    drawPolygon(center, radius, sides) {
+    private drawPolygon(center: Coordinate, radius: number, sides: number): void {
         // Calculate the angle created between interior diagonals
         let diagonalAngle = 360 / sides;
         diagonalAngle *= Math.PI / 180;
@@ -281,7 +281,7 @@ export default class Particles {
     }
 
     // Draw a particle object
-    drawParticle(particle) {
+    private drawParticle(particle: Particle): void {
         let opacity = particle.getOpacity();
         let radius = particle.getRadius();
         this.setFill(particle.color.toString(opacity));
@@ -313,13 +313,13 @@ export default class Particles {
     /************************************************ POSITION ************************************************/
 
     // Get a new position on the screen
-    getNewPosition() {
+    private getNewPosition(): Coordinate {
         // Get random position on the screen
         return new Coordinate(Math.random() * this.canvas.width, Math.random() * this.canvas.height);
     }
 
     // Check that position on screen is valid
-    checkPosition(particle) {
+    private checkPosition(particle: Particle): boolean {
         if(this.particleSettings.move) {
             // Check that position is not off the screen
             if(this.particleSettings.move.edgeBounce) {
@@ -346,7 +346,7 @@ export default class Particles {
     }
 
     // Add more particles based on density
-    distributeParticles() {
+    private distributeParticles(): void {
         if(this.particleSettings.density && typeof(this.particleSettings.density) === 'number') {
             let area = this.canvas.width * this.canvas.height / 1000;
             area /= this.pixelRatio * 2;
@@ -365,7 +365,7 @@ export default class Particles {
     /************************************************ PARTICLES ************************************************/
 
     // Create particles
-    createParticles(number = this.particleSettings.number, position) {
+    private createParticles(number: number = this.particleSettings.number, position: Coordinate = null): void {
         // Settings must be initalized before a particle instance is created
         if(!this.particleSettings)
             throw 'Particle settings must be initalized before a particle is created.';
@@ -388,7 +388,7 @@ export default class Particles {
     }
 
     // Remove particles
-    removeParticles(number) {
+    private removeParticles(number: number = null): void {
         if(!number) {
             this.particles = new Array();
         }
@@ -398,7 +398,7 @@ export default class Particles {
     }
 
     // Update particles for redraw
-    updateParticles() {
+    private updateParticles(): void {
         for(let particle of this.particles) {
             // Particles are moving
             if(this.particleSettings.move) {
@@ -469,7 +469,7 @@ export default class Particles {
             // Handle interactive events
             if(this.particleSettings.events) {
                 // Bubble particles on hover
-                if(this.particleSettings.events.hover === 'bubble') {
+                if(this.particleSettings.events.hover === 'bubble' && this.interactiveSettings.hover && this.interactiveSettings.hover.bubble) {
                     particle.bubble(this.mouse, this.interactiveSettings.hover.bubble);
                 }
             }
@@ -477,11 +477,44 @@ export default class Particles {
     }
 
     // Draw all particles on the canvas
-    drawParticles() {
+    private drawParticles(): void {
         this.clear();
         this.updateParticles();
         for(let particle of this.particles) {
             this.drawParticle(particle);
         }
+    }
+
+    /************************************************ PUBLIC ************************************************/
+
+    public setParticleSettings(settings: IParticleSettings): void {
+        if(this.running) {
+            throw 'Cannot change settings while Canvas is running.';
+        }
+        else {
+            this.particleSettings = settings;
+        }
+    }
+
+    public setInteractiveSettings(settings: IInteractiveSettings): void {
+        if(this.running) {
+            throw 'Cannot change settings while Canvas is running.';
+        }
+        else {
+            this.interactiveSettings = settings;
+        }
+    }
+
+    public start(): void {
+        if(this.particleSettings === null)
+            throw 'Particle settings must be initalized before Canvas can start.';
+
+        if(this.running)
+            throw 'Canvas is already running.';
+            
+        this.running = true;
+
+        this.initialize();
+        this.draw();
     }
 }
