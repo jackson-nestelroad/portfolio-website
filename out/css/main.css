@@ -48,6 +48,7 @@ div.canvas div.canvas-text-container {
   height: 80%;
   width: 100%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   pointer-events: none; }
 
 div.canvas div.canvas-text {
@@ -58,7 +59,9 @@ div.canvas div.canvas-text {
   word-wrap: break-word;
   user-select: none;
   -webkit-user-select: none;
-  transition: opacity 1s; }
+  transition: opacity 1s;
+  transform: translateZ(0) scale(1, 1);
+  -webkit-transform: translateZ(0) scale(1, 1); }
 
 div.canvas div.canvas-text.gradient {
   background: -webkit-linear-gradient(white, #052342);
@@ -113,11 +116,13 @@ div.canvas div.canvas-text.design {
   @media screen and (max-width: 599px) {
     div.canvas div.canvas-text.design {
       left: 50%;
-      transform: translate(-50%, 0%); } }
+      transform: translate(-50%, 0%);
+      -webkit-transform: translate(-50%, 0%); } }
   @media screen and (min-width: 600px) {
     div.canvas div.canvas-text.design {
       left: 10%;
-      transform: translate(-10%, 0%); } }
+      transform: translate(-10%, 0%);
+      -webkit-transform: translate(-10%, 0%); } }
 
 div.canvas div.canvas-text.develop {
   position: absolute;
@@ -125,11 +130,13 @@ div.canvas div.canvas-text.develop {
   @media screen and (max-width: 599px) {
     div.canvas div.canvas-text.develop {
       left: 50%;
-      transform: translate(-50%, -33%); } }
+      transform: translate(-50%, -33%);
+      -webkit-transform: translate(-50%, -33%); } }
   @media screen and (min-width: 600px) {
     div.canvas div.canvas-text.develop {
       left: 36%;
-      transform: translate(-36%, -33%); } }
+      transform: translate(-36%, -33%);
+      -webkit-transform: translate(-36%, -33%); } }
 
 div.canvas div.canvas-text.deploy {
   position: absolute;
@@ -137,11 +144,13 @@ div.canvas div.canvas-text.deploy {
   @media screen and (max-width: 599px) {
     div.canvas div.canvas-text.deploy {
       left: 50%;
-      transform: translate(-50%, -66%); } }
+      transform: translate(-50%, -66%);
+      -webkit-transform: translate(-50%, -66%); } }
   @media screen and (min-width: 600px) {
     div.canvas div.canvas-text.deploy {
       left: 56%;
-      transform: translate(-56%, -66%); } }
+      transform: translate(-56%, -66%);
+      -webkit-transform: translate(-56%, -66%); } }
 
 div.canvas div.canvas-text.discover {
   position: absolute;
@@ -149,11 +158,13 @@ div.canvas div.canvas-text.discover {
   @media screen and (max-width: 599px) {
     div.canvas div.canvas-text.discover {
       left: 50%;
-      transform: translate(-50%, -100%); } }
+      transform: translate(-50%, -100%);
+      -webkit-transform: translate(-50%, -100%); } }
   @media screen and (min-width: 600px) {
     div.canvas div.canvas-text.discover {
       left: 90%;
-      transform: translate(-90%, -100%); } }
+      transform: translate(-90%, -100%);
+      -webkit-transform: translate(-90%, -100%); } }
 
 .row {
   max-width: 75rem;
@@ -486,13 +497,16 @@ header.menu .hamburger.open:hover .line {
   width: 90%; }
 
 header.menu .hamburger.open .line:nth-child(1) {
-  transform: translateY(6px) rotate(45deg); }
+  transform: translateY(6px) rotate(45deg);
+  -webkit-transform: translateY(6px) rotate(45deg); }
 
 header.menu .hamburger.open .line:nth-child(2) {
-  transform: rotate(45deg); }
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg); }
 
 header.menu .hamburger.open .line:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg); }
+  transform: translateY(-6px) rotate(-45deg);
+  -webkit-transform: translateY(-6px) rotate(-45deg); }
 
 header.logo {
   padding: 8px 32px;

@@ -39,12 +39,15 @@ header.menu .hamburger.open:hover .line {
 
 header.menu .hamburger.open .line:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
+    -webkit-transform: translateY(6px) rotate(45deg);
 }
 
 header.menu .hamburger.open .line:nth-child(2) {
     transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
 
 header.menu .hamburger.open .line:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
+    -webkit-transform: translateY(-6px) rotate(-45deg);
 }

@@ -19,6 +19,7 @@ div.canvas div.canvas-text-container {
     height: 80%;
     width: 100%;
     transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
     pointer-events: none;
 }
 
@@ -31,6 +32,8 @@ div.canvas div.canvas-text {
     user-select: none;
     -webkit-user-select: none;
     transition: opacity 1s;
+    transform: translateZ(0) scale(1.0, 1.0);
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 
 div.canvas div.canvas-text.gradient { 
@@ -91,10 +94,12 @@ div.canvas div.canvas-text.design {
     @include for-mobile {
         left: 50%;
         transform: translate(-50%, -$vertical);
+        -webkit-transform: translate(-50%, -$vertical);
     }
     @include for-tablet-portrait-up {
         left: 10%;
         transform: translate(-10%, -$vertical);
+        -webkit-transform: translate(-10%, -$vertical);
     }
 }
 
@@ -106,10 +111,12 @@ div.canvas div.canvas-text.develop {
     @include for-mobile {
         left: 50%;
         transform: translate(-50%, -$vertical);
+        -webkit-transform: translate(-50%, -$vertical);
     }
     @include for-tablet-portrait-up {
         left: 36%;
         transform: translate(-36%, -$vertical);
+        -webkit-transform: translate(-36%, -$vertical);
     }
 }
 
@@ -121,10 +128,12 @@ div.canvas div.canvas-text.deploy {
     @include for-mobile {
         left: 50%;
         transform: translate(-50%, -$vertical);
+        -webkit-transform: translate(-50%, -$vertical);
     }
     @include for-tablet-portrait-up {
         left: 56%;
         transform: translate(-56%, -$vertical);
+        -webkit-transform: translate(-56%, -$vertical);
     }
 }
 
@@ -136,9 +145,11 @@ div.canvas div.canvas-text.discover {
     @include for-mobile {
         left: 50%;
         transform: translate(-50%, -$vertical);
+        -webkit-transform: translate(-50%, -$vertical);
     }
     @include for-tablet-portrait-up {
         left: 90%;
         transform: translate(-90%, -$vertical);
+        -webkit-transform: translate(-90%, -$vertical);
     }
 }
