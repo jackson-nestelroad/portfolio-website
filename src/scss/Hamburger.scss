@@ -22,10 +22,10 @@ header.menu .hamburger {
 }
 
 header.menu .hamburger .line {
-    height: 0px;
+    height: 2px;
     width: 100%;
     margin: 4px auto;
-    border: 1px solid $font-color-dark;
+    background: $font-color-dark;
     transition: 0.25s;
 }
 
