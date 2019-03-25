@@ -473,10 +473,10 @@ header.menu .hamburger {
   cursor: pointer; }
 
 header.menu .hamburger .line {
-  height: 0px;
+  height: 2px;
   width: 100%;
   margin: 4px auto;
-  border: 1px solid #3C3C60;
+  background: #3C3C60;
   transition: 0.25s; }
 
 header.menu .hamburger:hover:not(.open) .line {
