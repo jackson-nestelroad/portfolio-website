@@ -3,11 +3,8 @@
 import { DOM } from './DOM'
 import Section from '../Classes/Section'
 
-// Logo parts
-export let Logo = {
-    Inner: DOM.getFirstElement('header.logo .image svg .inner'),
-    Outer: DOM.getFirstElement('header.logo .image svg .outer')
-}
+// SVG container for logo
+export let Logo: HTMLElement = DOM.getFirstElement("header.logo .image svg");
 
 // Container for text over canvas
 export let CanvasText: HTMLElement = DOM.getFirstElement('div.canvas div.canvas-text-container');
