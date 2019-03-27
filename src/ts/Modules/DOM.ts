@@ -1,6 +1,6 @@
 // Functions for interacting with the DOM
 
-export namespace DOM {
+export module DOM {
     // Get array of elements by query
     export function getElements(query: string): NodeListOf<HTMLElement> {
         return document.querySelectorAll(query);
