@@ -1,37 +1,29 @@
 // Namespace for Menu data
 
 import { Menu as Elements } from '../Modules/WebPage'
-import { EventCallback, EventDispatcher } from '../Classes/EventDispatcher';
+import { Events } from '../Modules/EventDispatcher'
 
-export namespace Menu {
-    let open: boolean = false;
-    let right: boolean = false;
-    const dispatcher = new EventDispatcher("menuToggle", { open: open }, false);
+class Menu extends Events.EventDispatcher {
 
-    export let Hamburger: HTMLElement = Elements.Hamburger;
+    private open: boolean = false;
+    private right: boolean = false;
+    public Hamburger: HTMLElement = Elements.Hamburger;
 
-    export function toggle(): void {
-        open = !open;
-        if(open) {
-            Hamburger.classList.add('open');
+    constructor() { 
+        super();
+        this.register('toggle', { open: this.open });
+    }
+
+    public toggle(): void {
+        this.open = !this.open;
+        if(this.open) {
+            this.Hamburger.classList.add('open');
         }
         else {
-            Hamburger.classList.remove('open');
+            this.Hamburger.classList.remove('open');
         }
-        dispatcher.disperse();
-    }
-
-    export function move(moveRight: boolean): void {
-        if(right !== moveRight) {
-            right = moveRight;
-        }
-    }
-
-    export const subscribe = (element: HTMLElement, callback: EventCallback): void => {
-        dispatcher.subscribe(element, callback);
-    }
-
-    export const unsubscribe = (element: HTMLElement): void => {
-        dispatcher.unsubscribe(element);
+        this.dispatch('toggle');
     }
 }
+
+export const TopMenu = new Menu();
