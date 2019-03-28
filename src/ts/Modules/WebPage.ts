@@ -15,7 +15,7 @@ export let Menu = {
 }
 
 // All section tags
-export let Sections = new Object();
+export let Sections: { [key: string]: Section } = {};
 for(let element of Array.from(DOM.getElements('section'))) {
     Sections[element.id] = new Section(element);
 }
