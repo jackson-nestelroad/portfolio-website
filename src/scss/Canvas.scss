@@ -36,11 +36,18 @@ div.canvas div.canvas-text {
     -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 
-div.canvas div.canvas-text.gradient { 
-    background: -webkit-linear-gradient(white, #052342);
+div.canvas div.canvas-text.gradient {
+    $gradient: #052342;
+    background: linear-gradient(white, $gradient);
+    background: -webkit-linear-gradient(white, $gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @include for-ie {
+        background: none;
+        opacity: 0.5 !important;
+    }
 }
 
 div.canvas div.canvas-text.preload {

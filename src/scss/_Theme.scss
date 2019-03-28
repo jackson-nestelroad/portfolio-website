@@ -34,3 +34,9 @@ $logo-font-family: "Open Sans";
 @mixin for-big-desktop-up {
     @media screen and (min-width: 1800px) { @content; }
 }
+
+@mixin for-ie {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
