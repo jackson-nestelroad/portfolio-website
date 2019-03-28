@@ -33,6 +33,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.0",
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "tsd": "^0.7.0"

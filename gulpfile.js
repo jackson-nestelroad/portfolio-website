@@ -12,6 +12,7 @@ const browserify = require('browserify');
 const glob = require('glob');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
+require('@babel/polyfill');
 
 // Create a server to view changes
 gulp.task('connect', () => {
@@ -55,11 +56,21 @@ gulp.task('browserify', () => {
 	return browserify({
         entries: glob.sync('out/ts/**/*.js'),
         debug: true
-    })
+	})
+		.transform('babelify', { 
+			presets: [
+				[
+					'@babel/preset-env',
+					{
+						useBuiltIns: 'usage'
+					}
+				],
+			]
+		})
 		.bundle()
 		.pipe(source('scripts.js'))
 		.pipe(buffer())
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
 		.pipe(gulp.dest('out/js'))
 		.pipe(connect.reload());
 });
