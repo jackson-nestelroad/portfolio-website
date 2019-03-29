@@ -1,6 +1,6 @@
 // Class for getting information about a <section> tag
 
-import { DOM } from '../Modules/DOM'
+import { DOM } from '../../Modules/DOM'
 
 export default class Section {
     constructor(private element: HTMLElement) { }
