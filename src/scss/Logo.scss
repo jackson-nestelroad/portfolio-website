@@ -23,6 +23,10 @@ header.logo div.image svg {
     height: auto;
     margin-right: 5px;
     -webkit-user-drag: none;
+
+    @include for-ie {
+        height: 76px;
+    }
 }
 
 // Time for logo to animate in
@@ -36,6 +40,11 @@ header.logo div.image svg use:not(.preload) {
     -webkit-transform: scale(1,1) rotate(0deg);
     transform-origin: center;
     -webkit-transform-origin: center;
+
+    @include for-ie {
+        opacity: 1;
+        transition: opacity $animation-time;
+    }
 }
 
 // Preloaded svg position for outer svg
@@ -44,6 +53,10 @@ header.logo div.image svg use.preload.outer {
     -webkit-transform: scale(0,0) rotate(360deg);
     transform-origin: center;
     -webkit-transform-origin: center;
+
+    @include for-ie {
+        opacity: 0;
+    }
 }
 
 // Preloaded svg position for inner svg
@@ -52,6 +65,10 @@ header.logo div.image svg use.preload.inner {
     -webkit-transform: scale(0,0) rotate(-180deg);
     transform-origin: center;
     -webkit-transform-origin: center;
+
+    @include for-ie {
+        opacity: 0;
+    }
 }
 
 // Remove text decoration from links
