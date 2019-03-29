@@ -1,13 +1,13 @@
 // Namespace for Menu data
 
-import { Menu as Elements } from '../Modules/WebPage'
-import { Events } from '../Modules/EventDispatcher'
+import { DOM } from '../../Modules/DOM'
+import { Events } from '../../Modules/EventDispatcher'
 
-class Menu extends Events.EventDispatcher {
+export class Menu extends Events.EventDispatcher {
 
     private open: boolean = false;
     private right: boolean = false;
-    public Hamburger: HTMLElement = Elements.Hamburger;
+    public Hamburger: HTMLElement =  DOM.getFirstElement('header.menu .hamburger');
 
     constructor() { 
         super();
@@ -25,5 +25,3 @@ class Menu extends Events.EventDispatcher {
         this.dispatch('toggle');
     }
 }
-
-export const TopMenu = new Menu();
