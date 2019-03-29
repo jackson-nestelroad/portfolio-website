@@ -64,10 +64,15 @@ div.canvas div.canvas-text {
   -webkit-transform: translateZ(0) scale(1, 1); }
 
 div.canvas div.canvas-text.gradient {
+  background: linear-gradient(white, #052342);
   background: -webkit-linear-gradient(white, #052342);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    div.canvas div.canvas-text.gradient {
+      background: none;
+      opacity: 0.5 !important; } }
 
 div.canvas div.canvas-text.preload {
   opacity: 0 !important; }
@@ -524,6 +529,9 @@ header.logo div.image svg {
   height: auto;
   margin-right: 5px;
   -webkit-user-drag: none; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    header.logo div.image svg {
+      height: 76px; } }
 
 header.logo div.image svg use:not(.preload) {
   transition: transform 1.5s;
@@ -532,18 +540,28 @@ header.logo div.image svg use:not(.preload) {
   -webkit-transform: scale(1, 1) rotate(0deg);
   transform-origin: center;
   -webkit-transform-origin: center; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    header.logo div.image svg use:not(.preload) {
+      opacity: 1;
+      transition: opacity 1.5s; } }
 
 header.logo div.image svg use.preload.outer {
   transform: scale(0, 0) rotate(360deg);
   -webkit-transform: scale(0, 0) rotate(360deg);
   transform-origin: center;
   -webkit-transform-origin: center; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    header.logo div.image svg use.preload.outer {
+      opacity: 0; } }
 
 header.logo div.image svg use.preload.inner {
   transform: scale(0, 0) rotate(-180deg);
   -webkit-transform: scale(0, 0) rotate(-180deg);
   transform-origin: center;
   -webkit-transform-origin: center; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    header.logo div.image svg use.preload.inner {
+      opacity: 0; } }
 
 header.logo a {
   text-decoration: none; }
