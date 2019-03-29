@@ -31,5 +31,6 @@
         </g>
     </defs>
 
-    <use x="0" y="0" href="#full" />
+    <use x="0" y="0" href="#outer" />
+    <use x="0" y="0" href="#inner" />
 </svg>
