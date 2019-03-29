@@ -27,4 +27,8 @@ export module DOM {
             behavior: 'smooth'
         });
     }
+
+    export function isIE(): boolean {
+        return window.navigator.userAgent.match(/(MSIE|Trident)/) !== null;
+    }
 }
