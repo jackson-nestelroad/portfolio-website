@@ -1,12 +1,12 @@
 // Toggle the menu on click
 
 import { Sections } from '../Modules/WebPage'
-import { TopMenu } from '../Namespaces/Menu'
+import { Navigation } from '../Modules/WebPage'
 
-TopMenu.Hamburger.addEventListener('click', () => {
-    TopMenu.toggle();
+Navigation.Hamburger.addEventListener('click', () => {
+    Navigation.toggle();
 });
 
 document.addEventListener('scroll', () => {
-    // TopMenu.move(Sections['canvas'].inView());
+    // Menu.move(Sections['canvas'].inView());
 });
