@@ -38,10 +38,11 @@ export module DOM {
                 resolve(document);
             }
             else {
-                document.addEventListener('DOMContentLoaded', () => {
-                    document.removeEventListener('DOMContentLoaded', this);
+                const callback = () => {
+                    document.removeEventListener('DOMContentLoaded', callback);
                     resolve(document);
-                });
+                }
+                document.addEventListener('DOMContentLoaded', callback);
             }
         });
     }
