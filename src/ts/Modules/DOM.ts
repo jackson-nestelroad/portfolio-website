@@ -31,4 +31,17 @@ export module DOM {
     export function isIE(): boolean {
         return window.navigator.userAgent.match(/(MSIE|Trident)/) !== null;
     }
+
+    export function load(): Promise<Document> {
+        return new Promise((resolve, reject) => {
+            if(document.readyState === 'complete') {
+                resolve(document);
+            }
+            else {
+                document.addEventListener('DOMContentLoaded', () => {
+                    resolve(document);
+                });
+            }
+        });
+    }
 }
