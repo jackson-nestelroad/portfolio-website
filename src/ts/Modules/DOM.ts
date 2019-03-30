@@ -39,6 +39,7 @@ export module DOM {
             }
             else {
                 document.addEventListener('DOMContentLoaded', () => {
+                    document.removeEventListener('DOMContentLoaded', this);
                     resolve(document);
                 });
             }
