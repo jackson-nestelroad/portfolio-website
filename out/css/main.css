@@ -12,17 +12,6 @@ bg {
   stroke: #EBEBF4;
   stroke-width: 5; }
 
-#pattern-hex-small polygon {
-  fill: none;
-  stroke: #EBEBF4;
-  stroke-width: 7; }
-
-@keyframes animate-bg {
-  from {
-    transform: translate(0, 0); }
-  to {
-    transform: translate(129px, 111px); } }
-
 body {
   background-color: #F4F4F9;
   color: #3C3C60;
@@ -524,44 +513,36 @@ header.logo div.image {
   float: left;
   text-align: left; }
 
-header.logo div.image svg {
+header.logo div.image {
   width: 75px;
-  height: auto;
-  margin-right: 5px;
-  -webkit-user-drag: none; }
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    header.logo div.image svg {
-      height: 76px; } }
+  height: 75px;
+  margin-right: 5px; }
 
-header.logo div.image svg use:not(.preload) {
+header.logo div.image img {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  -webkit-user-drag: none; }
+
+header.logo div.image img:not(.preload) {
   transition: transform 1.5s;
   -webkit-transition: 1.5s;
   transform: scale(1, 1) rotate(0deg);
   -webkit-transform: scale(1, 1) rotate(0deg);
   transform-origin: center;
   -webkit-transform-origin: center; }
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    header.logo div.image svg use:not(.preload) {
-      opacity: 1;
-      transition: opacity 1.5s; } }
 
-header.logo div.image svg use.preload.outer {
+header.logo div.image img.preload.outer {
   transform: scale(0, 0) rotate(360deg);
   -webkit-transform: scale(0, 0) rotate(360deg);
   transform-origin: center;
   -webkit-transform-origin: center; }
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    header.logo div.image svg use.preload.outer {
-      opacity: 0; } }
 
-header.logo div.image svg use.preload.inner {
+header.logo div.image img.preload.inner {
   transform: scale(0, 0) rotate(-180deg);
   -webkit-transform: scale(0, 0) rotate(-180deg);
   transform-origin: center;
   -webkit-transform-origin: center; }
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    header.logo div.image svg use.preload.inner {
-      opacity: 0; } }
 
 header.logo a {
   text-decoration: none; }

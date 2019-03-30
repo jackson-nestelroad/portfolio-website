@@ -4,8 +4,11 @@ import { DOM } from './DOM'
 import Section from '../Classes/Elements/Section'
 import { Menu } from '../Classes/Elements/Menu'
 
-// SVG container for logo
-export let Logo: HTMLElement = DOM.getFirstElement('header.logo .image svg');
+// Logo images
+export const Logo = {
+    Outer: DOM.getFirstElement('header.logo .image img.outer'),
+    Inner: DOM.getFirstElement('header.logo .image img.inner')
+}
 
 // Container for text over canvas
 export let CanvasText: HTMLElement = DOM.getFirstElement('div.canvas div.canvas-text-container');

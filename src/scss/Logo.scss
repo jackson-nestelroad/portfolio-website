@@ -10,65 +10,56 @@ header.logo {
     -webkit-user-select: none;
 }
 
-// Parts of the logo
+// Parts of the header
 header.logo div.info,
 header.logo div.image {
     float: left;
     text-align: left;
 }
 
-// Positioning and size of svg
-header.logo div.image svg {
-    width: 75px;
-    height: auto;
+// Image container specifically
+header.logo div.image {
+    $width: 75px;
+    width: $width;
+    height: $width;
     margin-right: 5px;
-    -webkit-user-drag: none;
+}
 
-    @include for-ie {
-        height: 76px;
-    }
+// Make the logo image fit to its container
+header.logo div.image img {
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    -webkit-user-drag: none;
 }
 
 // Time for logo to animate in
 $animation-time: 1.5s;
 
 // Default positioning for logo
-header.logo div.image svg use:not(.preload) {
+header.logo div.image img:not(.preload) {
     transition: transform $animation-time;
     -webkit-transition: $animation-time;
     transform: scale(1,1) rotate(0deg);
     -webkit-transform: scale(1,1) rotate(0deg);
     transform-origin: center;
     -webkit-transform-origin: center;
-
-    @include for-ie {
-        opacity: 1;
-        transition: opacity $animation-time;
-    }
 }
 
-// Preloaded svg position for outer svg
-header.logo div.image svg use.preload.outer {
+// Preloaded position for inner image
+header.logo div.image img.preload.outer {
     transform: scale(0,0) rotate(360deg);
     -webkit-transform: scale(0,0) rotate(360deg);
     transform-origin: center;
     -webkit-transform-origin: center;
-
-    @include for-ie {
-        opacity: 0;
-    }
 }
 
-// Preloaded svg position for inner svg
-header.logo div.image svg use.preload.inner {
+// Preloaded position for outer image
+header.logo div.image img.preload.inner {
     transform: scale(0,0) rotate(-180deg);
     -webkit-transform: scale(0,0) rotate(-180deg);
     transform-origin: center;
     -webkit-transform-origin: center;
-
-    @include for-ie {
-        opacity: 0;
-    }
 }
 
 // Remove text decoration from links

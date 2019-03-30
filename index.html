@@ -38,25 +38,16 @@
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
                 <defs>
                     <!-- Big hexagon pattern -->
-                    <pattern id="pattern-hex" x="0" y="0" width="150" height="86.6025403784" patternUnits="userSpaceOnUse" patternTransform="scale(0.75) translate(0) rotate(30)">
+                    <pattern id="pattern-hex" style="fill: rgba(0,0,0,0); stroke: #EBEBF4; stroke-width: 5;" x="0" y="0" width="150" height="86.6025403784" patternUnits="userSpaceOnUse" patternTransform="scale(0.75) translate(0) rotate(30)">
                         <polygon id="hexagon" points="125,43.3012701892 100,86.6025403784 50,86.6025403784 25,43.3012701892 50,0 100,0" />
                         <use xlink:href="#hexagon" x="75" y="-43.3012701892" />
                         <use xlink:href="#hexagon" x="75" y="43.3012701892" />
                         <use xlink:href="#hexagon" x="-75" y="43.3012701892" />
                         <use xlink:href="#hexagon" x="-75" y="-43.3012701892" />
                     </pattern>
-                    <!-- Little hexagon pattern -->
-                    <pattern id="pattern-hex-small" x="0" y="0" width="150" height="86.6025403784" patternUnits="userSpaceOnUse" patternTransform="scale(0.09375) translate(0) rotate(30)">
-                        <polygon id="hexagon-small" points="125,43.3012701892 100,86.6025403784 50,86.6025403784 25,43.3012701892 50,0 100,0" />
-                        <use xlink:href="#hexagon-small" x="75" y="-43.3012701892" />
-                        <use xlink:href="#hexagon-small" x="75" y="43.3012701892" />
-                        <use xlink:href="#hexagon-small" x="-75" y="43.3012701892" />
-                        <use xlink:href="#hexagon-small" x="-75" y="-43.3012701892" />
-                    </pattern>
                 </defs>
                 <!-- Apply the two patterns to the whole page -->
                 <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-hex)" />
-                <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-hex-small)" />
             </svg>
         </bg>
         <header class="menu">
@@ -72,10 +63,8 @@
                     <div class="float-container">
                         <a href=".">
                             <div class="image">
-                                <svg viewBox="0 0 455 463" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- <use class="inner preload" xlink:href="out/images/Logo.svg#inner" />
-                                    <use class="outer preload" xlink:href="out/images/Logo.svg#outer" /> -->
-                                </svg>             
+                                <img class="outer preload" src="out/images/Logo/Outer.svg" />
+                                <img class="inner preload" src="out/images/Logo/Inner.svg" />
                             </div>
                             <div class="info">
                                 <div class="name">Jackson Nestelroad</div>
