@@ -23,18 +23,3 @@ bg {
     stroke: #EBEBF4;
     stroke-width: 5;
 }
-
-#pattern-hex-small polygon {
-    fill: none;
-    stroke: #EBEBF4;
-    stroke-width: 7;
-}
-
-// bg rect { 
-//     animation: animate-bg 2s linear infinite;
-// }
-
-@keyframes animate-bg {
-    from { transform: translate(0, 0); }
-    to { transform: translate(129px, 111px); }
-}
