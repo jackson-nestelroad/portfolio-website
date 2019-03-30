@@ -44,7 +44,6 @@ div.canvas div.canvas-text {
   font-family: "Nunito Sans";
   font-weight: 200;
   color: white;
-  opacity: 0.75;
   word-wrap: break-word;
   user-select: none;
   -webkit-user-select: none;
@@ -52,56 +51,56 @@ div.canvas div.canvas-text {
   transform: translateZ(0) scale(1, 1);
   -webkit-transform: translateZ(0) scale(1, 1); }
 
-div.canvas div.canvas-text.gradient {
+div.canvas div.canvas-text .gradient {
   background: linear-gradient(white, #052342);
   background: -webkit-linear-gradient(white, #052342);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    div.canvas div.canvas-text.gradient {
+    div.canvas div.canvas-text .gradient {
       background: none;
       opacity: 0.5 !important; } }
 
 div.canvas div.canvas-text.preload {
   opacity: 0 !important; }
 
-div.canvas div.canvas-text.bold {
+div.canvas div.canvas-text .bold {
   opacity: 1; }
 
-div.canvas div.canvas-text.thin {
+div.canvas div.canvas-text .light {
   opacity: 0.5; }
 
 @media screen and (max-width: 599px) {
-  div.canvas div.canvas-text.lg {
+  div.canvas div.canvas-text .lg {
     font-size: 32pt; } }
 
 @media screen and (min-width: 600px) {
-  div.canvas div.canvas-text.lg {
+  div.canvas div.canvas-text .lg {
     font-size: 48pt; } }
 
 @media screen and (min-width: 900px) {
-  div.canvas div.canvas-text.lg {
+  div.canvas div.canvas-text .lg {
     font-size: 64pt; } }
 
 @media screen and (min-width: 1200px) {
-  div.canvas div.canvas-text.lg {
+  div.canvas div.canvas-text .lg {
     font-size: 96pt; } }
 
 @media screen and (max-width: 599px) {
-  div.canvas div.canvas-text.sm {
+  div.canvas div.canvas-text .sm {
     font-size: 12pt; } }
 
 @media screen and (min-width: 600px) {
-  div.canvas div.canvas-text.sm {
+  div.canvas div.canvas-text .sm {
     font-size: 18pt; } }
 
 @media screen and (min-width: 900px) {
-  div.canvas div.canvas-text.sm {
+  div.canvas div.canvas-text .sm {
     font-size: 24pt; } }
 
 @media screen and (min-width: 1200px) {
-  div.canvas div.canvas-text.sm {
+  div.canvas div.canvas-text .sm {
     font-size: 32pt; } }
 
 div.canvas div.canvas-text.design {

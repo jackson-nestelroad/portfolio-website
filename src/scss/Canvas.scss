@@ -27,7 +27,6 @@ div.canvas div.canvas-text {
     font-family: "Nunito Sans";
     font-weight: $font-weight-light;
     color: white;
-    opacity: 0.75;
     word-wrap: break-word;
     user-select: none;
     -webkit-user-select: none;
@@ -36,7 +35,7 @@ div.canvas div.canvas-text {
     -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 
-div.canvas div.canvas-text.gradient {
+div.canvas div.canvas-text .gradient {
     $gradient: #052342;
     background: linear-gradient(white, $gradient);
     background: -webkit-linear-gradient(white, $gradient);
@@ -54,15 +53,15 @@ div.canvas div.canvas-text.preload {
     opacity: 0 !important;
 }
 
-div.canvas div.canvas-text.bold {
+div.canvas div.canvas-text .bold {
     opacity: 1;
 }
 
-div.canvas div.canvas-text.thin {
+div.canvas div.canvas-text .light {
     opacity: 0.5;
 }
 
-div.canvas div.canvas-text.lg {
+div.canvas div.canvas-text .lg {
     @include for-mobile {
         font-size: 32pt;
     }
@@ -77,7 +76,7 @@ div.canvas div.canvas-text.lg {
     }
 }
 
-div.canvas div.canvas-text.sm {
+div.canvas div.canvas-text .sm {
     @include for-mobile {
         font-size: 12pt;
     }
@@ -92,6 +91,12 @@ div.canvas div.canvas-text.sm {
     }
 }
 
+@mixin position-canvas-text($left, $vertical) {
+    left: $left;
+    transform: translate(-$left, -$vertical);
+    -webkit-transform: translate(-$left, -$vertical);
+}
+
 
 div.canvas div.canvas-text.design {
     position: absolute;
@@ -99,14 +104,10 @@ div.canvas div.canvas-text.design {
     top: $vertical;
 
     @include for-mobile {
-        left: 50%;
-        transform: translate(-50%, -$vertical);
-        -webkit-transform: translate(-50%, -$vertical);
+        @include position-canvas-text(50%, $vertical);
     }
     @include for-tablet-portrait-up {
-        left: 10%;
-        transform: translate(-10%, -$vertical);
-        -webkit-transform: translate(-10%, -$vertical);
+        @include position-canvas-text(10%, $vertical);
     }
 }
 
@@ -116,14 +117,10 @@ div.canvas div.canvas-text.develop {
     top: $vertical;
 
     @include for-mobile {
-        left: 50%;
-        transform: translate(-50%, -$vertical);
-        -webkit-transform: translate(-50%, -$vertical);
+        @include position-canvas-text(50%, $vertical);
     }
     @include for-tablet-portrait-up {
-        left: 36%;
-        transform: translate(-36%, -$vertical);
-        -webkit-transform: translate(-36%, -$vertical);
+        @include position-canvas-text(36%, $vertical);
     }
 }
 
@@ -133,14 +130,10 @@ div.canvas div.canvas-text.deploy {
     top: $vertical;
 
     @include for-mobile {
-        left: 50%;
-        transform: translate(-50%, -$vertical);
-        -webkit-transform: translate(-50%, -$vertical);
+        @include position-canvas-text(50%, $vertical);
     }
     @include for-tablet-portrait-up {
-        left: 56%;
-        transform: translate(-56%, -$vertical);
-        -webkit-transform: translate(-56%, -$vertical);
+        @include position-canvas-text(56%, $vertical);
     }
 }
 
@@ -150,13 +143,9 @@ div.canvas div.canvas-text.discover {
     top: $vertical;
 
     @include for-mobile {
-        left: 50%;
-        transform: translate(-50%, -$vertical);
-        -webkit-transform: translate(-50%, -$vertical);
+        @include position-canvas-text(50%, $vertical);
     }
     @include for-tablet-portrait-up {
-        left: 90%;
-        transform: translate(-90%, -$vertical);
-        -webkit-transform: translate(-90%, -$vertical);
+        @include position-canvas-text(90%, $vertical);
     }
 }
