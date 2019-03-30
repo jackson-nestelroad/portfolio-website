@@ -1,0 +1,14 @@
+<svg width="455" height="463" viewBox="0 0 455 463" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <g id="outer">
+            <rect width="455" height="463" fill="none"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M111 299.25L55 331.25L228 431V367L111 299.25Z" fill="#7ACDA0"/>
+            <path d="M401 331.25V131.75L345 163.75V299.25L401 331.25Z" fill="#7ACDA0"/>
+            <path d="M55 131.75V331.25L111 299.25V163.75L55 131.75Z" fill="#B0E5B3"/>
+            <path d="M401 131.75L228 32V96L345 163.75L401 131.75Z" fill="#B0E5B3"/>
+            <path d="M228 32L55 131.75L111 163.75L228 96V32Z" fill="#E0EFBD"/>
+            <path d="M228 431L401 331.25L345 299.25L228 367V431Z" fill="#6CB5AE"/>
+        </g>
+    </defs>
+    <use x="0" y="0" href="#outer" />
+</svg>
