@@ -4,6 +4,9 @@ import { DOM } from './DOM'
 import Section from '../Classes/Elements/Section'
 import { Menu } from '../Classes/Elements/Menu'
 
+// Main tag
+export const Main: HTMLElement = DOM.getFirstElement('main');
+
 // Logo images
 export const Logo = {
     Outer: DOM.getFirstElement('header.logo .image img.outer'),
