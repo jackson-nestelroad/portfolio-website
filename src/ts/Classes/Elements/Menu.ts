@@ -6,22 +6,22 @@ import { Events } from '../../Modules/EventDispatcher'
 export class Menu extends Events.EventDispatcher {
 
     private open: boolean = false;
-    private right: boolean = false;
-    public Hamburger: HTMLElement =  DOM.getFirstElement('header.menu .hamburger');
+    public readonly Container: HTMLElement = DOM.getFirstElement('header.menu');
+    public readonly Hamburger: HTMLElement =  DOM.getFirstElement('header.menu .hamburger');
 
     constructor() { 
         super();
-        this.register('toggle', { open: this.open });
+        this.register('toggle');
     }
 
     public toggle(): void {
         this.open = !this.open;
         if(this.open) {
-            this.Hamburger.classList.add('open');
+            this.Container.setAttribute('open', '');
         }
         else {
-            this.Hamburger.classList.remove('open');
+            this.Container.removeAttribute('open');
         }
-        this.dispatch('toggle');
+        this.dispatch('toggle', { open: this.open });
     }
 }
