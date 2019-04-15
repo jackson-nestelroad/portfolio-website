@@ -9,6 +9,7 @@ header.navigation {
     margin-left: 100%;
     background: $bg-primary;
     transition: box-shadow $menu-speed;
+    z-index: 1;
 }
 
 main[shifted] header.navigation {
