@@ -14,11 +14,15 @@ bg {
   stroke-width: 5; }
 
 body {
+  position: fixed;
+  height: 100%;
+  width: 100%;
   background-color: #F4F4F9;
   color: #3C3C60;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
   transition: transform 0.5s; }
 
 * {
@@ -331,24 +335,91 @@ main {
   height: 100%;
   text-align: center;
   font-family: "Nunito Sans";
-  transition: right 0.5s; }
+  transition: right 0.5s;
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 main[shifted] {
   right: 250px; }
 
-body::-webkit-scrollbar {
+main::-webkit-scrollbar {
   width: 7px;
-  max-width: 0.75vw; }
+  height: 8px;
+  background: transparent; }
 
-body::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track {
   background: white; }
 
-body::-webkit-scrollbar-thumb {
+main::-webkit-scrollbar-thumb {
+  width: 7px;
   background: #3C3C60;
   border-radius: 2.5px; }
 
 section {
   width: 100%; }
+
+header.logo {
+  width: 100%;
+  padding: 8px 32px;
+  background-color: white;
+  user-select: none;
+  -webkit-user-select: none; }
+
+header.logo div.info,
+header.logo div.image {
+  float: left;
+  text-align: left; }
+
+header.logo div.image {
+  width: 75px;
+  height: 75px;
+  margin-right: 5px; }
+
+header.logo div.image img {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  -webkit-user-drag: none; }
+
+header.logo div.image img:not(.preload) {
+  transition: transform 1.5s;
+  -webkit-transition: 1.5s;
+  transform: scale(1, 1) rotate(0deg);
+  -webkit-transform: scale(1, 1) rotate(0deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo div.image img.preload.outer {
+  transform: scale(0, 0) rotate(360deg);
+  -webkit-transform: scale(0, 0) rotate(360deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo div.image img.preload.inner {
+  transform: scale(0, 0) rotate(-180deg);
+  -webkit-transform: scale(0, 0) rotate(-180deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo a {
+  text-decoration: none; }
+
+header.logo .info {
+  margin-top: 14px;
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-transform: uppercase; }
+  @media screen and (max-width: 599px) {
+    header.logo .info {
+      display: none; } }
+
+header.logo .info .name {
+  color: #3C3C60;
+  font-size: 16pt; }
+
+header.logo .info .title {
+  color: #6A6A87;
+  font-size: 9.4pt; }
 
 div.canvas {
   position: relative; }
@@ -486,69 +557,6 @@ div.canvas div.canvas-text.discover {
       left: 90%;
       transform: translate(-90%, -100%);
       -webkit-transform: translate(-90%, -100%); } }
-
-header.logo {
-  width: 100%;
-  padding: 8px 32px;
-  background-color: white;
-  user-select: none;
-  -webkit-user-select: none; }
-
-header.logo div.info,
-header.logo div.image {
-  float: left;
-  text-align: left; }
-
-header.logo div.image {
-  width: 75px;
-  height: 75px;
-  margin-right: 5px; }
-
-header.logo div.image img {
-  height: inherit;
-  width: inherit;
-  position: absolute;
-  -webkit-user-drag: none; }
-
-header.logo div.image img:not(.preload) {
-  transition: transform 1.5s;
-  -webkit-transition: 1.5s;
-  transform: scale(1, 1) rotate(0deg);
-  -webkit-transform: scale(1, 1) rotate(0deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.outer {
-  transform: scale(0, 0) rotate(360deg);
-  -webkit-transform: scale(0, 0) rotate(360deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.inner {
-  transform: scale(0, 0) rotate(-180deg);
-  -webkit-transform: scale(0, 0) rotate(-180deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo a {
-  text-decoration: none; }
-
-header.logo .info {
-  margin-top: 14px;
-  font-weight: 700;
-  font-family: "Open Sans";
-  text-transform: uppercase; }
-  @media screen and (max-width: 599px) {
-    header.logo .info {
-      display: none; } }
-
-header.logo .info .name {
-  color: #3C3C60;
-  font-size: 16pt; }
-
-header.logo .info .title {
-  color: #6A6A87;
-  font-size: 9.4pt; }
 
 header.menu {
   position: fixed;

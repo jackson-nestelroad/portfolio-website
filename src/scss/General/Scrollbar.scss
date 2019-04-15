@@ -2,16 +2,16 @@
 
 @import "../Theme";
 
-body::-webkit-scrollbar {
+main::-webkit-scrollbar {
     width: 7px;
-    max-width: 0.75vw;
 }
 
-body::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track {
     background: $bg-primary;
 }
 
-body::-webkit-scrollbar-thumb {
+main::-webkit-scrollbar-thumb {
+    width: 7px;
     background: $font-color-dark;
     border-radius: 2.5px;
 }
