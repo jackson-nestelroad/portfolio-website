@@ -93,8 +93,8 @@ div.canvas div.canvas-text .sm {
 
 @mixin position-canvas-text($left, $vertical) {
     left: $left;
-    transform: translate(-$left, -$vertical);
-    -webkit-transform: translate(-$left, -$vertical);
+    transform: translate(-$left, -$vertical) translateZ(0) scale(1.0, 1.0);
+    -webkit-transform: translate(-$left, -$vertical) translateZ(0) scale(1.0, 1.0);
 }
 
 

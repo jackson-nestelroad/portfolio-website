@@ -1,4 +1,4 @@
-
+// Shift <main> tag over when menu is opened
 
 import { Main, Navigation } from '../Modules/WebPage'
 
