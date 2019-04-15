@@ -25,7 +25,7 @@ gulp.task('connect', () => {
 
 // SASS/SCSS Preprocessor
 gulp.task('sass', () => {
-	return gulp.src('src/scss/*.+(scss|sass)')
+	return gulp.src('src/scss/**/*.+(scss|sass)')
 		.pipe(sass())
 		.pipe(concat('main.css'))
 		.pipe(gulp.dest('out/css'))
@@ -77,7 +77,7 @@ gulp.task('browserify', () => {
 
 // Watch for changes to run tasks above
 gulp.task('watch', () => {
-	gulp.watch('src/scss/*.+(scss|sass)', gulp.parallel('sass'));
+	gulp.watch('src/scss/**/*.+(scss|sass)', gulp.parallel('sass'));
 	gulp.watch('src/ts/**/*.ts', gulp.parallel('compile'));
 	gulp.watch('*.html', gulp.parallel('html'));
 });
