@@ -4,6 +4,8 @@ $bg-base: #F4F4F9;
 $bg-primary: white;
 $bg-secondary: green;
 
+$color-shadow: rgba(0,0,50,0.3);
+
 $font-color-dark: #3C3C60;
 $font-color-light: #6A6A87;
 $font-color-white: white;
@@ -14,6 +16,9 @@ $font-weight-normal: 400;
 $font-weight-bold: 700;
 
 $logo-font-family: "Open Sans";
+
+$menu-speed: 0.5s;
+$menu-size: 250px;
 
 @mixin for-mobile {
     @media screen and (max-width: 599px) { @content; }

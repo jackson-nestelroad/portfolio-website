@@ -1,9 +1,10 @@
 // Styling for logo in the page's header
 
-@import "_Theme";
+@import "../Theme";
 
 // Working with the header itself
 header.logo {
+    width: 100%;
     padding: 8px 32px;
     background-color: white;
     user-select: none;

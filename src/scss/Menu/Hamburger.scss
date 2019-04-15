@@ -1,6 +1,6 @@
 // Styling for fixed menu
 
-@import "./_Theme";
+@import "../Theme";
 
 header.menu {
     position: fixed;
@@ -29,25 +29,25 @@ header.menu .hamburger .line {
     transition: 0.25s;
 }
 
-header.menu .hamburger:hover:not(.open) .line {
+header.menu:not([open]) .hamburger:hover .line {
     margin: 6px auto;
 }
 
-header.menu .hamburger.open:hover .line {
+header.menu[open] .hamburger:hover .line {
     width: 90%;
 }
 
-header.menu .hamburger.open .line:nth-child(1) {
+header.menu[open] .hamburger .line:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
     -webkit-transform: translateY(6px) rotate(45deg);
 }
 
-header.menu .hamburger.open .line:nth-child(2) {
+header.menu[open] .hamburger .line:nth-child(2) {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
 
-header.menu .hamburger.open .line:nth-child(3) {
+header.menu[open] .hamburger .line:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
     -webkit-transform: translateY(-6px) rotate(-45deg);
 }

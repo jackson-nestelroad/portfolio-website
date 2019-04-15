@@ -1,0 +1,18 @@
+// Styling for <main> tag
+
+@import "../Theme";
+
+main {
+    position: relative;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: $font-family;
+    transition: right $menu-speed;
+}
+
+main[shifted] {
+    // transform: translateX(-$menu-size);
+    right: $menu-size;
+}
