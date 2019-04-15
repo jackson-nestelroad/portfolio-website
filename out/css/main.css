@@ -1,26 +1,3 @@
-bg {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  margin: 0; }
-
-#pattern-hex polygon {
-  fill: none;
-  stroke: #EBEBF4;
-  stroke-width: 5; }
-
-body {
-  background-color: #F4F4F9;
-  color: #3C3C60;
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden; }
-
-* {
-  box-sizing: border-box; }
 
 div.canvas {
   position: relative; }
@@ -158,6 +135,31 @@ div.canvas div.canvas-text.discover {
       left: 90%;
       transform: translate(-90%, -100%);
       -webkit-transform: translate(-90%, -100%); } }
+
+bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  margin: 0; }
+
+#pattern-hex polygon {
+  fill: none;
+  stroke: #EBEBF4;
+  stroke-width: 5; }
+
+body {
+  background-color: #F4F4F9;
+  color: #3C3C60;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  transition: transform 0.5s; }
+
+* {
+  box-sizing: border-box; }
 
 .row {
   max-width: 75rem;
@@ -459,49 +461,34 @@ div.canvas div.canvas-text.discover {
 .last-xs {
   order: 1; }
 
-header.menu {
-  position: fixed;
-  top: 0;
-  right: 32px;
-  height: 98px;
-  width: 25px;
-  z-index: 1; }
-
-header.menu .hamburger {
-  position: absolute;
-  top: 50%;
+main {
+  position: relative;
+  right: 0;
   width: 100%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateT(-50%);
-  cursor: pointer; }
+  height: 100%;
+  text-align: center;
+  font-family: "Nunito Sans";
+  transition: right 0.5s; }
 
-header.menu .hamburger .line {
-  height: 2px;
-  width: 100%;
-  margin: 4px auto;
+main[shifted] {
+  right: 250px; }
+
+body::-webkit-scrollbar {
+  width: 7px;
+  max-width: 0.75vw; }
+
+body::-webkit-scrollbar-track {
+  background: white; }
+
+body::-webkit-scrollbar-thumb {
   background: #3C3C60;
-  transition: 0.25s; }
+  border-radius: 2.5px; }
 
-header.menu .hamburger:hover:not(.open) .line {
-  margin: 6px auto; }
-
-header.menu .hamburger.open:hover .line {
-  width: 90%; }
-
-header.menu .hamburger.open .line:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-  -webkit-transform: translateY(6px) rotate(45deg); }
-
-header.menu .hamburger.open .line:nth-child(2) {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg); }
-
-header.menu .hamburger.open .line:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-  -webkit-transform: translateY(-6px) rotate(-45deg); }
+section {
+  width: 100%; }
 
 header.logo {
+  width: 100%;
   padding: 8px 32px;
   background-color: white;
   user-select: none;
@@ -563,19 +550,55 @@ header.logo .info .title {
   color: #6A6A87;
   font-size: 9.4pt; }
 
-main {
+header.menu {
+  position: fixed;
+  top: 0;
+  right: 32px;
+  height: 98px;
+  width: 25px;
+  z-index: 1; }
+
+header.menu .hamburger {
+  position: absolute;
+  top: 50%;
   width: 100%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateT(-50%);
+  cursor: pointer; }
+
+header.menu .hamburger .line {
+  height: 2px;
+  width: 100%;
+  margin: 4px auto;
+  background: #3C3C60;
+  transition: 0.25s; }
+
+header.menu:not([open]) .hamburger:hover .line {
+  margin: 6px auto; }
+
+header.menu[open] .hamburger:hover .line {
+  width: 90%; }
+
+header.menu[open] .hamburger .line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+  -webkit-transform: translateY(6px) rotate(45deg); }
+
+header.menu[open] .hamburger .line:nth-child(2) {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg); }
+
+header.menu[open] .hamburger .line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+  -webkit-transform: translateY(-6px) rotate(-45deg); }
+
+header.navigation {
+  position: fixed;
   height: 100%;
-  text-align: center;
-  font-family: "Nunito Sans"; }
+  width: 250px;
+  margin-left: 100%;
+  background: white;
+  transition: box-shadow 0.5s; }
 
-body::-webkit-scrollbar {
-  width: 7px;
-  max-width: 0.75vw; }
-
-body::-webkit-scrollbar-track {
-  background: white; }
-
-body::-webkit-scrollbar-thumb {
-  background: #3C3C60; }
-
+main[shifted] header.navigation {
+  box-shadow: -30px 0px 25px rgba(0, 0, 50, 0.3); }
