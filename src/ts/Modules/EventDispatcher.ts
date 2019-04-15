@@ -16,14 +16,14 @@ export module Events {
     // Class to extend to create an event dispatcher
     // HTML elements can subscribe to an event dispatcher to run a function based on the event
     export abstract class EventDispatcher {
-        protected events: Map<string, NewEvent> = new Map();
+        protected events: Set<string> = new Set();
         protected listeners: Map<HTMLElement, EventCallback> = new Map();
 
         protected constructor() { }
 
         // Register a new event
-        protected register(name: string, detail: AnonymousObject = null) {
-            this.events.set(name, new NewEvent(name, detail));
+        protected register(name: string) {
+            this.events.add(name);
         }
 
         // Unregister an event
@@ -42,15 +42,16 @@ export module Events {
         }
 
         // Dispatch an event to all listeners
-        protected dispatch(name: string): boolean {
-            if(!this.events[name]) {
+        protected dispatch(name: string, detail: AnonymousObject = null): boolean {
+            if(!this.events.has(name)) {
                 return false;
             }
 
+            const event = new NewEvent(name, detail);
             let it = this.listeners.values();
             let callback: EventCallback;
             while(callback = it.next().value) {
-                callback(this.events[name]);
+                callback(event);
             }
         }
     }
