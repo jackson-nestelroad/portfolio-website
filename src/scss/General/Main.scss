@@ -10,8 +10,8 @@ main {
     text-align: center;
     font-family: $font-family;
     transition: right $menu-speed;
-    overflow-y: scroll;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 main[shifted] {

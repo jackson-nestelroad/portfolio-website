@@ -13,6 +13,11 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     transition: transform $menu-speed;
+
+    @include for-ie {
+        position: relative;
+        overflow-y: scroll;
+    }
 }
 
 * {
