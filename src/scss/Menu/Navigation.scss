@@ -13,5 +13,5 @@ header.navigation {
 }
 
 main[shifted] header.navigation {
-    box-shadow: -15px 0px 25px $color-shadow;
+    box-shadow: -15px 0px 25px shadow(0.3);
 }
