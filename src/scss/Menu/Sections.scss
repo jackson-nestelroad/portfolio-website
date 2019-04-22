@@ -1,0 +1,8 @@
+// Styling for the sections in the navigation menu
+
+@import "../Theme";
+
+header.navigation ol {
+    list-style-type: none;
+    padding-inline-start: 12px;
+}

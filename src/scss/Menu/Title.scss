@@ -1,0 +1,57 @@
+// Styling for the title in the navigation menu
+
+@import "../Theme";
+
+$title_size: 64px;
+$container_size: 96px;
+
+// Container for the navigation menu's title
+header.navigation div.header {
+    background: white;
+    list-style-type: none;
+    padding: calc((#{$container-size} - #{$title_size}) / 2) 0 0 12px;
+    height: $container_size;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+// Title within the header
+.navigation .header .title {
+    margin-right: 64px;
+}
+
+// Float container, so float everything to the left
+.navigation .header .title * {
+    float: left;
+    text-align: left;
+}
+
+// Logo in the title
+.navigation .header .title .logo {
+    height: $title_size;
+    width: $title_size;
+    margin-right: 5px;
+    -webkit-user-drag: none;
+
+    img {
+        height: inherit;
+        width: auto;
+    }
+}
+
+// Text for the title
+.navigation .header .title .text {
+    $font-size: 10pt;
+    font-size: $font-size;
+    color: $font-color-dark;
+    font-weight: $font-weight-bold;
+    font-family: $logo-font-family;
+    text-transform: uppercase;
+    margin-top: calc(#{$title_size} / 2 - #{$font-size} / 2);
+}
+
+// Line break to separate title from sections
+.navigation hr {
+    margin: 0;
+    border-top: 2px solid shadow(0.1);
+}
