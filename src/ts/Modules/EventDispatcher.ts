@@ -53,6 +53,7 @@ export module Events {
             while(callback = it.next().value) {
                 callback(event);
             }
+            return true;
         }
     }
 }
