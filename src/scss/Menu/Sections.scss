@@ -1,8 +1,33 @@
 // Styling for the sections in the navigation menu
 
 @import "../Theme";
+@import "Title";
 
-header.navigation ol {
-    list-style-type: none;
-    padding-inline-start: 12px;
+// Container for all sections
+header.navigation .sections {
+    height: calc(100% - #{$container_size} - 2px);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+// Each individual section
+.sections > a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    justify-content: center;
+    font-family: $logo-font-family;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    color: $font-color-white;
+
+    background-color: gray;
+}
+
+.sections > a[href=\#about] {
+    background-color: red; 
 }
