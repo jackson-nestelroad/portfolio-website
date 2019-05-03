@@ -3,7 +3,7 @@
 import { DOM } from '../../Modules/DOM'
 
 export default class Section {
-    constructor(private element: HTMLElement) { }
+    constructor(public readonly element: HTMLElement) { }
 
     public inView(): boolean {
         let bounding = this.element.getBoundingClientRect();

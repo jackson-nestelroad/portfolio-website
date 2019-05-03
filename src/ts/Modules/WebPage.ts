@@ -19,6 +19,9 @@ export let CanvasText: HTMLElement = DOM.getFirstElement('div.canvas div.canvas-
 // Fixed navigation menu
 export const Navigation: Menu = new Menu();
 
+// Side bar navigation buttons
+export const NavigationAnchors: NodeListOf<HTMLElement> = DOM.getElements('header.navigation .sections a');
+
 // All section tags
 export let Sections: { [key: string]: Section } = {};
 for(let element of Array.from(DOM.getElements('section'))) {
