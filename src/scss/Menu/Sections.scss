@@ -26,21 +26,25 @@ header.navigation .sections {
     font-weight: $font-weight-bold;
     color: $font-color-white;
 
-    box-shadow: inset 0 0 0 2px $font-color-dark;
+    // box-shadow: inset 0 0 0 2px $font-color-dark;
 }
 
+// Icon for the section
 .sections > a > svg {
-    height: 66%;
     width: 100% !important;
+    height: 40%;
+    min-height: 24px;
     position: relative;
     top: 50%;
     transform: translateY(-50%) translateZ(0) scale(1.0, 1.0);
 }
 
+// Color of the icon
 .sections > a > svg > path {
     fill: white;
 }
 
+// Create an incremental gradient for each section
 $base-color: #639674;
 $sections: 
     about,

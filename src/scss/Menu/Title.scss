@@ -9,28 +9,16 @@ $container_size: 96px;
 header.navigation div.header {
     background: white;
     list-style-type: none;
-    padding: calc((#{$container-size} - #{$title_size}) / 2) 0 0 12px;
+    padding: calc((#{$container-size} - #{$title_size}) / 2) 64px 0 48px;
     height: $container_size;
     user-select: none;
     -webkit-user-select: none;
 }
 
-// Title within the header
-.navigation .header .title {
-    margin-right: 64px;
-}
-
-// Float container, so float everything to the left
-.navigation .header .title * {
-    float: left;
-    text-align: left;
-}
-
 // Logo in the title
 .navigation .header .title .logo {
-    height: $title_size;
-    width: $title_size;
-    margin-right: 5px;
+    height: 48px;
+    width: 100%;
     -webkit-user-drag: none;
 
     img {
@@ -47,7 +35,7 @@ header.navigation div.header {
     font-weight: $font-weight-bold;
     font-family: $logo-font-family;
     text-transform: uppercase;
-    margin-top: calc(#{$title_size} / 2 - #{$font-size} / 2);
+    line-height: 10pt;
 }
 
 // Line break to separate title from sections

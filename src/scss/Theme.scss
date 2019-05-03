@@ -22,7 +22,7 @@ $font-weight-bold: 700;
 $logo-font-family: "Open Sans";
 
 $menu-speed: 0.5s;
-$menu-size: 250px;
+$menu-size: 215px;
 
 @mixin for-mobile {
     @media screen and (max-width: 599px) { @content; }
