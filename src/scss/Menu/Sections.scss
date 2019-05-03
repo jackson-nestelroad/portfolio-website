@@ -27,8 +27,6 @@ header.navigation .sections {
     color: $font-color-white;
 
     box-shadow: inset 0 0 0 2px $font-color-dark;
-
-    background-color: white;
 }
 
 .sections > a > svg {
@@ -40,9 +38,22 @@ header.navigation .sections {
 }
 
 .sections > a > svg > path {
-    fill: blue;
+    fill: white;
 }
 
-// .sections > a[href=\#about] {
-//     background-color: red; 
-// }
+$base-color: #639674;
+$sections: 
+    about,
+    skills,
+    experience,
+    projects,
+    education, 
+    contact;
+$step-size: 360 / length($sections);
+
+@for $i from 0 to length($sections) {
+    $section: nth($sections, $i + 1);
+    .sections > a[href=\##{$section}] {
+        background-color: adjust-hue($base-color, $step-size * $i);
+    }
+}
