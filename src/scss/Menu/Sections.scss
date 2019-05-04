@@ -17,7 +17,7 @@ header.navigation .sections {
 // Each individual section
 .sections > a {
     width: 100%;
-    min-height: 32px;
+    min-height: 40px;
     position: relative;
     flex-direction: column;
     flex: 1;
@@ -27,10 +27,9 @@ header.navigation .sections {
     text-transform: uppercase;
     font-weight: $font-weight-bold;
     color: $font-color-white;
+    border-bottom: 10px inset shadow(0.35);
 
-    // box-shadow: inset 0 -5px 5px -5px shadow(0.5);
-    // border-top: 10px inset shadow(0.5);
-
+    // box-shadow: inset 0px -10px 0 0px shadow(0.25);
     // box-shadow: inset 0 0 0 5px $font-color-dark;
 }
 
@@ -79,24 +78,16 @@ $step-size: 360 / length($sections);
     transition: left 0.5s, transform 0.5s;
     z-index: 1;
     text-transform: uppercase;
-    color: white;
+    color: $font-color-white;
     font-family: $logo-font-family;
     font-size: 14pt;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 10px inset shadow(0.35);
 }
 
 .sections > a:hover > .slider,
 .sections > a[selected] > .slider {
     transform: translateX(0);
 }
-
-// .sections > a:before {
-//     content: "";
-//     display: block;
-//     position: fixed;
-//     background-color: shadow(0.25);
-//     height: 12px;
-//     width: 100%;
-// }
