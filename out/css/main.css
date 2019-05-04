@@ -717,7 +717,7 @@ header.navigation .sections {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 10px inset #282841; }
+  border-bottom: 10px inset rgba(0, 0, 50, 0.5); }
 
 .sections > a:hover > .slider,
 .sections > a[selected] > .slider {
