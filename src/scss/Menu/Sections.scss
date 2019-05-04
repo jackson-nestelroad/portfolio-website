@@ -84,7 +84,7 @@ $step-size: 360 / length($sections);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 10px inset shadow(0.35);
+    border-bottom: 10px inset darken($font-color-dark, 10%);
 }
 
 .sections > a:hover > .slider,
