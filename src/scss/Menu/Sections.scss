@@ -11,12 +11,14 @@ header.navigation .sections {
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 // Each individual section
 .sections > a {
     width: 100%;
     min-height: 32px;
+    position: relative;
     flex-direction: column;
     flex: 1;
     flex-basis: 0;
@@ -26,7 +28,10 @@ header.navigation .sections {
     font-weight: $font-weight-bold;
     color: $font-color-white;
 
-    // box-shadow: inset 0 0 0 2px $font-color-dark;
+    // box-shadow: inset 0 -5px 5px -5px shadow(0.5);
+    // border-top: 10px inset shadow(0.5);
+
+    // box-shadow: inset 0 0 0 5px $font-color-dark;
 }
 
 // Icon for the section
@@ -61,3 +66,37 @@ $step-size: 360 / length($sections);
         background-color: adjust-hue($base-color, $step-size * $i);
     }
 }
+
+.sections > a > .slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%) translateX(16px);
+    width: 100%;
+    background-color: $font-color-dark;
+    transition: left 0.5s, transform 0.5s;
+    z-index: 1;
+    text-transform: uppercase;
+    color: white;
+    font-family: $logo-font-family;
+    font-size: 14pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sections > a:hover > .slider,
+.sections > a[selected] > .slider {
+    transform: translateX(0);
+}
+
+// .sections > a:before {
+//     content: "";
+//     display: block;
+//     position: fixed;
+//     background-color: shadow(0.25);
+//     height: 12px;
+//     width: 100%;
+// }
