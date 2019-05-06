@@ -66,6 +66,7 @@ $step-size: 360 / length($sections);
     }
 }
 
+// Slider over menu option
 .sections > a > .slider {
     position: absolute;
     top: 0;
@@ -87,7 +88,31 @@ $step-size: 360 / length($sections);
     border-bottom: 10px inset shadow(0.5);
 }
 
+// Move slider in front of option when selected or hovered over
 .sections > a:hover > .slider,
 .sections > a[selected] > .slider {
     transform: translateX(0);
 }
+
+// .sections > a > .slider::after {
+//     content: "";
+//     position: absolute;
+//     left: 100%;
+//     width: 0;
+// 	height: 0;
+//     border-style: solid;
+//     border-width: 25px 0 25px 25px;
+//     border-color: transparent transparent transparent $font-color-dark;
+// }
+
+// .sections > a > .slider::before {
+//     content: "";
+//     position: absolute;
+//     left: 100%;
+//     width: 0;
+// 	height: 0;
+//     border-style: solid;
+//     border-width: 30px 0 30px 30px;
+//     border-color: transparent transparent transparent $slider-shadow;
+//     transform: translateY(5px) translateZ(0) scale(1.0, 1.0);
+// }
