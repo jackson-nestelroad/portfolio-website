@@ -14,16 +14,22 @@ export const Logo = {
 }
 
 // Container for text over canvas
-export let CanvasText: HTMLElement = DOM.getFirstElement('div.canvas div.canvas-text-container');
+export const CanvasText: HTMLElement = DOM.getFirstElement('div.canvas div.canvas-text-container');
 
-// Fixed navigation menu
-export const Navigation: Menu = new Menu();
-
-// Side bar navigation buttons
-export const NavigationAnchors: NodeListOf<HTMLElement> = DOM.getElements('header.navigation .sections a');
+// Fixed button to open menu
+export const MenuButton: Menu = new Menu();
 
 // All section tags
-export let Sections: { [key: string]: Section } = {};
+export const Sections: Map<string, Section> = new Map();
 for(let element of Array.from(DOM.getElements('section'))) {
-    Sections[element.id] = new Section(element);
+    Sections.set(element.id, new Section(element));
+}
+
+// Maps a section to its corresponding button in the navigation menu
+export const SectionToMenu: Map<string, [Section, HTMLElement]> = new Map();
+for(let anchor of Array.from(DOM.getElements('header.navigation .sections a'))) {
+    let id = anchor.getAttribute('href').substr(1);
+    if(Sections.get(id).inMenu()) {
+        SectionToMenu.set(id, [Sections.get(id), anchor]);
+    }
 }

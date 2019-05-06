@@ -18,4 +18,8 @@ export default class Section {
     public getID(): string {
         return this.element.id;
     }
+
+    public inMenu(): boolean {
+        return !this.element.classList.contains('no-menu');
+    }
 }
