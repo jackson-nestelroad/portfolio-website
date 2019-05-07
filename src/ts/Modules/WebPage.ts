@@ -29,7 +29,7 @@ for(let element of Array.from(DOM.getElements('section'))) {
 export const SectionToMenu: Map<string, [Section, HTMLElement]> = new Map();
 for(let anchor of Array.from(DOM.getElements('header.navigation .sections a'))) {
     let id = anchor.getAttribute('href').substr(1);
-    if(Sections.get(id).inMenu()) {
+    if(Sections.get(id) && Sections.get(id).inMenu()) {
         SectionToMenu.set(id, [Sections.get(id), anchor]);
     }
 }
