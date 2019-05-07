@@ -62,7 +62,8 @@ gulp.task('browserify', () => {
 				[
 					'@babel/preset-env',
 					{
-						useBuiltIns: 'usage'
+						useBuiltIns: 'usage',
+						corejs: '2.0.0'
 					}
 				],
 			]
