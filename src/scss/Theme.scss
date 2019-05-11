@@ -1,8 +1,10 @@
 // Variables for the page's overall theme
 
+$root-font-size: 16px;
+
 $bg-base: #F4F4F9;
 $bg-primary: white;
-$bg-secondary: green;
+$bg-secondary: #30b57d;
 $bg-gray: #EFEFF4;
 
 @function shadow($opacity) {
@@ -22,7 +24,7 @@ $font-weight-bold: 700;
 $logo-font-family: "Open Sans";
 
 $menu-speed: 0.5s;
-$menu-size: 215px;
+$menu-size: 13.4375rem;
 
 @mixin for-mobile {
     @media screen and (max-width: 599px) { @content; }
