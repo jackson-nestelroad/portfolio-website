@@ -2,14 +2,14 @@
 
 @import "../Theme";
 
-$title_size: 64px;
-$container_size: 96px;
+$title_size: 4rem;
+$container_size: 6rem;
 
 // Container for the navigation menu's title
 header.navigation div.header {
     background: white;
     list-style-type: none;
-    padding: calc((#{$container-size} - #{$title_size}) / 2) 64px 0 48px;
+    padding: calc((#{$container-size} - #{$title_size}) / 2) 4rem 0 3rem;
     height: $container_size;
     user-select: none;
     -webkit-user-select: none;
@@ -17,7 +17,7 @@ header.navigation div.header {
 
 // Logo in the title
 .navigation .header .title .logo {
-    height: 48px;
+    height: 3rem;
     width: 100%;
     -webkit-user-drag: none;
 
@@ -29,13 +29,13 @@ header.navigation div.header {
 
 // Text for the title
 .navigation .header .title .text {
-    $font-size: 10pt;
+    $font-size: 0.825rem;
     font-size: $font-size;
     color: $font-color-dark;
     font-weight: $font-weight-bold;
     font-family: $logo-font-family;
     text-transform: uppercase;
-    line-height: 10pt;
+    line-height: 0.825rem;
 }
 
 // Line break to separate title from sections

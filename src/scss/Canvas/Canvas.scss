@@ -8,18 +8,22 @@ div.canvas {
 
 div.canvas canvas#particles {
     width: 100%;
-    height: 90vh;
-    background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%)
+    height: 95vh;
+    background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%);
+    display: block;
 }
 
 div.canvas div.canvas-text-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 80%;
+    // top: 50%;
+    // left: 50%;
+    // height: 80%;
+    // width: 100%;
+    // transform: translate(-50%, -50%) translateZ(0) scale(1.0, 1.0);
+    top: 7vh;
+    left: 0;
+    height: 75%;
     width: 100%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
     pointer-events: none;
 }
 
@@ -32,13 +36,11 @@ div.canvas div.canvas-text {
     -webkit-user-select: none;
     transition: opacity 1s;
     transform: translateZ(0) scale(1.0, 1.0);
-    -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 
 div.canvas div.canvas-text .gradient {
     $gradient: #052342;
     background: linear-gradient(white, $gradient);
-    background: -webkit-linear-gradient(white, $gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -63,38 +65,37 @@ div.canvas div.canvas-text .light {
 
 div.canvas div.canvas-text .lg {
     @include for-mobile {
-        font-size: 32pt;
+        font-size: 2.5rem;
     }
     @include for-tablet-portrait-up {
-        font-size: 48pt;
+        font-size: 4rem;
     }
     @include for-tablet-landscape-up {
-        font-size: 64pt;
+        font-size: 6rem;
     }
     @include for-desktop-up {
-        font-size: 96pt;
+        font-size: 8.5rem;
     }
 }
 
 div.canvas div.canvas-text .sm {
     @include for-mobile {
-        font-size: 12pt;
+        font-size: 0.75rem;
     }
     @include for-tablet-portrait-up {
-        font-size: 18pt;
+        font-size: 1rem;
     }
     @include for-tablet-landscape-up {
-        font-size: 24pt;
+        font-size: 1.5rem;
     }
     @include for-desktop-up {
-        font-size: 32pt;
+        font-size: 2rem;
     }
 }
 
 @mixin position-canvas-text($left, $vertical) {
     left: $left;
     transform: translate(-$left, -$vertical) translateZ(0) scale(1.0, 1.0);
-    -webkit-transform: translate(-$left, -$vertical) translateZ(0) scale(1.0, 1.0);
 }
 
 

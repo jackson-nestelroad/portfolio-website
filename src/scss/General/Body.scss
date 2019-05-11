@@ -2,10 +2,18 @@
 
 @import "../Theme";
 
+html {
+    font-size: $root-font-size;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
 body {
     position: fixed;
     height: 100%;
     width: 100%;
+    min-width: 300px;
     background-color: $bg-base;
     color: $font-color-dark;
     padding: 0;

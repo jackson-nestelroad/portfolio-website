@@ -5,7 +5,7 @@
 // Working with the header itself
 header.logo {
     width: 100%;
-    padding: 8px 32px;
+    padding: 0.5rem 2rem;
     background-color: white;
     user-select: none;
     -webkit-user-select: none;
@@ -20,10 +20,10 @@ header.logo div.image {
 
 // Image container specifically
 header.logo div.image {
-    $width: 75px;
+    $width: 4.675rem;
     width: $width;
     height: $width;
-    margin-right: 5px;
+    margin-right: 0.25rem;
 }
 
 // Make the logo image fit to its container
@@ -70,7 +70,7 @@ header.logo a {
 
 // Positioning for info next to logo
 header.logo .info {
-    margin-top: 14px;
+    margin-top: 0.825rem;
     font-weight: $font-weight-bold;
     font-family: $logo-font-family;
     text-transform: uppercase;
@@ -83,11 +83,11 @@ header.logo .info {
 // Name styling
 header.logo .info .name {
     color: $font-color-dark;
-    font-size: 16pt;
+    font-size: 1.35rem;
 }
 
 // Title styling
 header.logo .info .title {
     color: $font-color-light;
-    font-size: 9.4pt;
+    font-size: 0.8rem;
 }
