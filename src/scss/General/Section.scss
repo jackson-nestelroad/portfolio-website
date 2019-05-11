@@ -4,4 +4,25 @@
 
 section {
     width: 100%;
+    position: relative;
+}
+
+.section {
+    padding: 5rem 1.5rem;
+}
+
+.section.is-primary {
+    background-color: $bg-primary;
+    color: $font-color-dark;
+}
+
+.section.is-secondary {
+    background-color: $bg-secondary;
+    color: $font-color-white;
+}
+
+.container {
+    background-color: transparent;
+    margin: 0 auto;
+    overflow: hidden;
 }
