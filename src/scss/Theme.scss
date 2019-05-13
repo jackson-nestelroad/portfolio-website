@@ -11,7 +11,7 @@ $bg-dark: #3C3C60;
 $bg-gray: #EFEFF4;
 
 @function shadow($opacity) {
-    @return rgba(0,0,50,$opacity);
+    @return rgba(0,0,15,$opacity);
 }
 
 $font-color-dark: #3C3C60;
