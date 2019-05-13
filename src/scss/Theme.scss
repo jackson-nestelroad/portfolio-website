@@ -4,7 +4,10 @@ $root-font-size: 16px;
 
 $bg-base: #F4F4F9;
 $bg-primary: white;
-$bg-secondary: #30b57d;
+$bg-secondary: #29ab87;
+// #30b57d;
+// #309e94
+$bg-dark: #3C3C60;
 $bg-gray: #EFEFF4;
 
 @function shadow($opacity) {
@@ -25,6 +28,7 @@ $logo-font-family: "Open Sans";
 
 $menu-speed: 0.5s;
 $menu-size: 13.4375rem;
+
 
 @mixin for-mobile {
     @media screen and (max-width: 599px) { @content; }
