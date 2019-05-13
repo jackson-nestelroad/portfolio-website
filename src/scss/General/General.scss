@@ -14,12 +14,35 @@
     overflow: hidden;
 }
 
-.card {
-    width: 90%;
-    height: 100%;
-    background-color: $bg-primary;
+// Container for content
+.container, .card {
+    background-color: transparent;
     margin: 0 auto;
+    overflow: hidden;
+
+    @include for-tablet-landscape-up {
+        max-width: 960px;
+    }
+}
+
+// Card to hold content
+.card {
+    padding: 3.5rem 2rem;
     border-radius: 5px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.35);
-    overflow: hidden;
+
+    &.is-primary {
+        background-color: $bg-primary;
+        color: $font-color-dark;
+    }
+
+    &.is-secondary {
+        background-color: $bg-secondary;
+        color: $font-color-white;
+    }
+
+    &.is-dark {
+        background-color: $bg-dark;
+        color: $font-color-white;
+    }
 }
