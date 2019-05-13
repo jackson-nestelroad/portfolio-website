@@ -125,69 +125,6 @@ div.canvas div.canvas-text.discover {
       left: 90%;
       transform: translate(-90%, -100%) translateZ(0) scale(1, 1); } }
 
-header.logo {
-  width: 100%;
-  padding: 0.5rem 2rem;
-  background-color: white;
-  user-select: none;
-  -webkit-user-select: none; }
-
-header.logo div.info,
-header.logo div.image {
-  float: left;
-  text-align: left; }
-
-header.logo div.image {
-  width: 4.675rem;
-  height: 4.675rem;
-  margin-right: 0.25rem; }
-
-header.logo div.image img {
-  height: inherit;
-  width: inherit;
-  position: absolute;
-  -webkit-user-drag: none; }
-
-header.logo div.image img:not(.preload) {
-  transition: transform 1.5s;
-  -webkit-transition: 1.5s;
-  transform: scale(1, 1) rotate(0deg);
-  -webkit-transform: scale(1, 1) rotate(0deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.outer {
-  transform: scale(0, 0) rotate(360deg);
-  -webkit-transform: scale(0, 0) rotate(360deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.inner {
-  transform: scale(0, 0) rotate(-180deg);
-  -webkit-transform: scale(0, 0) rotate(-180deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo a {
-  text-decoration: none; }
-
-header.logo .info {
-  margin-top: 0.825rem;
-  font-weight: 700;
-  font-family: "Open Sans";
-  text-transform: uppercase; }
-  @media screen and (max-width: 599px) {
-    header.logo .info {
-      display: none; } }
-
-header.logo .info .name {
-  color: #3C3C60;
-  font-size: 1.35rem; }
-
-header.logo .info .title {
-  color: #6A6A87;
-  font-size: 0.8rem; }
-
 bg {
   position: fixed;
   top: 0;
@@ -492,20 +429,27 @@ main {
   text-align: center;
   font-family: "Nunito Sans";
   transition: right 0.5s;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; }
+  overflow: hidden; }
 
 main[shifted] {
   right: 13.4375rem; }
 
-main::-webkit-scrollbar {
+main .scroll {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    main .scroll {
+      overflow: hidden !important; } }
+
+main .scroll::-webkit-scrollbar {
   width: 7px; }
 
-main::-webkit-scrollbar-track {
+main .scroll::-webkit-scrollbar-track {
   background: white; }
 
-main::-webkit-scrollbar-thumb {
+main .scroll::-webkit-scrollbar-thumb {
   width: 7px;
   background: #3C3C60;
   border-radius: 2.5px; }
@@ -539,6 +483,70 @@ main::-webkit-scrollbar-thumb {
   @media screen and (max-width: 599px) {
     .is-size-1 {
       font-size: 2.5rem; } }
+
+header.logo {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  user-select: none;
+  -webkit-user-select: none; }
+
+header.logo div.info,
+header.logo div.image {
+  float: left;
+  text-align: left; }
+
+header.logo div.image {
+  width: 4.675rem;
+  height: 4.675rem;
+  margin-right: 0.25rem;
+  position: relative; }
+
+header.logo div.image img {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  -webkit-user-drag: none; }
+
+header.logo div.image img:not(.preload) {
+  transition: transform 1.5s;
+  -webkit-transition: 1.5s;
+  transform: scale(1, 1) rotate(0deg);
+  -webkit-transform: scale(1, 1) rotate(0deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo div.image img.preload.outer {
+  transform: scale(0, 0) rotate(360deg);
+  -webkit-transform: scale(0, 0) rotate(360deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo div.image img.preload.inner {
+  transform: scale(0, 0) rotate(-180deg);
+  -webkit-transform: scale(0, 0) rotate(-180deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo a {
+  text-decoration: none; }
+
+header.logo .info {
+  margin-top: 0.825rem;
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-transform: uppercase; }
+  @media screen and (max-width: 599px) {
+    header.logo .info {
+      display: none; } }
+
+header.logo .info .name {
+  color: #3C3C60;
+  font-size: 1.35rem; }
+
+header.logo .info .title {
+  color: #6A6A87;
+  font-size: 0.8rem; }
 
 header.menu {
   position: fixed;
