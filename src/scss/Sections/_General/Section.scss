@@ -1,0 +1,72 @@
+// Styling for the <section> tag and content
+
+@import "../../Theme.scss";
+
+@mixin spacing() {
+    &:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+section {
+    width: 100%;
+    position: relative;
+
+    h1, h2, h3, h4, h5, h6, p {
+        font-size: 1rem;
+        font-weight: $font-weight-bold;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.section {
+    padding: 5rem 1.5rem;
+
+    &.is-primary {
+        background-color: $bg-primary;
+        color: $font-color-dark;
+    }
+
+    &.is-secondary {
+        background-color: $bg-secondary;
+        color: $font-color-white;
+    }
+
+    &.is-dark {
+        background-color: $bg-dark;
+        color: $font-color-white;
+    }
+
+    &.is-transparent {
+        background-color: transparent;
+        color: $font-color-dark;
+    }
+
+    &.is-long {
+        padding-bottom: 12rem;
+    }
+
+    
+    .title,
+    .subtitle,
+    .text {
+        line-height: 100%;
+        word-break: break-word;
+
+        @include spacing();
+    }
+
+    .title {
+        font-weight: $font-weight-bold;
+    }
+
+    .subtitle {
+        font-weight: $font-weight-light;
+    }
+
+    .text {
+        font-weight: $font-weight-light;
+        text-align: justify;
+    }
+}
