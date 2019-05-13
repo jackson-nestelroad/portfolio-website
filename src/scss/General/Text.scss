@@ -1,0 +1,43 @@
+// Styling for font sizes
+
+@import '../Theme.scss';
+
+.is-size-5 {
+    font-size: 1.25rem;
+
+    @include for-mobile {
+        font-size: 1rem;
+    }
+}
+
+.is-size-4 {
+    font-size: 1.5rem;
+
+    @include for-mobile {
+        font-size: 1.25rem;
+    }
+}
+
+.is-size-3 {
+    font-size: 2rem;
+
+    @include for-mobile {
+        font-size: 1.5rem;
+    }
+}
+
+.is-size-2 {
+    font-size: 2.5rem;
+
+    @include for-mobile {
+        font-size: 2rem;
+    }
+}
+
+.is-size-1 {
+    font-size: 3rem;
+
+    @include for-mobile {
+        font-size: 2.5rem;
+    }
+}
