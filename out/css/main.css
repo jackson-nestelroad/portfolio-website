@@ -1,4 +1,130 @@
 
+div.canvas {
+  position: relative; }
+
+div.canvas canvas#particles {
+  width: 100%;
+  height: 95vh;
+  background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%);
+  display: block; }
+
+div.canvas div.canvas-text-container {
+  position: absolute;
+  top: 7vh;
+  left: 0;
+  height: 75%;
+  width: 100%;
+  pointer-events: none; }
+
+div.canvas div.canvas-text {
+  font-family: "Nunito Sans";
+  font-weight: 200;
+  color: white;
+  word-wrap: break-word;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 1s;
+  transform: translateZ(0) scale(1, 1); }
+
+div.canvas div.canvas-text .gradient {
+  background: linear-gradient(white, #052342);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    div.canvas div.canvas-text .gradient {
+      background: none;
+      opacity: 0.5 !important; } }
+
+div.canvas div.canvas-text.preload {
+  opacity: 0 !important; }
+
+div.canvas div.canvas-text .bold {
+  opacity: 1; }
+
+div.canvas div.canvas-text .light {
+  opacity: 0.5; }
+
+@media screen and (max-width: 599px) {
+  div.canvas div.canvas-text .lg {
+    font-size: 2.5rem; } }
+
+@media screen and (min-width: 600px) {
+  div.canvas div.canvas-text .lg {
+    font-size: 4rem; } }
+
+@media screen and (min-width: 900px) {
+  div.canvas div.canvas-text .lg {
+    font-size: 6rem; } }
+
+@media screen and (min-width: 1200px) {
+  div.canvas div.canvas-text .lg {
+    font-size: 8.5rem; } }
+
+@media screen and (max-width: 599px) {
+  div.canvas div.canvas-text .sm {
+    font-size: 0.75rem; } }
+
+@media screen and (min-width: 600px) {
+  div.canvas div.canvas-text .sm {
+    font-size: 1rem; } }
+
+@media screen and (min-width: 900px) {
+  div.canvas div.canvas-text .sm {
+    font-size: 1.5rem; } }
+
+@media screen and (min-width: 1200px) {
+  div.canvas div.canvas-text .sm {
+    font-size: 2rem; } }
+
+div.canvas div.canvas-text.design {
+  position: absolute;
+  top: 0%; }
+  @media screen and (max-width: 599px) {
+    div.canvas div.canvas-text.design {
+      left: 50%;
+      transform: translate(-50%, 0%) translateZ(0) scale(1, 1); } }
+  @media screen and (min-width: 600px) {
+    div.canvas div.canvas-text.design {
+      left: 10%;
+      transform: translate(-10%, 0%) translateZ(0) scale(1, 1); } }
+
+div.canvas div.canvas-text.develop {
+  position: absolute;
+  top: 33%; }
+  @media screen and (max-width: 599px) {
+    div.canvas div.canvas-text.develop {
+      left: 50%;
+      transform: translate(-50%, -33%) translateZ(0) scale(1, 1); } }
+  @media screen and (min-width: 600px) {
+    div.canvas div.canvas-text.develop {
+      left: 36%;
+      transform: translate(-36%, -33%) translateZ(0) scale(1, 1); } }
+
+div.canvas div.canvas-text.deploy {
+  position: absolute;
+  top: 66%; }
+  @media screen and (max-width: 599px) {
+    div.canvas div.canvas-text.deploy {
+      left: 50%;
+      transform: translate(-50%, -66%) translateZ(0) scale(1, 1); } }
+  @media screen and (min-width: 600px) {
+    div.canvas div.canvas-text.deploy {
+      left: 56%;
+      transform: translate(-56%, -66%) translateZ(0) scale(1, 1); } }
+
+div.canvas div.canvas-text.discover {
+  position: absolute;
+  top: 100%; }
+  @media screen and (max-width: 599px) {
+    div.canvas div.canvas-text.discover {
+      left: 50%;
+      transform: translate(-50%, -100%) translateZ(0) scale(1, 1); } }
+  @media screen and (min-width: 600px) {
+    div.canvas div.canvas-text.discover {
+      left: 90%;
+      transform: translate(-90%, -100%) translateZ(0) scale(1, 1); } }
+
 bg {
   position: fixed;
   top: 0;
@@ -358,70 +484,6 @@ main .scroll::-webkit-scrollbar-thumb {
     .is-size-1 {
       font-size: 2.5rem; } }
 
-header.logo {
-  width: 100%;
-  padding: 0.5rem 2rem;
-  background-color: white;
-  user-select: none;
-  -webkit-user-select: none; }
-
-header.logo div.info,
-header.logo div.image {
-  float: left;
-  text-align: left; }
-
-header.logo div.image {
-  width: 4.675rem;
-  height: 4.675rem;
-  margin-right: 0.25rem;
-  position: relative; }
-
-header.logo div.image img {
-  height: inherit;
-  width: inherit;
-  position: absolute;
-  -webkit-user-drag: none; }
-
-header.logo div.image img:not(.preload) {
-  transition: transform 1.5s;
-  -webkit-transition: 1.5s;
-  transform: scale(1, 1) rotate(0deg);
-  -webkit-transform: scale(1, 1) rotate(0deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.outer {
-  transform: scale(0, 0) rotate(360deg);
-  -webkit-transform: scale(0, 0) rotate(360deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.inner {
-  transform: scale(0, 0) rotate(-180deg);
-  -webkit-transform: scale(0, 0) rotate(-180deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo a {
-  text-decoration: none; }
-
-header.logo .info {
-  margin-top: 0.825rem;
-  font-weight: 700;
-  font-family: "Open Sans";
-  text-transform: uppercase; }
-  @media screen and (max-width: 599px) {
-    header.logo .info {
-      display: none; } }
-
-header.logo .info .name {
-  color: #3C3C60;
-  font-size: 1.35rem; }
-
-header.logo .info .title {
-  color: #6A6A87;
-  font-size: 0.8rem; }
-
 header.menu {
   position: fixed;
   top: 0;
@@ -608,131 +670,69 @@ header.navigation div.header {
   margin: 0;
   border-top: 2px solid rgba(0, 0, 15, 0.1); }
 
-div.canvas {
+header.logo {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  user-select: none;
+  -webkit-user-select: none; }
+
+header.logo div.info,
+header.logo div.image {
+  float: left;
+  text-align: left; }
+
+header.logo div.image {
+  width: 4.675rem;
+  height: 4.675rem;
+  margin-right: 0.25rem;
   position: relative; }
 
-div.canvas canvas#particles {
-  width: 100%;
-  height: 95vh;
-  background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%);
-  display: block; }
-
-div.canvas div.canvas-text-container {
+header.logo div.image img {
+  height: inherit;
+  width: inherit;
   position: absolute;
-  top: 7vh;
-  left: 0;
-  height: 75%;
-  width: 100%;
-  pointer-events: none; }
+  -webkit-user-drag: none; }
 
-div.canvas div.canvas-text {
-  font-family: "Nunito Sans";
-  font-weight: 200;
-  color: white;
-  word-wrap: break-word;
-  user-select: none;
-  -webkit-user-select: none;
-  transition: opacity 1s;
-  transform: translateZ(0) scale(1, 1); }
+header.logo div.image img:not(.preload) {
+  transition: transform 1.5s;
+  -webkit-transition: 1.5s;
+  transform: scale(1, 1) rotate(0deg);
+  -webkit-transform: scale(1, 1) rotate(0deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
 
-div.canvas div.canvas-text .gradient {
-  background: linear-gradient(white, #052342);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
-  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    div.canvas div.canvas-text .gradient {
-      background: none;
-      opacity: 0.5 !important; } }
+header.logo div.image img.preload.outer {
+  transform: scale(0, 0) rotate(360deg);
+  -webkit-transform: scale(0, 0) rotate(360deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
 
-div.canvas div.canvas-text.preload {
-  opacity: 0 !important; }
+header.logo div.image img.preload.inner {
+  transform: scale(0, 0) rotate(-180deg);
+  -webkit-transform: scale(0, 0) rotate(-180deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
 
-div.canvas div.canvas-text .bold {
-  opacity: 1; }
+header.logo a {
+  text-decoration: none; }
 
-div.canvas div.canvas-text .light {
-  opacity: 0.5; }
-
-@media screen and (max-width: 599px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 2.5rem; } }
-
-@media screen and (min-width: 600px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 4rem; } }
-
-@media screen and (min-width: 900px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 6rem; } }
-
-@media screen and (min-width: 1200px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 8.5rem; } }
-
-@media screen and (max-width: 599px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 0.75rem; } }
-
-@media screen and (min-width: 600px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 1rem; } }
-
-@media screen and (min-width: 900px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 1.5rem; } }
-
-@media screen and (min-width: 1200px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 2rem; } }
-
-div.canvas div.canvas-text.design {
-  position: absolute;
-  top: 0%; }
+header.logo .info {
+  margin-top: 0.825rem;
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-transform: uppercase; }
   @media screen and (max-width: 599px) {
-    div.canvas div.canvas-text.design {
-      left: 50%;
-      transform: translate(-50%, 0%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 600px) {
-    div.canvas div.canvas-text.design {
-      left: 10%;
-      transform: translate(-10%, 0%) translateZ(0) scale(1, 1); } }
+    header.logo .info {
+      display: none; } }
 
-div.canvas div.canvas-text.develop {
-  position: absolute;
-  top: 33%; }
-  @media screen and (max-width: 599px) {
-    div.canvas div.canvas-text.develop {
-      left: 50%;
-      transform: translate(-50%, -33%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 600px) {
-    div.canvas div.canvas-text.develop {
-      left: 36%;
-      transform: translate(-36%, -33%) translateZ(0) scale(1, 1); } }
+header.logo .info .name {
+  color: #3C3C60;
+  font-size: 1.35rem; }
 
-div.canvas div.canvas-text.deploy {
-  position: absolute;
-  top: 66%; }
-  @media screen and (max-width: 599px) {
-    div.canvas div.canvas-text.deploy {
-      left: 50%;
-      transform: translate(-50%, -66%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 600px) {
-    div.canvas div.canvas-text.deploy {
-      left: 56%;
-      transform: translate(-56%, -66%) translateZ(0) scale(1, 1); } }
-
-div.canvas div.canvas-text.discover {
-  position: absolute;
-  top: 100%; }
-  @media screen and (max-width: 599px) {
-    div.canvas div.canvas-text.discover {
-      left: 50%;
-      transform: translate(-50%, -100%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 600px) {
-    div.canvas div.canvas-text.discover {
-      left: 90%;
-      transform: translate(-90%, -100%) translateZ(0) scale(1, 1); } }
+header.logo .info .title {
+  color: #6A6A87;
+  font-size: 0.8rem; }
 
 section#about {
   box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
@@ -760,9 +760,6 @@ section#skills .skill {
     section#skills .skill {
       min-width: 33.33333%;
       padding-top: 28.86751%; }
-      section#skills .skill:nth-child(6n + 0) {
-        fill: black;
-        left: -8.33333%; }
       section#skills .skill:nth-child(6n + 1) {
         fill: black;
         left: -8.33333%; }
@@ -785,9 +782,6 @@ section#skills .skill {
     section#skills .skill {
       min-width: 16.66667%;
       padding-top: 14.43376%; }
-      section#skills .skill:nth-child(12n + 0) {
-        fill: black;
-        left: -4.16667%; }
       section#skills .skill:nth-child(12n + 1) {
         fill: black;
         left: -4.16667%; }
@@ -828,9 +822,6 @@ section#skills .skill {
     section#skills .skill {
       min-width: 12.5%;
       padding-top: 10.82532%; }
-      section#skills .skill:nth-child(16n + 0) {
-        fill: black;
-        left: -3.125%; }
       section#skills .skill:nth-child(16n + 1) {
         fill: black;
         left: -3.125%; }

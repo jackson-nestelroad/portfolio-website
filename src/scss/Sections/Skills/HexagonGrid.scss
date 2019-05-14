@@ -22,7 +22,7 @@
 
 @mixin create-offset($hex-per-row) {
     $offset: percentage(1 / $hex-per-row / 4);
-    @for $i from 0 through $hex-per-row {
+    @for $i from 1 through $hex-per-row {
         &:nth-child(#{$hex-per-row * 2}n + #{$i}) {
             fill: black;
             left: -$offset;
