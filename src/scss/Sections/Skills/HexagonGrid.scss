@@ -1,0 +1,116 @@
+// Styling for hexagon grid of skills icons
+
+@import "../../Theme";
+
+@function hex-per-row($size) {
+    @if($size == tiny) {
+        @return 3;
+    }
+    @if ($size == mobile) {
+        @return 4;
+    }
+    @else if ($size == portrait) {
+        @return 6;
+    }
+    @else if($size == landscape) {
+        @return 8;
+    }
+    @else if($size == desktop) {
+        @return 8;
+    }
+    @else if($size == big) {
+        @return 8;
+    }
+}
+
+@mixin create-offset($hex-per-row) {
+    $offset: percentage(1 / $hex-per-row / 4);
+    @for $i from 0 through $hex-per-row {
+        &:nth-child(#{$hex-per-row * 2}n + #{$i}) {
+            fill: black;
+            left: -$offset;
+        }
+    }
+    @for $i from ($hex-per-row + 1) through ($hex-per-row * 2) {
+        &:nth-child(#{$hex-per-row * 2}n + #{$i}) {
+            fill: red;
+            left: $offset;
+        }
+    }
+}
+
+@mixin skill-container-size($size) {
+    $hex: hex-per-row($size);
+    min-width: percentage(1 / $hex);
+    padding-top: percentage(1 / $hex * 0.866025404);
+    @include create-offset($hex);
+}
+
+@function calc-padding-hack($hex-per-row) {
+    @return percentage(100 / 86.6025403784 * (1 / $hex-per-row) - 0.01);
+}
+
+section#skills {
+    ul.hex-grid {
+        list-style: none;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    .hexagon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 0.1rem;
+    }
+
+    .skill {
+        position: relative;
+        flex: 0;
+        height: 0px;
+
+        @include for-mobile {
+            @include skill-container-size(mobile);
+        }
+
+        @include for-tablet-portrait-up {
+            @include skill-container-size(portrait);
+        }
+
+        @include for-tablet-landscape-up {
+            @include skill-container-size(landscape);
+        }
+
+        // Fixes two Internet Explorer bugs in calculating heights and widths
+        @include for-ie {
+            height: 0;
+            margin-bottom: 5px;
+
+            @include for-mobile {
+                padding-top: calc-padding-hack(hex-per-row(mobile));
+            }
+
+            @include for-tablet-portrait-up {
+                padding-top: calc-padding-hack(hex-per-row(portrait));
+            }
+    
+            @include for-tablet-landscape-up {
+                padding-top: calc-padding-hack(hex-per-row(landscape));
+            }
+
+            >svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

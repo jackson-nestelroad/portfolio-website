@@ -51,7 +51,7 @@ $menu-size: 13.4375rem;
 }
 
 @mixin for-ie {
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         @content;
     }
 }
