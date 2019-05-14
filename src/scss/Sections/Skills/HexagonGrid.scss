@@ -3,11 +3,8 @@
 @import "../../Theme";
 
 @function hex-per-row($size) {
-    @if($size == tiny) {
-        @return 3;
-    }
     @if ($size == mobile) {
-        @return 4;
+        @return 3;
     }
     @else if ($size == portrait) {
         @return 6;
