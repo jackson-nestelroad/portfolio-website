@@ -1,130 +1,4 @@
 
-div.canvas {
-  position: relative; }
-
-div.canvas canvas#particles {
-  width: 100%;
-  height: 95vh;
-  background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%);
-  display: block; }
-
-div.canvas div.canvas-text-container {
-  position: absolute;
-  top: 7vh;
-  left: 0;
-  height: 75%;
-  width: 100%;
-  pointer-events: none; }
-
-div.canvas div.canvas-text {
-  font-family: "Nunito Sans";
-  font-weight: 200;
-  color: white;
-  word-wrap: break-word;
-  user-select: none;
-  -webkit-user-select: none;
-  transition: opacity 1s;
-  transform: translateZ(0) scale(1, 1); }
-
-div.canvas div.canvas-text .gradient {
-  background: linear-gradient(white, #052342);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
-  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    div.canvas div.canvas-text .gradient {
-      background: none;
-      opacity: 0.5 !important; } }
-
-div.canvas div.canvas-text.preload {
-  opacity: 0 !important; }
-
-div.canvas div.canvas-text .bold {
-  opacity: 1; }
-
-div.canvas div.canvas-text .light {
-  opacity: 0.5; }
-
-@media screen and (max-width: 599px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 2.5rem; } }
-
-@media screen and (min-width: 600px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 4rem; } }
-
-@media screen and (min-width: 900px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 6rem; } }
-
-@media screen and (min-width: 1200px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 8.5rem; } }
-
-@media screen and (max-width: 599px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 0.75rem; } }
-
-@media screen and (min-width: 600px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 1rem; } }
-
-@media screen and (min-width: 900px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 1.5rem; } }
-
-@media screen and (min-width: 1200px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 2rem; } }
-
-div.canvas div.canvas-text.design {
-  position: absolute;
-  top: 0%; }
-  @media screen and (max-width: 599px) {
-    div.canvas div.canvas-text.design {
-      left: 50%;
-      transform: translate(-50%, 0%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 600px) {
-    div.canvas div.canvas-text.design {
-      left: 10%;
-      transform: translate(-10%, 0%) translateZ(0) scale(1, 1); } }
-
-div.canvas div.canvas-text.develop {
-  position: absolute;
-  top: 33%; }
-  @media screen and (max-width: 599px) {
-    div.canvas div.canvas-text.develop {
-      left: 50%;
-      transform: translate(-50%, -33%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 600px) {
-    div.canvas div.canvas-text.develop {
-      left: 36%;
-      transform: translate(-36%, -33%) translateZ(0) scale(1, 1); } }
-
-div.canvas div.canvas-text.deploy {
-  position: absolute;
-  top: 66%; }
-  @media screen and (max-width: 599px) {
-    div.canvas div.canvas-text.deploy {
-      left: 50%;
-      transform: translate(-50%, -66%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 600px) {
-    div.canvas div.canvas-text.deploy {
-      left: 56%;
-      transform: translate(-56%, -66%) translateZ(0) scale(1, 1); } }
-
-div.canvas div.canvas-text.discover {
-  position: absolute;
-  top: 100%; }
-  @media screen and (max-width: 599px) {
-    div.canvas div.canvas-text.discover {
-      left: 50%;
-      transform: translate(-50%, -100%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 600px) {
-    div.canvas div.canvas-text.discover {
-      left: 90%;
-      transform: translate(-90%, -100%) translateZ(0) scale(1, 1); } }
-
 bg {
   position: fixed;
   top: 0;
@@ -734,6 +608,132 @@ header.navigation div.header {
   margin: 0;
   border-top: 2px solid rgba(0, 0, 15, 0.1); }
 
+div.canvas {
+  position: relative; }
+
+div.canvas canvas#particles {
+  width: 100%;
+  height: 95vh;
+  background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%);
+  display: block; }
+
+div.canvas div.canvas-text-container {
+  position: absolute;
+  top: 7vh;
+  left: 0;
+  height: 75%;
+  width: 100%;
+  pointer-events: none; }
+
+div.canvas div.canvas-text {
+  font-family: "Nunito Sans";
+  font-weight: 200;
+  color: white;
+  word-wrap: break-word;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 1s;
+  transform: translateZ(0) scale(1, 1); }
+
+div.canvas div.canvas-text .gradient {
+  background: linear-gradient(white, #052342);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    div.canvas div.canvas-text .gradient {
+      background: none;
+      opacity: 0.5 !important; } }
+
+div.canvas div.canvas-text.preload {
+  opacity: 0 !important; }
+
+div.canvas div.canvas-text .bold {
+  opacity: 1; }
+
+div.canvas div.canvas-text .light {
+  opacity: 0.5; }
+
+@media screen and (max-width: 599px) {
+  div.canvas div.canvas-text .lg {
+    font-size: 2.5rem; } }
+
+@media screen and (min-width: 600px) {
+  div.canvas div.canvas-text .lg {
+    font-size: 4rem; } }
+
+@media screen and (min-width: 900px) {
+  div.canvas div.canvas-text .lg {
+    font-size: 6rem; } }
+
+@media screen and (min-width: 1200px) {
+  div.canvas div.canvas-text .lg {
+    font-size: 8.5rem; } }
+
+@media screen and (max-width: 599px) {
+  div.canvas div.canvas-text .sm {
+    font-size: 0.75rem; } }
+
+@media screen and (min-width: 600px) {
+  div.canvas div.canvas-text .sm {
+    font-size: 1rem; } }
+
+@media screen and (min-width: 900px) {
+  div.canvas div.canvas-text .sm {
+    font-size: 1.5rem; } }
+
+@media screen and (min-width: 1200px) {
+  div.canvas div.canvas-text .sm {
+    font-size: 2rem; } }
+
+div.canvas div.canvas-text.design {
+  position: absolute;
+  top: 0%; }
+  @media screen and (max-width: 599px) {
+    div.canvas div.canvas-text.design {
+      left: 50%;
+      transform: translate(-50%, 0%) translateZ(0) scale(1, 1); } }
+  @media screen and (min-width: 600px) {
+    div.canvas div.canvas-text.design {
+      left: 10%;
+      transform: translate(-10%, 0%) translateZ(0) scale(1, 1); } }
+
+div.canvas div.canvas-text.develop {
+  position: absolute;
+  top: 33%; }
+  @media screen and (max-width: 599px) {
+    div.canvas div.canvas-text.develop {
+      left: 50%;
+      transform: translate(-50%, -33%) translateZ(0) scale(1, 1); } }
+  @media screen and (min-width: 600px) {
+    div.canvas div.canvas-text.develop {
+      left: 36%;
+      transform: translate(-36%, -33%) translateZ(0) scale(1, 1); } }
+
+div.canvas div.canvas-text.deploy {
+  position: absolute;
+  top: 66%; }
+  @media screen and (max-width: 599px) {
+    div.canvas div.canvas-text.deploy {
+      left: 50%;
+      transform: translate(-50%, -66%) translateZ(0) scale(1, 1); } }
+  @media screen and (min-width: 600px) {
+    div.canvas div.canvas-text.deploy {
+      left: 56%;
+      transform: translate(-56%, -66%) translateZ(0) scale(1, 1); } }
+
+div.canvas div.canvas-text.discover {
+  position: absolute;
+  top: 100%; }
+  @media screen and (max-width: 599px) {
+    div.canvas div.canvas-text.discover {
+      left: 50%;
+      transform: translate(-50%, -100%) translateZ(0) scale(1, 1); } }
+  @media screen and (min-width: 600px) {
+    div.canvas div.canvas-text.discover {
+      left: 90%;
+      transform: translate(-90%, -100%) translateZ(0) scale(1, 1); } }
+
 section#about {
   box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
   section#about img.me {
@@ -751,13 +751,6 @@ section#skills ul.hex-grid {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start; }
-
-section#skills .hexagon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0 0.1rem; }
 
 section#skills .skill {
   position: relative;
@@ -886,26 +879,30 @@ section#skills .skill {
       section#skills .skill:nth-child(16n + 16) {
         fill: red;
         left: 3.125%; } }
-  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    section#skills .skill {
-      height: 0;
-      margin-bottom: 5px; } }
-  @media screen and (-ms-high-contrast: none) and (max-width: 599px), screen and (-ms-high-contrast: active) and (max-width: 599px) {
-    section#skills .skill {
-      padding-top: 37.49002%; } }
-  @media screen and (-ms-high-contrast: none) and (min-width: 600px), screen and (-ms-high-contrast: active) and (min-width: 600px) {
-    section#skills .skill {
-      padding-top: 18.24501%; } }
-  @media screen and (-ms-high-contrast: none) and (min-width: 900px), screen and (-ms-high-contrast: active) and (min-width: 900px) {
-    section#skills .skill {
-      padding-top: 13.43376%; } }
-  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      section#skills .skill > svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%; } }
+  section#skills .skill .hexagon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 0.1rem; }
+    @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      section#skills .skill .hexagon {
+        height: 0px;
+        margin-bottom: 5px;
+        padding-top: 110%; }
+        section#skills .skill .hexagon > svg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%; } }
+  section#skills .skill .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    z-index: 1;
+    transform: translateX(-50%) translateZ(0) scale(1, 1); }
 
 section#skills {
   margin-top: -12rem; }
