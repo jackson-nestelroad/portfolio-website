@@ -7,6 +7,9 @@ import { Menu } from '../Classes/Elements/Menu'
 // Main tag
 export const Main: HTMLElement = DOM.getFirstElement('main');
 
+// Scroll container in Main tag
+export const MainScroll: HTMLElement = DOM.getFirstElement('main .scroll');
+
 // Logo images
 export const Logo = {
     Outer: DOM.getFirstElement('header.logo .image img.outer'),
