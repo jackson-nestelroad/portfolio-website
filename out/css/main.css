@@ -484,6 +484,70 @@ main .scroll::-webkit-scrollbar-thumb {
     .is-size-1 {
       font-size: 2.5rem; } }
 
+header.logo {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  user-select: none;
+  -webkit-user-select: none; }
+
+header.logo div.info,
+header.logo div.image {
+  float: left;
+  text-align: left; }
+
+header.logo div.image {
+  width: 4.675rem;
+  height: 4.675rem;
+  margin-right: 0.25rem;
+  position: relative; }
+
+header.logo div.image img {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  -webkit-user-drag: none; }
+
+header.logo div.image img:not(.preload) {
+  transition: transform 1.5s;
+  -webkit-transition: 1.5s;
+  transform: scale(1, 1) rotate(0deg);
+  -webkit-transform: scale(1, 1) rotate(0deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo div.image img.preload.outer {
+  transform: scale(0, 0) rotate(360deg);
+  -webkit-transform: scale(0, 0) rotate(360deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo div.image img.preload.inner {
+  transform: scale(0, 0) rotate(-180deg);
+  -webkit-transform: scale(0, 0) rotate(-180deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo a {
+  text-decoration: none; }
+
+header.logo .info {
+  margin-top: 0.825rem;
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-transform: uppercase; }
+  @media screen and (max-width: 599px) {
+    header.logo .info {
+      display: none; } }
+
+header.logo .info .name {
+  color: #3C3C60;
+  font-size: 1.35rem; }
+
+header.logo .info .title {
+  color: #6A6A87;
+  font-size: 0.8rem; }
+
 header.menu {
   position: fixed;
   top: 0;
@@ -670,70 +734,6 @@ header.navigation div.header {
   margin: 0;
   border-top: 2px solid rgba(0, 0, 15, 0.1); }
 
-header.logo {
-  width: 100%;
-  padding: 0.5rem 2rem;
-  background-color: white;
-  user-select: none;
-  -webkit-user-select: none; }
-
-header.logo div.info,
-header.logo div.image {
-  float: left;
-  text-align: left; }
-
-header.logo div.image {
-  width: 4.675rem;
-  height: 4.675rem;
-  margin-right: 0.25rem;
-  position: relative; }
-
-header.logo div.image img {
-  height: inherit;
-  width: inherit;
-  position: absolute;
-  -webkit-user-drag: none; }
-
-header.logo div.image img:not(.preload) {
-  transition: transform 1.5s;
-  -webkit-transition: 1.5s;
-  transform: scale(1, 1) rotate(0deg);
-  -webkit-transform: scale(1, 1) rotate(0deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.outer {
-  transform: scale(0, 0) rotate(360deg);
-  -webkit-transform: scale(0, 0) rotate(360deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.inner {
-  transform: scale(0, 0) rotate(-180deg);
-  -webkit-transform: scale(0, 0) rotate(-180deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo a {
-  text-decoration: none; }
-
-header.logo .info {
-  margin-top: 0.825rem;
-  font-weight: 700;
-  font-family: "Open Sans";
-  text-transform: uppercase; }
-  @media screen and (max-width: 599px) {
-    header.logo .info {
-      display: none; } }
-
-header.logo .info .name {
-  color: #3C3C60;
-  font-size: 1.35rem; }
-
-header.logo .info .title {
-  color: #6A6A87;
-  font-size: 0.8rem; }
-
 section#about {
   box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
   section#about img.me {
@@ -752,7 +752,14 @@ section#skills ul.hex-grid {
   flex-wrap: wrap;
   justify-content: start; }
 
+@keyframes skill-fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 section#skills .skill {
+  animation: skill-fade-in 1s;
   position: relative;
   flex: 0;
   height: 0px; }
@@ -761,139 +768,117 @@ section#skills .skill {
       min-width: 33.33333%;
       padding-top: 28.86751%; }
       section#skills .skill:nth-child(6n + 1) {
-        fill: black;
         left: -8.33333%; }
       section#skills .skill:nth-child(6n + 2) {
-        fill: black;
         left: -8.33333%; }
       section#skills .skill:nth-child(6n + 3) {
-        fill: black;
         left: -8.33333%; }
       section#skills .skill:nth-child(6n + 4) {
-        fill: red;
         left: 8.33333%; }
       section#skills .skill:nth-child(6n + 5) {
-        fill: red;
         left: 8.33333%; }
       section#skills .skill:nth-child(6n + 6) {
-        fill: red;
         left: 8.33333%; } }
   @media screen and (min-width: 600px) {
     section#skills .skill {
       min-width: 16.66667%;
       padding-top: 14.43376%; }
       section#skills .skill:nth-child(12n + 1) {
-        fill: black;
         left: -4.16667%; }
       section#skills .skill:nth-child(12n + 2) {
-        fill: black;
         left: -4.16667%; }
       section#skills .skill:nth-child(12n + 3) {
-        fill: black;
         left: -4.16667%; }
       section#skills .skill:nth-child(12n + 4) {
-        fill: black;
         left: -4.16667%; }
       section#skills .skill:nth-child(12n + 5) {
-        fill: black;
         left: -4.16667%; }
       section#skills .skill:nth-child(12n + 6) {
-        fill: black;
         left: -4.16667%; }
       section#skills .skill:nth-child(12n + 7) {
-        fill: red;
         left: 4.16667%; }
       section#skills .skill:nth-child(12n + 8) {
-        fill: red;
         left: 4.16667%; }
       section#skills .skill:nth-child(12n + 9) {
-        fill: red;
         left: 4.16667%; }
       section#skills .skill:nth-child(12n + 10) {
-        fill: red;
         left: 4.16667%; }
       section#skills .skill:nth-child(12n + 11) {
-        fill: red;
         left: 4.16667%; }
       section#skills .skill:nth-child(12n + 12) {
-        fill: red;
         left: 4.16667%; } }
   @media screen and (min-width: 900px) {
     section#skills .skill {
       min-width: 12.5%;
       padding-top: 10.82532%; }
       section#skills .skill:nth-child(16n + 1) {
-        fill: black;
         left: -3.125%; }
       section#skills .skill:nth-child(16n + 2) {
-        fill: black;
         left: -3.125%; }
       section#skills .skill:nth-child(16n + 3) {
-        fill: black;
         left: -3.125%; }
       section#skills .skill:nth-child(16n + 4) {
-        fill: black;
         left: -3.125%; }
       section#skills .skill:nth-child(16n + 5) {
-        fill: black;
         left: -3.125%; }
       section#skills .skill:nth-child(16n + 6) {
-        fill: black;
         left: -3.125%; }
       section#skills .skill:nth-child(16n + 7) {
-        fill: black;
         left: -3.125%; }
       section#skills .skill:nth-child(16n + 8) {
-        fill: black;
         left: -3.125%; }
       section#skills .skill:nth-child(16n + 9) {
-        fill: red;
         left: 3.125%; }
       section#skills .skill:nth-child(16n + 10) {
-        fill: red;
         left: 3.125%; }
       section#skills .skill:nth-child(16n + 11) {
-        fill: red;
         left: 3.125%; }
       section#skills .skill:nth-child(16n + 12) {
-        fill: red;
         left: 3.125%; }
       section#skills .skill:nth-child(16n + 13) {
-        fill: red;
         left: 3.125%; }
       section#skills .skill:nth-child(16n + 14) {
-        fill: red;
         left: 3.125%; }
       section#skills .skill:nth-child(16n + 15) {
-        fill: red;
         left: 3.125%; }
       section#skills .skill:nth-child(16n + 16) {
-        fill: red;
         left: 3.125%; } }
-  section#skills .skill .hexagon {
+  section#skills .skill .container {
+    color: white;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     padding: 0 0.1rem; }
+    section#skills .skill .container > svg {
+      display: block;
+      transition: color 0.3s, opacity 0.3s; }
     @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      section#skills .skill .hexagon {
+      section#skills .skill .container {
         height: 0px;
         margin-bottom: 5px;
         padding-top: 110%; }
-        section#skills .skill .hexagon > svg {
+        section#skills .skill .container > svg.hexagon {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%; } }
-  section#skills .skill .icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: white;
-    z-index: 1;
-    transform: translateX(-50%) translateZ(0) scale(1, 1); }
+    section#skills .skill .container > svg.icon {
+      color: white;
+      position: absolute;
+      width: 75%;
+      padding: 10%;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      transform: translate(-50%, -50%) translateZ(0) scale(1, 1);
+      -webkit-user-drag: none;
+      user-select: none; }
+    section#skills .skill .container:hover > svg.hexagon {
+      opacity: 0; }
+    section#skills .skill .container:hover > svg.icon {
+      color: inherit; }
 
 section#skills {
   margin-top: -12rem; }
