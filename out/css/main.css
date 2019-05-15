@@ -734,14 +734,6 @@ header.navigation div.header {
   margin: 0;
   border-top: 2px solid rgba(0, 0, 15, 0.1); }
 
-section#about {
-  box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
-  section#about img.me {
-    width: 100%;
-    border-radius: 50%;
-    -webkit-user-drag: none;
-    user-select: none; }
-
 section#skills ul.hex-grid {
   list-style: none;
   width: 100%;
@@ -875,13 +867,21 @@ section#skills .skill {
       transform: translate(-50%, -50%) translateZ(0) scale(1, 1);
       -webkit-user-drag: none;
       user-select: none; }
-    section#skills .skill .container:hover > svg.hexagon {
+    section#skills .skill .container:hover > svg.hexagon, section#skills .skill .container:active > svg.hexagon {
       opacity: 0; }
-    section#skills .skill .container:hover > svg.icon {
+    section#skills .skill .container:hover > svg.icon, section#skills .skill .container:active > svg.icon {
       color: inherit; }
 
 section#skills {
   margin-top: -12rem; }
+
+section#about {
+  box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
+  section#about img.me {
+    width: 100%;
+    border-radius: 50%;
+    -webkit-user-drag: none;
+    user-select: none; }
 
 section {
   width: 100%;
