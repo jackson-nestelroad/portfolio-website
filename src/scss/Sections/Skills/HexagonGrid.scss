@@ -100,10 +100,12 @@ section#skills {
             padding: 0 0.1rem;
             pointer-events: auto;
 
+            $animation-time: 0.3s;
+
             >svg {
                 // Display block for correct sizing
                 display: block;
-                transition: color 0.3s, opacity 0.3s, transform 0.3s;
+                transition: color $animation-time, opacity $animation-time, transform $animation-time;
             }
 
             // Fixes two Internet Explorer bugs in calculating heights and widths
@@ -149,7 +151,7 @@ section#skills {
                 color: $font-color-white;
                 border-radius: 0.5rem;
                 transform: translateX(-50%) translateY(145%) translateZ(0) scale(1.0, 1.0);
-                transition: 0.3s;
+                transition: $animation-time;
                 user-select: none;
                 pointer-events: none;
                 white-space: nowrap;
