@@ -59,7 +59,7 @@ export const Skills: Array<SkillData> = [
         color: "#F0DB4F"
     },
     {
-        name: "Kubernets",
+        name: "Kubernetes",
         svg: "kubernetes",
         color: "#356DE6"
     },
