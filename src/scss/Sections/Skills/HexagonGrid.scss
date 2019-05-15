@@ -2,6 +2,7 @@
 
 @import "../../Theme";
 
+// Get number of hexagons per row based on screen size
 @function hex-per-row($size) {
     @if ($size == mobile) {
         @return 3;
@@ -20,22 +21,22 @@
     }
 }
 
+// Create offset for each row of hexagons
 @mixin create-offset($hex-per-row) {
     $offset: percentage(1 / $hex-per-row / 4);
     @for $i from 1 through $hex-per-row {
         &:nth-child(#{$hex-per-row * 2}n + #{$i}) {
-            fill: black;
             left: -$offset;
         }
     }
     @for $i from ($hex-per-row + 1) through ($hex-per-row * 2) {
         &:nth-child(#{$hex-per-row * 2}n + #{$i}) {
-            fill: red;
             left: $offset;
         }
     }
 }
 
+// Create sizings for hexagon container
 @mixin skill-container-size($size) {
     $hex: hex-per-row($size);
     min-width: percentage(1 / $hex);
@@ -48,6 +49,7 @@
 // }
 
 section#skills {
+    // Container
     ul.hex-grid {
         list-style: none;
         width: 100%;
@@ -59,7 +61,19 @@ section#skills {
         justify-content: start;
     }
 
+    // Fade-in animation
+    @keyframes skill-fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    // A single skill in the list
     .skill {
+        animation: skill-fade-in 1s;
         position: relative;
         flex: 0;
         height: 0px;
@@ -76,12 +90,20 @@ section#skills {
             @include skill-container-size(landscape);
         }
 
-        .hexagon {
+        // Container for hexagon
+        .container {
+            color: $bg-primary;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             padding: 0 0.1rem;
+
+            >svg {
+                // Display block for correct sizing
+                display: block;
+                transition: color 0.3s, opacity 0.3s;
+            }
 
             // Fixes two Internet Explorer bugs in calculating heights and widths
             @include for-ie {
@@ -89,7 +111,7 @@ section#skills {
                 margin-bottom: 5px;
                 padding-top: 110%;
 
-                >svg {
+                >svg.hexagon {
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -97,15 +119,32 @@ section#skills {
                     height: 100%;
                 }
             }
-        }
-    
-        .icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            color: white;
-            z-index: 1;
-            transform: translateX(-50%) translateZ(0) scale(1.0, 1.0);
+
+            // Center icon in container
+            >svg.icon {
+                color: $bg-primary;
+                position: absolute;
+                width: 75%;
+                padding: 10%;
+                top: 50%;
+                left: 50%;
+                z-index: 1;
+                transform: translate(-50%, -50%) translateZ(0) scale(1.0, 1.0);
+                -webkit-user-drag: none;
+                user-select: none;
+            }
+
+
+            // Hexagon fades away on hover
+            &:hover {
+                >svg.hexagon {
+                    opacity: 0;
+                }
+
+                >svg.icon {
+                    color: inherit;
+                }
+            }
         }
     }
 }
