@@ -32,11 +32,17 @@ export class Skill {
 
                 let parent = document.createElement('li');
                 parent.classList.add('skill');
+                parent.setAttribute('name', this.data.name);
                 
                 let hexagonContainer = document.createElement('div');
-                hexagonContainer.classList.add('container');
+                hexagonContainer.classList.add('hexagon-container');
                 hexagonContainer.setAttribute('style', `color: ${this.data.color}`);
 
+                let tooltip = document.createElement('span');
+                tooltip.classList.add('tooltip');
+                tooltip.innerText = this.data.name;
+
+                hexagonContainer.appendChild(tooltip);
                 hexagonContainer.appendChild(svg);
 
                 let hexagon = Skill.HexagonSVG.cloneNode(true);
