@@ -23,7 +23,8 @@ main[shifted] {
 main .scroll {
     width: 100%;
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 
     @include for-ie {
