@@ -1,4 +1,4 @@
-// Namespace for Menu data
+// Class for Menu data
 
 import { DOM } from '../../Modules/DOM'
 import { Events } from '../../Modules/EventDispatcher'
