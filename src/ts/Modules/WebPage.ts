@@ -36,3 +36,6 @@ for(let anchor of Array.from(DOM.getElements('header.navigation .sections a'))) 
         SectionToMenu.set(id, [Sections.get(id), anchor]);
     }
 }
+
+// Grid to draw skills onto
+export const SkillsGrid: HTMLElement = DOM.getFirstElement('section#skills .hex-grid');
