@@ -735,56 +735,6 @@ header.navigation div.header {
   margin: 0;
   border-top: 2px solid rgba(0, 0, 15, 0.1); }
 
-section#about {
-  box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
-  section#about img.me {
-    width: 100%;
-    border-radius: 50%;
-    -webkit-user-drag: none;
-    user-select: none; }
-
-section {
-  width: 100%;
-  position: relative; }
-  section h1, section h2, section h3, section h4, section h5, section h6, section p {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0;
-    padding: 0; }
-
-.section {
-  padding: 5rem 1.5rem; }
-  .section.is-primary {
-    background-color: white;
-    color: #3C3C60; }
-  .section.is-secondary {
-    background-color: #29ab87;
-    color: white; }
-  .section.is-dark {
-    background-color: #3C3C60;
-    color: white; }
-  .section.is-transparent {
-    background-color: transparent;
-    color: #3C3C60; }
-  .section.is-long {
-    padding-bottom: 12rem; }
-  .section .title,
-  .section .subtitle,
-  .section .text {
-    line-height: 100%;
-    word-break: break-word; }
-    .section .title:not(:last-child),
-    .section .subtitle:not(:last-child),
-    .section .text:not(:last-child) {
-      margin-bottom: 1.5rem; }
-  .section .title {
-    font-weight: 700; }
-  .section .subtitle {
-    font-weight: 200; }
-  .section .text {
-    font-weight: 200;
-    text-align: justify; }
-
 section#skills ul.hex-grid {
   list-style: none;
   width: 100%;
@@ -970,3 +920,55 @@ section#skills .skill {
 
 section#skills {
   margin-top: -12rem; }
+
+section#about {
+  box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
+  section#about img.me {
+    width: 100%;
+    border-radius: 50%;
+    -webkit-user-drag: none;
+    user-select: none; }
+
+section {
+  width: 100%;
+  position: relative; }
+  section h1, section h2, section h3, section h4, section h5, section h6, section p {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0; }
+
+.section {
+  padding: 5rem 1.5rem; }
+  .section.is-primary {
+    background-color: white;
+    color: #3C3C60; }
+  .section.is-secondary {
+    background-color: #29ab87;
+    color: white; }
+  .section.is-dark {
+    background-color: #3C3C60;
+    color: white; }
+  .section.is-transparent {
+    background-color: transparent;
+    color: #3C3C60; }
+  .section.is-long {
+    padding-bottom: 12rem; }
+  .section .title,
+  .section .subtitle,
+  .section .text {
+    word-break: break-word; }
+    .section .title:not(:last-child),
+    .section .subtitle:not(:last-child),
+    .section .text:not(:last-child) {
+      margin-bottom: 1.5rem; }
+  .section .title {
+    font-weight: 700;
+    line-height: 1; }
+  .section .subtitle {
+    font-weight: 200;
+    line-height: 1.125; }
+  .section .text {
+    font-weight: 200;
+    line-height: 1.5;
+    text-align: justify; }

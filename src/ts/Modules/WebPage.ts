@@ -37,5 +37,8 @@ for(let anchor of Array.from(DOM.getElements('header.navigation .sections a'))) 
     }
 }
 
+// Flavor text about me
+export const FlavorText: HTMLElement = DOM.getFirstElement('section#about .flavor');
+
 // Grid to draw skills onto
 export const SkillsGrid: HTMLElement = DOM.getFirstElement('section#skills .hex-grid');

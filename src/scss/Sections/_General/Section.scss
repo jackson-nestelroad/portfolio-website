@@ -51,7 +51,6 @@ section {
     .title,
     .subtitle,
     .text {
-        line-height: 100%;
         word-break: break-word;
 
         @include spacing();
@@ -59,14 +58,17 @@ section {
 
     .title {
         font-weight: $font-weight-bold;
+        line-height: 1;
     }
 
     .subtitle {
         font-weight: $font-weight-light;
+        line-height: 1.125;
     }
 
     .text {
         font-weight: $font-weight-light;
+        line-height: 1.5;
         text-align: justify;
     }
 }
