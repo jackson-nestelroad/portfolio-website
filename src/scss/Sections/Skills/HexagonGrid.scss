@@ -136,7 +136,7 @@ section#skills {
 
 
             // Hexagon fades away on hover
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 >svg.hexagon {
                     opacity: 0;
                 }
