@@ -36,7 +36,7 @@ export class Skill {
                 let hexagonContainer = document.createElement('div');
                 hexagonContainer.classList.add('container');
                 hexagonContainer.setAttribute('style', `color: ${this.data.color}`);
-        
+
                 hexagonContainer.appendChild(svg);
 
                 let hexagon = Skill.HexagonSVG.cloneNode(true);
