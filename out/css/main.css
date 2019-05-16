@@ -735,6 +735,14 @@ header.navigation div.header {
   margin: 0;
   border-top: 2px solid rgba(0, 0, 15, 0.1); }
 
+section#about {
+  box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
+  section#about img.me {
+    width: 100%;
+    border-radius: 50%;
+    -webkit-user-drag: none;
+    user-select: none; }
+
 section#skills ul.hex-grid {
   list-style: none;
   width: 100%;
@@ -921,14 +929,6 @@ section#skills .skill {
 section#skills {
   margin-top: -12rem; }
 
-section#about {
-  box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
-  section#about img.me {
-    width: 100%;
-    border-radius: 50%;
-    -webkit-user-drag: none;
-    user-select: none; }
-
 section {
   width: 100%;
   position: relative; }
@@ -946,6 +946,29 @@ section {
   .section.is-secondary {
     background-color: #29ab87;
     color: white; }
+    .section.is-secondary.is-wavy-top::before {
+      content: "";
+      position: absolute;
+      left: -2px;
+      width: calc(100% + 4px);
+      height: 100px;
+      background-size: cover;
+      background-image: url("../images/Content/Divider.svg");
+      background-position: top;
+      background-repeat: no-repeat;
+      bottom: calc(100% - 1px);
+      transform: rotate(180deg); }
+    .section.is-secondary.is-wavy-bottom::after {
+      content: "";
+      position: absolute;
+      left: -2px;
+      width: calc(100% + 4px);
+      height: 100px;
+      background-size: cover;
+      background-image: url("../images/Content/Divider.svg");
+      background-position: top;
+      background-repeat: no-repeat;
+      top: calc(100% - 1px); }
   .section.is-dark {
     background-color: #3C3C60;
     color: white; }

@@ -31,6 +31,33 @@ section {
     &.is-secondary {
         background-color: $bg-secondary;
         color: $font-color-white;
+
+        @mixin is-wavy-both {
+            content: "";
+            position: absolute;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: 100px;
+            background-size: cover;
+            background-image: url('../images/Content/Divider.svg');
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+
+        &.is-wavy-top {
+            &::before {
+                @include is-wavy-both;
+                bottom: calc(100% - 1px);
+                transform: rotate(180deg);
+            }
+        }
+
+        &.is-wavy-bottom {
+            &::after {
+                @include is-wavy-both;
+                top: calc(100% - 1px);
+            }
+        }
     }
 
     &.is-dark {
