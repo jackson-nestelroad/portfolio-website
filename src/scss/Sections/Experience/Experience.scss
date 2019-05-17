@@ -1,0 +1,139 @@
+// Styling for the Experience section
+
+@import "../../Theme";
+
+@function get-icon-size($screen: desktop) {
+    @if($screen == mobile) {
+        @return 3rem;
+    }
+    @else if($screen == portrait) {
+        @return 3.75rem;
+    }
+    @else {
+        @return 4.5rem;
+    }
+}
+
+section#experience {
+    .card.experience {
+        .content {
+            padding: 1rem;
+
+            .header {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 2px solid shadow(0.1);
+
+                @include for-tablet-portrait-down {
+                    flex-wrap: wrap;
+                }
+
+                @include for-tablet-portrait-down {
+                    >:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+                }
+
+                .icon {
+                    display: flex;
+                    justify-content: center;
+                    height: auto;
+                    margin-right: 1rem;
+                    min-width: get-icon-size(mobile);
+
+                    @include for-tablet-portrait-down {
+                        margin-right: 0;
+                    }
+
+                    @include for-mobile {
+                        width: get-icon-size(mobile);
+                        
+                    }
+
+                    @include for-tablet-portrait-up { 
+                        width: get-icon-size(portrait);
+                    }
+
+                    @include for-tablet-landscape-up {
+                        width: get-icon-size(landscape);
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        -webkit-user-drag: none;
+                        user-select: none;
+                    }
+                }
+
+                .small {
+                    color: $font-color-light;
+                    font-weight: $font-weight-normal;
+                    font-style: italic;
+                    font-size: 0.75rem;
+
+                    @include for-mobile {
+                        font-size: 0.5rem;
+                    }
+                }
+
+                .company {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    text-align: left;
+                    width: 100%;
+
+                    @include for-tablet-portrait-down {
+                        align-items: center;
+                    }
+
+                    .name {
+                        color: $font-color-dark;
+                        font-weight: $font-weight-normal;
+                        text-transform: uppercase;
+                        transition: color 0.2s;
+                        font-size: 2rem;
+    
+                        @include for-mobile {
+                            font-size: 1.5rem;
+                        }
+
+                        &:hover {
+                            color: $font-color-link;
+                        }
+                    }
+                }
+
+                .role {
+                    justify-self: flex-end;
+                    text-align: right;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-end;
+                    width: 100%;
+
+                    @include for-tablet-portrait-down {
+                        align-items: center;
+                    }
+
+                    .name {
+                        font-weight: $font-weight-bold;
+                        font-size: 1rem;
+
+                        @include for-mobile {
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

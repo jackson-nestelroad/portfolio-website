@@ -171,6 +171,12 @@ body {
 
 .float-container {
   overflow: hidden; }
+  .float-container .left {
+    float: left;
+    text-align: left; }
+  .float-container .right {
+    float: right;
+    text-align: right; }
 
 .container, .card {
   background-color: transparent;
@@ -181,9 +187,10 @@ body {
       max-width: 960px; } }
 
 .card {
-  padding: 3.5rem 2rem;
   border-radius: 5px;
   box-shadow: 0px 1px 3px rgba(0, 0, 15, 0.5); }
+  .card .content {
+    padding: 3.5rem 2rem; }
   .card.is-primary {
     background-color: white;
     color: #3C3C60; }
@@ -200,7 +207,7 @@ body {
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 0;
   text-align: left; }
   .grid-row.reverse,
   .grid-row-padding.reverse {
@@ -306,7 +313,9 @@ body {
   .grid-col.sm-last {
     order: 1; }
   .grid-col.sm-margin-bottom {
-    margin-bottom: 1.5rem; } }
+    margin-bottom: 1.5rem; }
+  .grid-col.sm-padding {
+    padding: 0 1rem; } }
 
 @media screen and (min-width: 600px) {
   .grid-col.md1 {
@@ -360,7 +369,9 @@ body {
   .grid-col.md-last {
     order: 1; }
   .grid-col.md-margin-bottom {
-    margin-bottom: 1.5rem; } }
+    margin-bottom: 1.5rem; }
+  .grid-col.md-padding {
+    padding: 0 1rem; } }
 
 @media screen and (min-width: 900px) {
   .grid-col.lg1 {
@@ -414,7 +425,9 @@ body {
   .grid-col.lg-last {
     order: 1; }
   .grid-col.lg-margin-bottom {
-    margin-bottom: 1.5rem; } }
+    margin-bottom: 1.5rem; }
+  .grid-col.lg-padding {
+    padding: 0 1rem; } }
 
 a {
   color: #654AA5;
@@ -491,11 +504,6 @@ header.logo {
   background-color: white;
   user-select: none;
   -webkit-user-select: none; }
-
-header.logo div.info,
-header.logo div.image {
-  float: left;
-  text-align: left; }
 
 header.logo div.image {
   width: 4.675rem;
@@ -743,6 +751,93 @@ section#about {
     -webkit-user-drag: none;
     user-select: none; }
 
+section#experience .card.experience .content {
+  padding: 1rem; }
+  section#experience .card.experience .content .header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(0, 0, 15, 0.1); }
+    @media screen and (max-width: 899px) {
+      section#experience .card.experience .content .header {
+        flex-wrap: wrap; } }
+    @media screen and (max-width: 899px) {
+      section#experience .card.experience .content .header > :not(:last-child) {
+        margin-bottom: 1rem; } }
+    section#experience .card.experience .content .header .icon {
+      display: flex;
+      justify-content: center;
+      height: auto;
+      margin-right: 1rem;
+      min-width: 3rem; }
+      @media screen and (max-width: 899px) {
+        section#experience .card.experience .content .header .icon {
+          margin-right: 0; } }
+      @media screen and (max-width: 599px) {
+        section#experience .card.experience .content .header .icon {
+          width: 3rem; } }
+      @media screen and (min-width: 600px) {
+        section#experience .card.experience .content .header .icon {
+          width: 3.75rem; } }
+      @media screen and (min-width: 900px) {
+        section#experience .card.experience .content .header .icon {
+          width: 4.5rem; } }
+      section#experience .card.experience .content .header .icon img {
+        width: 100%;
+        height: 100%;
+        -webkit-user-drag: none;
+        user-select: none; }
+    section#experience .card.experience .content .header .small {
+      color: #6A6A87;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 0.75rem; }
+      @media screen and (max-width: 599px) {
+        section#experience .card.experience .content .header .small {
+          font-size: 0.5rem; } }
+    section#experience .card.experience .content .header .company {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 899px) {
+        section#experience .card.experience .content .header .company {
+          align-items: center; } }
+      section#experience .card.experience .content .header .company .name {
+        color: #3C3C60;
+        font-weight: 400;
+        text-transform: uppercase;
+        transition: color 0.2s;
+        font-size: 2rem; }
+        @media screen and (max-width: 599px) {
+          section#experience .card.experience .content .header .company .name {
+            font-size: 1.5rem; } }
+        section#experience .card.experience .content .header .company .name:hover {
+          color: #654AA5; }
+    section#experience .card.experience .content .header .role {
+      justify-self: flex-end;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      width: 100%; }
+      @media screen and (max-width: 899px) {
+        section#experience .card.experience .content .header .role {
+          align-items: center; } }
+      section#experience .card.experience .content .header .role .name {
+        font-weight: 700;
+        font-size: 1rem; }
+        @media screen and (max-width: 599px) {
+          section#experience .card.experience .content .header .role .name {
+            font-size: 0.75rem; } }
+
 section#skills ul.hex-grid {
   list-style: none;
   width: 100%;
@@ -943,9 +1038,15 @@ section {
   .section.is-primary {
     background-color: white;
     color: #3C3C60; }
+    .section.is-primary *::selection {
+      color: #6A6A87;
+      background-color: #29ab87; }
   .section.is-secondary {
     background-color: #29ab87;
     color: white; }
+    .section.is-secondary *::selection {
+      color: #3C3C60;
+      background-color: #F4F4F9; }
     .section.is-secondary.is-wavy-top::before {
       content: "";
       position: absolute;
@@ -972,9 +1073,15 @@ section {
   .section.is-dark {
     background-color: #3C3C60;
     color: white; }
+    .section.is-dark *::selection {
+      color: #3C3C60;
+      background-color: #F4F4F9; }
   .section.is-transparent {
     background-color: transparent;
     color: #3C3C60; }
+    .section.is-transparent *::selection {
+      color: white;
+      background-color: #29ab87; }
   .section.is-long {
     padding-bottom: 12rem; }
   .section .title,
