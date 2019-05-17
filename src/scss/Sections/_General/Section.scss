@@ -26,11 +26,21 @@ section {
     &.is-primary {
         background-color: $bg-primary;
         color: $font-color-dark;
+
+        *::selection {
+            color: $font-color-light;
+            background-color: $bg-secondary;
+        }
     }
 
     &.is-secondary {
         background-color: $bg-secondary;
         color: $font-color-white;
+
+        *::selection {
+            color: $font-color-dark;
+            background-color: $bg-base;
+        }
 
         @mixin is-wavy-both {
             content: "";
@@ -63,11 +73,21 @@ section {
     &.is-dark {
         background-color: $bg-dark;
         color: $font-color-white;
+
+        *::selection {
+            color: $font-color-dark;
+            background-color: $bg-base;
+        }
     }
 
     &.is-transparent {
         background-color: transparent;
         color: $font-color-dark;
+
+        *::selection {
+            color: $font-color-white;
+            background-color: $bg-secondary;
+        }
     }
 
     &.is-long {
