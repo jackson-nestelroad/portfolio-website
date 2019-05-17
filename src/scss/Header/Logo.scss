@@ -11,13 +11,6 @@ header.logo {
     -webkit-user-select: none;
 }
 
-// Parts of the header
-header.logo div.info,
-header.logo div.image {
-    float: left;
-    text-align: left;
-}
-
 // Image container specifically
 header.logo div.image {
     $width: 4.675rem;
