@@ -12,6 +12,16 @@
 // Container holding floating content
 .float-container {
     overflow: hidden;
+
+    .left {
+        float: left;
+        text-align: left;
+    }
+
+    .right {
+        float: right;
+        text-align: right;
+    }
 }
 
 // Container for content
@@ -27,9 +37,12 @@
 
 // Card to hold content
 .card {
-    padding: 3.5rem 2rem;
     border-radius: 5px;
     box-shadow: 0px 1px 3px shadow(0.5);
+
+    .content {
+        padding: 3.5rem 2rem;
+    }
 
     &.is-primary {
         background-color: $bg-primary;
