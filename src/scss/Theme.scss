@@ -17,6 +17,7 @@ $bg-gray: #EFEFF4;
 $font-color-dark: #3C3C60;
 $font-color-light: #6A6A87;
 $font-color-white: white;
+$font-color-black: #161616;
 $font-color-link: #654AA5;
 
 $font-family: "Nunito Sans";
@@ -32,6 +33,10 @@ $menu-size: 13.4375rem;
 
 @mixin for-mobile {
     @media screen and (max-width: 599px) { @content; }
+}
+
+@mixin for-tablet-portrait-down {
+    @media screen and (max-width: 899px) { @content; }
 }
 
 @mixin for-tablet-portrait-up {
