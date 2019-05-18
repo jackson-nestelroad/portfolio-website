@@ -125,65 +125,6 @@ div.canvas div.canvas-text.discover {
       left: 90%;
       transform: translate(-90%, -100%) translateZ(0) scale(1, 1); } }
 
-header.logo {
-  width: 100%;
-  padding: 0.5rem 2rem;
-  background-color: white;
-  user-select: none;
-  -webkit-user-select: none; }
-
-header.logo div.image {
-  width: 4.675rem;
-  height: 4.675rem;
-  margin-right: 0.25rem;
-  position: relative; }
-
-header.logo div.image img {
-  height: inherit;
-  width: inherit;
-  position: absolute;
-  -webkit-user-drag: none; }
-
-header.logo div.image img:not(.preload) {
-  transition: transform 1.5s;
-  -webkit-transition: 1.5s;
-  transform: scale(1, 1) rotate(0deg);
-  -webkit-transform: scale(1, 1) rotate(0deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.outer {
-  transform: scale(0, 0) rotate(360deg);
-  -webkit-transform: scale(0, 0) rotate(360deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.inner {
-  transform: scale(0, 0) rotate(-180deg);
-  -webkit-transform: scale(0, 0) rotate(-180deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo a {
-  text-decoration: none; }
-
-header.logo .info {
-  margin-top: 0.825rem;
-  font-weight: 700;
-  font-family: "Open Sans";
-  text-transform: uppercase; }
-  @media screen and (max-width: 599px) {
-    header.logo .info {
-      display: none; } }
-
-header.logo .info .name {
-  color: #3C3C60;
-  font-size: 1.35rem; }
-
-header.logo .info .title {
-  color: #6A6A87;
-  font-size: 0.8rem; }
-
 bg {
   position: fixed;
   top: 0;
@@ -533,34 +474,127 @@ main .scroll::-webkit-scrollbar-thumb {
   border-radius: 2.5px; }
 
 .is-size-5 {
-  font-size: 1.25rem; }
+  font-size: 0.75rem; }
   @media screen and (max-width: 599px) {
     .is-size-5 {
-      font-size: 1rem; } }
+      font-size: 0.5rem; } }
 
 .is-size-4 {
-  font-size: 1.5rem; }
+  font-size: 1rem; }
   @media screen and (max-width: 599px) {
     .is-size-4 {
-      font-size: 1.25rem; } }
+      font-size: 0.75rem; } }
 
 .is-size-3 {
-  font-size: 2rem; }
+  font-size: 1.25rem; }
   @media screen and (max-width: 599px) {
     .is-size-3 {
-      font-size: 1.5rem; } }
+      font-size: 1rem; } }
 
 .is-size-2 {
-  font-size: 2.5rem; }
+  font-size: 1.5rem; }
   @media screen and (max-width: 599px) {
     .is-size-2 {
-      font-size: 2rem; } }
+      font-size: 1.25rem; } }
 
 .is-size-1 {
-  font-size: 3rem; }
+  font-size: 2rem; }
   @media screen and (max-width: 599px) {
     .is-size-1 {
-      font-size: 2.5rem; } }
+      font-size: 1.5rem; } }
+
+.is-bold {
+  font-weight: 700; }
+
+.is-normal-weight {
+  font-weight: 400; }
+
+.is-light-weight {
+  font-weight: 200; }
+
+.is-italic {
+  font-style: italic; }
+
+.is-light-color {
+  color: #6A6A87; }
+
+.is-uppercase {
+  text-transform: uppercase; }
+
+.is-centered {
+  text-align: center; }
+
+.is-justified {
+  text-align: justify; }
+
+.is-left-aligned {
+  text-align: left; }
+
+.is-right-aligned {
+  text-align: right; }
+
+.is-quote {
+  padding-left: 1rem;
+  border-left: 0.25rem solid #29ab87; }
+
+header.logo {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  user-select: none;
+  -webkit-user-select: none; }
+
+header.logo div.image {
+  width: 4.675rem;
+  height: 4.675rem;
+  margin-right: 0.25rem;
+  position: relative; }
+
+header.logo div.image img {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  -webkit-user-drag: none; }
+
+header.logo div.image img:not(.preload) {
+  transition: transform 1.5s;
+  -webkit-transition: 1.5s;
+  transform: scale(1, 1) rotate(0deg);
+  -webkit-transform: scale(1, 1) rotate(0deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo div.image img.preload.outer {
+  transform: scale(0, 0) rotate(360deg);
+  -webkit-transform: scale(0, 0) rotate(360deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo div.image img.preload.inner {
+  transform: scale(0, 0) rotate(-180deg);
+  -webkit-transform: scale(0, 0) rotate(-180deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo a {
+  text-decoration: none; }
+
+header.logo .info {
+  margin-top: 0.825rem;
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-transform: uppercase; }
+  @media screen and (max-width: 599px) {
+    header.logo .info {
+      display: none; } }
+
+header.logo .info .name {
+  color: #3C3C60;
+  font-size: 1.35rem; }
+
+header.logo .info .title {
+  color: #6A6A87;
+  font-size: 0.8rem; }
 
 header.menu {
   position: fixed;
@@ -815,16 +849,11 @@ section#experience .card.experience .content {
       width: 100%; }
       @media screen and (max-width: 899px) {
         section#experience .card.experience .content .header .company {
-          align-items: center; } }
+          align-items: center;
+          text-align: center; } }
       section#experience .card.experience .content .header .company .name {
         color: #3C3C60;
-        font-weight: 400;
-        text-transform: uppercase;
-        transition: color 0.2s;
-        font-size: 2rem; }
-        @media screen and (max-width: 599px) {
-          section#experience .card.experience .content .header .company .name {
-            font-size: 1.5rem; } }
+        transition: color 0.2s; }
         section#experience .card.experience .content .header .company .name:hover {
           color: #654AA5; }
     section#experience .card.experience .content .header .role {
@@ -837,13 +866,13 @@ section#experience .card.experience .content {
       width: 100%; }
       @media screen and (max-width: 899px) {
         section#experience .card.experience .content .header .role {
-          align-items: center; } }
-      section#experience .card.experience .content .header .role .name {
-        font-weight: 700;
-        font-size: 1rem; }
-        @media screen and (max-width: 599px) {
-          section#experience .card.experience .content .header .role .name {
-            font-size: 0.75rem; } }
+          align-items: center;
+          text-align: center; } }
+  section#experience .card.experience .content .info {
+    padding: 1rem 2rem; }
+    section#experience .card.experience .content .info .description {
+      padding-left: 1rem;
+      border-left: 0.25rem solid #29ab87; }
 
 section#skills ul.hex-grid {
   list-style: none;

@@ -90,18 +90,12 @@ section#experience {
 
                     @include for-tablet-portrait-down {
                         align-items: center;
+                        text-align: center;
                     }
 
                     .name {
                         color: $font-color-dark;
-                        font-weight: $font-weight-normal;
-                        text-transform: uppercase;
                         transition: color 0.2s;
-                        font-size: 2rem;
-    
-                        @include for-mobile {
-                            font-size: 1.5rem;
-                        }
 
                         &:hover {
                             color: $font-color-link;
@@ -120,16 +114,17 @@ section#experience {
 
                     @include for-tablet-portrait-down {
                         align-items: center;
+                        text-align: center;
                     }
+                }
+            }
 
-                    .name {
-                        font-weight: $font-weight-bold;
-                        font-size: 1rem;
+            .info {
+                padding: 1rem 2rem;
 
-                        @include for-mobile {
-                            font-size: 0.75rem;
-                        }
-                    }
+                .description {
+                    padding-left: 1rem;
+                    border-left: 0.25rem solid $bg-secondary;
                 }
             }
         }
