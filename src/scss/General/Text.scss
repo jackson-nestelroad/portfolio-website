@@ -3,6 +3,22 @@
 @import '../Theme.scss';
 
 .is-size-5 {
+    font-size: 0.75rem;
+
+    @include for-mobile {
+        font-size: 0.5rem;
+    }
+}
+
+.is-size-4 {
+    font-size: 1rem;
+
+    @include for-mobile {
+        font-size: 0.75rem;
+    }
+}
+
+.is-size-3 {
     font-size: 1.25rem;
 
     @include for-mobile {
@@ -10,7 +26,7 @@
     }
 }
 
-.is-size-4 {
+.is-size-2 {
     font-size: 1.5rem;
 
     @include for-mobile {
@@ -18,7 +34,7 @@
     }
 }
 
-.is-size-3 {
+.is-size-1 {
     font-size: 2rem;
 
     @include for-mobile {
@@ -26,18 +42,47 @@
     }
 }
 
-.is-size-2 {
-    font-size: 2.5rem;
-
-    @include for-mobile {
-        font-size: 2rem;
-    }
+.is-bold {
+    font-weight: $font-weight-bold;
 }
 
-.is-size-1 {
-    font-size: 3rem;
+.is-normal-weight {
+    font-weight: $font-weight-normal;
+}
 
-    @include for-mobile {
-        font-size: 2.5rem;
-    }
+.is-light-weight {
+    font-weight: $font-weight-light;
+}
+
+.is-italic {
+    font-style: italic;
+}
+
+.is-light-color {
+    color: $font-color-light;
+}
+
+.is-uppercase {
+    text-transform: uppercase;
+}
+
+.is-centered {
+    text-align: center;
+}
+
+.is-justified {
+    text-align: justify;
+}
+
+.is-left-aligned {
+    text-align: left;
+}
+
+.is-right-aligned {
+    text-align: right;
+}
+
+.is-quote {
+    padding-left: 1rem;
+    border-left: 0.25rem solid $bg-secondary;
 }
