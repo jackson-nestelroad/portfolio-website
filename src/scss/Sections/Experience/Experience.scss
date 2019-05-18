@@ -16,6 +16,11 @@
 
 section#experience {
     .card.experience {
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
         .content {
             padding: 1rem;
 
@@ -125,6 +130,13 @@ section#experience {
                 .description {
                     padding-left: 1rem;
                     border-left: 0.25rem solid $bg-secondary;
+                }
+
+                .job {
+                    padding-left: 1rem;
+                    >li {
+                        padding: 0.2rem 0;
+                    }
                 }
             }
         }

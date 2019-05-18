@@ -794,6 +794,9 @@ section#about {
     -webkit-user-drag: none;
     user-select: none; }
 
+section#experience .card.experience:not(:last-child) {
+  margin-bottom: 2rem; }
+
 section#experience .card.experience .content {
   padding: 1rem; }
   section#experience .card.experience .content .header {
@@ -873,6 +876,10 @@ section#experience .card.experience .content {
     section#experience .card.experience .content .info .description {
       padding-left: 1rem;
       border-left: 0.25rem solid #29ab87; }
+    section#experience .card.experience .content .info .job {
+      padding-left: 1rem; }
+      section#experience .card.experience .content .info .job > li {
+        padding: 0.2rem 0; }
 
 section#skills ul.hex-grid {
   list-style: none;

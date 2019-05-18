@@ -1,6 +1,7 @@
 // Class for a single skill in the Skill section
 
 import { SVG } from '../../Modules/SVG'
+import { ElementFactory } from '../../Definitions/JSX'
 
 // Format for data for each skill
 export interface SkillData {
@@ -11,7 +12,7 @@ export interface SkillData {
 
 // Class to craft an element from SkillData
 export class Skill {
-    private element: HTMLElement = null;
+    private element: JSX.Element = null;
     public readonly data: SkillData;
 
     private static HexagonSVG: SVGSVGElement;
@@ -21,7 +22,7 @@ export class Skill {
     }
 
     // Creates an element once
-    public createElement(): Promise<HTMLElement> {
+    public createElement(): Promise<JSX.Element> {
         return new Promise((resolve, reject) => {
             if(this.element) {
                 resolve(this.element);
@@ -30,29 +31,15 @@ export class Skill {
             SVG.loadSVG(`./out/images/Skills/${this.data.svg}`).then(svg => {
                 svg.setAttribute('class', 'icon');
 
-                let parent = document.createElement('li');
-                parent.classList.add('skill');
-                parent.setAttribute('name', this.data.name);
-                
-                let hexagonContainer = document.createElement('div');
-                hexagonContainer.classList.add('hexagon-container');
-                hexagonContainer.setAttribute('style', `color: ${this.data.color}`);
-
-                let tooltip = document.createElement('span');
-                tooltip.classList.add('tooltip');
-                tooltip.innerText = this.data.name;
-
-                hexagonContainer.appendChild(tooltip);
-                hexagonContainer.appendChild(svg);
-
-                let hexagon = Skill.HexagonSVG.cloneNode(true);
-                hexagonContainer.appendChild(hexagon);
-        
-                parent.appendChild(hexagonContainer);
-
-                this.element = parent;
-
-                resolve(parent);
+                resolve (
+                    <li className='skill'>
+                        <div className='hexagon-container' style={{color: this.data.color}}>
+                            <span className='tooltip'>{this.data.name}</span>
+                            {svg}
+                            {Skill.HexagonSVG.cloneNode(true)}
+                        </div>
+                    </li>
+                );
             })
             .catch(err => {
                 reject(err);

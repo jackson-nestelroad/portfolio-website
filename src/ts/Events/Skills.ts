@@ -4,6 +4,7 @@ import { DOM } from '../Modules/DOM'
 import { SkillsGrid } from '../Modules/WebPage'
 import { SkillData, Skill } from '../Classes/Elements/Skill'
 import { Skills } from '../Data/Skills'
+import { ElementFactory } from '../Definitions/JSX'
 
 DOM.load().then(document => {
     createSkills(Skills);
@@ -21,7 +22,7 @@ const createSkills = (skillsData: Array<SkillData>) => {
         for(let data of skillsData) {
             skill = new Skill(data);
             element = await skill.createElement();
-            SkillsGrid.appendChild(element);
+            ElementFactory.appendChild(SkillsGrid, element);
         }
     })
 }

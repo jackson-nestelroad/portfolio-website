@@ -4,6 +4,7 @@
         "module": "commonjs",
         "isolatedModules": false,
         "jsx": "react",
+        "jsxFactory": "ElementFactory.createElement",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "declaration": false,

@@ -79,7 +79,7 @@ gulp.task('browserify', () => {
 // Watch for changes to run tasks above
 gulp.task('watch', () => {
 	gulp.watch('src/scss/**/*.+(scss|sass)', gulp.parallel('sass'));
-	gulp.watch('src/ts/**/*.ts', gulp.parallel('compile'));
+	gulp.watch('src/ts/**/*.+(ts|tsx)', gulp.parallel('compile'));
 	gulp.watch('*.html', gulp.parallel('html'));
 });
 
