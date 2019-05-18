@@ -42,6 +42,13 @@
 
     .content {
         padding: 3.5rem 2rem;
+
+        hr {
+            margin: 0 auto 1rem;
+            border: none;
+            background-color: shadow(0.1);
+            height: 3px;
+        }
     }
 
     &.is-primary {

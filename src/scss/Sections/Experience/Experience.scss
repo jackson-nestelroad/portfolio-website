@@ -25,9 +25,7 @@ section#experience {
                 flex-direction: row;
                 flex-wrap: nowrap;
                 justify-content: center;
-                margin-bottom: 1rem;
                 padding-bottom: 1rem;
-                border-bottom: 2px solid shadow(0.1);
 
                 @include for-tablet-portrait-down {
                     flex-wrap: wrap;

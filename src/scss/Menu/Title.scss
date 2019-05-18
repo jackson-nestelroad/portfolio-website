@@ -40,6 +40,8 @@ header.navigation div.header {
 
 // Line break to separate title from sections
 .navigation hr {
-    margin: 0;
-    border-top: 2px solid shadow(0.1);
+    margin: 0 auto;
+    border: none;
+    background-color: shadow(0.1);
+    height: 3px;
 }
