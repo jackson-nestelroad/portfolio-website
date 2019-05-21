@@ -12,7 +12,7 @@ export interface SkillData {
 
 // Class to craft an element from SkillData
 export class Skill {
-    private element: JSX.Element = null;
+    private element: HTMLElement = null;
     public readonly data: SkillData;
 
     private static HexagonSVG: SVGSVGElement;
@@ -22,7 +22,7 @@ export class Skill {
     }
 
     // Creates an element once
-    public createElement(): Promise<JSX.Element> {
+    public createElement(): Promise<HTMLElement> {
         return new Promise((resolve, reject) => {
             if(this.element) {
                 resolve(this.element);

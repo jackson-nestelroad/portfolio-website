@@ -24,7 +24,7 @@ export class Experience {
     }
 
     // Creates an element once
-    public createElement(): JSX.Element {
+    public createElement(): HTMLElement {
         return (
             <div className="card is-primary experience">
                 <div className="content">
