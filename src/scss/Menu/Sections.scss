@@ -23,7 +23,7 @@ header.navigation .sections {
     flex: 1;
     flex-basis: 0;
     justify-content: center;
-    font-family: $logo-font-family;
+    font-family: $font-family-logo;
     text-transform: uppercase;
     font-weight: $font-weight-bold;
     color: $font-color-white;
@@ -77,7 +77,7 @@ $step-size: 360 / length($sections);
     z-index: 1;
     text-transform: uppercase;
     color: $font-color-white;
-    font-family: $logo-font-family;
+    font-family: $font-family-logo;
     font-size: 1.15rem;
     display: flex;
     align-items: center;

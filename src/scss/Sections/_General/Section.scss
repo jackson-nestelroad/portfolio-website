@@ -8,6 +8,25 @@
     }
 }
 
+@mixin custom-visual-tag($tag, $content: "") {
+    section##{to-lower-case($tag)} {
+        &::before {
+            content: "<#{$tag}#{$content}>";
+
+            @include for-mobile {
+                content: "<#{$tag}>";
+            }
+        }
+        &::after {
+            content: "</#{$tag}>";
+        }
+    }
+}
+
+@include custom-visual-tag(Skills);
+@include custom-visual-tag(Experience);
+@include custom-visual-tag(Projects, " class=\"recent\"");
+
 section {
     width: 100%;
     position: relative;
@@ -92,6 +111,52 @@ section {
 
     &.is-long {
         padding-bottom: 12rem;
+    }
+
+    &.has-no-top-padding {
+        padding-top: 0;
+    }
+
+    &.has-no-bottom-padding {
+        padding-bottom: 0;
+    }
+
+    &.has-visual-tags {
+        display: flex;
+        flex-wrap: wrap;
+
+        * {
+            width: 100%;
+        }
+
+        &::before, &::after {
+            position: relative;
+            font-family: $font-family-handwriting;
+            font-weight: 700;
+            margin: 0 auto;
+            opacity: 0.5;
+            width: 100%;
+            max-width: 1000px;
+            user-select: none;
+
+            font-size: 1.25rem;
+            @include for-mobile {
+                font-size: 1rem;
+            }
+
+        }
+
+        &::before {
+            content: "<Section>";
+            top: -1rem;
+            text-align: left;
+        }
+
+        &::after {
+            content: "</Section>";
+            top: 1rem;
+            text-align: right;
+        }
     }
 
     

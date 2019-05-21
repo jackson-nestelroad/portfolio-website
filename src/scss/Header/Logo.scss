@@ -66,7 +66,7 @@ header.logo a {
 header.logo .info {
     margin-top: 0.825rem;
     font-weight: $font-weight-bold;
-    font-family: $logo-font-family;
+    font-family: $font-family-logo;
     text-transform: uppercase;
 
     @include for-mobile {
