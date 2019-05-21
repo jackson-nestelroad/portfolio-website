@@ -24,7 +24,12 @@ export namespace ElementFactory {
                     element.setAttribute('class', attributeValue);
                 }
                 else if(key === 'style') {
-                    element.setAttribute('style', JStoCSS(attributeValue));
+                    if(typeof attributeValue === 'object') {
+                        element.setAttribute('style', JStoCSS(attributeValue));
+                    }
+                    else {
+                        element.setAttribute('style', attributeValue);
+                    }
                 }
                 else if(key.startsWith('on') && typeof attributeValue === 'function') {
                     element.addEventListener(key.substring(2), attributeValue);
@@ -75,9 +80,9 @@ export namespace ElementFactory {
         let cssString: string = "";
         let rule: string;
         let rules = Object.keys(cssObject);
-        for(let i = 0; i < rules.length; i++, cssString += '\n') {
+        for(let i = 0; i < rules.length; i++, cssString += ' ') {
             rule = rules[i];
-            cssString += `${rule.replace(/([A-Z])/g, upper => `-${upper[0].toLowerCase()}`)}: ${cssObject[rule]}`;
+            cssString += `${rule.replace(/([A-Z])/g, upper => `-${upper[0].toLowerCase()}`)}: ${cssObject[rule]};`;
         }
         return cssString;
     }
