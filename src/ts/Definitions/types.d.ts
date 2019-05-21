@@ -15,4 +15,8 @@ declare global {
         public readonly name: string;
         public readonly detail: AnonymousObject;
     }
+
+    namespace JSX {
+        interface Element extends HTMLElement { }
+    }
 }

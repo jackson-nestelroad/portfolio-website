@@ -22,7 +22,7 @@ const createSkills = (skillsData: Array<SkillData>) => {
         for(let data of skillsData) {
             skill = new Skill(data);
             element = await skill.createElement();
-            ElementFactory.appendChild(SkillsGrid, element);
+            SkillsGrid.appendChild(element);
         }
     })
 }

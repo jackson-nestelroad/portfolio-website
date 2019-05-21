@@ -8,7 +8,7 @@ export namespace ElementFactory {
 
     export function createElement(
         tagName: string, 
-        attributes: { [name: string]: any } | null, 
+        attributes: { [name: string]: any } | null | JSX.IntrinsicAttributes, 
         ...children: any[]) : Element | DocumentFragment {
 
         if(tagName === Fragment) {

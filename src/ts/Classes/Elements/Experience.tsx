@@ -17,7 +17,6 @@ export interface ExperienceData {
 
 // Class to craft an element from ExperienceData
 export class Experience {
-    private element: JSX.Element = null;
     public readonly data: ExperienceData;
 
     constructor(data: ExperienceData) {
