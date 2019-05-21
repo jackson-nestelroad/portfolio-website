@@ -14,7 +14,7 @@ export const Experience: Array<ExperienceData> = [
         flavor: 'Life.Church is a multi-site church centered around their mission to "lead people to become fully-devoted followers of Christ." I worked alongside their Central Information Technology team: a group dedicated to utilizing technology to serve and equip the church.',
         roles: [
             'Spent time learning from hardware, software, and database teams in an Agile environment.',
-            'Designed and deployed a web application for remote volunteer tracking with Node.js and PostgreSQL.',
+            'Designed and developed a web application for remote volunteer tracking with Node.js and PostgreSQL.',
             'Dynamically deployed application to Google Cloud Platform using Cloud Builds, Docker, and Kubernetes.'
         ]
     }
