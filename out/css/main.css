@@ -1234,6 +1234,8 @@ section {
     font-weight: 200;
     line-height: 1.5;
     text-align: justify; }
+  .section .extra-bottom {
+    margin-bottom: 2.5rem !important; }
 
 @keyframes fade-in {
   from {
