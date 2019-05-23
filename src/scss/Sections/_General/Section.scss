@@ -10,22 +10,29 @@
 
 @mixin custom-visual-tag($tag, $content: "") {
     section##{to-lower-case($tag)} {
-        &::before {
-            content: "<#{$tag}#{$content}>";
+        &.has-visual-tags {
+            &::before {
+                @if($content != "") {
+                    content: "<#{$tag} #{$content}>";
 
-            @include for-mobile {
-                content: "<#{$tag}>";
+                    @include for-mobile {
+                        content: "<#{$tag}>";
+                    }
+                }
+                @else {
+                    content: "<#{$tag}>";
+                }
             }
-        }
-        &::after {
-            content: "</#{$tag}>";
+            &::after {
+                content: "</#{$tag}>";
+            }
         }
     }
 }
 
 @include custom-visual-tag(Skills);
 @include custom-visual-tag(Experience);
-@include custom-visual-tag(Projects, " class=\"recent\"");
+@include custom-visual-tag(Projects, "class=\"recent\"");
 
 section {
     width: 100%;
@@ -159,13 +166,20 @@ section {
         }
     }
 
+    .title,
+    .subtitle,
+    .text,
+    .grid-row,
+    .grid-row-padding,
+    .container,
+    .card {
+        @include spacing();
+    }
     
     .title,
     .subtitle,
     .text {
         word-break: break-word;
-
-        @include spacing();
     }
 
     .title {
@@ -182,5 +196,15 @@ section {
         font-weight: $font-weight-light;
         line-height: 1.5;
         text-align: justify;
+    }
+}
+
+// Fade-in animation
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

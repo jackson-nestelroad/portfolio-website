@@ -16,6 +16,7 @@
 
 section#experience {
     .card.experience {
+        @include drawn-in;
 
         &:not(:last-child) {
             margin-bottom: 2rem;

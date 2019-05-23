@@ -61,19 +61,10 @@ section#skills {
         justify-content: start;
     }
 
-    // Fade-in animation
-    @keyframes skill-fade-in {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-
     // A single skill in the list
     .skill {
-        animation: skill-fade-in 1s;
+        @include drawn-in;
+        
         position: relative;
         flex: 0;
         height: 0px;
