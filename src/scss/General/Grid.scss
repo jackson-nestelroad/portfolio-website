@@ -9,7 +9,7 @@ $gutter: 1rem;
 // Minimum width for each size to take effect
 $grid-sizes: 
     sm 0px,
-    md 600px,
+    md 500px,
     lg 900px;
 
 // Row for a grid
@@ -103,6 +103,21 @@ $grid-sizes:
             &.#{$name}-middle {
                 align-items: center;
             }
+
+            // Justify content to start of column
+            &.#{$name}-left {
+                justify-content: start;
+            }
+
+            // Justify content to end of column
+            &.#{$name}-right {
+                justify-content: end;
+            }
+
+            // Justify content to center of column
+            &.#{$name}-center {
+                justify-content: center;
+            }
         
             // Force column to be first in row
             &.#{$name}-first {
@@ -122,6 +137,11 @@ $grid-sizes:
             // Add side padding to column
             &.#{$name}-padding {
                 padding: 0 $gutter;
+            }
+
+            // Force column to display content as a block
+            &.#{$name}-block {
+                display: block;
             }
         }
     }

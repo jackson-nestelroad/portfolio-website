@@ -31,9 +31,13 @@ $font-family-handwriting: "Kalam";
 $menu-speed: 0.5s;
 $menu-size: 13.4375rem;
 
+@mixin drawn-in {
+    animation: fade-in 1s;
+}
+
 
 @mixin for-mobile {
-    @media screen and (max-width: 599px) { @content; }
+    @media screen and (max-width: 499px) { @content; }
 }
 
 @mixin for-tablet-portrait-down {
@@ -41,7 +45,7 @@ $menu-size: 13.4375rem;
 }
 
 @mixin for-tablet-portrait-up {
-    @media screen and (min-width: 600px) { @content; }
+    @media screen and (min-width: 500px) { @content; }
 }
 
 @mixin for-tablet-landscape-up {
