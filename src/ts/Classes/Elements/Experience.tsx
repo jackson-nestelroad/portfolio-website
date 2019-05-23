@@ -23,7 +23,6 @@ export class Experience {
         this.data = data;
     }
 
-    // Creates an element once
     public createElement(): HTMLElement {
         return (
             <div className="card is-primary experience">

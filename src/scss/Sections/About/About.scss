@@ -10,4 +10,27 @@ section#about {
         -webkit-user-drag: none;
         user-select: none;
     }
+
+    .flavor {
+        @include drawn-in;
+    }
+
+    .qualities {
+        @include drawn-in;
+
+        @include for-mobile {
+            >:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .icon {
+            height: 3rem;
+            width: auto;
+        }
+
+        .icon, .quality {
+            margin-bottom: 0.75rem;
+        }
+    }
 }
