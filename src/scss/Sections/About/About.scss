@@ -27,10 +27,20 @@ section#about {
         .icon {
             height: 3rem;
             width: auto;
+            transform: scale(1.0, 1.0);
+            transition: transform 0.5s;
+
+            &:hover {
+                transform: scale(1.25, 1.25);
+            }
         }
 
         .icon, .quality {
             margin-bottom: 0.75rem;
+        }
+
+        .desc {
+            padding: 0.25rem;
         }
     }
 }
