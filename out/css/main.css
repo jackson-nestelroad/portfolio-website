@@ -564,65 +564,6 @@ main .scroll::-webkit-scrollbar-thumb {
 .is-handwriting {
   font-family: "Kalam"; }
 
-header.logo {
-  width: 100%;
-  padding: 0.5rem 2rem;
-  background-color: white;
-  user-select: none;
-  -webkit-user-select: none; }
-
-header.logo div.image {
-  width: 4.675rem;
-  height: 4.675rem;
-  margin-right: 0.25rem;
-  position: relative; }
-
-header.logo div.image img {
-  height: inherit;
-  width: inherit;
-  position: absolute;
-  -webkit-user-drag: none; }
-
-header.logo div.image img:not(.preload) {
-  transition: transform 1.5s;
-  -webkit-transition: 1.5s;
-  transform: scale(1, 1) rotate(0deg);
-  -webkit-transform: scale(1, 1) rotate(0deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.outer {
-  transform: scale(0, 0) rotate(360deg);
-  -webkit-transform: scale(0, 0) rotate(360deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo div.image img.preload.inner {
-  transform: scale(0, 0) rotate(-180deg);
-  -webkit-transform: scale(0, 0) rotate(-180deg);
-  transform-origin: center;
-  -webkit-transform-origin: center; }
-
-header.logo a {
-  text-decoration: none; }
-
-header.logo .info {
-  margin-top: 0.825rem;
-  font-weight: 700;
-  font-family: "Open Sans";
-  text-transform: uppercase; }
-  @media screen and (max-width: 499px) {
-    header.logo .info {
-      display: none; } }
-
-header.logo .info .name {
-  color: #3C3C60;
-  font-size: 1.35rem; }
-
-header.logo .info .title {
-  color: #6A6A87;
-  font-size: 0.8rem; }
-
 header.menu {
   position: fixed;
   top: 0;
@@ -813,6 +754,65 @@ header.navigation div.header {
   background-color: rgba(0, 0, 15, 0.1);
   height: 3px; }
 
+header.logo {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  user-select: none;
+  -webkit-user-select: none; }
+
+header.logo div.image {
+  width: 4.675rem;
+  height: 4.675rem;
+  margin-right: 0.25rem;
+  position: relative; }
+
+header.logo div.image img {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  -webkit-user-drag: none; }
+
+header.logo div.image img:not(.preload) {
+  transition: transform 1.5s;
+  -webkit-transition: 1.5s;
+  transform: scale(1, 1) rotate(0deg);
+  -webkit-transform: scale(1, 1) rotate(0deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo div.image img.preload.outer {
+  transform: scale(0, 0) rotate(360deg);
+  -webkit-transform: scale(0, 0) rotate(360deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo div.image img.preload.inner {
+  transform: scale(0, 0) rotate(-180deg);
+  -webkit-transform: scale(0, 0) rotate(-180deg);
+  transform-origin: center;
+  -webkit-transform-origin: center; }
+
+header.logo a {
+  text-decoration: none; }
+
+header.logo .info {
+  margin-top: 0.825rem;
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-transform: uppercase; }
+  @media screen and (max-width: 499px) {
+    header.logo .info {
+      display: none; } }
+
+header.logo .info .name {
+  color: #3C3C60;
+  font-size: 1.35rem; }
+
+header.logo .info .title {
+  color: #6A6A87;
+  font-size: 0.8rem; }
+
 section#about {
   box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
   section#about img.me {
@@ -829,9 +829,103 @@ section#about {
         margin-bottom: 1.5rem; } }
     section#about .qualities .icon {
       height: 3rem;
-      width: auto; }
+      width: auto;
+      transform: scale(1, 1);
+      transition: transform 0.5s; }
+      section#about .qualities .icon:hover {
+        transform: scale(1.25, 1.25); }
     section#about .qualities .icon, section#about .qualities .quality {
       margin-bottom: 0.75rem; }
+    section#about .qualities .desc {
+      padding: 0.25rem; }
+
+section#experience .card.experience {
+  animation: fade-in 1s; }
+  section#experience .card.experience:not(:last-child) {
+    margin-bottom: 2rem; }
+  section#experience .card.experience .content {
+    padding: 1rem; }
+    section#experience .card.experience .content .header {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      padding-bottom: 1rem; }
+      @media screen and (max-width: 899px) {
+        section#experience .card.experience .content .header {
+          flex-wrap: wrap; } }
+      @media screen and (max-width: 899px) {
+        section#experience .card.experience .content .header > :not(:last-child) {
+          margin-bottom: 1rem; } }
+      section#experience .card.experience .content .header .icon {
+        display: flex;
+        justify-content: center;
+        height: auto;
+        margin-right: 1rem;
+        min-width: 3rem; }
+        @media screen and (max-width: 899px) {
+          section#experience .card.experience .content .header .icon {
+            margin-right: 0; } }
+        @media screen and (max-width: 499px) {
+          section#experience .card.experience .content .header .icon {
+            width: 3rem; } }
+        @media screen and (min-width: 500px) {
+          section#experience .card.experience .content .header .icon {
+            width: 3.75rem; } }
+        @media screen and (min-width: 900px) {
+          section#experience .card.experience .content .header .icon {
+            width: 4.5rem; } }
+        section#experience .card.experience .content .header .icon img {
+          width: 100%;
+          height: 100%;
+          -webkit-user-drag: none;
+          user-select: none; }
+      section#experience .card.experience .content .header .small {
+        color: #6A6A87;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 0.75rem; }
+        @media screen and (max-width: 499px) {
+          section#experience .card.experience .content .header .small {
+            font-size: 0.5rem; } }
+      section#experience .card.experience .content .header .company {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%; }
+        @media screen and (max-width: 899px) {
+          section#experience .card.experience .content .header .company {
+            align-items: center;
+            text-align: center; } }
+        section#experience .card.experience .content .header .company .name {
+          color: #3C3C60;
+          transition: color 0.2s; }
+          section#experience .card.experience .content .header .company .name:hover {
+            color: #654AA5; }
+      section#experience .card.experience .content .header .role {
+        justify-self: flex-end;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%; }
+        @media screen and (max-width: 899px) {
+          section#experience .card.experience .content .header .role {
+            align-items: center;
+            text-align: center; } }
+    section#experience .card.experience .content .info {
+      padding: 1rem 2rem; }
+      section#experience .card.experience .content .info .description {
+        padding-left: 1rem;
+        border-left: 0.25rem solid #29ab87; }
+      section#experience .card.experience .content .info .job {
+        padding-left: 1rem; }
+        section#experience .card.experience .content .info .job > li {
+          padding: 0.2rem 0; }
 
 section#skills ul.hex-grid {
   list-style: none;
@@ -1012,94 +1106,6 @@ section#skills .skill {
 
 section#skills {
   margin-top: -12rem; }
-
-section#experience .card.experience {
-  animation: fade-in 1s; }
-  section#experience .card.experience:not(:last-child) {
-    margin-bottom: 2rem; }
-  section#experience .card.experience .content {
-    padding: 1rem; }
-    section#experience .card.experience .content .header {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      padding-bottom: 1rem; }
-      @media screen and (max-width: 899px) {
-        section#experience .card.experience .content .header {
-          flex-wrap: wrap; } }
-      @media screen and (max-width: 899px) {
-        section#experience .card.experience .content .header > :not(:last-child) {
-          margin-bottom: 1rem; } }
-      section#experience .card.experience .content .header .icon {
-        display: flex;
-        justify-content: center;
-        height: auto;
-        margin-right: 1rem;
-        min-width: 3rem; }
-        @media screen and (max-width: 899px) {
-          section#experience .card.experience .content .header .icon {
-            margin-right: 0; } }
-        @media screen and (max-width: 499px) {
-          section#experience .card.experience .content .header .icon {
-            width: 3rem; } }
-        @media screen and (min-width: 500px) {
-          section#experience .card.experience .content .header .icon {
-            width: 3.75rem; } }
-        @media screen and (min-width: 900px) {
-          section#experience .card.experience .content .header .icon {
-            width: 4.5rem; } }
-        section#experience .card.experience .content .header .icon img {
-          width: 100%;
-          height: 100%;
-          -webkit-user-drag: none;
-          user-select: none; }
-      section#experience .card.experience .content .header .small {
-        color: #6A6A87;
-        font-weight: 400;
-        font-style: italic;
-        font-size: 0.75rem; }
-        @media screen and (max-width: 499px) {
-          section#experience .card.experience .content .header .small {
-            font-size: 0.5rem; } }
-      section#experience .card.experience .content .header .company {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        text-align: left;
-        width: 100%; }
-        @media screen and (max-width: 899px) {
-          section#experience .card.experience .content .header .company {
-            align-items: center;
-            text-align: center; } }
-        section#experience .card.experience .content .header .company .name {
-          color: #3C3C60;
-          transition: color 0.2s; }
-          section#experience .card.experience .content .header .company .name:hover {
-            color: #654AA5; }
-      section#experience .card.experience .content .header .role {
-        justify-self: flex-end;
-        text-align: right;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-        width: 100%; }
-        @media screen and (max-width: 899px) {
-          section#experience .card.experience .content .header .role {
-            align-items: center;
-            text-align: center; } }
-    section#experience .card.experience .content .info {
-      padding: 1rem 2rem; }
-      section#experience .card.experience .content .info .description {
-        padding-left: 1rem;
-        border-left: 0.25rem solid #29ab87; }
-      section#experience .card.experience .content .info .job {
-        padding-left: 1rem; }
-        section#experience .card.experience .content .info .job > li {
-          padding: 0.2rem 0; }
 
 section#skills.has-visual-tags::before {
   content: "<Skills>"; }
