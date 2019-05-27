@@ -16,6 +16,6 @@ export const Qualities: Array<QualityData> = [
     {
         faClass: 'fas fa-feather-alt',
         name: 'Flexible',
-        description: 'Text.'
+        description: 'I work best when I am challenged. While I thrive in organization, I can always adapt and pick up new things in a swift manner.'
     }
 ]
