@@ -92,5 +92,10 @@ export const Skills: Array<SkillData> = [
         name: "TypeScript",
         svg: "typescript",
         color: "#007ACC"
+    },
+    {
+        name: "Vue",
+        svg: "vue",
+        color: "#4FC08D"
     }
 ];
