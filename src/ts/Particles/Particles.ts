@@ -6,13 +6,15 @@ import { AnimationFrameFunctions } from './AnimationFrameFunctions'
 import { DOM } from '../Modules/DOM'
 import Coordinate from './Coordinate'
 import Particle from './Particle'
-import { IParticleSettings, IInteractiveSettings } from './ParticleSettings';
+import { IParticleSettings, IInteractiveSettings, MoveSetting } from './ParticleSettings';
 import Mouse from './Mouse';
 import Stroke from './Stroke';
 
 export default class Particles {
 
-    private running: boolean = false;
+    private state: 'running' | 'paused' | 'stopped' = 'stopped';
+
+    private moveSettings: MoveSetting;
 
     private canvas: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D;
@@ -488,7 +490,7 @@ export default class Particles {
     /************************************************ PUBLIC ************************************************/
 
     public setParticleSettings(settings: IParticleSettings): void {
-        if(this.running) {
+        if(this.state !== 'stopped') {
             throw 'Cannot change settings while Canvas is running.';
         }
         else {
@@ -497,7 +499,7 @@ export default class Particles {
     }
 
     public setInteractiveSettings(settings: IInteractiveSettings): void {
-        if(this.running) {
+        if(this.state !== 'stopped') {
             throw 'Cannot change settings while Canvas is running.';
         }
         else {
@@ -509,12 +511,36 @@ export default class Particles {
         if(this.particleSettings === null)
             throw 'Particle settings must be initalized before Canvas can start.';
 
-        if(this.running)
+        if(this.state !== 'stopped')
             throw 'Canvas is already running.';
             
-        this.running = true;
+        this.state = 'running';
 
         this.initialize();
         this.draw();
+    }
+
+    public pause(): void {
+        if(this.state === 'stopped') {
+            throw 'No Particles to pause.';
+        }
+        this.state = 'paused';
+        
+        this.moveSettings = this.particleSettings.move;
+        this.particleSettings.move = false;
+    }
+
+    public resume(): void {
+        if(this.state === 'stopped') {
+            throw 'No Particles to resume.';
+        }
+        this.state = 'running';
+        this.particleSettings.move = this.moveSettings;
+        this.draw();
+    }
+
+    public stop(): void {
+        this.state = 'stopped';
+        this.stopDrawing();
     }
 }
