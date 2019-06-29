@@ -34,6 +34,16 @@ export const Skills: Array<SkillData> = [
         color: '#3D3D3D'
     },
     {
+        name: 'Firebase',
+        svg: 'firebase',
+        color: '#FFCA28'
+    },
+    {
+        name: 'Git',
+        svg: 'git',
+        color: '#F05032'
+    },
+    {
         name: 'Google Cloud Platform',
         svg: 'gcp',
         color: '#4386FA'
@@ -99,7 +109,7 @@ export const Skills: Array<SkillData> = [
         color: '#007ACC'
     },
     {
-        name: 'Vue',
+        name: 'Vue.js',
         svg: 'vue',
         color: '#4FC08D'
     }
