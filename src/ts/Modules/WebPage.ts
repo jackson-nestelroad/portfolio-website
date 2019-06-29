@@ -10,6 +10,9 @@ export const Main: HTMLElement = DOM.getFirstElement('main');
 // Scroll container in Main tag
 export const MainScroll: HTMLElement = DOM.getFirstElement('main .scroll');
 
+// Element to hook scroll events onto
+export const ScrollHook: HTMLElement | Window = DOM.isIE() ? window : MainScroll;
+
 // Logo images
 export const Logo = {
     Outer: DOM.getFirstElement('header.logo .image img.outer'),

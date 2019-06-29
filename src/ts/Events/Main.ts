@@ -1,6 +1,6 @@
 // Event attached to the <main> tag
 
-import { Main, MainScroll, MenuButton, SectionToMenu } from '../Modules/WebPage'
+import { Main, ScrollHook, MenuButton, SectionToMenu } from '../Modules/WebPage'
 import Section from '../Classes/Elements/Section'
 import { DOM } from '../Modules/DOM'
 
@@ -17,7 +17,7 @@ MenuButton.subscribe(Main, (event: NewEvent) => {
 });
 
 // Toggle navigation sections when scrolled into view
-(DOM.isIE() ? window : MainScroll).addEventListener('scroll', event => {
+ScrollHook.addEventListener('scroll', event => {
     let section: Section;
     let anchor: HTMLElement;
     let iter = SectionToMenu.values();
