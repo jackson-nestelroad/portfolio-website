@@ -1,129 +1,124 @@
 
-div.canvas {
+.canvas {
   position: relative; }
+  .canvas canvas#particles {
+    width: 100%;
+    height: 95vh;
+    background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%);
+    display: block; }
+  .canvas .canvas-text-container {
+    position: absolute;
+    top: 7vh;
+    left: 0;
+    height: 75%;
+    width: 100%;
+    pointer-events: none; }
+    .canvas .canvas-text-container .canvas-text {
+      font-family: "Nunito Sans";
+      font-weight: 200;
+      color: white;
+      word-wrap: break-word;
+      user-select: none;
+      -webkit-user-select: none;
+      transform: translateZ(0) scale(1, 1);
+      opacity: 0;
+      animation: canvas-text-fade-in 1s;
+      animation-fill-mode: forwards; }
 
-div.canvas canvas#particles {
-  width: 100%;
-  height: 95vh;
-  background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%);
-  display: block; }
-
-div.canvas div.canvas-text-container {
-  position: absolute;
-  top: 7vh;
-  left: 0;
-  height: 75%;
-  width: 100%;
-  pointer-events: none; }
-
-div.canvas div.canvas-text {
-  font-family: "Nunito Sans";
-  font-weight: 200;
-  color: white;
-  word-wrap: break-word;
-  user-select: none;
-  -webkit-user-select: none;
-  transition: opacity 1s;
-  transform: translateZ(0) scale(1, 1); }
-
-div.canvas div.canvas-text .gradient {
-  background: linear-gradient(white, #052342);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
-  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    div.canvas div.canvas-text .gradient {
-      background: none;
-      opacity: 0.5 !important; } }
-
-div.canvas div.canvas-text.preload {
-  opacity: 0 !important; }
-
-div.canvas div.canvas-text .bold {
-  opacity: 1; }
-
-div.canvas div.canvas-text .light {
-  opacity: 0.5; }
-
-@media screen and (max-width: 499px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 2.5rem; } }
-
-@media screen and (min-width: 500px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 4rem; } }
-
-@media screen and (min-width: 900px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 6rem; } }
-
-@media screen and (min-width: 1200px) {
-  div.canvas div.canvas-text .lg {
-    font-size: 8.5rem; } }
-
-@media screen and (max-width: 499px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 0.75rem; } }
-
-@media screen and (min-width: 500px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 1rem; } }
-
-@media screen and (min-width: 900px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 1.5rem; } }
-
-@media screen and (min-width: 1200px) {
-  div.canvas div.canvas-text .sm {
-    font-size: 2rem; } }
-
-div.canvas div.canvas-text.design {
-  position: absolute;
-  top: 0%; }
-  @media screen and (max-width: 499px) {
-    div.canvas div.canvas-text.design {
-      left: 50%;
-      transform: translate(-50%, 0%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 500px) {
-    div.canvas div.canvas-text.design {
-      left: 10%;
-      transform: translate(-10%, 0%) translateZ(0) scale(1, 1); } }
-
-div.canvas div.canvas-text.develop {
-  position: absolute;
-  top: 33%; }
-  @media screen and (max-width: 499px) {
-    div.canvas div.canvas-text.develop {
-      left: 50%;
-      transform: translate(-50%, -33%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 500px) {
-    div.canvas div.canvas-text.develop {
-      left: 36%;
-      transform: translate(-36%, -33%) translateZ(0) scale(1, 1); } }
-
-div.canvas div.canvas-text.deploy {
-  position: absolute;
-  top: 66%; }
-  @media screen and (max-width: 499px) {
-    div.canvas div.canvas-text.deploy {
-      left: 50%;
-      transform: translate(-50%, -66%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 500px) {
-    div.canvas div.canvas-text.deploy {
-      left: 56%;
-      transform: translate(-56%, -66%) translateZ(0) scale(1, 1); } }
-
-div.canvas div.canvas-text.discover {
-  position: absolute;
-  top: 100%; }
-  @media screen and (max-width: 499px) {
-    div.canvas div.canvas-text.discover {
-      left: 50%;
-      transform: translate(-50%, -100%) translateZ(0) scale(1, 1); } }
-  @media screen and (min-width: 500px) {
-    div.canvas div.canvas-text.discover {
-      left: 90%;
-      transform: translate(-90%, -100%) translateZ(0) scale(1, 1); } }
+@keyframes canvas-text-fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+      .canvas .canvas-text-container .canvas-text:nth-child(1) {
+        animation-delay: calc(1000ms * 1); }
+      .canvas .canvas-text-container .canvas-text:nth-child(2) {
+        animation-delay: calc(1000ms * 2); }
+      .canvas .canvas-text-container .canvas-text:nth-child(3) {
+        animation-delay: calc(1000ms * 3); }
+      .canvas .canvas-text-container .canvas-text:nth-child(4) {
+        animation-delay: calc(1000ms * 4); }
+      .canvas .canvas-text-container .canvas-text .gradient {
+        background: linear-gradient(white, #052342);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; }
+        @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          .canvas .canvas-text-container .canvas-text .gradient {
+            background: none;
+            opacity: 0.5 !important; } }
+      .canvas .canvas-text-container .canvas-text .bold {
+        opacity: 1; }
+      .canvas .canvas-text-container .canvas-text .light {
+        opacity: 0.5; }
+      @media screen and (max-width: 499px) {
+        .canvas .canvas-text-container .canvas-text .lg {
+          font-size: 2.5rem; } }
+      @media screen and (min-width: 500px) {
+        .canvas .canvas-text-container .canvas-text .lg {
+          font-size: 4rem; } }
+      @media screen and (min-width: 900px) {
+        .canvas .canvas-text-container .canvas-text .lg {
+          font-size: 6rem; } }
+      @media screen and (min-width: 1200px) {
+        .canvas .canvas-text-container .canvas-text .lg {
+          font-size: 8.5rem; } }
+      @media screen and (max-width: 499px) {
+        .canvas .canvas-text-container .canvas-text .sm {
+          font-size: 0.75rem; } }
+      @media screen and (min-width: 500px) {
+        .canvas .canvas-text-container .canvas-text .sm {
+          font-size: 1rem; } }
+      @media screen and (min-width: 900px) {
+        .canvas .canvas-text-container .canvas-text .sm {
+          font-size: 1.5rem; } }
+      @media screen and (min-width: 1200px) {
+        .canvas .canvas-text-container .canvas-text .sm {
+          font-size: 2rem; } }
+      .canvas .canvas-text-container .canvas-text.design {
+        position: absolute;
+        top: 0%; }
+        @media screen and (max-width: 499px) {
+          .canvas .canvas-text-container .canvas-text.design {
+            left: 50%;
+            transform: translate(-50%, 0%) translateZ(0) scale(1, 1); } }
+        @media screen and (min-width: 500px) {
+          .canvas .canvas-text-container .canvas-text.design {
+            left: 10%;
+            transform: translate(-10%, 0%) translateZ(0) scale(1, 1); } }
+      .canvas .canvas-text-container .canvas-text.develop {
+        position: absolute;
+        top: 33%; }
+        @media screen and (max-width: 499px) {
+          .canvas .canvas-text-container .canvas-text.develop {
+            left: 50%;
+            transform: translate(-50%, -33%) translateZ(0) scale(1, 1); } }
+        @media screen and (min-width: 500px) {
+          .canvas .canvas-text-container .canvas-text.develop {
+            left: 36%;
+            transform: translate(-36%, -33%) translateZ(0) scale(1, 1); } }
+      .canvas .canvas-text-container .canvas-text.deploy {
+        position: absolute;
+        top: 66%; }
+        @media screen and (max-width: 499px) {
+          .canvas .canvas-text-container .canvas-text.deploy {
+            left: 50%;
+            transform: translate(-50%, -66%) translateZ(0) scale(1, 1); } }
+        @media screen and (min-width: 500px) {
+          .canvas .canvas-text-container .canvas-text.deploy {
+            left: 56%;
+            transform: translate(-56%, -66%) translateZ(0) scale(1, 1); } }
+      .canvas .canvas-text-container .canvas-text.discover {
+        position: absolute;
+        top: 100%; }
+        @media screen and (max-width: 499px) {
+          .canvas .canvas-text-container .canvas-text.discover {
+            left: 50%;
+            transform: translate(-50%, -100%) translateZ(0) scale(1, 1); } }
+        @media screen and (min-width: 500px) {
+          .canvas .canvas-text-container .canvas-text.discover {
+            left: 90%;
+            transform: translate(-90%, -100%) translateZ(0) scale(1, 1); } }
 
 bg {
   position: fixed;
@@ -813,32 +808,6 @@ header.navigation div.header {
   background-color: rgba(0, 0, 15, 0.1);
   height: 3px; }
 
-section#about {
-  box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
-  section#about img.me {
-    width: 100%;
-    border-radius: 50%;
-    -webkit-user-drag: none;
-    user-select: none; }
-  section#about .flavor {
-    animation: fade-in 1s; }
-  section#about .qualities {
-    animation: fade-in 1s; }
-    @media screen and (max-width: 499px) {
-      section#about .qualities > :not(:last-child) {
-        margin-bottom: 1.5rem; } }
-    section#about .qualities .icon {
-      height: 3rem;
-      width: auto;
-      transform: scale(1, 1);
-      transition: transform 0.5s; }
-      section#about .qualities .icon:hover {
-        transform: scale(1.25, 1.25); }
-    section#about .qualities .icon, section#about .qualities .quality {
-      margin-bottom: 0.75rem; }
-    section#about .qualities .desc {
-      padding: 0.25rem; }
-
 section#experience .card.experience {
   animation: fade-in 1s; }
   section#experience .card.experience:not(:last-child) {
@@ -1106,6 +1075,32 @@ section#skills .skill {
 
 section#skills {
   margin-top: -12rem; }
+
+section#about {
+  box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
+  section#about img.me {
+    width: 100%;
+    border-radius: 50%;
+    -webkit-user-drag: none;
+    user-select: none; }
+  section#about .flavor {
+    animation: fade-in 1s; }
+  section#about .qualities {
+    animation: fade-in 1s; }
+    @media screen and (max-width: 499px) {
+      section#about .qualities > :not(:last-child) {
+        margin-bottom: 1.5rem; } }
+    section#about .qualities .icon {
+      height: 3rem;
+      width: auto;
+      transform: scale(1, 1);
+      transition: transform 0.5s; }
+      section#about .qualities .icon:hover {
+        transform: scale(1.25, 1.25); }
+    section#about .qualities .icon, section#about .qualities .quality {
+      margin-bottom: 0.75rem; }
+    section#about .qualities .desc {
+      padding: 0.25rem; }
 
 section#skills.has-visual-tags::before {
   content: "<Skills>"; }
