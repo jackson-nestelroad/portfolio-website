@@ -31,4 +31,7 @@ ScrollHook.addEventListener('scroll', event => {
             anchor.removeAttribute('selected');
         }
     }
+}, {
+    capture: true,
+    passive: true
 });

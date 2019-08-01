@@ -4,6 +4,9 @@ import { DOM } from './DOM'
 import Section from '../Classes/Elements/Section'
 import { Menu } from '../Classes/Elements/Menu'
 
+// Body tag
+export const Body: HTMLElement = DOM.getFirstElement('body');
+
 // Main tag
 export const Main: HTMLElement = DOM.getFirstElement('main');
 
@@ -18,9 +21,6 @@ export const Logo = {
     Outer: DOM.getFirstElement('header.logo .image img.outer'),
     Inner: DOM.getFirstElement('header.logo .image img.inner')
 }
-
-// Container for text over canvas
-export const CanvasText: HTMLElement = DOM.getFirstElement('div.canvas div.canvas-text-container');
 
 // Fixed button to open menu
 export const MenuButton: Menu = new Menu();

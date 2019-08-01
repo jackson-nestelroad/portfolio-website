@@ -24,4 +24,8 @@ ScrollHook.addEventListener('scroll', () => {
             canvas.pause();
         }
     }
+},
+{
+    capture: true,
+    passive: true
 });
