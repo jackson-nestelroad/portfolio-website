@@ -2,151 +2,161 @@
 
 @import "../Theme";
 
-div.canvas {
+.canvas {
     position: relative;
-}
 
-div.canvas canvas#particles {
-    width: 100%;
-    height: 95vh;
-    background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%);
-    display: block;
-}
-
-div.canvas div.canvas-text-container {
-    position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // height: 80%;
-    // width: 100%;
-    // transform: translate(-50%, -50%) translateZ(0) scale(1.0, 1.0);
-    top: 7vh;
-    left: 0;
-    height: 75%;
-    width: 100%;
-    pointer-events: none;
-}
-
-div.canvas div.canvas-text {
-    font-family: "Nunito Sans";
-    font-weight: $font-weight-light;
-    color: white;
-    word-wrap: break-word;
-    user-select: none;
-    -webkit-user-select: none;
-    transition: opacity 1s;
-    transform: translateZ(0) scale(1.0, 1.0);
-}
-
-div.canvas div.canvas-text .gradient {
-    $gradient: #052342;
-    background: linear-gradient(white, $gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    @include for-ie {
-        background: none;
-        opacity: 0.5 !important;
+    canvas#particles {
+        width: 100%;
+        height: 95vh;
+        background: radial-gradient(ellipse at bottom, #26394D 0%, #090A0F 100%);
+        display: block;
     }
-}
 
-div.canvas div.canvas-text.preload {
-    opacity: 0 !important;
-}
+    .canvas-text-container {
+        position: absolute;
+        top: 7vh;
+        left: 0;
+        height: 75%;
+        width: 100%;
+        pointer-events: none;
 
-div.canvas div.canvas-text .bold {
-    opacity: 1;
-}
+        .canvas-text {
+            font-family: "Nunito Sans";
+            font-weight: $font-weight-light;
+            color: white;
+            word-wrap: break-word;
+            user-select: none;
+            -webkit-user-select: none;
+            transform: translateZ(0) scale(1.0, 1.0);
 
-div.canvas div.canvas-text .light {
-    opacity: 0.5;
-}
+            @keyframes canvas-text-fade-in {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
 
-div.canvas div.canvas-text .lg {
-    @include for-mobile {
-        font-size: 2.5rem;
-    }
-    @include for-tablet-portrait-up {
-        font-size: 4rem;
-    }
-    @include for-tablet-landscape-up {
-        font-size: 6rem;
-    }
-    @include for-desktop-up {
-        font-size: 8.5rem;
-    }
-}
+            opacity: 0;
+            animation: canvas-text-fade-in 1s;
+            animation-fill-mode: forwards;
 
-div.canvas div.canvas-text .sm {
-    @include for-mobile {
-        font-size: 0.75rem;
-    }
-    @include for-tablet-portrait-up {
-        font-size: 1rem;
-    }
-    @include for-tablet-landscape-up {
-        font-size: 1.5rem;
-    }
-    @include for-desktop-up {
-        font-size: 2rem;
-    }
-}
+            $delay: 1000ms;
 
-@mixin position-canvas-text($left, $vertical) {
-    left: $left;
-    transform: translate(-$left, -$vertical) translateZ(0) scale(1.0, 1.0);
-}
+            @for $n from 1 through 4 {
+                &:nth-child(#{$n}) {
+                    animation-delay: calc(#{$delay} * #{$n});
+                }
+            }
 
+            .gradient {
+                $gradient: #052342;
+                background: linear-gradient(white, $gradient);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
 
-div.canvas div.canvas-text.design {
-    position: absolute;
-    $vertical: 0%;
-    top: $vertical;
+                @include for-ie {
+                    background: none;
+                    opacity: 0.5 !important;
+                }
+            }
 
-    @include for-mobile {
-        @include position-canvas-text(50%, $vertical);
-    }
-    @include for-tablet-portrait-up {
-        @include position-canvas-text(10%, $vertical);
-    }
-}
+            .bold {
+                opacity: 1;
+            }
 
-div.canvas div.canvas-text.develop {
-    position: absolute;
-    $vertical: 33%;
-    top: $vertical;
+            .light {
+                opacity: 0.5;
+            }
 
-    @include for-mobile {
-        @include position-canvas-text(50%, $vertical);
-    }
-    @include for-tablet-portrait-up {
-        @include position-canvas-text(36%, $vertical);
-    }
-}
+            .lg {
+                @include for-mobile {
+                    font-size: 2.5rem;
+                }
+                @include for-tablet-portrait-up {
+                    font-size: 4rem;
+                }
+                @include for-tablet-landscape-up {
+                    font-size: 6rem;
+                }
+                @include for-desktop-up {
+                    font-size: 8.5rem;
+                }
+            }
 
-div.canvas div.canvas-text.deploy {
-    position: absolute;
-    $vertical: 66%;
-    top: $vertical;
+            .sm {
+                @include for-mobile {
+                    font-size: 0.75rem;
+                }
+                @include for-tablet-portrait-up {
+                    font-size: 1rem;
+                }
+                @include for-tablet-landscape-up {
+                    font-size: 1.5rem;
+                }
+                @include for-desktop-up {
+                    font-size: 2rem;
+                }
+            }
 
-    @include for-mobile {
-        @include position-canvas-text(50%, $vertical);
-    }
-    @include for-tablet-portrait-up {
-        @include position-canvas-text(56%, $vertical);
-    }
-}
+            @mixin position-canvas-text($left, $vertical) {
+                left: $left;
+                transform: translate(-$left, -$vertical) translateZ(0) scale(1.0, 1.0);
+            }
 
-div.canvas div.canvas-text.discover {
-    position: absolute;
-    $vertical: 100%;
-    top: $vertical;
+            &.design {
+                position: absolute;
+                $vertical: 0%;
+                top: $vertical;
 
-    @include for-mobile {
-        @include position-canvas-text(50%, $vertical);
-    }
-    @include for-tablet-portrait-up {
-        @include position-canvas-text(90%, $vertical);
+                @include for-mobile {
+                    @include position-canvas-text(50%, $vertical);
+                }
+                @include for-tablet-portrait-up {
+                    @include position-canvas-text(10%, $vertical);
+                }
+            }
+
+            &.develop {
+                position: absolute;
+                $vertical: 33%;
+                top: $vertical;
+
+                @include for-mobile {
+                    @include position-canvas-text(50%, $vertical);
+                }
+                @include for-tablet-portrait-up {
+                    @include position-canvas-text(36%, $vertical);
+                }
+            }
+
+            &.deploy {
+                position: absolute;
+                $vertical: 66%;
+                top: $vertical;
+
+                @include for-mobile {
+                    @include position-canvas-text(50%, $vertical);
+                }
+                @include for-tablet-portrait-up {
+                    @include position-canvas-text(56%, $vertical);
+                }
+            }
+
+            &.discover {
+                position: absolute;
+                $vertical: 100%;
+                top: $vertical;
+
+                @include for-mobile {
+                    @include position-canvas-text(50%, $vertical);
+                }
+                @include for-tablet-portrait-up {
+                    @include position-canvas-text(90%, $vertical);
+                }
+            }
+        }
     }
 }
