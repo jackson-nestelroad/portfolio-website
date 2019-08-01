@@ -4,11 +4,11 @@ import { IParticlesConfig } from '../Particles/ParticleSettings'
 
 export const Stars: IParticlesConfig = {
     Particles: {
-        number: 350,
+        number: 300,
         density: 200,
         color: '#FFFFFF',
         opacity: 'random',
-        radius: [1, 1.5, 2, 2.5, 3, 3.5],
+        radius: [2, 2.5, 3, 3.5, 4, 4.5],
         shape: 'circle',
         stroke: {
             width: 0,
@@ -44,7 +44,7 @@ export const Stars: IParticlesConfig = {
         hover: {
             bubble: {
                 distance: 75,
-                radius: 7,
+                radius: 8,
                 opacity: 1
             }
         }
