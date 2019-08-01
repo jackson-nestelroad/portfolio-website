@@ -29,12 +29,12 @@ export class Experience {
                 <div className="content">
                     <div className="header">
                         <div className="icon">
-                            <a href={this.data.link}>
+                            <a href={this.data.link} target="_blank">
                                 <img src={`./out/images/Experience/${this.data.svg}.svg`}/>
                             </a>
                         </div>
                         <div className="company">
-                            <a href={this.data.link} className="name is-size-1 is-normal-weight is-uppercase">{this.data.company}</a>
+                            <a href={this.data.link} target="_blank" className="name is-size-1 is-normal-weight is-uppercase">{this.data.company}</a>
                             <p className="location is-size-5 is-italic is-light-color is-normal-weight">{this.data.location}</p>
                         </div>
                         <div className="role">
