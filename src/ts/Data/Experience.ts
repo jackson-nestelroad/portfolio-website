@@ -11,7 +11,7 @@ export const Experience: ExperienceData[] = [
         position: 'Web Application Developer',
         begin: 'May 2019',
         end: 'July 2019',
-        flavor: 'Medit is a start-up company committed to making medical education more efficient through their mobile solutions. By combining technology with curated content, practicing professionals are given a quick, unique, and relevant learning experience. I had the opportunity work as the company\'s first web developer, laying down the essential foundations for a web-based version of their application.',
+        flavor: 'Medit is a start-up company committed to making medical education more efficient through their mobile solutions. By combining technology with curated content, practicing professionals are given a quick, unique, and relevant learning experience. I had the opportunity to work as the company\'s first web developer, laying down the essential foundations for a web-based version of their application.',
         roles: [
             'Architected the initial foundations for a full-scale, single-page web application using Vue and TypeScript.',
             'Designed an interface-oriented, modularized state management system to work behind the application.',
