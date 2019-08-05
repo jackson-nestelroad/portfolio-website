@@ -1,7 +1,7 @@
 // Styling for the sections in the navigation menu
 
 @import "../Theme";
-@import "Title";
+@import "Variables";
 
 // Container for all sections
 header.navigation .sections {
@@ -23,10 +23,10 @@ header.navigation .sections {
     flex: 1;
     flex-basis: 0;
     justify-content: center;
-    font-family: $font-family-logo;
+    font-family: font-family(logo);
     text-transform: uppercase;
-    font-weight: $font-weight-bold;
-    color: $font-color-white;
+    font-weight: font-weight(bold);
+    color: font-color(white);
     border-bottom: 10px inset shadow(0.35);
 }
 
@@ -72,12 +72,12 @@ $step-size: 360 / length($sections);
     left: 0;
     transform: translateX(-100%) translateX(16px);
     width: 100%;
-    background-color: $bg-dark;
+    background-color: theme-background-color(dark);
     transition: left 0.5s, transform 0.5s;
     z-index: 1;
     text-transform: uppercase;
-    color: $font-color-white;
-    font-family: $font-family-logo;
+    color: font-color(white);
+    font-family: font-family(logo);
     font-size: 1.15rem;
     display: flex;
     align-items: center;

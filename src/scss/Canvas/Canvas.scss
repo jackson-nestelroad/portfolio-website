@@ -22,7 +22,7 @@
 
         .canvas-text {
             font-family: "Nunito Sans";
-            font-weight: $font-weight-light;
+            font-weight: font-weight(light);
             color: white;
             word-wrap: break-word;
             user-select: none;
@@ -72,31 +72,31 @@
             }
 
             .lg {
-                @include for-mobile {
+                @include for-viewport-down(xs) {
                     font-size: 2.5rem;
                 }
-                @include for-tablet-portrait-up {
+                @include for-viewport-up(sm) {
                     font-size: 4rem;
                 }
-                @include for-tablet-landscape-up {
+                @include for-viewport-up(md) {
                     font-size: 6rem;
                 }
-                @include for-desktop-up {
+                @include for-viewport-up(lg) {
                     font-size: 8.5rem;
                 }
             }
 
             .sm {
-                @include for-mobile {
+                @include for-viewport-down(xs) {
                     font-size: 0.75rem;
                 }
-                @include for-tablet-portrait-up {
+                @include for-viewport-up(sm) {
                     font-size: 1rem;
                 }
-                @include for-tablet-landscape-up {
+                @include for-viewport-up(md) {
                     font-size: 1.5rem;
                 }
-                @include for-desktop-up {
+                @include for-viewport-up(lg) {
                     font-size: 2rem;
                 }
             }
@@ -114,7 +114,7 @@
                 @include for-mobile {
                     @include position-canvas-text(50%, $vertical);
                 }
-                @include for-tablet-portrait-up {
+                @include for-not-mobile {
                     @include position-canvas-text(10%, $vertical);
                 }
             }
@@ -127,7 +127,7 @@
                 @include for-mobile {
                     @include position-canvas-text(50%, $vertical);
                 }
-                @include for-tablet-portrait-up {
+                @include for-not-mobile  {
                     @include position-canvas-text(36%, $vertical);
                 }
             }
@@ -140,7 +140,7 @@
                 @include for-mobile {
                     @include position-canvas-text(50%, $vertical);
                 }
-                @include for-tablet-portrait-up {
+                @include for-not-mobile  {
                     @include position-canvas-text(56%, $vertical);
                 }
             }
@@ -153,7 +153,7 @@
                 @include for-mobile {
                     @include position-canvas-text(50%, $vertical);
                 }
-                @include for-tablet-portrait-up {
+                @include for-not-mobile  {
                     @include position-canvas-text(90%, $vertical);
                 }
             }

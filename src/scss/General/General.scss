@@ -2,13 +2,6 @@
 
 @import "../Theme";
 
-// Styling for any div with the "row" class
-// Used to keep things in a row with each other
-.row {
-    max-width: 75rem;
-    margin: 0 auto;
-}
-
 // Container holding floating content
 .float-container {
     overflow: hidden;
@@ -28,21 +21,48 @@
 .container, .card {
     background-color: transparent;
     margin: 0 auto;
-    overflow: hidden;
-
-    @include for-tablet-landscape-up {
-        max-width: 960px;
-    }
+    max-width: 960px;
 }
 
 // Card to hold content
 .card {
     border-radius: 5px;
-    box-shadow: 0px 1px 3px shadow(0.5);
+    box-shadow: 0 2px 5px 0 shadow(0.16), 0 2px 10px 0 shadow(0.16);
+    position: relative;
+    overflow: hidden;
 
-    .content {
+    >.image {
+        height: 200px;
+        overflow: hidden;
+        background-position: center center;
+        background-size: cover;
+
+        &~.content {
+            padding: 1rem;
+        }
+    }
+
+    >.content {
         padding: 3.5rem 2rem;
 
+        >.title {
+            margin-bottom: 1.5rem;
+
+            @include for-mobile {
+                margin-bottom: 0.75rem;
+            }
+        }
+
+        >.body {
+           &~.options {
+               margin-top: 1rem;
+           } 
+        }
+
+        >.options {
+            text-align: left;
+        }
+        
         hr {
             margin: 0 auto 1rem;
             border: none;
@@ -51,18 +71,10 @@
         }
     }
 
-    &.is-primary {
-        background-color: $bg-primary;
-        color: $font-color-dark;
-    }
-
-    &.is-secondary {
-        background-color: $bg-secondary;
-        color: $font-color-white;
-    }
-
-    &.is-dark {
-        background-color: $bg-dark;
-        color: $font-color-white;
+    @each $name, $setting in $themes {
+        &.is-#{$name} {
+            background-color: theme-background-color($name);
+            color: theme-font-color($name);
+        }
     }
 }

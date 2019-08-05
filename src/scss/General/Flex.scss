@@ -1,0 +1,213 @@
+// CSS Flexbox library
+
+@import "../Theme.scss";
+
+// Defines a flexbox
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+
+    // Centers flexbox on the page
+    &.center {
+        margin: 0 auto;
+    }
+
+    // Defines a row
+    &.row {
+        flex-direction: row;
+    }
+
+    // Defines a column
+    &.col {
+        flex-direction: column;
+    }
+
+    // Classes to be used with a breakpoint size
+    // The page will render the largest one possible depending on the screen size
+    @each $name, $size in $breakpoints {
+        @include for-viewport-up($name) {
+
+            // Add spacing between flex items
+            @for $i from 1 through 10 {
+                $padding: calc(0.2rem * #{$i});
+
+                // Space between in all directions
+                &.#{$name}-space-between-#{$i} > * {
+                    padding: $padding;
+                }
+
+                // Space between in x-direction
+                &.#{$name}-x-space-between-#{$i} > * {
+                    &:first-child {
+                        padding-left: 0;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;
+                    }
+
+                    padding: 0 $padding;
+                }
+
+                // Space between in y-direction
+                &.#{$name}-y-space-between-#{$i} > * {
+                    &:first-child {
+                        padding-top: 0;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+
+                    padding: $padding 0;
+                }
+            }
+
+            // Enable wrapping
+            &.#{$name}-wrap {
+                flex-wrap: wrap;
+            }
+
+            // Disable wrapping
+            &.#{$name}-nowrap {
+                flex-wrap: nowrap;
+            }
+
+            &.row {
+                // Reverse direction
+                &.#{$name}-reverse {
+                    flex-direction: row-reverse;
+                }
+
+                // Flex item positioning
+
+                &.#{$name}-x-begin {
+                    justify-content: flex-start;
+                }
+    
+                &.#{$name}-x-center {
+                    justify-content: center;
+                }
+    
+                &.#{$name}-x-end {
+                    justify-content: end;
+                }
+    
+                &.#{$name}-y-begin {
+                    align-items: flex-start;
+                }
+    
+                &.#{$name}-y-center {
+                    align-items: center;
+                }
+    
+                &.#{$name}-y-end {
+                    align-items: flex-end;
+                }
+    
+                // Flex item classes (direct children)
+                > * {
+                    &.#{$name}-x-self-begin {
+                        margin-right: auto;
+                    }
+    
+                    &.#{$name}-x-self-center {
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    &.#{$name}-x-self-end {
+                        margin-left: auto;
+                    }
+
+                    &.#{$name}-y-self-begin {
+                        align-self: flex-start;
+                    }
+
+                    &.#{$name}-y-self-center {
+                        align-self: center;
+                    }
+
+                    &.#{$name}-y-self-end {
+                        align-self: flex-end;
+                    }
+
+                    // Width sizes in a row
+                    @for $i from 1 through $grid-columns {
+                        &.#{$name}-#{$i} {
+                            flex-basis: 100% / $grid-columns * $i;
+                            max-width: 100% / $grid-columns * $i;
+                        }
+                    }
+        
+                    // Use width of content
+                    &.#{$name}-auto {
+                        flex: 0 0 auto;
+                    }
+                }
+            }
+
+            &.col {
+                // Reverse direction
+                &.#{$name}-reverse {
+                    flex-direction: column-reverse;
+                }
+
+                // Flex item positioning
+
+                &.#{$name}-y-begin {
+                    justify-content: flex-start;
+                }
+    
+                &.#{$name}-y-center {
+                    justify-content: center;
+                }
+    
+                &.#{$name}-y-end {
+                    justify-content: end;
+                }
+    
+                &.#{$name}-x-begin {
+                    align-items: flex-start;
+                }
+    
+                &.#{$name}-x-center {
+                    align-items: center;
+                }
+    
+                &.#{$name}-x-end {
+                    align-items: flex-end;
+                }
+    
+                // Flex item classes (direct children)
+                > * {
+                    &.#{$name}-y-self-begin {
+                        margin-bottom: auto;
+                    }
+    
+                    &.#{$name}-y-self-center {
+                        margin-top: auto;
+                        margin-bottom: auto;
+                    }
+
+                    &.#{$name}-y-self-end {
+                        margin-top: auto;
+                    }
+
+                    &.#{$name}-x-self-begin {
+                        align-self: flex-start;
+                    }
+
+                    &.#{$name}-x-self-center {
+                        align-self: center;
+                    }
+
+                    &.#{$name}-x-self-end {
+                        align-self: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}

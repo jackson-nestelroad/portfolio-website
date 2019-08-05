@@ -1,0 +1,40 @@
+// Styling for the Projects section
+
+@import "../../Theme";
+
+section#projects {
+    .project {
+        width: 100%;
+
+        .image {
+            background-image: url(https://github.com/jackson-nestelroad/christ-centered/blob/master/store_images/Large%20Tile.png?raw=true);
+        }
+
+        .content {
+            .title {
+                .name {
+                    color: #fe904e;
+                }
+            }
+        }
+
+        // &:hover {
+        //     &::after {
+        //         transform: translateY(0);
+        //     }
+        // }
+
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     top: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     left: 0;
+        //     background-color: $bg-dark;
+        //     transform: translateY(90%);
+        //     border-top: 10px darken($bg-dark, 50) solid;
+        //     transition: transform 0.25s;
+        // }
+    }
+}

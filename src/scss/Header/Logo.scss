@@ -9,6 +9,11 @@ header.logo {
     background-color: white;
     user-select: none;
     -webkit-user-select: none;
+
+    .row {
+        max-width: 75rem;
+        margin: 0 auto;
+    }
 }
 
 // Image container specifically
@@ -65,8 +70,8 @@ header.logo a {
 // Positioning for info next to logo
 header.logo .info {
     margin-top: 0.825rem;
-    font-weight: $font-weight-bold;
-    font-family: $font-family-logo;
+    font-weight: font-weight(bold);
+    font-family: font-family(logo);
     text-transform: uppercase;
 
     @include for-mobile {
@@ -76,12 +81,12 @@ header.logo .info {
 
 // Name styling
 header.logo .info .name {
-    color: $font-color-dark;
+    color: font-color(dark);
     font-size: 1.35rem;
 }
 
 // Title styling
 header.logo .info .title {
-    color: $font-color-light;
+    color: font-color(light);
     font-size: 0.8rem;
 }

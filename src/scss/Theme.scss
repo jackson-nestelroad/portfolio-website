@@ -2,31 +2,118 @@
 
 $root-font-size: 16px;
 
-$bg-base: #F4F4F9;
-$bg-primary: white;
-$bg-secondary: #29ab87;
-// #30b57d;
-// #309e94
-$bg-dark: #3C3C60;
-$bg-gray: #EFEFF4;
+$font-colors: (
+    dark: #3C3C60,
+    light: #6A6A87,
+    white: white,
+    faded-white: lighten(white, 0.75),
+    black: #161616,
+    link: #654AA5
+);
+
+$font-weights: (
+    light: 200,
+    normal: 400,
+    bold: 700,
+    extra-bold: 800
+);
+
+$font-families: (
+    default: "Nunito Sans",
+    logo: "Open Sans",
+    handwriting: "Kalam"
+);
+
+@function font-color($color: dark) {
+    @return map-get($font-colors, $color);
+}
+
+@function font-weight($weight: normal) {
+    @return map-get($font-weights, $weight);
+}
+
+@function font-family($family: default) {
+    @return map-get($font-families, $family);
+}
+
+$theme-colors: (
+    base: #F4F4F9,
+    primary: #29AB87,
+    secondary: white,
+    dark: #3C3C60,
+    gray: #EFEFF4,
+    transparent: transparent
+);
+
+@function theme-color($color) {
+    @return map-get($theme-colors, $color);
+}
+
+$themes: (
+    base: (
+        background-color: theme-color(base),
+        color: font-color(dark),
+        selection: (
+            background-color: theme-color(primary),
+            color: font-color(white)
+        )
+    ),
+    primary: (
+        background-color: theme-color(primary),
+        color: font-color(white),
+        selection: (
+            background-color: theme-color(base),
+            color: font-color(dark)
+        )
+    ),
+    secondary: (
+        background-color: theme-color(secondary),
+        color: font-color(dark),
+        selection: (
+            background-color: theme-color(primary),
+            color: font-color(white)
+        )
+    ),
+    dark: (
+        background-color: theme-color(dark),
+        color: font-color(white),
+        selection: (
+            background-color: theme-color(base),
+            color: font-color(dark)
+        )
+    ),
+    gray: (
+        background-color: theme-color(gray),
+        color: font-color(dark),
+        selection: (
+            background-color: theme-color(primary),
+            color: font-color(white)
+        )
+    ),
+    transparent: (
+        background-color: theme-color(transparent),
+        color: font-color(dark),
+        selection: (
+            background-color: theme-color(primary),
+            color: font-color(white)
+        )
+    )
+);
+
+@function theme-background-color($theme) {
+    @return map-get(map-get($themes, $theme), background-color);
+}
+
+@function theme-font-color($theme) {
+    @return map-get(map-get($themes, $theme), color);
+}
 
 @function shadow($opacity) {
     @return rgba(0,0,15,$opacity);
 }
 
-$font-color-dark: #3C3C60;
-$font-color-light: #6A6A87;
-$font-color-white: white;
-$font-color-black: #161616;
-$font-color-link: #654AA5;
-
-$font-family: "Nunito Sans";
-$font-weight-light: 200;
-$font-weight-normal: 400;
-$font-weight-bold: 700;
-
-$font-family-logo: "Open Sans";
-$font-family-handwriting: "Kalam";
+$grid-columns: 12;
+$grid-gutter: 1rem;
 
 $menu-speed: 0.5s;
 $menu-size: 13.4375rem;
@@ -35,29 +122,92 @@ $menu-size: 13.4375rem;
     animation: fade-in 1s;
 }
 
+// $breakpoints: (
+//     xs: 0px,
+//     sm: 500px,
+//     md: 900px,
+//     lg: 1200px,
+//     xl: 1800px
+// );
+
+$breakpoints: (
+    xs: 0px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+@mixin for-viewport-up($size) {
+    // Small devices (landscape phones, 576px and up)
+    @if($size == sm) {
+        @media all and (min-width: map-get($breakpoints, sm)) {
+            @content;
+        }
+    }
+    // Medium devices (tablets, 768px and up)
+    @else if($size == md) {
+        @media all and (min-width: map-get($breakpoints, md)) {
+            @content;
+        }
+    }
+    // Large devices (desktops, 992px and up)
+    @else if($size == lg) {
+        @media all and (min-width: map-get($breakpoints, lg)) {
+            @content;
+        }
+    }
+    // Extra large devices (large desktops, 1200px and up)
+    @else if($size == xl) {
+        @media all and (min-width: map-get($breakpoints, xl)) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
+
+@mixin for-viewport-down($size) {
+    // Extra small devices (portrait phones, less than 576px)
+    @if($size == xs) {
+        @media all and (max-width: map-get($breakpoints, sm)) {
+            @content;
+        }
+    }
+    // Small devices (landscape phones, less than 768px)
+    @else if($size == sm) {
+        @media all and (max-width: map-get($breakpoints, md)) {
+            @content;
+        }
+    }
+    // Medium devices (tablets, less than 992px)
+    @else if($size == md) {
+        @media all and (max-width: map-get($breakpoints, lg)) {
+            @content;
+        }
+    }
+    // Large devices (desktops, less than 1200px)
+    @else if($size == lg) {
+        @media all and (max-width: map-get($breakpoints, xl)) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
 
 @mixin for-mobile {
-    @media screen and (max-width: 499px) { @content; }
+    @include for-viewport-down(xs) {
+        @content;
+    }
 }
 
-@mixin for-tablet-portrait-down {
-    @media screen and (max-width: 899px) { @content; }
-}
-
-@mixin for-tablet-portrait-up {
-    @media screen and (min-width: 500px) { @content; }
-}
-
-@mixin for-tablet-landscape-up {
-    @media screen and (min-width: 900px) { @content; }
-}
-
-@mixin for-desktop-up {
-    @media screen and (min-width: 1200px) { @content; }
-}
-
-@mixin for-big-desktop-up {
-    @media screen and (min-width: 1800px) { @content; }
+@mixin for-not-mobile {
+    @include for-viewport-up(sm) {
+        @content;
+    }
 }
 
 @mixin for-ie {

@@ -25,7 +25,7 @@ export class Experience {
 
     public createElement(): HTMLElement {
         return (
-            <div className="card is-primary experience">
+            <div className="card is-secondary experience">
                 <div className="content">
                     <div className="header">
                         <div className="icon">
@@ -38,7 +38,7 @@ export class Experience {
                             <p className="location is-size-5 is-italic is-light-color is-normal-weight">{this.data.location}</p>
                         </div>
                         <div className="role">
-                            <p className="name is-size-3 is-bold">{this.data.position}</p>
+                            <p className="name is-size-3 is-bold-weight">{this.data.position}</p>
                             <p className="date is-size-5 is-italic is-light-color is-normal-weight">{`(${this.data.begin} \u2014 ${this.data.end})`}</p>
                         </div>
                     </div>

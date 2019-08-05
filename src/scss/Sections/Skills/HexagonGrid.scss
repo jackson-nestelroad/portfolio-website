@@ -69,21 +69,23 @@ section#skills {
         flex: 0;
         height: 0px;
 
-        @include for-mobile {
+        @include for-viewport-down(xs) {
             @include skill-container-size(mobile);
         }
 
-        @include for-tablet-portrait-up {
+        @include for-viewport-up(sm) {
             @include skill-container-size(portrait);
         }
 
-        @include for-tablet-landscape-up {
+        @include for-viewport-up(md) {
             @include skill-container-size(landscape);
         }
 
+
+
         // Container for hexagon
         .hexagon-container {
-            color: $bg-primary;
+            color: theme-background-color(secondary);
             position: absolute;
             top: 0;
             left: 0;
@@ -116,7 +118,7 @@ section#skills {
 
             // Center icon in container
             >svg.icon {
-                color: $bg-primary;
+                color: theme-background-color(secondary);
                 position: absolute;
                 height: auto;
                 width: 75%;
@@ -138,8 +140,8 @@ section#skills {
                 left: 50%;
                 z-index: 2;
                 width: auto;
-                background-color: $bg-dark;
-                color: $font-color-white;
+                background-color: theme-background-color(dark);
+                color: font-color(white);
                 border-radius: 0.5rem;
                 transform: translateX(-50%) translateY(145%) translateZ(0) scale(1.0, 1.0);
                 transition: $animation-time;
@@ -152,7 +154,7 @@ section#skills {
                     padding: 0.25rem;
                 }
 
-                @include for-tablet-portrait-up {
+                @include for-not-mobile {
                     font-size: 1rem;
                     padding: 0.5rem;
                 }
@@ -163,7 +165,7 @@ section#skills {
                     top: 100%;
                     left: 50%;
                     border-style: solid;
-                    border-color: $bg-dark transparent transparent transparent;
+                    border-color: theme-background-color(dark) transparent transparent transparent;
 
                     @include for-mobile {
                         $size: 4px;
@@ -171,7 +173,7 @@ section#skills {
                         border-width: $size;
                     }
 
-                    @include for-tablet-portrait-up {
+                    @include for-not-mobile {
                         $size: 8px;
                         margin-left: -$size;
                         border-width: $size;

@@ -18,12 +18,6 @@ section#about {
     .qualities {
         @include drawn-in;
 
-        @include for-mobile {
-            >:not(:last-child) {
-                margin-bottom: 1.5rem;
-            }
-        }
-
         .icon {
             height: 3rem;
             width: auto;

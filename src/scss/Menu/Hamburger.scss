@@ -17,7 +17,7 @@ header.menu .hamburger {
     width: 100%;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
-    -ms-transform: translateT(-50%);
+    -ms-transform: translateY(-50%);
     cursor: pointer;
 }
 
@@ -25,7 +25,7 @@ header.menu .hamburger .line {
     height: 2px;
     width: 100%;
     margin: 4px auto;
-    background: $bg-dark;
+    background: theme-background-color(dark);
     transition: 0.25s;
 }
 

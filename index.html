@@ -26,8 +26,8 @@
         <meta property="og:site_name" content="Jackson Nestelroad">
         <meta name="twitter:image:alt" content="">
 
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400,700,800" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Kalam:700&display=swap" rel="stylesheet">
 
@@ -66,15 +66,15 @@
         <main>
             <header class="navigation">
                 <div class="header">
-                        <div class="title">
-                            <a href=".">
-                                <div class="logo">
-                                    <img src="./out/images/Logo/Logo.svg" alt="Logo">
-                                </div>
-                                <div class="text">Jackson Nestelroad</div>
-                            </a>
-                        </div>
+                    <div class="title">
+                        <a href=".">
+                            <div class="logo">
+                                <img src="./out/images/Logo/Logo.svg" alt="Logo">
+                            </div>
+                            <div class="text">Jackson Nestelroad</div>
+                        </a>
                     </div>
+                </div>
                 <hr>
                 <div class="sections">
                     <a href="#about">
@@ -122,43 +122,43 @@
                 </header>
                 <section id="canvas" class="no-menu">
                     <div class="canvas">
-                            <div class="canvas-text-container">
-                                <div class="canvas-text design">
-                                    <span class="lg bold gradient">DESIGN</span>
-                                </div>
-                                <div class="canvas-text develop">
-                                    <span class="lg bold gradient">DEVELOP</span>
-                                </div>
-                                <div class="canvas-text deploy">
-                                    <span class="lg bold gradient">DEPLOY</span>
-                                </div>
-                                <div class="canvas-text discover">
-                                    <span class="lg bold gradient">DISCOVER</span>
-                                </div>
+                        <div class="canvas-text-container">
+                            <div class="canvas-text design">
+                                <span class="lg bold gradient">DESIGN</span>
                             </div>
-                            <canvas id="particles"></canvas>
+                            <div class="canvas-text develop">
+                                <span class="lg bold gradient">DEVELOP</span>
+                            </div>
+                            <div class="canvas-text deploy">
+                                <span class="lg bold gradient">DEPLOY</span>
+                            </div>
+                            <div class="canvas-text discover">
+                                <span class="lg bold gradient">DISCOVER</span>
+                            </div>
                         </div>
+                        <canvas id="particles"></canvas>
+                    </div>
                 </section>
-                <section id="about" class="section is-secondary is-long is-wavy-bottom">
-                    <div class="container">
-                        <h1 class="title is-size-1">Hello, I'm Jackson.</h1>
-                        <h2 class="subtitle is-size-2">I am exicted to share my passion with you!</h2>
-                        <div class="grid-row-padding sm-center extra-bottom">
-                            <div class="grid-col sm7 md4 sm-middle sm-center sm-margin-bottom">
+                <section id="about" class="section is-primary is-long is-wavy-bottom">
+                    <div class="container spaced">
+                        <h1 class="text title is-size-1">Hello, I'm Jackson.</h1>
+                        <h2 class="text subtitle is-size-2">I am exicted to share my passion with you!</h2>
+                        <div class="flex row xs-x-center xs-space-between-5">
+                            <div class="flex col xs-y-center xs-7 sm-4">
                                 <img class="me" src="./out/images/Content/Me.png" alt="Me">
                             </div>
-                            <div class="grid-col sm12 md8 sm-middle sm-left">
-                                <p class="flavor text is-size-3"></p>
+                            <div class="flex col xs-y-center xs-12 sm-8">
+                                <p class="flavor text body is-size-3"></p>
                             </div>
                         </div>
-                        <div class="qualities grid-row sm-center"></div>
+                        <div class="qualities flex row xs-x-center xs-y-space-between-5 sm-x-space-between-2"></div>
                     </div>
                 </section>
                 <section id="skills" class="section is-transparent has-visual-tags">
-                    <div class="card is-primary">
-                        <div class="content">
-                            <h2 class="subtitle is-size-3">I have worked with several different areas of technology, but I am always looking to expand my knowledge and explore new things.</h2>
-                            <h2 class="subtitle is-size-3">My primary experience has been in web development, C++ programming, and DevOps methodology.</h2>
+                    <div class="card is-secondary">
+                        <div class="content spaced">
+                            <h2 class="text subtitle is-size-3">I have worked with several different areas of technology, but I am always looking to expand my knowledge and explore new things.</h2>
+                            <h2 class="text subtitle is-size-3">My primary experience has been in web development, C++ programming, and DevOps methodology.</h2>
                             <hr>
                             <ul class="hex-grid"></ul>
                         </div>
@@ -167,9 +167,24 @@
                 <section id="experience" class="section is-transparent has-visual-tags has-no-top-padding"></section>
                 <section id="projects" class="section is-transparent has-visual-tags has-no-top-padding">
                     <div class="container">
-                        <div class="grid-row-padding sm-center">
-                            <div class="grid-col sm12 md6 lg4 sm-middle sm-center">
-                                Hello
+                        <div class="flex row xs-x-center">
+                            <div class="xs-12 sm-6 md-4">
+                                <div class="card is-secondary project">
+                                    <div class="image"></div>
+                                    <div class="content">
+                                        <div class="title">
+                                            <p class="name is-size-3 is-left-aligned is-bold-weight">Christ-Centered</p>
+                                            <p class="date is-size-5 is-left-aligned is-normal-weight is-light-color">Fall 2018</p>
+                                        </div>
+                                        <div class="body">
+                                            <p class="description is-size-4 is-left-aligned is-normal-weight">A Google Chrome Extension to share the Bible verse of the day.</p>
+                                        </div>
+                                        <div class="options">
+                                            <button>Details</button>
+                                            <button>Repo</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

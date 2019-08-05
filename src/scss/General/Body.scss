@@ -14,8 +14,8 @@ body {
     height: 100%;
     width: 100%;
     min-width: 300px;
-    background-color: $bg-base;
-    color: $font-color-dark;
+    background-color: theme-background-color(base);
+    color: font-color(dark);
     padding: 0;
     margin: 0;
     overflow-x: hidden;
@@ -28,6 +28,6 @@ body {
     }
 }
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }

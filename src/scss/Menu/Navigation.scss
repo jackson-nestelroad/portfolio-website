@@ -7,7 +7,7 @@ header.navigation {
     height: 100%;
     width: $menu-size;
     margin-left: 100%;
-    background: $bg-primary;
+    background: theme-background-color(secondary);
     transition: box-shadow $menu-speed;
     z-index: 1;
 }

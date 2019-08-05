@@ -3,7 +3,7 @@
 @import "../Theme.scss";
 
 a {
-    color: $font-color-link;
+    color: font-color(link);
     text-decoration: none;
     cursor: pointer;
 }

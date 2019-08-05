@@ -2,11 +2,11 @@
 
 @import "../../Theme";
 
-@function get-icon-size($screen: desktop) {
-    @if($screen == mobile) {
+@function get-icon-size($screen: md) {
+    @if($screen == xs) {
         @return 3rem;
     }
-    @else if($screen == portrait) {
+    @else if($screen == sm) {
         @return 3.75rem;
     }
     @else {
@@ -33,11 +33,9 @@ section#experience {
                 justify-content: center;
                 padding-bottom: 1rem;
 
-                @include for-tablet-portrait-down {
+                @include for-viewport-down(sm) {
                     flex-wrap: wrap;
-                }
 
-                @include for-tablet-portrait-down {
                     >:not(:last-child) {
                         margin-bottom: 1rem;
                     }
@@ -48,23 +46,22 @@ section#experience {
                     justify-content: center;
                     height: auto;
                     margin-right: 1rem;
-                    min-width: get-icon-size(mobile);
+                    min-width: get-icon-size(xs);
 
-                    @include for-tablet-portrait-down {
+                    @include for-viewport-down(sm) {
                         margin-right: 0;
                     }
 
-                    @include for-mobile {
-                        width: get-icon-size(mobile);
-                        
+                    @include for-viewport-down(xs) {
+                        width: get-icon-size(xs);
                     }
 
-                    @include for-tablet-portrait-up { 
-                        width: get-icon-size(portrait);
+                    @include for-viewport-up(sm) { 
+                        width: get-icon-size(sm);
                     }
 
-                    @include for-tablet-landscape-up {
-                        width: get-icon-size(landscape);
+                    @include for-viewport-up(md) {
+                        width: get-icon-size(md);
                     }
 
                     img {
@@ -76,8 +73,8 @@ section#experience {
                 }
 
                 .small {
-                    color: $font-color-light;
-                    font-weight: $font-weight-normal;
+                    color: font-color(light);
+                    font-weight: font-weight(normal);
                     font-style: italic;
                     font-size: 0.75rem;
 
@@ -94,17 +91,17 @@ section#experience {
                     text-align: left;
                     width: 100%;
 
-                    @include for-tablet-portrait-down {
+                    @include for-viewport-down(sm) {
                         align-items: center;
                         text-align: center;
                     }
 
                     .name {
-                        color: $font-color-dark;
+                        color: font-color(dark);
                         transition: color 0.2s;
 
                         &:hover {
-                            color: $font-color-link;
+                            color: font-color(link);
                         }
                     }
                 }
@@ -118,7 +115,7 @@ section#experience {
                     align-items: flex-end;
                     width: 100%;
 
-                    @include for-tablet-portrait-down {
+                    @include for-viewport-down(sm) {
                         align-items: center;
                         text-align: center;
                     }
@@ -130,7 +127,7 @@ section#experience {
 
                 .description {
                     padding-left: 1rem;
-                    border-left: 0.25rem solid $bg-secondary;
+                    border-left: 0.25rem solid theme-background-color(primary);
                 }
 
                 .job {

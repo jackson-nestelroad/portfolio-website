@@ -2,12 +2,6 @@
 
 @import "../../Theme.scss";
 
-@mixin spacing() {
-    &:not(:last-child) {
-        margin-bottom: 1.5rem;
-    }
-}
-
 @mixin custom-visual-tag($tag, $content: "") {
     section##{to-lower-case($tag)} {
         &.has-visual-tags {
@@ -33,14 +27,13 @@
 @include custom-visual-tag(Skills);
 @include custom-visual-tag(Experience);
 @include custom-visual-tag(Projects, "class=\"recent\"");
+@include custom-visual-tag(Education);
 
 section {
     width: 100%;
     position: relative;
 
     h1, h2, h3, h4, h5, h6, p {
-        font-size: 1rem;
-        font-weight: $font-weight-bold;
         margin: 0;
         padding: 0;
     }
@@ -49,25 +42,20 @@ section {
 .section {
     padding: 5rem 1.5rem;
 
-    &.is-primary {
-        background-color: $bg-primary;
-        color: $font-color-dark;
+    @each $name, $setting in $themes {
+        &.is-#{$name} {
+            background-color: theme-background-color($name);
+            color: theme-font-color($name);
 
-        *::selection {
-            color: $font-color-light;
-            background-color: $bg-secondary;
+            *::selection {
+                $selection: map-get($setting, selection);
+                background-color: map-get($selection, background-color);
+                color: map-get($selection, color);
+            }
         }
     }
 
-    &.is-secondary {
-        background-color: $bg-secondary;
-        color: $font-color-white;
-
-        *::selection {
-            color: $font-color-dark;
-            background-color: $bg-base;
-        }
-
+    &.is-primary {
         @mixin is-wavy-both {
             content: "";
             position: absolute;
@@ -96,26 +84,6 @@ section {
         }
     }
 
-    &.is-dark {
-        background-color: $bg-dark;
-        color: $font-color-white;
-
-        *::selection {
-            color: $font-color-dark;
-            background-color: $bg-base;
-        }
-    }
-
-    &.is-transparent {
-        background-color: transparent;
-        color: $font-color-dark;
-
-        *::selection {
-            color: $font-color-white;
-            background-color: $bg-secondary;
-        }
-    }
-
     &.is-long {
         padding-bottom: 12rem;
     }
@@ -131,6 +99,7 @@ section {
     &.has-visual-tags {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
 
         >* {
             width: 100%;
@@ -138,7 +107,7 @@ section {
 
         &::before, &::after {
             position: relative;
-            font-family: $font-family-handwriting;
+            font-family: font-family(handwriting);
             font-weight: 700;
             margin: 0 auto;
             opacity: 0.5;
@@ -166,36 +135,12 @@ section {
         }
     }
 
-    .title,
-    .subtitle,
-    .text,
-    .grid-row,
-    .grid-row-padding,
-    .container,
-    .card {
-        @include spacing();
-    }
-    
-    .title,
-    .subtitle,
-    .text {
-        word-break: break-word;
-    }
-
-    .title {
-        font-weight: $font-weight-bold;
-        line-height: 1;
-    }
-
-    .subtitle {
-        font-weight: $font-weight-light;
-        line-height: 1.125;
-    }
-
-    .text {
-        font-weight: $font-weight-light;
-        line-height: 1.5;
-        text-align: justify;
+    .spaced {
+        > * {
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+        }
     }
 
     .extra-bottom {

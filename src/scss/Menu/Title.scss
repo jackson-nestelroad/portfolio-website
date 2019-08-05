@@ -1,9 +1,7 @@
 // Styling for the title in the navigation menu
 
 @import "../Theme";
-
-$title_size: 4rem;
-$container_size: 6rem;
+@import "Variables";
 
 // Container for the navigation menu's title
 header.navigation div.header {
@@ -31,9 +29,9 @@ header.navigation div.header {
 .navigation .header .title .text {
     $font-size: 0.825rem;
     font-size: $font-size;
-    color: $font-color-dark;
-    font-weight: $font-weight-bold;
-    font-family: $font-family-logo;
+    color: font-color(dark);
+    font-weight: font-weight(bold);
+    font-family: font-family(logo);
     text-transform: uppercase;
     line-height: 0.825rem;
 }

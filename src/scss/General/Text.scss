@@ -2,11 +2,19 @@
 
 @import '../Theme.scss';
 
-.is-size-5 {
+.is-size-6 {
     font-size: 0.75rem;
 
     @include for-mobile {
-        font-size: 0.5rem;
+        font-size: 0.625rem;
+    }
+}
+
+.is-size-5 {
+    font-size: 0.875rem;
+
+    @include for-mobile {
+        font-size: 0.75rem;
     }
 }
 
@@ -14,7 +22,7 @@
     font-size: 1rem;
 
     @include for-mobile {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
     }
 }
 
@@ -42,24 +50,20 @@
     }
 }
 
-.is-bold {
-    font-weight: $font-weight-bold;
-}
-
-.is-normal-weight {
-    font-weight: $font-weight-normal;
-}
-
-.is-light-weight {
-    font-weight: $font-weight-light;
+@each $name, $weight in $font-weights {
+    .is-#{$name}-weight {
+        font-weight: $weight;
+    }
 }
 
 .is-italic {
     font-style: italic;
 }
 
-.is-light-color {
-    color: $font-color-light;
+@each $name, $color in $font-colors {
+    .is-#{$name}-color {
+        color: $color;
+    }
 }
 
 .is-uppercase {
@@ -84,9 +88,29 @@
 
 .is-quote {
     padding-left: 1rem;
-    border-left: 0.25rem solid $bg-secondary;
+    border-left: 0.25rem solid get-background-color(primary);
 }
 
 .is-handwriting {
-    font-family: $font-family-handwriting;
+    font-family: font-family(handwriting);
+}
+
+.text {
+    word-break: break-word;
+
+    &.title {
+        font-weight: font-weight(bold);
+        line-height: 1;
+    }
+
+    &.subtitle {
+        font-weight: font-weight(light);
+        line-height: 1.125;
+    }
+
+    &.body {
+        font-weight: font-weight(light);
+        line-height: 1.5;
+        text-align: justify;
+    }
 }
