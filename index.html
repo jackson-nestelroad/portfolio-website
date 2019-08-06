@@ -107,7 +107,7 @@
                 <header class="logo is-theme-secondary">
                     <div class="row">
                         <div class="float-container">
-                            <a href="." class="is-not-colored">
+                            <a href=".">
                                 <div class="image left">
                                     <img class="outer preload" src="./out/images/Logo/Outer.svg" alt="Outer">
                                     <img class="inner preload" src="./out/images/Logo/Inner.svg" alt="Inner">
@@ -140,10 +140,10 @@
                     </div>
                 </section>
                 <section id="about" class="section is-theme-primary is-long is-wavy-bottom">
-                    <div class="container spaced is-center-aligned">
+                    <div class="container flex col xs-y-margin-between-3 is-center-aligned">
                         <h1 class="is-size-4">Hello, I'm Jackson.</h1>
                         <h2 class="is-size-5 is-light-weight">I am exicted to share my passion with you!</h2>
-                        <div class="flex row xs-x-center xs-space-between-5">
+                        <div class="about-me flex row xs-x-center xs-padding-between-5">
                             <div class="flex col xs-y-center xs-7 sm-4">
                                 <img class="me" src="./out/images/Content/Me.png" alt="Me">
                             </div>
@@ -151,12 +151,12 @@
                                 <p class="flavor is-size-6 is-light-weight is-justified is-body"></p>
                             </div>
                         </div>
-                        <div class="qualities flex row xs-x-center xs-y-space-between-5 sm-x-space-between-2"></div>
+                        <div class="qualities flex row xs-x-center xs-y-padding-between-5 sm-x-padding-between-2"></div>
                     </div>
                 </section>
                 <section id="skills" class="section has-visual-tags">
                     <div class="card is-theme-secondary elevation-1">
-                        <div class="content spaced is-center-aligned">
+                        <div class="content padding-x-4 padding-y-7 xs-y-margin-between-3 is-center-aligned">
                             <p class="is-size-6 is-light-weight">I have worked with several different areas of technology, but I am always looking to expand my knowledge and explore new things.</h2>
                             <p class="is-size-6 is-light-weight">My primary experience has been in web development, C++ programming, and DevOps methodology.</h2>
                             <hr>
@@ -164,24 +164,57 @@
                         </div>
                     </div>
                 </section>
-                <section id="experience" class="section has-visual-tags has-no-top-padding"></section>
+                <section id="experience" class="section has-visual-tags has-no-top-padding xs-y-margin-between-5"></section>
                 <section id="projects" class="section has-visual-tags has-no-top-padding">
                     <div class="container">
                         <div class="flex row xs-x-center">
                             <div class="xs-12 sm-6 md-4">
                                 <div class="card is-theme-secondary elevation-1 project">
                                     <div class="image"></div>
-                                    <div class="content">
+                                    <div class="content padding-2">
                                         <div class="title">
                                             <p class="name is-size-6 is-bold-weight">Christ-Centered</p>
+                                            <p class="type is-size-8">Side Project</p>
                                             <p class="date is-size-8 is-color-light">Fall 2018</p>
                                         </div>
                                         <div class="body">
                                             <p class="description is-size-7">A Google Chrome Extension to share the Bible verse of the day.</p>
                                         </div>
-                                        <div class="options">
-                                            <button class="btn is-primary is-text is-custom">Details</button>
-                                            <a class="btn is-primary is-text is-custom" target="_blank">Repo</a>
+                                        <div class="slider is-theme-secondary">
+                                            <div class="content padding-4">
+                                                <div class="title flex row xs-x-begin xs-y-center">
+                                                    <p class="is-size-6 is-bold-weight">Details</p>
+                                                    <button class="btn close is-svg is-primary xs-x-self-end">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="body">
+                                                    <ul class="details xs-y-padding-between-1 is-size-8">
+                                                        <li>Won "Best UI/UX" Award at HackUTD 2019.</li>
+                                                        <li>Learned basics of React.</li>
+                                                        <li>Published to Chrome Web Store.</li>
+                                                        <li>Published to Chrome Web Store.</li>
+                                                        <li>Published to Chrome Web Store.</li>
+                                                        <li>Published to Chrome Web Store.</li>
+                                                        <li>Published to Chrome Web Store.</li>
+                                                        <li>Published to Chrome Web Store.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="options is-theme-secondary flex row xs-nowrap xs-x-margin-between-1">
+                                            <button class="btn is-primary is-text is-custom">
+                                                <i class="fas fa-info"></i>
+                                                <span>More Info</span>
+                                            </button>
+                                            <a class="btn is-primary is-text is-custom" target="_blank" tabindex="0">
+                                                <i class="fas fa-code"></i>
+                                                <span>See Code</span>
+                                            </a>
+                                            <a class="btn is-primary is-text is-custom" target="_blank" tabindex="0">
+                                                <i class="fas fa-external-link-alt"></i>
+                                                <span>View Online</span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
