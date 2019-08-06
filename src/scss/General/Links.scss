@@ -3,7 +3,14 @@
 @import "../Theme.scss";
 
 a {
-    color: font-color(link);
+    color: inherit;
     text-decoration: none;
     cursor: pointer;
+    transition: color 0.2s;
+
+    &:not(.is-not-colored) {
+        &:hover {
+            color: font-color(link);
+        }
+    }
 }
