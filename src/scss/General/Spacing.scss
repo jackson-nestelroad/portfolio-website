@@ -1,0 +1,110 @@
+// Classes for adding space between elements
+
+@import "../Theme";
+
+@mixin spacing($property, $size, $num, $direction) {
+    $space: calc(0.2rem * #{$num});
+    @if $direction == null {
+        .#{$size}-#{$property}-between-#{$num} > * {
+            #{$property}: $space;
+        }
+    }
+    @else {
+        $first: left;
+        $last: right;
+
+        @if $direction == y {
+            $first: top;
+            $last: bottom;
+        }
+
+        .#{$size}-#{$direction}-#{$property}-between-#{$num} > * {
+            &:first-child {
+                #{$property}-#{$first}: 0;
+            }
+
+            &:last-child {
+                #{$property}-#{$last}: 0;
+            }
+
+            #{$property}-#{$first}: $space;
+            #{$property}-#{$last}: $space;
+        }
+    }
+}
+
+$properties: padding, margin;
+$directions: null, x, y;
+
+@each $name, $size in $breakpoints {
+    @include for-viewport-up($name) {
+        @for $i from 0 through 10 {
+            @each $property in $properties {
+                @each $direction in $directions {
+                    @include spacing($property, $name, $i, $direction);
+                }
+            }
+            // $space: calc(0.2rem * #{$i});
+
+            // // Space between in all directions
+            // &.#{$name}-padding-between-#{$i} > * {
+            //     padding: $space;
+            // }
+
+            // // Space between in x-direction
+            // &.#{$name}-x-padding-between-#{$i} > * {
+            //     &:first-child {
+            //         padding-left: 0;
+            //     }
+
+            //     &:last-child {
+            //         padding-right: 0;
+            //     }
+
+            //     padding-left: $space;
+            //     padding-right: $space;
+            // }
+
+            // // Space between in y-direction
+            // &.#{$name}-y-padding-between-#{$i} > * {
+            //     &:first-child {
+            //         padding-top: 0;
+            //     }
+
+            //     &:last-child {
+            //         padding-bottom: 0;
+            //     }
+
+            //     padding: $space 0;
+            // }
+
+            // &.#{$name}-margin-between-#{$i} > * {
+            //     margin: $space;
+            // }
+
+            // &.#{$name}-x-margin-between-#{$i} > * {
+            //     &:first-child {
+            //         margin-left: 0;
+            //     }
+
+            //     &:last-child {
+            //         margin-right: 0;
+            //     }
+
+            //     margin: 0 $space;
+            // }
+
+            // &.#{$name}-y-margin-between-#{$i} > * {
+            //     &:first-child {
+            //         margin-top: 0;
+            //     }
+
+            //     &:last-child {
+            //         margin-bottom: 0;
+            //     }
+
+            //     margin: $space 0;
+            // }
+        }
+    }
+}

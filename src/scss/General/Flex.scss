@@ -28,42 +28,6 @@
     @each $name, $size in $breakpoints {
         @include for-viewport-up($name) {
 
-            // Add spacing between flex items
-            @for $i from 1 through 10 {
-                $padding: calc(0.2rem * #{$i});
-
-                // Space between in all directions
-                &.#{$name}-space-between-#{$i} > * {
-                    padding: $padding;
-                }
-
-                // Space between in x-direction
-                &.#{$name}-x-space-between-#{$i} > * {
-                    &:first-child {
-                        padding-left: 0;
-                    }
-
-                    &:last-child {
-                        padding-right: 0;
-                    }
-
-                    padding: 0 $padding;
-                }
-
-                // Space between in y-direction
-                &.#{$name}-y-space-between-#{$i} > * {
-                    &:first-child {
-                        padding-top: 0;
-                    }
-
-                    &:last-child {
-                        padding-bottom: 0;
-                    }
-
-                    padding: $padding 0;
-                }
-            }
-
             // Enable wrapping
             &.#{$name}-wrap {
                 flex-wrap: wrap;
