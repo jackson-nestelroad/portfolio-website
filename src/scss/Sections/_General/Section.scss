@@ -32,30 +32,12 @@
 section {
     width: 100%;
     position: relative;
-
-    h1, h2, h3, h4, h5, h6, p {
-        margin: 0;
-        padding: 0;
-    }
 }
 
 .section {
     padding: 5rem 1.5rem;
 
-    @each $name, $setting in $themes {
-        &.is-#{$name} {
-            background-color: theme-background-color($name);
-            color: theme-font-color($name);
-
-            *::selection {
-                $selection: map-get($setting, selection);
-                background-color: map-get($selection, background-color);
-                color: map-get($selection, color);
-            }
-        }
-    }
-
-    &.is-primary {
+    &.is-theme-primary {
         @mixin is-wavy-both {
             content: "";
             position: absolute;
