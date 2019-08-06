@@ -2,6 +2,8 @@
 
 @import "../Theme";
 
+$padding-multiplier: 0.5rem;
+
 // Container holding floating content
 .float-container {
     overflow: hidden;
@@ -36,13 +38,29 @@
         background-position: center center;
         background-size: cover;
 
-        &~.content {
-            padding: 1rem 1rem 0.5rem;
-        }
+        // &~.content {
+        //     padding: 1rem 1rem 0.5rem;
+        // }
     }
 
-    >.content {
-        padding: 3.5rem 2rem;
+    .content {
+        // padding: 3.5rem 2rem;
+        @for $i from 1 through 10 {
+            $padding: calc(#{$padding-multiplier} * #{$i});
+            &.padding-#{$i} {
+                padding: $padding;
+            }
+
+            &.padding-x-#{$i} {
+                padding-left: $padding;
+                padding-right: $padding;
+            }
+
+            &.padding-y-#{$i} {
+                padding-top: $padding;
+                padding-bottom: $padding;
+            }
+        }
 
         >.title {
             margin-bottom: 1.5rem;
@@ -60,6 +78,7 @@
 
         >.options {
             text-align: left;
+            margin-bottom: -0.5rem;
         }
         
         hr {
