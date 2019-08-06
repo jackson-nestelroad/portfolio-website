@@ -1,0 +1,25 @@
+// Styling for all themes
+
+@import "../Theme";
+
+@each $name, $setting in $themes {
+    .is-theme-#{$name} {
+        $background-color: map-get($setting, background-color);
+        $color: map-get($setting, color);
+
+        background-color: $background-color;
+        color: $color;
+
+        *::selection {
+            $selection: map-get($setting, selection);
+            background-color: map-get($selection, background-color);
+            color: map-get($selection, color);
+        }
+
+        @each $color-name, $color-value in map-get($setting, colors) {
+            .is-color-#{$color-name} {
+                color: $color-value; 
+            }
+        }
+    }
+}
