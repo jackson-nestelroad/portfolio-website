@@ -3,113 +3,84 @@
 @import "../Theme";
 @import "Variables";
 
-// Container for all sections
-header.navigation .sections {
-    height: calc(100% - #{$container_size} - 2px);
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-}
+header.navigation {
+    .sections {
+        height: calc(100% - #{$container_size} - 2px);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
 
-// Each individual section
-.sections > a {
-    width: 100%;
-    min-height: 40px;
-    position: relative;
-    flex-direction: column;
-    flex: 1;
-    flex-basis: 0;
-    justify-content: center;
-    font-family: font-family(logo);
-    text-transform: uppercase;
-    font-weight: font-weight(bold);
-    color: font-color(white);
-    border-bottom: 10px inset shadow(0.35);
-}
+        > a {
+            width: 100%;
+            min-height: 40px;
+            position: relative;
+            flex: 1;
+            flex-basis: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: font-family(logo);
+            text-transform: uppercase;
+            font-weight: font-weight(bold);
+            color: font-color(white);
+            border-bottom: 10px inset shadow(0.35);
 
-// Icon for the section
-.sections > a > svg {
-    width: 100% !important;
-    height: 40%;
-    min-height: 24px;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%) translateZ(0) scale(1.0, 1.0);
-}
+            > svg {
+                width: 100% !important;
+                height: 40%;
+                min-height: 24px;
 
-// Color of the icon
-.sections > a > svg > path {
-    fill: white;
-}
+                > path {
+                    fill: white;
+                }
+            }
+                
+            // Create an incremental gradient for each section
+            $base-color: #639674;
+            $sections: 
+                about,
+                skills,
+                experience,
+                projects,
+                education, 
+                contact;
+            $step-size: 360 / length($sections);
+            @for $i from 0 to length($sections) {
+                $section: nth($sections, $i + 1);
+                &[href=\##{$section}] {
+                    background-color: adjust-hue($base-color, $step-size * $i);
+                }
+            }
 
-// Create an incremental gradient for each section
-$base-color: #639674;
-$sections: 
-    about,
-    skills,
-    experience,
-    projects,
-    education, 
-    contact;
-$step-size: 360 / length($sections);
+            > .slider {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                transform: translateX(-100%) translateX(16px);
+                width: 100%;
+                background-color: theme-background-color(dark);
+                transition: left 0.5s, transform 0.5s;
+                z-index: 1;
+                text-transform: uppercase;
+                color: font-color(white);
+                font-family: font-family(logo);
+                font-size: 1.15rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 10px inset shadow(0.5);
+            }
 
-@for $i from 0 to length($sections) {
-    $section: nth($sections, $i + 1);
-    .sections > a[href=\##{$section}] {
-        background-color: adjust-hue($base-color, $step-size * $i);
+            &:hover, &[selected] {
+                > .slider {
+                    transform: translateX(0);
+                }
+            }
+        }
     }
 }
-
-// Slider over menu option
-.sections > a > .slider {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: translateX(-100%) translateX(16px);
-    width: 100%;
-    background-color: theme-background-color(dark);
-    transition: left 0.5s, transform 0.5s;
-    z-index: 1;
-    text-transform: uppercase;
-    color: font-color(white);
-    font-family: font-family(logo);
-    font-size: 1.15rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 10px inset shadow(0.5);
-}
-
-// Move slider in front of option when selected or hovered over
-.sections > a:hover > .slider,
-.sections > a[selected] > .slider {
-    transform: translateX(0);
-}
-
-// .sections > a > .slider::after {
-//     content: "";
-//     position: absolute;
-//     left: 100%;
-//     width: 0;
-// 	height: 0;
-//     border-style: solid;
-//     border-width: 25px 0 25px 25px;
-//     border-color: transparent transparent transparent $bg-dark;
-// }
-
-// .sections > a > .slider::before {
-//     content: "";
-//     position: absolute;
-//     left: 100%;
-//     width: 0;
-// 	height: 0;
-//     border-style: solid;
-//     border-width: 30px 0 30px 30px;
-//     border-color: transparent transparent transparent $slider-shadow;
-//     transform: translateY(5px) translateZ(0) scale(1.0, 1.0);
-// }
