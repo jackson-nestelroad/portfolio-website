@@ -27,7 +27,6 @@
 // Card to hold content
 .card {
     border-radius: 5px;
-    box-shadow: 0 2px 5px 0 shadow(0.16), 0 2px 10px 0 shadow(0.16);
     position: relative;
     overflow: hidden;
 
@@ -38,7 +37,7 @@
         background-size: cover;
 
         &~.content {
-            padding: 1rem;
+            padding: 1rem 1rem 0.5rem;
         }
     }
 
@@ -68,13 +67,6 @@
             border: none;
             background-color: shadow(0.1);
             height: 3px;
-        }
-    }
-
-    @each $name, $setting in $themes {
-        &.is-#{$name} {
-            background-color: theme-background-color($name);
-            color: theme-font-color($name);
         }
     }
 }
