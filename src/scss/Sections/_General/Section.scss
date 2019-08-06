@@ -117,14 +117,6 @@ section {
         }
     }
 
-    .spaced {
-        > * {
-            &:not(:last-child) {
-                margin-bottom: 1.5rem;
-            }
-        }
-    }
-
     .extra-bottom {
         margin-bottom: 2.5rem !important;
     }
