@@ -8,7 +8,7 @@ a {
     cursor: pointer;
     transition: color 0.2s;
 
-    &:not(.is-not-colored) {
+    &.is-colored-link {
         &:hover {
             color: font-color(link);
         }
