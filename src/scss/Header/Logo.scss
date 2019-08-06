@@ -13,78 +13,62 @@ header.logo {
     .row {
         max-width: 75rem;
         margin: 0 auto;
+
+        .image {
+            $width: 4.675rem;
+            width: $width;
+            height: $width;
+            margin-right: 0.25rem;
+            position: relative;
+    
+            img {
+                height: inherit;
+                width: inherit;
+                position: absolute;
+                -webkit-user-drag: none;
+                transform-origin: center center;
+                -webkit-transform-origin: center center;
+    
+                $animation-time: 1.5s;
+    
+                &:not(.preload) {
+                    transition: transform $animation-time;
+                    -webkit-transition: $animation-time;
+                    transform: scale(1,1) rotate(0deg);
+                    -webkit-transform: scale(1,1) rotate(0deg);
+                }
+    
+                &.preload {
+                    &.outer {
+                        transform: scale(0,0) rotate(360deg);
+                        -webkit-transform: scale(0,0) rotate(360deg);
+                    }
+    
+                    &.inner {
+                        transform: scale(0,0) rotate(-180deg);
+                        -webkit-transform: scale(0,0) rotate(-180deg);
+                    }
+                }
+            }
+        }
+    
+        .info {
+            margin-top: 0.825rem;
+            font-weight: font-weight(bold);
+            font-family: font-family(logo);
+            text-transform: uppercase;
+
+            @include for-mobile {
+                display: none;
+            }
+
+            .name {
+                font-size: 1.35rem;
+            }
+
+            .title {
+                font-size: 0.8rem;
+            }
+        }
     }
-}
-
-// Image container specifically
-header.logo div.image {
-    $width: 4.675rem;
-    width: $width;
-    height: $width;
-    margin-right: 0.25rem;
-    position: relative;
-}
-
-// Make the logo image fit to its container
-header.logo div.image img {
-    height: inherit;
-    width: inherit;
-    position: absolute;
-    -webkit-user-drag: none;
-}
-
-// Time for logo to animate in
-$animation-time: 1.5s;
-
-// Default positioning for logo
-header.logo div.image img:not(.preload) {
-    transition: transform $animation-time;
-    -webkit-transition: $animation-time;
-    transform: scale(1,1) rotate(0deg);
-    -webkit-transform: scale(1,1) rotate(0deg);
-    transform-origin: center;
-    -webkit-transform-origin: center;
-}
-
-// Preloaded position for inner image
-header.logo div.image img.preload.outer {
-    transform: scale(0,0) rotate(360deg);
-    -webkit-transform: scale(0,0) rotate(360deg);
-    transform-origin: center;
-    -webkit-transform-origin: center;
-}
-
-// Preloaded position for outer image
-header.logo div.image img.preload.inner {
-    transform: scale(0,0) rotate(-180deg);
-    -webkit-transform: scale(0,0) rotate(-180deg);
-    transform-origin: center;
-    -webkit-transform-origin: center;
-}
-
-// Remove text decoration from links
-header.logo a {
-    text-decoration: none;
-}
-
-// Positioning for info next to logo
-header.logo .info {
-    margin-top: 0.825rem;
-    font-weight: font-weight(bold);
-    font-family: font-family(logo);
-    text-transform: uppercase;
-
-    @include for-mobile {
-        display: none;
-    }
-}
-
-// Name styling
-header.logo .info .name {
-    font-size: 1.35rem;
-}
-
-// Title styling
-header.logo .info .title {
-    font-size: 0.8rem;
 }
