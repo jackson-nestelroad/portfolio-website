@@ -25,7 +25,7 @@ export class Experience {
 
     public createElement(): HTMLElement {
         return (
-            <div className="card is-secondary experience">
+            <div className="card is-theme-secondary elevation-1 experience">
                 <div className="content">
                     <div className="header">
                         <div className="icon">
@@ -34,18 +34,18 @@ export class Experience {
                             </a>
                         </div>
                         <div className="company">
-                            <a href={this.data.link} target="_blank" className="name is-size-1 is-normal-weight is-uppercase">{this.data.company}</a>
-                            <p className="location is-size-5 is-italic is-light-color is-normal-weight">{this.data.location}</p>
+                            <a href={this.data.link} target="_blank" className="name is-size-4 is-normal-weight is-uppercase">{this.data.company}</a>
+                            <p className="location is-size-8 is-italic is-color-light is-normal-weight">{this.data.location}</p>
                         </div>
                         <div className="role">
-                            <p className="name is-size-3 is-bold-weight">{this.data.position}</p>
-                            <p className="date is-size-5 is-italic is-light-color is-normal-weight">{`(${this.data.begin} \u2014 ${this.data.end})`}</p>
+                            <p className="name is-size-6 is-bold-weight">{this.data.position}</p>
+                            <p className="date is-size-8 is-italic is-color-light is-normal-weight">{`(${this.data.begin} \u2014 ${this.data.end})`}</p>
                         </div>
                     </div>
                     <hr/>
                     <div className="content info">
-                        <p className="description is-size-4 is-normal-weight is-light-color is-italic is-justified is-quote">{this.data.flavor}</p>
-                        <ul className="job is-left-aligned is-size-4">
+                        <p className="description is-size-8 is-normal-weight is-color-light is-italic is-justified is-quote">{this.data.flavor}</p>
+                        <ul className="job is-left-aligned is-size-7">
                             {this.data.roles.map(role => {
                                 return <li>{role}</li>
                             })}
