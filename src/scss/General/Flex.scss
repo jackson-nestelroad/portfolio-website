@@ -104,11 +104,6 @@
                             max-width: 100% / $grid-columns * $i;
                         }
                     }
-        
-                    // Use width of content
-                    &.#{$name}-auto {
-                        flex: 0 0 auto;
-                    }
                 }
             }
 
@@ -169,6 +164,30 @@
 
                     &.#{$name}-x-self-end {
                         align-self: flex-end;
+                    }
+                }
+            }
+
+            &.row, &.col {
+                > * {
+                    // Use size of content
+                    &.#{$name}-auto {
+                        flex: 0 0 auto;
+                    }
+
+                    // Grow to flexbox
+                    &.#{$name}-grow {
+                        flex-grow: 1;
+                    }
+
+                    // Shrink to flexbox
+                    &.#{$name}-shrink {
+                        flex-shrink: 1
+                    }
+
+                    // Set flex to 1
+                    &.#{$name}-flex-1 {
+                        flex: 1;
                     }
                 }
             }
