@@ -6,7 +6,7 @@ export const Projects: ProjectData[] = [
     {
         name: 'Portfolio Website',
         color: '#29AB87',
-        image: '',
+        image: 'portfolio-website.jpg',
         type: 'Side Project',
         date: 'Spring/Fall 2019',
         flavor: 'Personal website to showcase my work and experience.',
@@ -22,7 +22,7 @@ export const Projects: ProjectData[] = [
     {
         name: 'Ponder',
         color: '#FFA500',
-        image: '',
+        image: 'ponder.jpg',
         type: 'Side Project',
         date: 'HackUTD 2019',
         flavor: 'Web and mobile application to make group brainstorming organized and efficient.',
@@ -37,7 +37,7 @@ export const Projects: ProjectData[] = [
     {
         name: 'Key Consumer',
         color: '#7A69AD',
-        image: '',
+        image: 'key-consumer.jpg',
         type: 'Side Project',
         date: 'January 2019',
         flavor: 'Windows command to attach a low-level keyboard hook in another running process.',
@@ -67,7 +67,7 @@ export const Projects: ProjectData[] = [
     {
         name: 'Christ-Centered',
         color: '#FE904E',
-        image: '',
+        image: 'christ-centered.jpg',
         type: 'Side Project',
         date: 'Fall 2018',
         flavor: 'Google Chrome extension to deliver the YouVersion Verse of the Day to your new tab.',
