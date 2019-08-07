@@ -48,6 +48,3 @@ export const QualitiesContainer: HTMLElement = DOM.getFirstElement('section#abou
 
 // Grid to draw skills onto
 export const SkillsGrid: HTMLElement = DOM.getFirstElement('section#skills .hex-grid');
-
-//  Experience section to draw cards onto
-export const ExperienceSection: HTMLElement = DOM.getFirstElement('section#experience');
