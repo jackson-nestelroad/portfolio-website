@@ -32,7 +32,7 @@ export namespace ElementFactory {
                     }
                 }
                 else if(key.startsWith('on') && typeof attributeValue === 'function') {
-                    element.addEventListener(key.substring(2), attributeValue);
+                    element.addEventListener(key.substring(2).toLowerCase(), attributeValue);
                 }
                 else {
                     if(typeof attributeValue === 'boolean' && attributeValue) {
