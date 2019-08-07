@@ -20,3 +20,9 @@ declare global {
         interface Element extends HTMLElement { }
     }
 }
+
+declare module 'react' {
+    interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
+        tabindex?: string;
+    }
+}
