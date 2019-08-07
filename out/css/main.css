@@ -609,8 +609,6 @@ body {
   .flex.row > *.xs-12 {
     flex-basis: 100%;
     max-width: 100%; }
-  .flex.row > *.xs-auto {
-    flex: 0 0 auto; }
   .flex.col.xs-reverse {
     flex-direction: column-reverse; }
   .flex.col.xs-y-begin {
@@ -638,6 +636,14 @@ body {
     align-self: center; }
   .flex.col > *.xs-x-self-end {
     align-self: flex-end; }
+  .flex.row > *.xs-auto, .flex.col > *.xs-auto {
+    flex: 0 0 auto; }
+  .flex.row > *.xs-grow, .flex.col > *.xs-grow {
+    flex-grow: 1; }
+  .flex.row > *.xs-shrink, .flex.col > *.xs-shrink {
+    flex-shrink: 1; }
+  .flex.row > *.xs-flex-1, .flex.col > *.xs-flex-1 {
+    flex: 1; }
   @media all and (min-width: 576px) {
     .flex.sm-wrap {
       flex-wrap: wrap; }
@@ -706,8 +712,6 @@ body {
     .flex.row > *.sm-12 {
       flex-basis: 100%;
       max-width: 100%; }
-    .flex.row > *.sm-auto {
-      flex: 0 0 auto; }
     .flex.col.sm-reverse {
       flex-direction: column-reverse; }
     .flex.col.sm-y-begin {
@@ -734,7 +738,15 @@ body {
     .flex.col > *.sm-x-self-center {
       align-self: center; }
     .flex.col > *.sm-x-self-end {
-      align-self: flex-end; } }
+      align-self: flex-end; }
+    .flex.row > *.sm-auto, .flex.col > *.sm-auto {
+      flex: 0 0 auto; }
+    .flex.row > *.sm-grow, .flex.col > *.sm-grow {
+      flex-grow: 1; }
+    .flex.row > *.sm-shrink, .flex.col > *.sm-shrink {
+      flex-shrink: 1; }
+    .flex.row > *.sm-flex-1, .flex.col > *.sm-flex-1 {
+      flex: 1; } }
   @media all and (min-width: 768px) {
     .flex.md-wrap {
       flex-wrap: wrap; }
@@ -803,8 +815,6 @@ body {
     .flex.row > *.md-12 {
       flex-basis: 100%;
       max-width: 100%; }
-    .flex.row > *.md-auto {
-      flex: 0 0 auto; }
     .flex.col.md-reverse {
       flex-direction: column-reverse; }
     .flex.col.md-y-begin {
@@ -831,7 +841,15 @@ body {
     .flex.col > *.md-x-self-center {
       align-self: center; }
     .flex.col > *.md-x-self-end {
-      align-self: flex-end; } }
+      align-self: flex-end; }
+    .flex.row > *.md-auto, .flex.col > *.md-auto {
+      flex: 0 0 auto; }
+    .flex.row > *.md-grow, .flex.col > *.md-grow {
+      flex-grow: 1; }
+    .flex.row > *.md-shrink, .flex.col > *.md-shrink {
+      flex-shrink: 1; }
+    .flex.row > *.md-flex-1, .flex.col > *.md-flex-1 {
+      flex: 1; } }
   @media all and (min-width: 992px) {
     .flex.lg-wrap {
       flex-wrap: wrap; }
@@ -900,8 +918,6 @@ body {
     .flex.row > *.lg-12 {
       flex-basis: 100%;
       max-width: 100%; }
-    .flex.row > *.lg-auto {
-      flex: 0 0 auto; }
     .flex.col.lg-reverse {
       flex-direction: column-reverse; }
     .flex.col.lg-y-begin {
@@ -928,7 +944,15 @@ body {
     .flex.col > *.lg-x-self-center {
       align-self: center; }
     .flex.col > *.lg-x-self-end {
-      align-self: flex-end; } }
+      align-self: flex-end; }
+    .flex.row > *.lg-auto, .flex.col > *.lg-auto {
+      flex: 0 0 auto; }
+    .flex.row > *.lg-grow, .flex.col > *.lg-grow {
+      flex-grow: 1; }
+    .flex.row > *.lg-shrink, .flex.col > *.lg-shrink {
+      flex-shrink: 1; }
+    .flex.row > *.lg-flex-1, .flex.col > *.lg-flex-1 {
+      flex: 1; } }
   @media all and (min-width: 1200px) {
     .flex.xl-wrap {
       flex-wrap: wrap; }
@@ -997,8 +1021,6 @@ body {
     .flex.row > *.xl-12 {
       flex-basis: 100%;
       max-width: 100%; }
-    .flex.row > *.xl-auto {
-      flex: 0 0 auto; }
     .flex.col.xl-reverse {
       flex-direction: column-reverse; }
     .flex.col.xl-y-begin {
@@ -1025,7 +1047,15 @@ body {
     .flex.col > *.xl-x-self-center {
       align-self: center; }
     .flex.col > *.xl-x-self-end {
-      align-self: flex-end; } }
+      align-self: flex-end; }
+    .flex.row > *.xl-auto, .flex.col > *.xl-auto {
+      flex: 0 0 auto; }
+    .flex.row > *.xl-grow, .flex.col > *.xl-grow {
+      flex-grow: 1; }
+    .flex.row > *.xl-shrink, .flex.col > *.xl-shrink {
+      flex-shrink: 1; }
+    .flex.row > *.xl-flex-1, .flex.col > *.xl-flex-1 {
+      flex: 1; } }
 
 .float-container {
   overflow: hidden; }
@@ -1045,106 +1075,124 @@ body {
   border-radius: 5px;
   position: relative;
   overflow: hidden; }
+  .card.is-in-grid {
+    display: flex;
+    flex-direction: column; }
+    .card.is-in-grid > .image {
+      flex: 0 0 auto; }
+    .card.is-in-grid > .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column; }
+      .card.is-in-grid > .content > * {
+        max-width: 100%; }
+      .card.is-in-grid > .content > .options {
+        margin-top: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; }
   .card > .image {
     height: 200px;
     overflow: hidden;
     background-position: center center;
     background-size: cover; }
-  .card .content.padding-1 {
-    padding: calc(0.5rem * 1); }
-  .card .content.padding-x-1 {
-    padding-left: calc(0.5rem * 1);
-    padding-right: calc(0.5rem * 1); }
-  .card .content.padding-y-1 {
-    padding-top: calc(0.5rem * 1);
-    padding-bottom: calc(0.5rem * 1); }
-  .card .content.padding-2 {
-    padding: calc(0.5rem * 2); }
-  .card .content.padding-x-2 {
-    padding-left: calc(0.5rem * 2);
-    padding-right: calc(0.5rem * 2); }
-  .card .content.padding-y-2 {
-    padding-top: calc(0.5rem * 2);
-    padding-bottom: calc(0.5rem * 2); }
-  .card .content.padding-3 {
-    padding: calc(0.5rem * 3); }
-  .card .content.padding-x-3 {
-    padding-left: calc(0.5rem * 3);
-    padding-right: calc(0.5rem * 3); }
-  .card .content.padding-y-3 {
-    padding-top: calc(0.5rem * 3);
-    padding-bottom: calc(0.5rem * 3); }
-  .card .content.padding-4 {
-    padding: calc(0.5rem * 4); }
-  .card .content.padding-x-4 {
-    padding-left: calc(0.5rem * 4);
-    padding-right: calc(0.5rem * 4); }
-  .card .content.padding-y-4 {
-    padding-top: calc(0.5rem * 4);
-    padding-bottom: calc(0.5rem * 4); }
-  .card .content.padding-5 {
-    padding: calc(0.5rem * 5); }
-  .card .content.padding-x-5 {
-    padding-left: calc(0.5rem * 5);
-    padding-right: calc(0.5rem * 5); }
-  .card .content.padding-y-5 {
-    padding-top: calc(0.5rem * 5);
-    padding-bottom: calc(0.5rem * 5); }
-  .card .content.padding-6 {
-    padding: calc(0.5rem * 6); }
-  .card .content.padding-x-6 {
-    padding-left: calc(0.5rem * 6);
-    padding-right: calc(0.5rem * 6); }
-  .card .content.padding-y-6 {
-    padding-top: calc(0.5rem * 6);
-    padding-bottom: calc(0.5rem * 6); }
-  .card .content.padding-7 {
-    padding: calc(0.5rem * 7); }
-  .card .content.padding-x-7 {
-    padding-left: calc(0.5rem * 7);
-    padding-right: calc(0.5rem * 7); }
-  .card .content.padding-y-7 {
-    padding-top: calc(0.5rem * 7);
-    padding-bottom: calc(0.5rem * 7); }
-  .card .content.padding-8 {
-    padding: calc(0.5rem * 8); }
-  .card .content.padding-x-8 {
-    padding-left: calc(0.5rem * 8);
-    padding-right: calc(0.5rem * 8); }
-  .card .content.padding-y-8 {
-    padding-top: calc(0.5rem * 8);
-    padding-bottom: calc(0.5rem * 8); }
-  .card .content.padding-9 {
-    padding: calc(0.5rem * 9); }
-  .card .content.padding-x-9 {
-    padding-left: calc(0.5rem * 9);
-    padding-right: calc(0.5rem * 9); }
-  .card .content.padding-y-9 {
-    padding-top: calc(0.5rem * 9);
-    padding-bottom: calc(0.5rem * 9); }
-  .card .content.padding-10 {
-    padding: calc(0.5rem * 10); }
-  .card .content.padding-x-10 {
-    padding-left: calc(0.5rem * 10);
-    padding-right: calc(0.5rem * 10); }
-  .card .content.padding-y-10 {
-    padding-top: calc(0.5rem * 10);
-    padding-bottom: calc(0.5rem * 10); }
-  .card .content > .title {
-    margin-bottom: 1.5rem; }
-    @media all and (max-width: 576px) {
-      .card .content > .title {
-        margin-bottom: 0.75rem; } }
-  .card .content > .body ~ .options {
-    margin-top: 1rem; }
-  .card .content > .options {
-    text-align: left;
-    margin-bottom: -0.5rem; }
-  .card .content hr {
-    margin: 0 auto 1rem;
-    border: none;
-    background-color: rgba(0, 0, 15, 0.1);
-    height: 3px; }
+  .card .content {
+    max-width: 100%; }
+    .card .content.padding-1 {
+      padding: calc(0.5rem * 1); }
+    .card .content.padding-x-1 {
+      padding-left: calc(0.5rem * 1);
+      padding-right: calc(0.5rem * 1); }
+    .card .content.padding-y-1 {
+      padding-top: calc(0.5rem * 1);
+      padding-bottom: calc(0.5rem * 1); }
+    .card .content.padding-2 {
+      padding: calc(0.5rem * 2); }
+    .card .content.padding-x-2 {
+      padding-left: calc(0.5rem * 2);
+      padding-right: calc(0.5rem * 2); }
+    .card .content.padding-y-2 {
+      padding-top: calc(0.5rem * 2);
+      padding-bottom: calc(0.5rem * 2); }
+    .card .content.padding-3 {
+      padding: calc(0.5rem * 3); }
+    .card .content.padding-x-3 {
+      padding-left: calc(0.5rem * 3);
+      padding-right: calc(0.5rem * 3); }
+    .card .content.padding-y-3 {
+      padding-top: calc(0.5rem * 3);
+      padding-bottom: calc(0.5rem * 3); }
+    .card .content.padding-4 {
+      padding: calc(0.5rem * 4); }
+    .card .content.padding-x-4 {
+      padding-left: calc(0.5rem * 4);
+      padding-right: calc(0.5rem * 4); }
+    .card .content.padding-y-4 {
+      padding-top: calc(0.5rem * 4);
+      padding-bottom: calc(0.5rem * 4); }
+    .card .content.padding-5 {
+      padding: calc(0.5rem * 5); }
+    .card .content.padding-x-5 {
+      padding-left: calc(0.5rem * 5);
+      padding-right: calc(0.5rem * 5); }
+    .card .content.padding-y-5 {
+      padding-top: calc(0.5rem * 5);
+      padding-bottom: calc(0.5rem * 5); }
+    .card .content.padding-6 {
+      padding: calc(0.5rem * 6); }
+    .card .content.padding-x-6 {
+      padding-left: calc(0.5rem * 6);
+      padding-right: calc(0.5rem * 6); }
+    .card .content.padding-y-6 {
+      padding-top: calc(0.5rem * 6);
+      padding-bottom: calc(0.5rem * 6); }
+    .card .content.padding-7 {
+      padding: calc(0.5rem * 7); }
+    .card .content.padding-x-7 {
+      padding-left: calc(0.5rem * 7);
+      padding-right: calc(0.5rem * 7); }
+    .card .content.padding-y-7 {
+      padding-top: calc(0.5rem * 7);
+      padding-bottom: calc(0.5rem * 7); }
+    .card .content.padding-8 {
+      padding: calc(0.5rem * 8); }
+    .card .content.padding-x-8 {
+      padding-left: calc(0.5rem * 8);
+      padding-right: calc(0.5rem * 8); }
+    .card .content.padding-y-8 {
+      padding-top: calc(0.5rem * 8);
+      padding-bottom: calc(0.5rem * 8); }
+    .card .content.padding-9 {
+      padding: calc(0.5rem * 9); }
+    .card .content.padding-x-9 {
+      padding-left: calc(0.5rem * 9);
+      padding-right: calc(0.5rem * 9); }
+    .card .content.padding-y-9 {
+      padding-top: calc(0.5rem * 9);
+      padding-bottom: calc(0.5rem * 9); }
+    .card .content.padding-10 {
+      padding: calc(0.5rem * 10); }
+    .card .content.padding-x-10 {
+      padding-left: calc(0.5rem * 10);
+      padding-right: calc(0.5rem * 10); }
+    .card .content.padding-y-10 {
+      padding-top: calc(0.5rem * 10);
+      padding-bottom: calc(0.5rem * 10); }
+    .card .content > .title {
+      padding-bottom: 1.5rem; }
+      @media all and (max-width: 576px) {
+        .card .content > .title {
+          padding-bottom: 0.75rem; } }
+    .card .content > .body ~ .options {
+      padding-top: 1rem; }
+    .card .content > .options {
+      text-align: left;
+      margin-bottom: -0.5rem; }
+    .card .content hr {
+      margin: 0 auto 1rem;
+      border: none;
+      background-color: rgba(0, 0, 15, 0.1);
+      height: 3px; }
 
 a {
   color: inherit;
@@ -3452,6 +3500,35 @@ header.navigation div.header {
   height: 3px; }
 
 
+section#about {
+  box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
+  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    section#about .about-me {
+      min-height: 1px; }
+      section#about .about-me img.me {
+        min-height: 1px; } }
+  section#about img.me {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    -webkit-user-drag: none;
+    user-select: none; }
+  section#about .flavor {
+    animation: fade-in 1s; }
+  section#about .qualities {
+    animation: fade-in 1s; }
+    section#about .qualities .icon {
+      height: 3rem;
+      width: auto;
+      transform: scale(1, 1);
+      transition: transform 0.5s; }
+      section#about .qualities .icon:hover {
+        transform: scale(1.25, 1.25); }
+    section#about .qualities .icon, section#about .qualities .quality {
+      margin-bottom: 0.75rem; }
+    section#about .qualities .desc {
+      padding: 0.25rem; }
+
 section#experience .card.experience {
   animation: fade-in 1s; }
   section#experience .card.experience .content .header {
@@ -3533,42 +3610,9 @@ section#experience .card.experience {
     section#experience .card.experience .content .info .job {
       padding-left: 1rem; }
 
-section#about {
-  box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
-  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    section#about .about-me {
-      min-height: 1px; }
-      section#about .about-me img.me {
-        min-height: 1px; } }
-  section#about img.me {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-    -webkit-user-drag: none;
-    user-select: none; }
-  section#about .flavor {
-    animation: fade-in 1s; }
-  section#about .qualities {
-    animation: fade-in 1s; }
-    section#about .qualities .icon {
-      height: 3rem;
-      width: auto;
-      transform: scale(1, 1);
-      transition: transform 0.5s; }
-      section#about .qualities .icon:hover {
-        transform: scale(1.25, 1.25); }
-    section#about .qualities .icon, section#about .qualities .quality {
-      margin-bottom: 0.75rem; }
-    section#about .qualities .desc {
-      padding: 0.25rem; }
-
 section#projects .project {
   width: 100%;
-  --button-background-color: #fe904e; }
-  section#projects .project .image {
-    background-image: url(https://github.com/jackson-nestelroad/christ-centered/blob/master/store_images/Large%20Tile.png?raw=true); }
-  section#projects .project .content .title .name {
-    color: #fe904e; }
+  height: 100%; }
   section#projects .project .content .options {
     transform: translateZ(1px); }
     section#projects .project .content .options .btn {
@@ -3576,13 +3620,13 @@ section#projects .project {
       justify-content: center;
       align-items: center; }
       section#projects .project .content .options .btn svg {
-        height: 1.25rem;
+        height: 1.1rem;
         width: auto;
         transition: 0.5s ease-in-out;
         transition-property: opacity, transform, height, width; }
         @media all and (max-width: 576px) {
           section#projects .project .content .options .btn svg {
-            height: 1rem; } }
+            height: 0.85rem; } }
         @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
           section#projects .project .content .options .btn svg {
             width: 1.5rem; } }
