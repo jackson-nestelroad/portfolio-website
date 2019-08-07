@@ -2,7 +2,7 @@
 
 import { QualityData } from '../Classes/Elements/Quality'
 
-export const Qualities: Array<QualityData> = [
+export const Qualities: QualityData[] = [
     {
         faClass: 'fas fa-history',
         name: 'Efficient',
