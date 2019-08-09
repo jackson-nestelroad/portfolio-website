@@ -15,6 +15,6 @@ DOM.load().then(document => {
     let object: Quality;
     for(let quality of Qualities) {
         object = new Quality(quality);
-        QualitiesContainer.appendChild(object.createElement());
+        object.appendTo(QualitiesContainer);
     }
 });

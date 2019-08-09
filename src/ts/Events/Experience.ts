@@ -10,6 +10,6 @@ DOM.load().then(document => {
     let card: Experience;
     for(let data of Data) {
         card = new Experience(data);
-        ExperienceSection.appendChild(card.createElement());
+        card.appendTo(ExperienceSection);
     }
 });
