@@ -41,19 +41,18 @@ section {
         @mixin is-wavy-both {
             content: "";
             position: absolute;
-            left: -2px;
-            width: calc(100% + 4px);
+            left: 0;
+            width: 100%;
             height: 100px;
-            background-size: 100% 100px;
+            background-size: cover;
             background-image: url('../images/Content/Divider.svg');
-            background-position: top;
-            background-repeat: no-repeat;
+            background-position: center center;
         }
 
         &.is-wavy-top {
             &::before {
                 @include is-wavy-both;
-                bottom: calc(100% - 1px);
+                bottom: 100%;
                 transform: rotate(180deg);
             }
         }
@@ -61,7 +60,7 @@ section {
         &.is-wavy-bottom {
             &::after {
                 @include is-wavy-both;
-                top: calc(100% - 1px);
+                top: 100%;
             }
         }
     }
