@@ -1,10 +1,10 @@
 <!-- 
     height="60"
-    viewBox="0 0 500 60"
+    width="500"
 
     Removed so SVG will scale
  -->
-<svg width="500" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 30C0 30 74.888 59 125 59C175.112 59 250 30 250 30C250 30 324.888 1 375 1C425.112 0.999996 500 30 500 30V0H0V30Z" fill="#29AB87"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M500 0H0V30C0 30 74.888 59 125 59C175.112 59 250 30 250 30C250 30 324.888 1 375 1C425.112 0.999996 500 30 500 30V0Z"/>
+<svg fill="none" preserveAspectRatio="none" viewBox="0 0 500 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 30C0 30 74.888 59 125 59C175.112 59 250 30 250 30C250 30 324.888 1 375 1C425.112 0.999996 500 30 500 30V0H0V30Z" fill="#29AB87"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M500 0H0V30C0 30 74.888 59 125 59C175.112 59 250 30 250 30C250 30 324.888 1 375 1C425.112 0.999996 500 30 500 30V0Z"/>
 </svg>
