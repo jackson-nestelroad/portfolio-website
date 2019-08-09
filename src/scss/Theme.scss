@@ -130,6 +130,11 @@ $menu-size: 13.4375rem;
 
 @mixin drawn-in {
     animation: fade-in 1s;
+    animation-play-state: running;
+
+    &.preload {
+        animation-play-state: paused;
+    }
 }
 
 // $breakpoints: (
@@ -148,26 +153,34 @@ $breakpoints: (
     xl: 1200px
 );
 
+$breakpoints-max: (
+    xs: 0px,
+    sm: 575.98px,
+    md: 767.98px,
+    lg: 991.98px,
+    xl: 1199.98px
+);
+
 @mixin for-viewport-up($size) {
-    // Small devices (landscape phones, 576px and up)
+    // Small devices (landscape phones)
     @if($size == sm) {
         @media all and (min-width: map-get($breakpoints, sm)) {
             @content;
         }
     }
-    // Medium devices (tablets, 768px and up)
+    // Medium devices (tablets)
     @else if($size == md) {
         @media all and (min-width: map-get($breakpoints, md)) {
             @content;
         }
     }
-    // Large devices (desktops, 992px and up)
+    // Large devices (desktops)
     @else if($size == lg) {
         @media all and (min-width: map-get($breakpoints, lg)) {
             @content;
         }
     }
-    // Extra large devices (large desktops, 1200px and up)
+    // Extra large devices (large desktops)
     @else if($size == xl) {
         @media all and (min-width: map-get($breakpoints, xl)) {
             @content;
@@ -179,32 +192,65 @@ $breakpoints: (
 }
 
 @mixin for-viewport-down($size) {
-    // Extra small devices (portrait phones, less than 576px)
+    
     @if($size == xs) {
-        @media all and (max-width: map-get($breakpoints, sm)) {
+        @media all and (max-width: map-get($breakpoints-max, sm)) {
             @content;
         }
     }
-    // Small devices (landscape phones, less than 768px)
+    // Small devices (landscape phones)
     @else if($size == sm) {
-        @media all and (max-width: map-get($breakpoints, md)) {
+        @media all and (max-width: map-get($breakpoints-max, md)) {
             @content;
         }
     }
-    // Medium devices (tablets, less than 992px)
+    // Medium devices (tablets)
     @else if($size == md) {
-        @media all and (max-width: map-get($breakpoints, lg)) {
+        @media all and (max-width: map-get($breakpoints-max, lg)) {
             @content;
         }
     }
-    // Large devices (desktops, less than 1200px)
+    // Large devices (desktops)
     @else if($size == lg) {
-        @media all and (max-width: map-get($breakpoints, xl)) {
+        @media all and (max-width: map-get($breakpoints-max, xl)) {
             @content;
-        }
+        }// Extra small devices (portrait phones)
     }
     @else {
         @content;
+    }
+}
+
+@mixin for-viewport-only($size) {
+    // Extra small devices (portrait phones)
+    @if($size == xs) {
+        @media all and (min-width: map-get($breakpoints, xs)) and (max-width: map-get($breakpoints-max, sm)) {
+            @content;
+        }
+    }
+    // Small devices (landscape phones)
+    @if($size == sm) {
+        @media all and (min-width: map-get($breakpoints, sm)) and (max-width: map-get($breakpoints-max, md)) {
+            @content;
+        }
+    }
+    // Medium devices (tablets)
+    @else if($size == md) {
+        @media all and (min-width: map-get($breakpoints, md)) and (max-width: map-get($breakpoints-max, lg)) {
+            @content;
+        }
+    }
+    // Large devices (desktops)
+    @else if($size == lg) {
+        @media all and (min-width: map-get($breakpoints, lg)) and (max-width: map-get($breakpoints-max, xl)) {
+            @content;
+        }
+    }
+    // Extra large devices (large desktops)
+    @else if($size == xl) {
+        @media all and (min-width: map-get($breakpoints, xl)) {
+            @content;
+        }
     }
 }
 
