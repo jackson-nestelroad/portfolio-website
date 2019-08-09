@@ -6,6 +6,10 @@ declare global {
     interface AnonymousObject {
         [key: string]: any
     }
+
+    interface Dictionary<T> {
+        [key: string]: T
+    }
     
     interface ObjectBuilder {
         [key: string]: () => any
