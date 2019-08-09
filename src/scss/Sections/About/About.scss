@@ -27,7 +27,9 @@ section#about {
     }
 
     .qualities {
-        @include drawn-in;
+        > * {
+            @include drawn-in;
+        }
 
         .icon {
             height: 3rem;
