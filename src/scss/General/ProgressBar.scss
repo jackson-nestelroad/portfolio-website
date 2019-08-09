@@ -1,0 +1,103 @@
+// Styling for a progress bar
+
+@import "../Theme";
+
+.progress-bar {
+    $height: 5px;
+    $border-radius: 0.5rem;
+    $transition: 1.5s ease-in-out;
+
+    height: $height;
+    width: 100%;
+    margin: 2rem 0.5rem;
+    position: relative;
+
+    $variable: var(--progress-bar-color, #{theme-background-color(primary)});
+
+    @function normal($color: theme-background-color(primary)) {
+        @return $color;
+    }
+
+    @function dark($color: theme-background-color(primary)) {
+        $shadow: shadow(0.4);
+        @return linear-gradient(to right, #{$shadow}, #{$shadow}), 
+                linear-gradient(to right, #{$color}, #{$color});
+    }
+
+    @function light($color: theme-background-color(primary)) {
+        $highlight: rgba(255, 255, 255, 0.5);
+        @return linear-gradient(to right, $highlight, $highlight), 
+                linear-gradient(to right, $color, $color);
+    }
+
+    .track {
+        background: light();
+        background: light($variable);
+    }
+
+    .fill {
+        background: normal();
+        background: normal($variable);
+    }
+
+    .buffer {
+        background: dark();
+        background: dark($variable);
+    }
+
+    .track, .fill, .buffer {
+        position: absolute;
+        height: 100%;
+        border-radius: $border-radius;
+        transition: $transition;
+        transition-property: width;
+    }
+
+    .track {
+        width: 100%;
+    }
+
+    .fill, .buffer {
+        width: 0;
+    }
+
+    .marker {
+        position: absolute;
+        bottom: $height;
+        left: 0;
+        opacity: 0;
+        transform: rotate(60deg) scaleY(0) translateX(10px) translateX(-50%);
+        transform-origin: center bottom;
+        pointer-events: none;
+        transition: opacity 0.2s ease-in-out,
+                    transform 0.2s ease-in-out,
+                    left #{$transition};
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &::after {
+            content: "";
+            width: 0;
+            height: 0;
+            margin-top: 0px;
+            border-style: solid;
+            border-bottom: none;
+            border-color: font-color(dark) transparent transparent transparent;
+
+            border-width: 7px 4px;
+            @include for-mobile {
+                border-width: 5px 3px;
+            }
+        }
+    }
+}
+
+.progress-bar, .progress-bar-hover-container {
+    &:hover {
+        .marker {
+            opacity: 1;
+            transform: rotate(0deg) scaleY(1) translateX(-50%);
+        }
+    }
+}
