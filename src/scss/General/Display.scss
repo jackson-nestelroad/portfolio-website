@@ -1,0 +1,15 @@
+// Classes to alter the display of an element depending on the viewport
+
+@import "../Theme";
+
+$displays: block, inline-block, flex, none;
+
+@each $display in $displays {
+    @each $name, $size in $breakpoints {
+        @include for-viewport-up($name) {
+            &.#{$name}-display-#{$display} {
+                display: $display !important;
+            }
+        } 
+    }
+}
