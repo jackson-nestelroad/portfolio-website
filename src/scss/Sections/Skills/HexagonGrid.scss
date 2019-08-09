@@ -118,6 +118,8 @@ section#skills {
 
             // Center icon in container
             >svg.icon {
+                @include drawn-in;
+                
                 color: theme-background-color(secondary);
                 position: absolute;
                 height: auto;
