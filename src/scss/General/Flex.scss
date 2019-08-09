@@ -189,6 +189,11 @@
                     &.#{$name}-flex-1 {
                         flex: 1;
                     }
+
+                    // Set width to 100%
+                    &.#{$name}-full {
+                        flex-basis: 100%;
+                    }
                 }
             }
         }
