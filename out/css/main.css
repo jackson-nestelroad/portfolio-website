@@ -3447,6 +3447,51 @@ h1, h2, h3, h4, h5, h6, p {
   .is-theme-dark .is-color-light {
     color: rgba(255, 255, 255, 0.75); }
 
+header.logo {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  user-select: none;
+  -webkit-user-select: none; }
+  header.logo .row {
+    max-width: 75rem;
+    margin: 0 auto; }
+    header.logo .row .image {
+      width: 4.675rem;
+      height: 4.675rem;
+      margin-right: 0.25rem;
+      position: relative; }
+      header.logo .row .image img {
+        height: inherit;
+        width: inherit;
+        position: absolute;
+        -webkit-user-drag: none;
+        transform-origin: center center;
+        -webkit-transform-origin: center center; }
+        header.logo .row .image img:not(.preload) {
+          transition: transform 1.5s;
+          -webkit-transition: 1.5s;
+          transform: scale(1, 1) rotate(0deg);
+          -webkit-transform: scale(1, 1) rotate(0deg); }
+        header.logo .row .image img.preload.outer {
+          transform: scale(0, 0) rotate(360deg);
+          -webkit-transform: scale(0, 0) rotate(360deg); }
+        header.logo .row .image img.preload.inner {
+          transform: scale(0, 0) rotate(-180deg);
+          -webkit-transform: scale(0, 0) rotate(-180deg); }
+    header.logo .row .info {
+      margin-top: 0.825rem;
+      font-weight: 700;
+      font-family: "Open Sans";
+      text-transform: uppercase; }
+      @media all and (max-width: 575.98px) {
+        header.logo .row .info {
+          display: none; } }
+      header.logo .row .info .name {
+        font-size: 1.35rem; }
+      header.logo .row .info .title {
+        font-size: 0.8rem; }
+
 header.menu {
   position: fixed;
   top: 0;
@@ -3539,7 +3584,7 @@ header.navigation .sections {
       background-color: #966385; }
     header.navigation .sections > a[href=\#education] {
       background-color: #967463; }
-    header.navigation .sections > a[href=\#contact] {
+    header.navigation .sections > a[href=\#connect] {
       background-color: #859663; }
     header.navigation .sections > a > .slider {
       position: absolute;
@@ -3593,51 +3638,6 @@ header.navigation div.header {
   background-color: rgba(0, 0, 15, 0.1);
   height: 3px; }
 
-
-header.logo {
-  width: 100%;
-  padding: 0.5rem 2rem;
-  background-color: white;
-  user-select: none;
-  -webkit-user-select: none; }
-  header.logo .row {
-    max-width: 75rem;
-    margin: 0 auto; }
-    header.logo .row .image {
-      width: 4.675rem;
-      height: 4.675rem;
-      margin-right: 0.25rem;
-      position: relative; }
-      header.logo .row .image img {
-        height: inherit;
-        width: inherit;
-        position: absolute;
-        -webkit-user-drag: none;
-        transform-origin: center center;
-        -webkit-transform-origin: center center; }
-        header.logo .row .image img:not(.preload) {
-          transition: transform 1.5s;
-          -webkit-transition: 1.5s;
-          transform: scale(1, 1) rotate(0deg);
-          -webkit-transform: scale(1, 1) rotate(0deg); }
-        header.logo .row .image img.preload.outer {
-          transform: scale(0, 0) rotate(360deg);
-          -webkit-transform: scale(0, 0) rotate(360deg); }
-        header.logo .row .image img.preload.inner {
-          transform: scale(0, 0) rotate(-180deg);
-          -webkit-transform: scale(0, 0) rotate(-180deg); }
-    header.logo .row .info {
-      margin-top: 0.825rem;
-      font-weight: 700;
-      font-family: "Open Sans";
-      text-transform: uppercase; }
-      @media all and (max-width: 575.98px) {
-        header.logo .row .info {
-          display: none; } }
-      header.logo .row .info .name {
-        font-size: 1.35rem; }
-      header.logo .row .info .title {
-        font-size: 0.8rem; }
 
 section#about {
   box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5); }
@@ -3781,86 +3781,6 @@ section#projects .project {
           width: 100%;
           height: 100%; } }
     section#projects .project .content .slider .body .details {
-      padding-left: 1rem; }
-
-section#experience .card.experience {
-  animation: fade-in 1s;
-  animation-play-state: running; }
-  section#experience .card.experience.preload {
-    animation-play-state: paused; }
-  section#experience .card.experience .content .header {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center; }
-    @media all and (max-width: 767.98px) {
-      section#experience .card.experience .content .header {
-        flex-wrap: wrap; }
-        section#experience .card.experience .content .header > :not(:last-child) {
-          margin-bottom: 1rem; } }
-    section#experience .card.experience .content .header .icon {
-      flex: 0 0 auto;
-      height: auto;
-      margin-right: 1rem;
-      min-width: 3rem;
-      width: 3rem; }
-      @media all and (max-width: 767.98px) {
-        section#experience .card.experience .content .header .icon {
-          margin-right: 0; } }
-      @media all and (min-width: 576px) {
-        section#experience .card.experience .content .header .icon {
-          width: 3.75rem; } }
-      @media all and (min-width: 768px) {
-        section#experience .card.experience .content .header .icon {
-          width: 3rem; } }
-      section#experience .card.experience .content .header .icon img {
-        width: 100%;
-        height: 100%;
-        -webkit-user-drag: none;
-        user-select: none; }
-    section#experience .card.experience .content .header .small {
-      color: #6A6A87;
-      font-weight: 400;
-      font-style: italic;
-      font-size: 0.75rem; }
-      @media all and (max-width: 575.98px) {
-        section#experience .card.experience .content .header .small {
-          font-size: 0.5rem; } }
-    section#experience .card.experience .content .header .company {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      text-align: left;
-      width: 100%; }
-      @media all and (max-width: 767.98px) {
-        section#experience .card.experience .content .header .company {
-          align-items: center;
-          text-align: center; } }
-      section#experience .card.experience .content .header .company .name {
-        color: #3C3C60;
-        transition: color 0.2s; }
-        section#experience .card.experience .content .header .company .name:hover {
-          color: #654AA5; }
-    section#experience .card.experience .content .header .role {
-      justify-self: flex-end;
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      width: 100%; }
-      @media all and (max-width: 767.98px) {
-        section#experience .card.experience .content .header .role {
-          align-items: center;
-          text-align: center; } }
-  section#experience .card.experience .content .info {
-    padding: 1rem 2rem; }
-    section#experience .card.experience .content .info .description {
-      padding-left: 1rem;
-      border-left: 0.25rem solid #29AB87; }
-    section#experience .card.experience .content .info .job {
       padding-left: 1rem; }
 
 section#skills ul.hex-grid {
@@ -4145,3 +4065,83 @@ section {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+section#experience .card.experience {
+  animation: fade-in 1s;
+  animation-play-state: running; }
+  section#experience .card.experience.preload {
+    animation-play-state: paused; }
+  section#experience .card.experience .content .header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center; }
+    @media all and (max-width: 767.98px) {
+      section#experience .card.experience .content .header {
+        flex-wrap: wrap; }
+        section#experience .card.experience .content .header > :not(:last-child) {
+          margin-bottom: 1rem; } }
+    section#experience .card.experience .content .header .icon {
+      flex: 0 0 auto;
+      height: auto;
+      margin-right: 1rem;
+      min-width: 3rem;
+      width: 3rem; }
+      @media all and (max-width: 767.98px) {
+        section#experience .card.experience .content .header .icon {
+          margin-right: 0; } }
+      @media all and (min-width: 576px) {
+        section#experience .card.experience .content .header .icon {
+          width: 3.75rem; } }
+      @media all and (min-width: 768px) {
+        section#experience .card.experience .content .header .icon {
+          width: 3rem; } }
+      section#experience .card.experience .content .header .icon img {
+        width: 100%;
+        height: 100%;
+        -webkit-user-drag: none;
+        user-select: none; }
+    section#experience .card.experience .content .header .small {
+      color: #6A6A87;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 0.75rem; }
+      @media all and (max-width: 575.98px) {
+        section#experience .card.experience .content .header .small {
+          font-size: 0.5rem; } }
+    section#experience .card.experience .content .header .company {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      width: 100%; }
+      @media all and (max-width: 767.98px) {
+        section#experience .card.experience .content .header .company {
+          align-items: center;
+          text-align: center; } }
+      section#experience .card.experience .content .header .company .name {
+        color: #3C3C60;
+        transition: color 0.2s; }
+        section#experience .card.experience .content .header .company .name:hover {
+          color: #654AA5; }
+    section#experience .card.experience .content .header .role {
+      justify-self: flex-end;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      width: 100%; }
+      @media all and (max-width: 767.98px) {
+        section#experience .card.experience .content .header .role {
+          align-items: center;
+          text-align: center; } }
+  section#experience .card.experience .content .info {
+    padding: 1rem 2rem; }
+    section#experience .card.experience .content .info .description {
+      padding-left: 1rem;
+      border-left: 0.25rem solid #29AB87; }
+    section#experience .card.experience .content .info .job {
+      padding-left: 1rem; }

@@ -46,7 +46,7 @@ header.navigation {
                 experience,
                 projects,
                 education, 
-                contact;
+                connect;
             $step-size: 360 / length($sections);
             @for $i from 0 to length($sections) {
                 $section: nth($sections, $i + 1);
