@@ -6,13 +6,7 @@ export default class Section {
     constructor(public readonly element: HTMLElement) { }
 
     public inView(): boolean {
-        let bounding = this.element.getBoundingClientRect();
-        let view = DOM.getViewport();
-
-        return bounding.bottom >= 0 &&
-               bounding.right >= 0 &&
-               bounding.top <= view.height && 
-               bounding.left <= view.width;
+        return DOM.inView(this.element);
     }
 
     public getID(): string {
