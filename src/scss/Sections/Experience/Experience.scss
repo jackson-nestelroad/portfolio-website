@@ -2,17 +2,11 @@
 
 @import "../../Theme";
 
-@function get-icon-size($screen: md) {
-    @if($screen == xs) {
-        @return 3rem;
-    }
-    @else if($screen == sm) {
-        @return 3.75rem;
-    }
-    @else {
-        @return 4.5rem;
-    }
-}
+$icon-sizes: (
+    xs: 3rem,
+    sm: 3.75rem,
+    md: 3rem
+);
 
 section#experience {
     .card.experience {
@@ -25,7 +19,6 @@ section#experience {
                 flex-direction: row;
                 flex-wrap: nowrap;
                 justify-content: center;
-                padding-bottom: 1rem;
 
                 @include for-viewport-down(sm) {
                     flex-wrap: wrap;
@@ -36,26 +29,19 @@ section#experience {
                 }
 
                 .icon {
-                    display: flex;
-                    justify-content: center;
+                    flex: 0 0 auto;
                     height: auto;
                     margin-right: 1rem;
-                    min-width: get-icon-size(xs);
+                    min-width: map-get($icon-sizes, xs);
 
                     @include for-viewport-down(sm) {
                         margin-right: 0;
                     }
 
-                    @include for-viewport-down(xs) {
-                        width: get-icon-size(xs);
-                    }
-
-                    @include for-viewport-up(sm) { 
-                        width: get-icon-size(sm);
-                    }
-
-                    @include for-viewport-up(md) {
-                        width: get-icon-size(md);
+                    @each $breakpoint, $size in $icon-sizes {
+                        @include for-viewport-up($breakpoint) {
+                            width: $size;
+                        }
                     }
 
                     img {
