@@ -1,6 +1,7 @@
 // Class for a single quality in the About section
 
 import { ElementFactory } from '../../Definitions/JSX'
+import { DataComponent } from '../Component'
 
 // Format for data
 export interface QualityData {
@@ -9,14 +10,14 @@ export interface QualityData {
     description: string
 }
 
-export class Quality {
-    public readonly data: QualityData;
-
+export class Quality extends DataComponent<QualityData> {
     constructor(data: QualityData) {
-        this.data = data;
+        super(data);
     }
 
-    public createElement(): HTMLElement {
+    protected update(): void { }
+
+    protected createElement(): HTMLElement {
         return (
             <div className="xs-12 sm-4">
                 <i className={`icon ${this.data.faClass}`}></i>

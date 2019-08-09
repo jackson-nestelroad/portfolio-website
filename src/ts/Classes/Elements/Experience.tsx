@@ -1,6 +1,7 @@
 // Class for a single card in the Experience section
 
 import { ElementFactory } from '../../Definitions/JSX'
+import { DataComponent } from '../Component'
 
 // Format for data
 export interface ExperienceData {
@@ -12,17 +13,14 @@ export interface ExperienceData {
     begin: string,
     end: string,
     flavor: string,
-    roles: Array<string>
+    roles: string[]
 }
 
 // Class to craft an element from ExperienceData
-export class Experience {
-    public readonly data: ExperienceData;
+export class Experience extends DataComponent<ExperienceData> {
 
-    constructor(data: ExperienceData) {
-        this.data = data;
-    }
-
+    protected update(): void { }
+    
     public createElement(): HTMLElement {
         return (
             <div className="card is-theme-secondary elevation-1 experience">
@@ -34,17 +32,17 @@ export class Experience {
                             </a>
                         </div>
                         <div className="company">
-                            <a href={this.data.link} target="_blank" className="name is-size-4 is-normal-weight is-uppercase is-colored-link">{this.data.company}</a>
-                            <p className="location is-size-8 is-italic is-color-light is-normal-weight">{this.data.location}</p>
+                            <a href={this.data.link} target="_blank" className="name is-size-4 is-uppercase is-colored-link">{this.data.company}</a>
+                            <p className="location is-size-8 is-italic is-color-light">{this.data.location}</p>
                         </div>
                         <div className="role">
                             <p className="name is-size-6 is-bold-weight">{this.data.position}</p>
-                            <p className="date is-size-8 is-italic is-color-light is-normal-weight">{`(${this.data.begin} \u2014 ${this.data.end})`}</p>
+                            <p className="date is-size-8 is-italic is-color-light">{`(${this.data.begin} \u2014 ${this.data.end})`}</p>
                         </div>
                     </div>
                     <hr/>
                     <div className="content info">
-                        <p className="description is-size-8 is-normal-weight is-color-light is-italic is-justified is-quote">{this.data.flavor}</p>
+                        <p className="description is-size-8 is-color-light is-italic is-justified is-quote">{this.data.flavor}</p>
                         <ul className="job is-left-aligned is-size-7 xs-y-padding-between-1">
                             {this.data.roles.map(role => {
                                 return <li>{role}</li>

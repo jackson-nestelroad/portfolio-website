@@ -2,6 +2,7 @@
 
 import { SVG } from '../../Modules/SVG'
 import { ElementFactory } from '../../Definitions/JSX'
+import { DataComponent } from '../Component'
 
 // Format for data for each skill
 export interface SkillData {
@@ -11,40 +12,31 @@ export interface SkillData {
 }
 
 // Class to craft an element from SkillData
-export class Skill {
-    private element: HTMLElement = null;
-    public readonly data: SkillData;
-
+export class Skill extends DataComponent<SkillData> {
     private static HexagonSVG: SVGSVGElement;
 
-    constructor(data: SkillData) {
-        this.data = data;
+    protected update(): void { }
+
+    private created(): void {
+        SVG.loadSVG(`./out/images/Skills/${this.data.svg}`).then(svg => {
+            svg.setAttribute('class', 'icon');
+            const hexagon = this.getReference('hexagon');
+            hexagon.parentNode.insertBefore(svg, hexagon);
+        });
     }
 
-    // Creates an element once
-    public createElement(): Promise<HTMLElement> {
-        return new Promise((resolve, reject) => {
-            if(this.element) {
-                resolve(this.element);
-            }
-
-            SVG.loadSVG(`./out/images/Skills/${this.data.svg}`).then(svg => {
-                svg.setAttribute('class', 'icon');
-
-                resolve (
-                    <li className='skill'>
-                        <div className='hexagon-container' style={{color: this.data.color}}>
-                            <span className='tooltip'>{this.data.name}</span>
-                            {svg}
-                            {Skill.HexagonSVG.cloneNode(true)}
-                        </div>
-                    </li>
-                );
-            })
-            .catch(err => {
-                reject(err);
-            });
-        });
+    protected createElement(): HTMLElement {
+        if(!Skill.HexagonSVG) {
+            throw 'Cannot create Skill element without being initialized.';
+        }
+        return (
+            <li className='skill'>
+                <div className='hexagon-container' style={{color: this.data.color}}>
+                    <span className='tooltip'>{this.data.name}</span>
+                    {Skill.HexagonSVG.cloneNode(true)}
+                </div>
+            </li>
+        )
     }
 
     // Initializes static members
@@ -57,6 +49,7 @@ export class Skill {
             else {
                 SVG.loadSVG('./out/images/Content/Hexagon').then(element => {
                     element.setAttribute('class', 'hexagon');
+                    element.setAttribute('ref', 'hexagon');
                     Skill.HexagonSVG = element;
                     resolve(true);
                 })

@@ -1,6 +1,7 @@
 // Class for a single card in the Projects section
 
 import { ElementFactory } from '../../Definitions/JSX'
+import { DataComponent } from '../Component'
 
 export interface ProjectData {
     name: string,
@@ -15,16 +16,8 @@ export interface ProjectData {
 }
 
 // Class to craft an element from ProjectData
-export class Project {
-    public readonly data: ProjectData;
-    private element: HTMLElement = null;
-    
+export class Project extends DataComponent<ProjectData> {
     private infoDisplayed: boolean = false;
-
-    constructor(data: ProjectData) {
-        this.data = data;
-        this.createElement();
-    }
 
     private lessInfo(): void {
         this.infoDisplayed = false;
@@ -36,11 +29,7 @@ export class Project {
         this.update();
     }
 
-    private getReference(ref: string): Element {
-        return this.element.querySelector(`[ref="${ref}"]`) || null;
-    }
-
-    private update(): void {
+    protected update(): void {
         if(this.infoDisplayed) {
             this.getReference('slider').setAttribute('opened', '');
         }
@@ -51,7 +40,7 @@ export class Project {
         this.getReference('infoText').innerHTML = `${this.infoDisplayed ? 'Less' : 'More'} Info`;
     }
 
-    public createElement(): HTMLElement {
+    protected createElement(): HTMLElement {
         const inlineStyle = {
             '--button-background-color': this.data.color
         } as React.CSSProperties;
