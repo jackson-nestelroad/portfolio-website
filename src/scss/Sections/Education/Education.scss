@@ -1,0 +1,80 @@
+// Styling for the Education section
+
+@import "../../Theme";
+
+$icon-sizes: (
+    xs: 3rem,
+    sm: 3.75rem,
+    md: 3rem
+);
+
+section#education {
+    .card.education {
+        @include drawn-in;
+
+        .content {
+            .header {
+                &, .about {
+                    @include for-viewport-down(sm) {
+                        >:not(:last-child) {
+                            margin-bottom: 1rem;
+                        }
+                    }  
+                }
+                
+
+                .icon {
+                    height: auto;
+                    margin-right: 1rem;
+
+                    @include for-viewport-down(sm) {
+                        margin-right: 0;
+                    }
+
+                    @each $breakpoint, $size in $icon-sizes {
+                        @include for-viewport-up($breakpoint) {
+                            width: $size;
+                        }
+                    }
+
+                    >img {
+                        width: 100%;
+                        height: 100%;
+                        user-select: none;
+                        -webkit-user-drag: none;
+                    }
+                }
+            }
+
+            .progress {
+                padding-top: 2.5rem;
+
+                .progress-bar {
+                    margin-top: 0;
+                    margin-bottom: 0;
+
+                    .marker {
+                        &.completed {
+                            @include for-viewport-down(sm) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .info {
+                .courses {
+                    ul {
+                        padding-left: 0;
+                        list-style-position: inside;
+
+                        >li {
+                            padding: 0 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
