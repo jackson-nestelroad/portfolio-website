@@ -1,0 +1,72 @@
+// Styling for the Connect section
+
+@import "../../Theme";
+
+$logo-sizes: 3rem, 2rem;
+$icon-sizes: 2rem, 1.5rem;
+
+section#connect {
+    .direct-action {
+
+    }
+
+    .footer {
+        $opacity: 0.35;
+
+        color: rgba(white, $opacity);
+
+        .logo {
+            $size: nth($logo-sizes, 1);
+            width: $size;
+            height: $size;
+
+            @include for-mobile {
+                $size: nth($logo-sizes, 2);
+                width: $size;
+                height: $size;
+            }
+
+            opacity: $opacity;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url('../images/Logo/Mono.svg');
+        }
+
+        .social-icons {
+            .social {
+                >.btn {
+                    $size: nth($icon-sizes, 1);
+                    width: $size;
+                    height: $size;
+
+                    @include for-mobile {
+                        $size: nth($icon-sizes, 2);
+                        width: $size;
+                        height: $size;
+                    }
+
+                    >svg {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .note {
+            .react-icon {
+                @keyframes react-spin {
+                    from {
+                        transform: rotate(0);
+                    }
+                    to {
+                        transform: rotate(1turn);
+                    }
+                }
+
+                animation: react-spin 5s linear infinite;
+            }
+        }
+    }
+}
