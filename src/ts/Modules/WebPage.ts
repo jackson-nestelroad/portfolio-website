@@ -51,3 +51,6 @@ export const SkillsGrid: HTMLElement = DOM.getFirstElement('section#skills .hex-
 
 // Grid to draw social media icons onto
 export const SocialGrid: HTMLElement = DOM.getFirstElement('section#connect .social-icons');
+
+// Container to attach connect form to
+export const FormContainer: HTMLElement = DOM.getFirstElement('section#connect .form-container');
