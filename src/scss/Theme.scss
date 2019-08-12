@@ -15,6 +15,7 @@ $font-colors: (
     light: #6A6A87,
     white: white,
     faded-white: rgba(white, 0.75),
+    very-faded-white: rgba(white, 0.35),
     black: #161616,
     link: #654AA5
 );
@@ -54,6 +55,10 @@ $font-sizes: (
 
 @function font-family($family: default) {
     @return map-get($font-families, $family);
+}
+
+@function get-font-size($i) {
+    @return map-get($font-sizes, $i);
 }
 
 @mixin font-size($i) {
@@ -112,6 +117,7 @@ $themes: (
         ),
         colors: (
             light: font-color(faded-white),
+            lighter: font-color(very-faded-white),
             action: theme-color(primary)
         )
     ),
