@@ -98,6 +98,10 @@
                 border-radius: 0;
                 background-color: transparent;
                 border-color: transparent;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 &:hover, &:focus {
                     color: $background-color;
