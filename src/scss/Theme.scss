@@ -2,6 +2,14 @@
 
 $root-font-size: 16px;
 
+$theme-colors: (
+    base: #F4F4F9,
+    primary: #29AB87,
+    secondary: white,
+    dark: #2D323F,
+    darker: #222636
+);
+
 $font-colors: (
     dark: #3C3C60,
     light: #6A6A87,
@@ -60,13 +68,6 @@ $font-sizes: (
     }
 }
 
-$theme-colors: (
-    base: #F4F4F9,
-    primary: #29AB87,
-    secondary: white,
-    dark: #3C3C60
-);
-
 @function theme-color($color) {
     @return map-get($theme-colors, $color);
 }
@@ -110,7 +111,22 @@ $themes: (
             color: font-color(dark)
         ),
         colors: (
-            light: font-color(faded-white)
+            light: font-color(faded-white),
+            action: theme-color(primary)
+        )
+    ),
+    darker: (
+        background-color: theme-color(darker),
+        color: font-color(white),
+        selection: (
+            background-color: theme-color(base),
+            color: theme-color(dark)
+        ),
+        colors: (
+            light: font-color(faded-white),
+            action: theme-color(primary),
+            typescript: #1B93E2,
+            react: #00D8FF
         )
     )
 );
@@ -119,8 +135,11 @@ $themes: (
     @return map-get(map-get($themes, $theme), background-color);
 }
 
-@function theme-font-color($theme) {
-    @return map-get(map-get($themes, $theme), color);
+@function theme-font-color($theme, $color: null) {
+    @if($color == null) {
+        @return map-get(map-get($themes, $theme), color);
+    }
+    @return map-get(map-get(map-get($themes, $theme), colors), $color);
 }
 
 $grid-columns: 12;
@@ -280,6 +299,10 @@ $breakpoints-max: (
 
 @function shadow($opacity) {
     @return rgba(0,0,15,$opacity);
+}
+
+@function highlight($opacity) {
+    @return rgba(255,255,255,$opacity);
 }
 
 $elevation-umbra-color: shadow(0.2);
