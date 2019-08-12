@@ -35,7 +35,10 @@ section {
 }
 
 .section {
-    padding: 5rem 1.5rem;
+    $padding: 5rem 1.5rem;
+    padding: $padding;
+
+    position: relative;
 
     &.is-theme-primary {
         @mixin is-wavy-both {
@@ -65,16 +68,24 @@ section {
         }
     }
 
+    &.has-subsections {
+        padding: 0;
+
+        .section {
+            padding: 2rem nth($padding, 2);
+        }
+    }
+
     &.is-long {
-        padding-bottom: 12rem;
+        padding-bottom: 12rem !important;
     }
 
     &.has-no-top-padding {
-        padding-top: 0;
+        padding-top: 0 !important;
     }
 
     &.has-no-bottom-padding {
-        padding-bottom: 0;
+        padding-bottom: 0 !important;
     }
 
     &.has-visual-tags {
