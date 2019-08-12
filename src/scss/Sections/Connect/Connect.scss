@@ -6,8 +6,49 @@ $logo-sizes: 3rem, 2rem;
 $icon-sizes: 2rem, 1.5rem;
 
 section#connect {
-    .direct-action {
+    .direct-connect {
+        .form-container {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
 
+            form {
+                input, textarea {
+                    display: block;
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    padding: 0.75rem 1rem;
+                    margin: 0.5rem auto;
+                    background: theme-background-color(darker);
+                    color: theme-font-color(darker);
+    
+                    font-family: inherit;
+                    @include font-size(7);
+    
+                    &:focus {
+                        outline: none;
+                    }
+                }
+    
+                textarea {
+                    resize: vertical;
+                }
+    
+                img.formspree {
+                    $sizes: get-font-size(8);
+                    width: auto;
+                    opacity: 0.35;
+                    -webkit-user-drag: none;
+    
+                    height: nth($sizes, 1);
+    
+                    @include for-mobile {
+                        height: nth($sizes, 2);
+                    }
+                }
+            }
+        }
     }
 
     .footer {
@@ -26,6 +67,7 @@ section#connect {
                 height: $size;
             }
 
+            margin-right: 0.5rem;
             opacity: $opacity;
             background-size: contain;
             background-repeat: no-repeat;
