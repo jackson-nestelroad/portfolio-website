@@ -1,0 +1,25 @@
+// Styling and classes for <hr> elements
+
+@import "../Theme";
+
+hr {
+    margin: 1rem auto;
+    border: none;
+    background-color: shadow(1);
+    opacity: 0.1;
+    height: 3px;
+
+    &.is-dark {
+        background-color: white;
+    }
+
+    @for $i from 1 through 10 {
+        &.is-width-#{$i}0 {
+            width: calc(10% * #{$i});
+        }
+
+        &.is-shade-#{$i} {
+            opacity: calc(0.1 * #{$i});
+        }
+    }
+}
