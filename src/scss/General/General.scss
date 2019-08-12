@@ -24,12 +24,12 @@ $padding-multiplier: 0.5rem;
     background-color: transparent;
     margin: 0 auto;
     max-width: 960px;
+    position: relative;
 }
 
 // Card to hold content
 .card {
     border-radius: 5px;
-    position: relative;
     overflow: hidden;
 
     &.is-in-grid {
@@ -102,13 +102,6 @@ $padding-multiplier: 0.5rem;
         >.options {
             text-align: left;
             margin-bottom: -0.5rem;
-        }
-        
-        hr {
-            margin: 1rem auto;
-            border: none;
-            background-color: shadow(0.1);
-            height: 3px;
         }
     }
 }
