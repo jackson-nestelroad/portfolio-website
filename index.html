@@ -171,29 +171,36 @@
                 </section>
                 <section id="education" class="section has-visual-tags has-no-top-padding xs-y-margin-between-5"></section>
                 <section id="connect" class="section has-subsections is-center-aligned">
-                    <div class="direct-connect section is-theme-dark">
-                        <div class="container xs-y-margin-between-3">
-                            <h1 class="is-size-4">Connect</h1>
-                            <p class="is-size-5 is-light-weight">Enough about me. I want to hear about you!</p>
-                            <p class="is-size-6 is-light-weight is-body">Have a question? Want to work together? Just want to chat?</p>
-                            <form>
-                                <div>Form here</div>
-                            </form>
+                    <div class="direct-connect section is-theme-dark is-round-top">
+                        <div class="container xs-y-margin-between-5">
+                            <h1 class="title is-size-4">Connect</h1>
+                            <p class="subtitle is-size-5 is-light-weight">Enough about me. I want to hear about you!</p>
+                            <div class="form-container">
+                                <form action="https://formspree.io/jackson@nestelroad.com" method="post" accept-charset="utf-8">
+                                    <p class="is-size-8 is-color-action">Have a question? Want to work together? Just want to chat?</p>
+                                    <input type="text" name="name" placeholder="Name" required>
+                                    <input type="email" name="_replyto" placeholder="Email Address" required>
+                                    <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
+                                    <input type="hidden" name="_subject" value="Connect Form Submission" readonly>
+                                    <div class="flex row">
+                                        <p class="is-size-8 is-color-lighter flex row xs-y-center">Powered by&nbsp;<img class="formspree" src="./out/images/Content/Formspree.svg"/>&nbsp;Formspree</p>
+                                        <button type="submit" class="btn is-primary is-outline xs-x-self-end is-size-8">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="footer-container">
-                        <div class="footer section is-theme-darker">
-                            <div class="container xs-y-margin-between-5">
-                                <div class="flex row xs-x-center xs-y-center">
-                                    <div class="logo"></div>
-                                </div>
+                    <div class="footer section is-theme-darker">
+                        <div class="container xs-y-margin-between-5">
+                            <div class="flex row xs-x-center xs-y-center">
+                                <div class="logo"></div>
                                 <p class="email is-size-7">jackson@nestelroad.com</p>
-                                <hr class="is-dark is-width-30"/>
-                                <div class="social-icons flex row xs-x-center xs-y-center xs-padding-between-2"></div>
-                                <p class="note is-size-8">Built from scratch with <span class="is-color-typescript">TypeScript</span> and JSX&nbsp;<i class="react-icon fab fa-react is-color-react"></i></span></p>
-                                <p class="copyright is-size-8 is-uppercase">Jackson Nestelroad <span class="is-color-action">&copy; 2019</span></p>
-                            </div> 
-                        </div>
+                            </div>
+                            <hr class="is-dark is-width-30"/>
+                            <div class="social-icons flex row xs-x-center xs-y-center xs-padding-between-2"></div>
+                            <p class="note is-size-8">Built from scratch with <span class="is-color-typescript">TypeScript</span> and JSX&nbsp;<i class="react-icon fab fa-react is-color-react"></i></span></p>
+                            <p class="copyright is-size-8 is-uppercase">Jackson Nestelroad <span class="is-color-action">&copy; 2019</span></p>
+                        </div> 
                     </div>
                 </section>
             </div>            
