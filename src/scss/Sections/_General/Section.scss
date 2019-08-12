@@ -6,6 +6,7 @@
     section##{to-lower-case($tag)} {
         &.has-visual-tags {
             &::before {
+                z-index: 1;
                 @if($content != "") {
                     content: "<#{$tag} #{$content}>";
 
@@ -18,6 +19,7 @@
                 }
             }
             &::after {
+                z-index: 1;
                 content: "</#{$tag}>";
             }
         }
@@ -34,6 +36,32 @@ section {
     position: relative;
 }
 
+@mixin has-divider($image, $place: bottom) {
+    $pseudo-element: after;
+    @if($place == top) {
+        $pseudo-element: before;
+    }
+
+    &::#{$pseudo-element} {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-size: cover;
+        background-image: url('../images/Dividers/#{$image}.svg');
+        background-position: center center;
+
+        @if($place == top) {
+            bottom: calc(100% - 10px);
+            transform: rotate(180deg);
+        }
+        @else {
+            top: calc(100% - 10px);
+        }
+    }
+}
+
 .section {
     $padding: 5rem 1.5rem;
     padding: $padding;
@@ -41,30 +69,18 @@ section {
     position: relative;
 
     &.is-theme-primary {
-        @mixin is-wavy-both {
-            content: "";
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background-size: cover;
-            background-image: url('../images/Content/Divider.svg');
-            background-position: center center;
-        }
-
         &.is-wavy-top {
-            &::before {
-                @include is-wavy-both;
-                bottom: 100%;
-                transform: rotate(180deg);
-            }
+            @include has-divider(Wavy, top);
         }
 
         &.is-wavy-bottom {
-            &::after {
-                @include is-wavy-both;
-                top: 100%;
-            }
+            @include has-divider(Wavy, bottom);
+        }
+    }
+
+    &.is-theme-dark {
+        &.is-round-top {
+            @include has-divider(Round, top);
         }
     }
 
