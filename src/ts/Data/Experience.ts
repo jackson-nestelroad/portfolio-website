@@ -16,7 +16,7 @@ export const Experience: ExperienceData[] = [
             'Architected the initial foundations for a full-scale, single-page web application using Vue, TypeScript, and SASS.',
             'Designed an interface-oriented, modularized state management system to work behind the application.',
             'Developed a Vue configuration library to enhance the ability to mock application state in unit testing.',
-            'Estbalished a comprehensive UI component library to accelerate the ability to add new content.'
+            'Established a comprehensive UI component library to accelerate the ability to add new content.'
         ]
     },
     {
