@@ -8,7 +8,7 @@ export const Projects: ProjectData[] = [
         color: '#29AB87',
         image: 'portfolio-website.jpg',
         type: 'Side Project',
-        date: 'Spring/Fall 2019',
+        date: 'Spring/Summer 2019',
         flavor: 'Personal website to showcase my work and experience.',
         repo: 'https://github.com/jackson-nestelroad/portfolio-website',
         external: 'https://jackson.nestelroad.com',
