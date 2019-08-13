@@ -1,7 +1,15 @@
 // Events attached to the navigation menu
 
+import { DOM } from '../Modules/DOM'
 import { MenuButton, SectionToMenu } from '../Modules/WebPage'
 import Section from '../Classes/Elements/Section'
+
+document.addEventListener('scroll', event => {
+    MenuButton.updateContrast();
+}, {
+    capture: true,
+    passive: true
+});
 
 // Toggle menu to open when clicked
 MenuButton.Hamburger.addEventListener('click', () => {
