@@ -64,6 +64,11 @@ export const Skills: Array<SkillData> = [
         color: '#EF652A'
     },
     {
+        name: 'Java',
+        svg: 'java',
+        color: '#007699'
+    },
+    {
         name: 'JavaScript',
         svg: 'javascript',
         color: '#F0DB4F'
