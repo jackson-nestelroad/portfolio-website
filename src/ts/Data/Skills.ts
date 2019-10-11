@@ -34,6 +34,11 @@ export const Skills: Array<SkillData> = [
         color: '#3D3D3D'
     },
     {
+        name: 'Figma',
+        svg: 'figma',
+        color: '#F24E1E'
+    },
+    {
         name: 'Firebase',
         svg: 'firebase',
         color: '#FFCA28'
