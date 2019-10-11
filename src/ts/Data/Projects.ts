@@ -4,6 +4,22 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
+        name: 'AR Sphere Server',
+        color: '#CF2A30',
+        image: 'acm-ignite.jpg',
+        type: 'ACM Ignite',
+        date: 'Fall 2019',
+        flavor: 'Server for a mobile application to place persistent models and AR experiences across the globe.',
+        repo: 'https://github.com/jackson-nestelroad/ar-sphere-server',
+        external: null,
+        details: [
+            'Currently in development!',
+            'Implemented with C# and ASP.NET Core MVC.',
+            'Streams continuous data with SignalR.',
+            'Deployed to Microsoft Azure with SQL Server.'
+        ]
+    },
+    {
         name: 'Portfolio Website',
         color: '#29AB87',
         image: 'portfolio-website.jpg',
@@ -59,7 +75,7 @@ export const Projects: ProjectData[] = [
         repo: 'https://github.com/jackson-nestelroad/comet-climate-server',
         external: null,
         details: [
-            'Implemented with C# and the .NET Core library.',
+            'Implemented with C# and the ASP.NET Core MVC.',
             'Deployed to Heroku with PostgreSQL database.',
             'Always returns data less than 10 minutes old.'
         ]
