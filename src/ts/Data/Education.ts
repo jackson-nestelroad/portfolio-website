@@ -21,9 +21,13 @@ export const Education: EducationData[] = [
             overall: '4.0',
             major: '4.0'
         },
+        notes: [
+            'Collegium V Honors'
+        ],
         courses: [
             'Two Semesters of C++ Programming',
-            'Discrete Mathematics I',
+            'Computer Architecture',
+            'Discrete Mathematics',
             'Data Science with R Workshop'
         ]
     }

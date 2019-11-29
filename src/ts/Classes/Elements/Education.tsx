@@ -23,6 +23,7 @@ export interface EducationData {
         overall: string;
         major: string;
     },
+    notes: string[] | null,
     courses: string[]
 }
 
@@ -93,6 +94,9 @@ export class Education extends DataComponent<EducationData> {
                         </div>
                         <div className="info content padding-x-4 padding-y-2">
                             <p className="is-light-color is-size-8 is-italic">GPA / {this.data.gpa.overall} (overall) / {this.data.gpa.major} (major)</p>
+                            {this.data.notes.map(note => {
+                                return <p className="is-light-color is-size-8 is-italic">{note}</p>
+                            })}
                             <hr/>
                             <div className="courses">
                                 <p className="is-bold-weight is-size-6">Recent Coursework</p>
