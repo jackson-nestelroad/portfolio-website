@@ -5,18 +5,19 @@ import { ProjectData } from '../Classes/Elements/Project'
 export const Projects: ProjectData[] = [
     {
         name: 'AR Sphere Server',
-        color: '#CF2A30',
-        image: 'acm-ignite.jpg',
+        color: '#DB4F54',
+        image: 'ar-sphere.jpg',
         type: 'ACM Ignite',
         date: 'Fall 2019',
         flavor: 'Server for a mobile application to place persistent models and AR experiences across the globe.',
         repo: 'https://github.com/jackson-nestelroad/ar-sphere-server',
         external: null,
         details: [
-            'Currently in development!',
+            'Team entrepreneurial project under ACM Ignite.',
             'Implemented with C# and ASP.NET Core MVC.',
-            'Streams continuous data with SignalR.',
-            'Deployed to Microsoft Azure with SQL Server.'
+            'Streams continuous data and real-time updates with SignalR.',
+            'Saves geographical data with Azure Spatial Anchors.',
+            'Deployed to Microsoft Azure with SQL Server and Blob Storage.'
         ]
     },
     {
