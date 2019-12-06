@@ -2,6 +2,7 @@
 
 import { ElementFactory } from '../../Definitions/JSX'
 import { DataComponent } from '../Component'
+import { DOM } from '../../Modules/DOM';
 
 export interface ProjectData {
     name: string,
@@ -9,6 +10,7 @@ export interface ProjectData {
     image: string,
     type: string,
     date: string,
+    award: string,
     flavor: string,
     repo: string | null,
     external: string | null,
@@ -18,6 +20,37 @@ export interface ProjectData {
 // Class to craft an element from ProjectData
 export class Project extends DataComponent<ProjectData> {
     private infoDisplayed: boolean = false;
+    private tooltipLeft: boolean = true;
+
+    private created(): void {
+        if(this.data.award) {
+            window.addEventListener('resize', () => this.checkTooltipSide(), { passive: true });
+        }
+    }
+
+    private mounted(): void {
+        // Check tooltip side on initial mount if applicable
+        if(this.data.award) {
+            this.checkTooltipSide();
+        }
+    }
+
+    private checkTooltipSide(): void {
+        const tooltip = this.getReference('tooltip');
+
+        const tooltipPos = tooltip.getBoundingClientRect().left;
+        const screenWidth = DOM.getViewport().width;
+
+        if(this.tooltipLeft !== (tooltipPos >= screenWidth / 2)) {
+            this.tooltipLeft = !this.tooltipLeft;
+
+            const add = this.tooltipLeft ? 'left' : 'top';
+            const remove = this.tooltipLeft ? 'top' : 'left';
+
+            tooltip.classList.remove(remove);
+            tooltip.classList.add(add);
+        }
+    }
 
     private lessInfo(): void {
         this.infoDisplayed = false;
@@ -49,8 +82,18 @@ export class Project extends DataComponent<ProjectData> {
             backgroundImage: `url(${`./out/images/Projects/${this.data.image}`})`
         }
 
-        this.element = (
+        return (
             <div className="xs-12 sm-6 md-4">
+                {
+                    this.data.award ? 
+                    <div className="award">
+                        <div className="tooltip-container">
+                            <img src="out/images/Projects/award.png"/>
+                            <span ref="tooltip" className="tooltip left is-size-8">{this.data.award}</span>
+                        </div>
+                    </div>
+                    : null
+                }
                 <div className="project card is-theme-secondary elevation-1 is-in-grid" style={inlineStyle}>
                     <div className="image" style={imageStyle}></div>
                     <div className="content padding-2">
@@ -71,7 +114,7 @@ export class Project extends DataComponent<ProjectData> {
                                     </button>
                                 </div>
                                 <div className="body">
-                                    <ul className="details xs-y-padding-between-1 is-size-8">
+                                    <ul className="details xs-y-padding-between-1 is-size-9">
                                         {this.data.details.map(detail => {
                                             return <li>{detail}</li>
                                         })}
@@ -105,7 +148,5 @@ export class Project extends DataComponent<ProjectData> {
                 </div>
             </div>
         );
-
-        return this.element;
     }
 }
