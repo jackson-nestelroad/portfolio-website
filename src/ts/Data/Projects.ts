@@ -4,18 +4,19 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
-        name: 'AR Sphere Server',
+        name: 'AR Sphere',
         color: '#DB4F54',
         image: 'ar-sphere.jpg',
         type: 'ACM Ignite',
         date: 'Fall 2019',
-        flavor: 'Server for a mobile application to place persistent models and AR experiences across the globe.',
+        award: 'First place for Fall 2019 ACM Ignite.',
+        flavor: 'Mobile application to place persistent AR models and experiences across the globe.',
         repo: 'https://github.com/jackson-nestelroad/ar-sphere-server',
         external: null,
         details: [
-            'Team entrepreneurial project under ACM Ignite.',
-            'Implemented with C# and ASP.NET Core MVC.',
-            'Streams continuous data and real-time updates with SignalR.',
+            'Semester-long team entrepreneurial project.',
+            'Lead server developer with C#, ASP.NET Core MVC, and Entity Framework.',
+            'Stream continuous data and real-time updates with SignalR.',
             'Saves geographical data with Azure Spatial Anchors.',
             'Deployed to Microsoft Azure with SQL Server and Blob Storage.'
         ]
@@ -26,6 +27,7 @@ export const Projects: ProjectData[] = [
         image: 'portfolio-website.jpg',
         type: 'Side Project',
         date: 'Spring/Summer 2019',
+        award: null,
         flavor: 'Personal website to showcase my work and experience.',
         repo: 'https://github.com/jackson-nestelroad/portfolio-website',
         external: 'https://jackson.nestelroad.com',
@@ -42,11 +44,11 @@ export const Projects: ProjectData[] = [
         image: 'ponder.jpg',
         type: 'Side Project',
         date: 'HackUTD 2019',
+        award: '"Best UI/UX" for HackUTD 2019',
         flavor: 'Web and mobile application to make group brainstorming organized and efficient.',
         repo: 'https://github.com/jackson-nestelroad/ponder-hackutd-19',
         external: null,
         details: [
-            'Winner of "Best UI/UX" for HackUTD 2019.',
             'Implemented with React and Firebase Realtime Database.',
             'Complete connection and realtime updates with mobile counterpart.',
         ]
@@ -57,6 +59,7 @@ export const Projects: ProjectData[] = [
         image: 'key-consumer.jpg',
         type: 'Side Project',
         date: 'January 2019',
+        award: null,
         flavor: 'Windows command to attach a low-level keyboard hook in another running process.',
         repo: 'https://github.com/jackson-nestelroad/key-consumer',
         external: null,
@@ -72,6 +75,7 @@ export const Projects: ProjectData[] = [
         image: 'comet-climate.jpg',
         type: 'Class Project',
         date: 'November 2018',
+        award: null,
         flavor: 'Self-updating API to collect current weather and Twitter data for the University of Texas at Dallas.',
         repo: 'https://github.com/jackson-nestelroad/comet-climate-server',
         external: null,
@@ -87,6 +91,7 @@ export const Projects: ProjectData[] = [
         image: 'christ-centered.jpg',
         type: 'Side Project',
         date: 'Fall 2018',
+        award: null,
         flavor: 'Google Chrome extension to deliver the YouVersion Verse of the Day to your new tab.',
         repo: 'https://github.com/jackson-nestelroad/christ-centered',
         external: 'http://bit.ly/christ-centered',
