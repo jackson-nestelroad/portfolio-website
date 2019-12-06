@@ -30,9 +30,9 @@ export class Skill extends DataComponent<SkillData> {
             throw 'Cannot create Skill element without being initialized.';
         }
         return (
-            <li className='skill'>
+            <li className='skill tooltip-container'>
                 <div className='hexagon-container' style={{color: this.data.color}}>
-                    <span className='tooltip'>{this.data.name}</span>
+                    <span className='tooltip top is-size-7'>{this.data.name}</span>
                     {Skill.HexagonSVG.cloneNode(true)}
                 </div>
             </li>
