@@ -22,10 +22,13 @@ namespace Components {
         export function appendTo(parent: Element): void {
             parent.appendChild(this.element);
             
-            if(!this._mounted) {
-                Events.dispatch(this, 'mounted', { parent });
-                this._mounted = true;
-            }
+            // Use setTimeout to wait for element to appended
+            setTimeout(() => {
+                if(!this._mounted) {
+                    Events.dispatch(this, 'mounted', { parent });
+                    this._mounted = true;
+                }
+            }, 0);
         }
     }
 
