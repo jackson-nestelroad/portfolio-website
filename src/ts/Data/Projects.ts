@@ -9,7 +9,7 @@ export const Projects: ProjectData[] = [
         image: 'ar-sphere.jpg',
         type: 'ACM Ignite',
         date: 'Fall 2019',
-        award: 'First place for Fall 2019 ACM Ignite.',
+        award: 'First place for Fall 2019 ACM Ignite',
         flavor: 'Mobile application to place persistent AR models and experiences across the globe.',
         repo: 'https://github.com/jackson-nestelroad/ar-sphere-server',
         external: null,
