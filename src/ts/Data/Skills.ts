@@ -89,6 +89,11 @@ export const Skills: Array<SkillData> = [
         color: '#356DE6'
     },
     {
+        name: 'Microsoft Azure',
+        svg: 'azure',
+        color: '#0089D6'
+    },
+    {
         name: 'Node.js',
         svg: 'nodejs',
         color: '#8CC84B'
@@ -112,6 +117,11 @@ export const Skills: Array<SkillData> = [
         name: 'SASS/SCSS',
         svg: 'sass',
         color: '#CD669A'
+    },
+    {
+        name: 'SQL',
+        svg: 'sql',
+        color: '#F89700'
     },
     {
         name: 'TypeScript',
