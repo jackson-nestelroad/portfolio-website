@@ -19,6 +19,15 @@ export module DOM {
         }
     }
 
+    // Get point in center of viewport
+    export function getCenterOfViewport(): { x: number, y: number } {
+        const { height, width } = getViewport();
+        return { 
+            x: width / 2,
+            y: height / 2
+        }
+    }
+
     export function scrollTo(element: Element): void {
 
     }

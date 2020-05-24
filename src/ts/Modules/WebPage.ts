@@ -40,6 +40,9 @@ for(let anchor of Array.from(DOM.getElements('header.navigation .sections a'))) 
     }
 }
 
+// Background element
+export const Background: HTMLElement = DOM.getFirstElement('bg');
+
 // Flavor text about me
 export const FlavorText: HTMLElement = DOM.getFirstElement('section#about .flavor');
 
