@@ -109,9 +109,11 @@ export class Project extends DataComponent<ProjectData> {
                             <div className="content padding-4">
                                 <div className="title flex row xs-x-begin xs-y-center">
                                     <p className="is-size-6 is-bold-weight">Details</p>
-                                    <button className="btn close is-svg is-primary xs-x-self-end" tabindex="-1" onClick={this.lessInfo.bind(this)}>
-                                        <i className="fas fa-times"></i>
-                                    </button>
+                                    <div className="close-btn-wrapper xs-x-self-end">
+                                        <button className="btn close is-svg is-primary" tabindex="-1" onClick={this.lessInfo.bind(this)}>
+                                            <i className="fas fa-times"></i>
+                                        </button> 
+                                    </div>
                                 </div>
                                 <div className="body">
                                     <ul className="details xs-y-padding-between-1 is-size-9">
