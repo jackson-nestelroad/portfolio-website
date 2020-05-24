@@ -11,11 +11,11 @@ export const Education: EducationData[] = [
         location: 'Richardson, TX, USA',
         degree: 'Bachelor of Science in Computer Science',
         start: 'Fall 2018',
-        end: 'Spring 2022',
+        end: 'Fall 2021',
         credits: {
             total: 124,
-            completed: 62,
-            taking: 16
+            completed: 90,
+            taking: 14
         },
         gpa: {
             overall: '4.0',
@@ -27,8 +27,8 @@ export const Education: EducationData[] = [
         courses: [
             'Two Semesters of C++ Programming',
             'Computer Architecture',
-            'Discrete Mathematics',
-            'Data Science with R Workshop'
+            'Software Engineering',
+            'Programming in UNIX'
         ]
     }
 ];
