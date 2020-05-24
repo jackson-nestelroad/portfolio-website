@@ -4,16 +4,29 @@ import { SVG } from '../../Modules/SVG'
 import { ElementFactory } from '../../Definitions/JSX'
 import { DataComponent } from '../Component'
 
+export enum SkillCategory {
+    Programming,
+    Web,
+    Database,
+    DevOps,
+    Other
+}
+
 // Format for data for each skill
 export interface SkillData {
     name: string,
     svg: string,
-    color: string
+    color: string,
+    category: SkillCategory
 }
 
 // Class to craft an element from SkillData
 export class Skill extends DataComponent<SkillData> {
     private static HexagonSVG: SVGSVGElement;
+
+    public getCategory(): SkillCategory {
+        return this.data.category;
+    }
 
     protected update(): void { }
 
