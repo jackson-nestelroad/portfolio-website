@@ -6,6 +6,7 @@ import { DataComponent } from '../Component'
 
 export enum SkillCategory {
     Programming,
+    Scripting,
     Web,
     Database,
     DevOps,
