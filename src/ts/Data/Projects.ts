@@ -4,6 +4,22 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
+        name: 'Aether',
+        color: '#1C1C67',
+        image: 'aether.jpg',
+        type: 'Side Project',
+        date: 'Spring 2020',
+        award: null,
+        flavor: 'TCP proxy server for intercepting and viewing web traffic.',
+        repo: 'https://github.com/jackson-nestelroad/aether-proxy',
+        external: null,
+        details: [
+            'Implemented with C++ using the Boost.Asio library.',
+            'Multithreaded HTTP parsing and forwarding.',
+            'TCP tunneling for HTTPS/TLS and WebSockets.'
+        ]
+    },
+    {
         name: 'AR Sphere',
         color: '#DB4F54',
         image: 'ar-sphere.jpg',
