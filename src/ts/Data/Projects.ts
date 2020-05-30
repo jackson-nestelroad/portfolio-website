@@ -10,7 +10,7 @@ export const Projects: ProjectData[] = [
         type: 'Side Project',
         date: 'Spring 2020',
         award: null,
-        flavor: 'TCP proxy server for intercepting and viewing web traffic.',
+        flavor: 'TCP proxy server for viewing and intercepting web traffic.',
         repo: 'https://github.com/jackson-nestelroad/aether-proxy',
         external: null,
         details: [
