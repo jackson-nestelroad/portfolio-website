@@ -58,6 +58,12 @@ export const Skills: Array<SkillData> = [
         category: SkillCategory.Programming
     },
     {
+        name: 'GNU Bash',
+        svg: 'bash',
+        color: '#2B3539',
+        category: SkillCategory.Scripting,
+    },
+    {
         name: 'Google Cloud Platform',
         svg: 'gcp',
         color: '#4386FA',
@@ -124,6 +130,12 @@ export const Skills: Array<SkillData> = [
         category: SkillCategory.Database
     },
     {
+        name: 'Python',
+        svg: 'python',
+        color: '#3776AB',
+        category: SkillCategory.Scripting
+    },
+    {
         name: 'React',
         svg: 'react',
         color: '#00D8FF',
@@ -133,7 +145,7 @@ export const Skills: Array<SkillData> = [
         name: 'R Language',
         svg: 'rlang',
         color: '#2369BC',
-        category: SkillCategory.Programming
+        category: SkillCategory.Scripting
     },
     {
         name: 'SASS/SCSS',
