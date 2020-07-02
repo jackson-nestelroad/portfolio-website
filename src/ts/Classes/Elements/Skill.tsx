@@ -5,12 +5,14 @@ import { ElementFactory } from '../../Definitions/JSX'
 import { DataComponent } from '../Component'
 
 export enum SkillCategory {
-    Programming,
-    Scripting,
-    Web,
-    Database,
-    DevOps,
-    Other
+    Programming = 1 << 0,
+    Scripting = 1 << 1,
+    Web = 1 << 2,
+    Server = 1 << 3,
+    Database = 1 << 4,
+    DevOps = 1 << 5,
+    Framework = 1 << 6,
+    Other = 1 << 7
 }
 
 // Format for data for each skill
