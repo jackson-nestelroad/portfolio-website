@@ -32,11 +32,11 @@ export class Experience extends DataComponent<ExperienceData> {
                             </a>
                         </div>
                         <div className="company">
-                            <a href={this.data.link} target="_blank" className="name is-size-4 is-uppercase is-colored-link">{this.data.company}</a>
+                            <a href={this.data.link} target="_blank" className="name is-size-6 is-bold-weight is-colored-link">{this.data.company}</a>
                             <p className="location is-size-8 is-italic is-color-light">{this.data.location}</p>
                         </div>
                         <div className="role">
-                            <p className="name is-size-6 is-bold-weight">{this.data.position}</p>
+                            <p className="name is-size-7 is-bold-weight">{this.data.position}</p>
                             <p className="date is-size-8 is-italic is-color-light">{`(${this.data.begin} \u2014 ${this.data.end})`}</p>
                         </div>
                     </div>
