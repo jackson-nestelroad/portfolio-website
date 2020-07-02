@@ -3,6 +3,7 @@
 import { DOM } from './DOM'
 import Section from '../Classes/Elements/Section'
 import { Menu } from '../Classes/Elements/Menu'
+import { SkillsFilter } from '../Classes/Elements/SkillsFilter'
 
 // Body tag
 export const Body: HTMLElement = DOM.getFirstElement('body');
@@ -24,6 +25,8 @@ export const Logo = {
 
 // Fixed button to open menu
 export const MenuButton: Menu = new Menu();
+
+export const SkillsFilterObject: SkillsFilter = new SkillsFilter();
 
 // All section tags
 export const Sections: Map<string, Section> = new Map();

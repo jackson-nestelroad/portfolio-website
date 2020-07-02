@@ -1,5 +1,19 @@
 // Styling for the Skills section
 
+@import "../../Theme.scss";
+
 section#skills {
     margin-top: -12rem;
+
+    ul.hex-grid:not(:last-child) {
+        + * {
+            margin-top: 2.5rem;
+        }
+    }
+
+    .skills-filter {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 320px;
+    }
 }

@@ -1,0 +1,169 @@
+// Styling for dropdowns
+
+@import "../Theme";
+
+.dropdown {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0.5rem auto;
+    font-family: inherit;
+    font-size: 1rem;
+    user-select: none;
+
+    &:not(.disabled),
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &:disabled {
+        opacity: 0.45;
+        pointer-events: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    @each $name, $setting in $themes {
+        &.is-#{$name} {
+            $background-color: theme-background-color($name);
+            $color: theme-font-color($name);
+
+            background-color: inherit;
+            color: inherit;
+
+            &:hover, &:focus {
+                
+            }
+
+            &:active, &.active {
+                .selected-options {
+                    .arrow {
+                        color: $background-color;
+                    }
+                    .display {
+                        &:after {
+                            height: 2px;
+                            background-color: $background-color;
+                        }
+                    }
+                }
+
+                .menu {
+                    .options {
+                        > li {
+                            &:hover, &.hover {
+                                background-color: rgba($background-color, 0.10);
+                            }
+
+                            &:active, &.selected {
+                                background-color: rgba($background-color, 0.25);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover, &:focus {
+        .selected-options {
+            .display {
+                &:after {
+                    height: 2px;
+                }
+            }
+        }
+    }
+
+    &:active, &.active {
+        .selected-options {
+            .arrow {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+
+        .menu {
+            visibility: visible;
+            transform: scaleY(1);
+            opacity: 1;
+        }
+    }
+
+    .selected-options {
+        position: relative;
+        border-radius: 0.25rem 0.25rem 0 0;
+
+        .arrow {
+            position: absolute;
+            left: auto;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: 0.2s;
+        }
+
+        .display {
+            padding: 0.75rem 1.5rem 0.75rem 1rem;
+            text-align: left;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                border-radius: 0.25rem;
+                background-color: currentColor;
+            }
+        }
+    }
+
+    &.top {
+        .menu {
+            transform-origin: bottom center;
+            top: auto;
+            bottom: 100%;
+        }
+    }
+
+    .menu {
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        bottom: auto;
+        width: 100%;
+        min-width: 112px;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top center;
+        overflow: auto;
+        z-index: 8;
+        transition: 0.2s;
+        border-radius: 5px;
+
+        background-color: theme-background-color(secondary);
+        color: theme-font-color(secondary);
+
+        @include elevation(5);
+
+        .options {
+            margin: 0;
+            padding: 0.5rem 0;
+            list-style-type: none;
+
+            > li {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0.5rem 1rem;
+                overflow: hidden;
+                transition: 0.2s;
+            }
+        }
+    }
+}
