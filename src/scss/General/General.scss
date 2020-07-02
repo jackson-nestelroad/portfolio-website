@@ -30,7 +30,10 @@ $padding-multiplier: 0.5rem;
 // Card to hold content
 .card {
     border-radius: 5px;
-    overflow: hidden;
+
+    &.hide-overflow {
+        overflow: hidden;
+    }
 
     &.is-in-grid {
         display: flex;
