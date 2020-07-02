@@ -83,7 +83,16 @@ export module DOM {
         }
 
         return (rect.bottom + offset) >= 0 && (rect.top + offset - viewHeight) < 0;
-        
+    }
+
+    export function pixelsBelowScreenTop(element: Element): number {
+        return element.getBoundingClientRect().top;
+    }
+
+    export function pixelsAboveScreenBottom(element: Element): number {
+        const rect = element.getBoundingClientRect();
+        const viewHeight = getViewport().height;
+        return viewHeight - rect.bottom;
     }
 
     interface FirstAppearanceSettings {
@@ -111,5 +120,23 @@ export module DOM {
                 passive: true
             });
         }
+    }
+
+    export function getPathToRoot(element: Element): Array<Element | Document | Window> {
+        const path: Array<Element | Document | Window> = [];
+        let curr = element;
+        while (curr) {
+            path.push(curr);
+            curr = curr.parentElement;
+        }
+        
+        if (path.indexOf(window) === -1 && path.indexOf(document) === -1) {
+            path.push(document);
+        }
+        if (path.indexOf(window) === -1) {
+            path.push(window);
+        }
+        
+        return path;
     }
 }
