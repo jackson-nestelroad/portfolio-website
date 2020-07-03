@@ -4,6 +4,8 @@
 
 main {
     .scroll {
+        position: relative;
+        
         &::-webkit-scrollbar {
             width: 7px;
         }
