@@ -6,7 +6,7 @@ export default class Section {
     constructor(public readonly element: HTMLElement) { }
 
     public inView(): boolean {
-        return DOM.inView(this.element);
+        return DOM.inVerticalWindowView(this.element);
     }
 
     public getID(): string {
