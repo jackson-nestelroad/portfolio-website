@@ -29,6 +29,7 @@
         &.is-#{$name} {
             $background-color: theme-background-color($name);
             $color: theme-font-color($name);
+            $hover-color: theme-font-color(secondary);
 
             background-color: inherit;
             color: inherit;
@@ -54,10 +55,13 @@
                     .options {
                         > li {
                             &:hover, &.hover {
-                                background-color: rgba($background-color, 0.10);
+                                background-color: rgba($hover-color, 0.15);
                             }
 
                             &:active, &.selected {
+                                &:hover, &.hover {
+                                    background-color: rgba($background-color, 0.40);
+                                }
                                 background-color: rgba($background-color, 0.25);
                             }
                         }

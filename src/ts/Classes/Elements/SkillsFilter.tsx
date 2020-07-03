@@ -11,9 +11,12 @@ export class SkillsFilter {
     private filter: number = 0;
     private active: boolean = false;
     private top: boolean = false;
-    private optionElements: Map<Element, number> = new Map();
-    private skillElements: Skill[] = [];
     private maxHeight: number = 224;
+    private optionElements: Map<HTMLElement, number> = new Map();
+    private skillElements: Skill[] = [];
+
+    private usingArrowKeys: boolean = false;
+    private lastSelected: HTMLElement = null;
 
     public readonly Container: HTMLElement = DOM.getFirstElement('section#skills .skills-filter');
     public readonly Dropdown: HTMLElement = this.Container.querySelector('.dropdown');
@@ -88,8 +91,8 @@ export class SkillsFilter {
     private createEventListeners(): void {
         document.addEventListener('click', (event: MouseEvent) => {
             // Clicked an option
-            if (this.optionElements.has(event.target as Element)) {
-                this.toggleOption(event.target as Element);
+            if (this.optionElements.has(event.target as HTMLElement)) {
+                this.toggleOption(event.target as HTMLElement);
             }
             else {
                 const path = DOM.getPathToRoot(event.target as Element);
@@ -109,6 +112,9 @@ export class SkillsFilter {
             if (event.keyCode === 32) {
                 const path = DOM.getPathToRoot(document.activeElement);
                 if (path.indexOf(this.Dropdown) !== -1) {
+                    if (this.active && this.usingArrowKeys) {
+                        this.toggleOption(this.lastSelected);
+                    }
                     this.toggle();
                     event.preventDefault();
                     event.stopPropagation();
@@ -117,16 +123,23 @@ export class SkillsFilter {
             else if (this.active) {
                 // Left arrow or up arrow
                 if (event.keyCode === 37 || event.keyCode === 38) {
-
+                    this.moveArrowSelection(-1);
                     event.preventDefault();
                     event.stopPropagation();
                 }
                 // Right arrow or down arrow
                 else if (event.keyCode === 39 || event.keyCode === 40) {
-
+                    this.moveArrowSelection(1);
                     event.preventDefault();
                     event.stopPropagation();
                 }
+            }
+        });
+
+        this.MenuOptions.addEventListener('mouseover', (event: MouseEvent) => {
+            if (this.lastSelected) {
+                this.usingArrowKeys = false;
+                this.lastSelected.classList.remove('hover');
             }
         });
 
@@ -152,14 +165,17 @@ export class SkillsFilter {
     private open(): void {
         this.active = true;
         this.Dropdown.classList.add('active');
+        if (this.lastSelected) {
+            this.lastSelected.classList.add('hover');
+        }
     }
 
     private toggle(): void {
         this.active ? this.close() : this.open();
     }
 
-    private toggleOption(option: Element) {
-        const bit = this.optionElements.get(option);
+    private toggleOption(option: HTMLElement): void {
+        const bit = this.optionElements.get(option as HTMLElement);
         if ((this.filter & bit) !== 0) {
             option.classList.remove('selected');    
         }
@@ -167,7 +183,40 @@ export class SkillsFilter {
             option.classList.add('selected');
         }
         this.filter ^= bit;
+        this.lastSelected = option;
         this.update();
+    }
+
+    private moveArrowSelection(dir: number): void {
+        if (!this.lastSelected) {
+            this.lastSelected = this.MenuOptions.firstElementChild as HTMLElement;
+            this.lastSelected.classList.add('hover');
+        }
+        else {
+            if (this.usingArrowKeys) {
+                this.lastSelected.classList.remove('hover');
+                // Up
+                if (dir < 0) {
+                    this.lastSelected = (this.lastSelected.previousElementSibling || this.MenuOptions.lastElementChild) as HTMLElement;
+                }
+                // Down
+                else {
+                    this.lastSelected = (this.lastSelected.nextElementSibling || this.MenuOptions.firstElementChild) as HTMLElement;
+                }
+            }
+            else {
+                this.usingArrowKeys = true;
+            }
+            
+            this.lastSelected.classList.add('hover');
+
+            // Add scrolling functionality
+            // If the option moved to is out of view, put it in view
+            if (!DOM.inOffsetView(this.lastSelected, { ignoreX: true, whole: true })) {
+                DOM.scrollContainerToViewWholeChild(this.Menu, this.lastSelected, { ignoreX: true, smooth: true });
+            }
+        }
+        this.usingArrowKeys = true;
     }
 
     private checkPosition(): void {
