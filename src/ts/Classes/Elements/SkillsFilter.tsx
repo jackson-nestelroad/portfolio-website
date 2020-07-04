@@ -100,7 +100,7 @@ export class SkillsFilter {
                     this.close();
                 }
                 else {
-                    this.open();
+                    this.active ? this.close() : this.open();
                 }
             }
         }, {
