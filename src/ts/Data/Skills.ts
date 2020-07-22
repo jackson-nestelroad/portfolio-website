@@ -4,6 +4,12 @@ import { SkillData, SkillCategory } from '../Classes/Elements/Skill'
 
 export const Skills: SkillData[] = [
     {
+        name: 'Amazon Web Services',
+        svg: 'aws',
+        color: '#232F3E',
+        category: SkillCategory.DevOps,
+    },
+    {
         name: 'Angular',
         svg: 'angular',
         color: '#DD0031',
