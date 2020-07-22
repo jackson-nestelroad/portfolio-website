@@ -14,11 +14,14 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
         "lib": [
-            "dom",
-            "es5",
-            "scripthost",
-            "es2015"
-        ]
+            "DOM",
+            "DOM.Iterable",
+            "ESNext",
+            "ES5",
+            "ScriptHost",
+            "ES2015"
+        ],
+        "types": []
     },
     "compileOnSave": false,
     "include": [
