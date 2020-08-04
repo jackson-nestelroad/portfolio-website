@@ -8,9 +8,9 @@ export const Experience: ExperienceData[] = [
         link: 'https://www.fidelity.com/',
         company: 'Fidelity Investments',
         location: 'Remote',
-        position: 'Software Engineering Intern',
+        position: 'Software Engineer Intern',
         begin: 'June 2020',
-        end: 'August 2020',
+        end: 'July 2020',
         flavor: 'Fidelity Investments is an international provider of financial services that help individuals and institutions meet their financial objectives. As a leader in the industry, Fidelity is committed to using state-of-the-art technology to serve its customers. I worked remotely as a part of the Single Sign-On team in the Customer Protection division of Workplace Investing.',
         roles: [
             'Created a full-stack web application for single sign-on work intake using Angular and Spring Boot.',
