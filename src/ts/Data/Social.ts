@@ -11,7 +11,7 @@ export const Social: SocialData[] = [
     {
         name: 'LinkedIn',
         faClass: 'fab fa-linkedin',
-        link: 'https://www.linkedin.com/in/jacksonroad7/'
+        link: 'https://www.linkedin.com/in/jackson-nestelroad/'
     },
     {
         name: 'Email',
