@@ -4,6 +4,23 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
+        name: 'Spinda Discord Bot',
+        color: '#F75D5D',
+        image: 'spinda.jpg',
+        type: 'Side Project',
+        date: 'Fall 2020',
+        award: null,
+        flavor: 'Discord bot for generating Spinda patterns, custom commands, and more.',
+        repo: 'https://github.com/jackson-nestelroad/spinda-discord-bot',
+        external: null,
+        details: [
+            'Implemented with TypeScript, Discord.JS, and Sequelize.',
+            'Deployed with a PostgreSQL database to Heroku.',
+            'Generates a random pattern of the Pokémon Spinda from 4,294,967,295 possibilities, matching the behavior of the mainline Pok\u{00E9}mon games',
+            'Server-specific, highly-programmable custom commands.',
+        ],
+    },
+    {
         name: 'Aether',
         color: '#1C1C67',
         image: 'aether.jpg',
