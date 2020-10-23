@@ -1,4 +1,4 @@
-// Class for a single card in the Education section
+// Class for managing SkillsFilter dropdown
 
 import { ElementFactory } from '../../Definitions/JSX'
 import { DOM } from '../../Modules/DOM'
