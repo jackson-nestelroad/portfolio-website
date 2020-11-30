@@ -14,8 +14,8 @@ export const Education: EducationData[] = [
         end: 'Fall 2021',
         credits: {
             total: 124,
-            completed: 90,
-            taking: 14
+            completed: 101,
+            taking: 9
         },
         gpa: {
             overall: '4.0',
@@ -25,8 +25,8 @@ export const Education: EducationData[] = [
             'Collegium V Honors'
         ],
         courses: [
-            'Two Semesters of C++ Programming',
-            'Computer Architecture',
+            'Data Structures and Algorithm Analysis',
+            'Operating Systems',
             'Software Engineering',
             'Programming in UNIX'
         ]

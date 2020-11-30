@@ -25,15 +25,15 @@ export const Projects: ProjectData[] = [
         color: '#1C1C67',
         image: 'aether.jpg',
         type: 'Side Project',
-        date: 'Spring 2020',
+        date: 'Spring/Fall 2020',
         award: null,
         flavor: 'TCP proxy server for viewing and intercepting web traffic.',
         repo: 'https://github.com/jackson-nestelroad/aether-proxy',
         external: null,
         details: [
             'Implemented with C++ using the Boost.Asio library.',
-            'Multithreaded HTTP parsing and forwarding.',
-            'TCP tunneling for HTTPS/TLS and WebSockets.'
+            'Multithreaded HTTP/HTTPS parsing, forwarding, and interception.',
+            'Custom certificate authority and certificate generation with OpenSSL.'
         ]
     },
     {
