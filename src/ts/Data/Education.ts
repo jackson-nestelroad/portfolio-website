@@ -15,7 +15,7 @@ export const Education: EducationData[] = [
         credits: {
             total: 124,
             completed: 101,
-            taking: 9
+            taking: 13
         },
         gpa: {
             overall: '4.0',
