@@ -21,7 +21,7 @@ export interface EducationData {
     },
     gpa: {
         overall: string;
-        major: string;
+        major?: string;
     },
     notes: string[] | null,
     courses: string[]
@@ -93,7 +93,13 @@ export class Education extends DataComponent<EducationData> {
                             <p className="credits is-size-8 xs-auto">{this.data.credits.total} credits</p>
                         </div>
                         <div className="info content padding-x-4 padding-y-2">
-                            <p className="is-light-color is-size-8 is-italic">GPA / {this.data.gpa.overall} (overall) / {this.data.gpa.major} (major)</p>
+                            <p className="is-light-color is-size-8 is-italic">
+                                {
+                                    this.data.gpa.major
+                                    ? `GPA / ${this.data.gpa.overall} (overall) / ${this.data.gpa.major} (major)`
+                                    : `GPA / ${this.data.gpa.overall}`
+                                }
+                            </p>
                             {this.data.notes.map(note => {
                                 return <p className="is-light-color is-size-8 is-italic">{note}</p>
                             })}

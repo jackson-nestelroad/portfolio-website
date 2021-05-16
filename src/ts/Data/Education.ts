@@ -7,15 +7,40 @@ export const Education: EducationData[] = [
         name: 'The University of Texas at Dallas',
         color: '#C75B12',
         image: 'utd.svg',
-        link: 'http://utdallas.edu',
+        link: 'https://utdallas.edu',
+        location: 'Ricahrdson, TX, USA',
+        degree: 'Master of Science in Computer Science',
+        start: 'Spring 2021',
+        end: 'Fall 2022',
+        credits: {
+            total: 33,
+            completed: 6,
+            taking: 9,
+        },
+        gpa: {
+            overall: '4.0',
+        },
+        notes: [
+            'Jonsson School Fast-Track Program'
+        ],
+        courses: [
+            'Computer Architecture',
+            'Design and Analysis of Computer Algorithms',
+        ],
+    },
+    {
+        name: 'The University of Texas at Dallas',
+        color: '#C75B12',
+        image: 'utd.svg',
+        link: 'https://utdallas.edu',
         location: 'Richardson, TX, USA',
         degree: 'Bachelor of Science in Computer Science',
         start: 'Fall 2018',
         end: 'Fall 2021',
         credits: {
             total: 124,
-            completed: 101,
-            taking: 13
+            completed: 114,
+            taking: 10,
         },
         gpa: {
             overall: '4.0',
