@@ -4,6 +4,19 @@ import { ExperienceData } from '../Classes/Elements/Experience'
 
 export const Experience: ExperienceData[] = [
     {
+        svg: 'google',
+        link: 'https://about.google/',
+        company: 'Google',
+        location: 'Remote',
+        position: 'Software Engineering Intern',
+        begin: 'May 2021',
+        end: 'August 2021',
+        flavor: 'Google is a multinational technology company that provides a wide variety of Internet-related products and services, such as its search engine, advertising platform, software services, and cloud computing platform. As one of the largest technology companies in the world, Google continues to lead the web in innovation and creativity.',
+        roles: [
+            
+        ],
+    },
+    {
         svg: 'fidelity',
         link: 'https://www.fidelity.com/',
         company: 'Fidelity Investments',
