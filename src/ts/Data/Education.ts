@@ -8,7 +8,7 @@ export const Education: EducationData[] = [
         color: '#C75B12',
         image: 'utd.svg',
         link: 'https://utdallas.edu',
-        location: 'Ricahrdson, TX, USA',
+        location: 'Richardson, TX, USA',
         degree: 'Master of Science in Computer Science',
         start: 'Spring 2021',
         end: 'Fall 2022',
@@ -21,6 +21,7 @@ export const Education: EducationData[] = [
             overall: '4.0',
         },
         notes: [
+            'Systems Track',
             'Jonsson School Fast-Track Program'
         ],
         courses: [
