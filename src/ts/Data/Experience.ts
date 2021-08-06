@@ -11,9 +11,11 @@ export const Experience: ExperienceData[] = [
         position: 'Software Engineering Intern',
         begin: 'May 2021',
         end: 'August 2021',
-        flavor: 'Google is a multinational technology company that provides a wide variety of Internet-related products and services, such as its search engine, advertising platform, software services, and cloud computing platform. As one of the largest technology companies in the world, Google continues to lead the web in innovation and creativity.',
+        flavor: 'Google is a multinational technology company that provides a wide variety of Internet-related products and services. As one of the largest technology companies in the world, Google continues to lead the web in innovation and creativity. I worked remotely in Cloud Technical Infrastructure on the internal cluster management system that empowers all of Google at scale.',
         roles: [
-            
+            'Designed and implemented running OCI containers in Google’s large-scale cluster manager using modern C++, Go, and Protobuf, helping bridge the growing gap between the open source stack and internal stack.',
+            'Developed internal changes to on-machine package lifecycle, allowing packages to be directly tied to the lifetime of dependent tasks.',
+            'Wrote extensive unit tests, integration tests, and design documentation.'
         ],
     },
     {
