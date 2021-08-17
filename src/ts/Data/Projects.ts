@@ -14,7 +14,7 @@ export const Projects: ProjectData[] = [
         repo: 'https://github.com/jackson-nestelroad/panda-discord',
         external: 'https://www.npmjs.com/package/panda-discord',
         details: [
-            'Implemented with Typescript and discord.js.',
+            'Implemented with TypeScript and discord.js.',
             'Strongly-typed, class-based structure for writing complex commands.',
             'Allows message commands and interaction commands to be handled by a single method.',
             'Handles argument parsing, categories, permissions, cooldowns, and more.'
