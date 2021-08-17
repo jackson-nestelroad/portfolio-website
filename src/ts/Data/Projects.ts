@@ -4,6 +4,23 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
+        name: 'Panda',
+        color: '#5865F2',
+        image: 'panda-discord.jpg',
+        type: 'NPM Package',
+        date: 'Summer 2021',
+        award: null,
+        flavor: 'Command framework for building Discord bots with discord.js.',
+        repo: 'https://github.com/jackson-nestelroad/panda-discord',
+        external: 'https://www.npmjs.com/package/panda-discord',
+        details: [
+            'Implemented with Typescript and discord.js.',
+            'Strongly-typed, class-based structure for writing complex commands.',
+            'Allows message commands and interaction commands to be handled by a single method.',
+            'Handles argument parsing, categories, permissions, cooldowns, and more.'
+        ],
+    },
+    {
         name: 'Spinda Discord Bot',
         color: '#F75D5D',
         image: 'spinda.jpg',
@@ -14,7 +31,7 @@ export const Projects: ProjectData[] = [
         repo: 'https://github.com/jackson-nestelroad/spinda-discord-bot',
         external: null,
         details: [
-            'Implemented with TypeScript, Discord.JS, and Sequelize.',
+            'Implemented with TypeScript, discord.js, Sequelize, and Panda.',
             'Deployed with a PostgreSQL database to Heroku.',
             'Generates a random pattern of the Pokémon Spinda from 4,294,967,295 possibilities, matching the behavior of the mainline Pok\u{00E9}mon games',
             'Server-specific, highly-programmable custom commands.',
