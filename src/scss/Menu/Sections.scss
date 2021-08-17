@@ -1,5 +1,7 @@
 // Styling for the sections in the navigation menu
 
+@use 'sass:math';
+
 @import "../Theme";
 @import "Variables";
 
@@ -47,7 +49,7 @@ header.navigation {
                 projects,
                 education, 
                 connect;
-            $step-size: 360 / length($sections);
+            $step-size: math.div(360, length($sections));
             @for $i from 0 to length($sections) {
                 $section: nth($sections, $i + 1);
                 &[href=\##{$section}] {

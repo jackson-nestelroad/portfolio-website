@@ -1,5 +1,7 @@
 // CSS Flexbox library
 
+@use 'sass:math';
+
 @import "../Theme.scss";
 
 // Defines a flexbox
@@ -100,8 +102,8 @@
                     // Width sizes in a row
                     @for $i from 1 through $grid-columns {
                         &.#{$name}-#{$i} {
-                            flex-basis: 100% / $grid-columns * $i;
-                            max-width: 100% / $grid-columns * $i;
+                            flex-basis: math.div(100%, $grid-columns) * $i;
+                            max-width: math.div(100%, $grid-columns) * $i;
                         }
                     }
                 }

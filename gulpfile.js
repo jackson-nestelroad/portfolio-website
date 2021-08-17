@@ -2,8 +2,8 @@
 
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
-const tsProject = ts.createProject('./tsconfig.json');
-const sass = require('gulp-sass');
+const tsProject = ts.createProject('tsconfig.json');
+const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const connect = require('gulp-connect');
@@ -63,7 +63,7 @@ gulp.task('browserify', () => {
 					'@babel/preset-env',
 					{
 						useBuiltIns: 'usage',
-						corejs: '2.0.0'
+						corejs: '3'
 					}
 				],
 			]

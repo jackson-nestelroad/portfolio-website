@@ -1,5 +1,7 @@
 // Styling for hexagon grid of skills icons
 
+@use 'sass:math';
+
 @import "../../Theme";
 
 // Get number of hexagons per row based on screen size
@@ -23,7 +25,7 @@
 
 // Create offset for each row of hexagons
 @mixin create-offset($hex-per-row) {
-    $offset: percentage(1 / $hex-per-row / 4);
+    $offset: percentage(math.div(math.div(1, $hex-per-row), 4));
     @for $i from 1 through $hex-per-row {
         &:nth-child(#{$hex-per-row * 2}n + #{$i}) {
             left: -$offset;
@@ -39,8 +41,8 @@
 // Create sizings for hexagon container
 @mixin skill-container-size($size) {
     $hex: hex-per-row($size);
-    min-width: percentage(1 / $hex);
-    padding-top: percentage(1 / $hex * 0.866025404);
+    min-width: percentage(math.div(1, $hex));
+    padding-top: percentage(math.div(1, $hex) * 0.866025404);
     @include create-offset($hex);
 }
 
