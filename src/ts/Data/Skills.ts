@@ -160,6 +160,12 @@ export const Skills: SkillData[] = [
         category: SkillCategory.Programming,
     },
     {
+        name: 'Rust',
+        svg: 'rust',
+        color: '#000000',
+        category: SkillCategory.Programming,
+    },
+    {
         name: 'SASS/SCSS',
         svg: 'sass',
         color: '#CD669A',
