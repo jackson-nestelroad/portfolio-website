@@ -4,6 +4,23 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
+        name: 'DataJoint Core',
+        color: '#51A8B9',
+        image: 'datajoint-core.jpg',
+        type: 'Senior Capstone',
+        date: 'Fall 2021',
+        award: null,
+        flavor: 'Rust library for shared code across user-level DataJoint frameworks.',
+        repo: 'https://github.com/datajoint/datajoint-core',
+        external: null,
+        details: [
+            'Implemented with Rust and SQLx.',
+            'Moves database connection and querying code to a shared library to avoid code duplication.',
+            'Allows connections to any MySQL, Postgres, MSSQL, or SQLite database.',
+            'Exposed over a C FFI for user-level frameworks in Python, MATLAB, and more.',
+        ],
+    },
+    {
         name: 'Panda',
         color: '#5865F2',
         image: 'panda-discord.jpg',
