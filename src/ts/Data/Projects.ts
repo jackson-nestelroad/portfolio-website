@@ -16,7 +16,7 @@ export const Projects: ProjectData[] = [
         details: [
             'Implemented with Rust and SQLx.',
             'Moves database connection and querying code to a shared library to avoid code duplication.',
-            'Allows connections to any MySQL, Postgres, MSSQL, or SQLite database.',
+            'Allows connections to any MySQL or Postgres database.',
             'Exposed over a C FFI for user-level frameworks in Python, MATLAB, and more.',
         ],
     },

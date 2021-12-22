@@ -14,19 +14,13 @@ export const Education: EducationData[] = [
         end: 'Fall 2022',
         credits: {
             total: 33,
-            completed: 6,
+            completed: 15,
             taking: 9,
         },
-        gpa: {
-            overall: '4.0',
-        },
+        gpa: '4.0',
         notes: [
             'Systems Track',
             'Jonsson School Fast-Track Program'
-        ],
-        courses: [
-            'Computer Architecture',
-            'Design and Analysis of Computer Algorithms',
         ],
     },
     {
@@ -40,21 +34,13 @@ export const Education: EducationData[] = [
         end: 'Fall 2021',
         credits: {
             total: 124,
-            completed: 114,
-            taking: 10,
+            completed: 124,
+            taking: 0,
         },
-        gpa: {
-            overall: '4.0',
-            major: '4.0'
-        },
+        gpa: '4.0',
         notes: [
-            'Collegium V Honors'
+            'Summa Cum Laude',
+            'Collegium V Honors',
         ],
-        courses: [
-            'Data Structures and Algorithm Analysis',
-            'Operating Systems',
-            'Software Engineering',
-            'Programming in UNIX'
-        ]
     }
 ];

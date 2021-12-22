@@ -47,7 +47,11 @@ section#education {
             }
 
             .progress {
-                padding-top: 2.5rem;
+                padding-top: 1rem;
+                
+                &.incomplete {
+                    padding-top: 2.5rem;
+                }
 
                 .progress-bar {
                     margin-top: 0;

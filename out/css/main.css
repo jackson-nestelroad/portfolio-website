@@ -5521,62 +5521,6 @@ h1, h2, h3, h4, h5, h6, p {
   transform: translateY(-50%);
   border-color: transparent #2D323F transparent transparent;
 }
-header.logo {
-  width: 100%;
-  padding: 0.5rem 2rem;
-  background-color: white;
-  user-select: none;
-  -webkit-user-select: none;
-}
-header.logo .row {
-  max-width: 75rem;
-  margin: 0 auto;
-}
-header.logo .row .image {
-  width: 4.675rem;
-  height: 4.675rem;
-  margin-right: 0.25rem;
-  position: relative;
-}
-header.logo .row .image img {
-  height: inherit;
-  width: inherit;
-  position: absolute;
-  -webkit-user-drag: none;
-  transform-origin: center center;
-  -webkit-transform-origin: center center;
-}
-header.logo .row .image img:not(.preload) {
-  transition: transform 1.5s;
-  -webkit-transition: 1.5s;
-  transform: scale(1, 1) rotate(0deg);
-  -webkit-transform: scale(1, 1) rotate(0deg);
-}
-header.logo .row .image img.preload.outer {
-  transform: scale(0, 0) rotate(360deg);
-  -webkit-transform: scale(0, 0) rotate(360deg);
-}
-header.logo .row .image img.preload.inner {
-  transform: scale(0, 0) rotate(-180deg);
-  -webkit-transform: scale(0, 0) rotate(-180deg);
-}
-header.logo .row .info {
-  margin-top: 0.825rem;
-  font-weight: 700;
-  font-family: "Open Sans";
-  text-transform: uppercase;
-}
-@media all and (max-width: 575.98px) {
-  header.logo .row .info {
-    display: none;
-  }
-}
-header.logo .row .info .name {
-  font-size: 1.35rem;
-}
-header.logo .row .info .title {
-  font-size: 0.8rem;
-}
 header.menu {
   position: fixed;
   top: 0;
@@ -5741,6 +5685,62 @@ header.navigation div.header {
   height: 3px;
 }
 
+header.logo {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  user-select: none;
+  -webkit-user-select: none;
+}
+header.logo .row {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+header.logo .row .image {
+  width: 4.675rem;
+  height: 4.675rem;
+  margin-right: 0.25rem;
+  position: relative;
+}
+header.logo .row .image img {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  -webkit-user-drag: none;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+}
+header.logo .row .image img:not(.preload) {
+  transition: transform 1.5s;
+  -webkit-transition: 1.5s;
+  transform: scale(1, 1) rotate(0deg);
+  -webkit-transform: scale(1, 1) rotate(0deg);
+}
+header.logo .row .image img.preload.outer {
+  transform: scale(0, 0) rotate(360deg);
+  -webkit-transform: scale(0, 0) rotate(360deg);
+}
+header.logo .row .image img.preload.inner {
+  transform: scale(0, 0) rotate(-180deg);
+  -webkit-transform: scale(0, 0) rotate(-180deg);
+}
+header.logo .row .info {
+  margin-top: 0.825rem;
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+}
+@media all and (max-width: 575.98px) {
+  header.logo .row .info {
+    display: none;
+  }
+}
+header.logo .row .info .name {
+  font-size: 1.35rem;
+}
+header.logo .row .info .title {
+  font-size: 0.8rem;
+}
 section#about {
   box-shadow: 0 -40px 30px 0px rgba(0, 0, 15, 0.5);
 }
@@ -5911,6 +5911,9 @@ section#education .card.education .content .header .icon > img {
   -webkit-user-drag: none;
 }
 section#education .card.education .content .progress {
+  padding-top: 1rem;
+}
+section#education .card.education .content .progress.incomplete {
   padding-top: 2.5rem;
 }
 section#education .card.education .content .progress .progress-bar {
@@ -6034,115 +6037,6 @@ section#experience .card.experience .content .info .description {
   border-left: 0.25rem solid #29AB87;
 }
 section#experience .card.experience .content .info .job {
-  padding-left: 1rem;
-}
-section#projects .projects-container > * {
-  animation: fade-in 1s;
-  animation-play-state: running;
-  position: relative;
-}
-section#projects .projects-container > *.preload {
-  animation-play-state: paused;
-}
-section#projects .award {
-  position: absolute;
-  top: -1rem;
-  right: -1rem;
-  z-index: 1;
-}
-section#projects .award:hover img {
-  transform: translateY(-2px) scale(1.05, 1.05);
-}
-section#projects .award img {
-  height: 6rem;
-  width: auto;
-  user-select: none;
-  -webkit-user-drag: none;
-  transition: transform 0.2s ease-in-out;
-}
-section#projects .project {
-  width: 100%;
-  height: 100%;
-}
-section#projects .project .content .options {
-  transform: translateZ(1px);
-}
-section#projects .project .content .options .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-section#projects .project .content .options .btn svg {
-  height: 1.1rem;
-  width: auto;
-  transition: 0.5s ease-in-out;
-  transition-property: opacity, transform, height, width;
-}
-@media all and (max-width: 575.98px) {
-  section#projects .project .content .options .btn svg {
-    height: 0.85rem;
-  }
-}
-@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  section#projects .project .content .options .btn svg {
-    width: 1.5rem;
-  }
-}
-section#projects .project .content .options .btn span {
-  display: inline-flex;
-  max-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: 0.5s ease-in-out;
-  transition-property: max-width;
-}
-section#projects .project .content .options .btn:hover svg {
-  opacity: 0;
-  transform: scale(0, 0);
-  height: 0;
-}
-@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  section#projects .project .content .options .btn:hover svg {
-    width: 0;
-  }
-}
-section#projects .project .content .options .btn:hover span {
-  max-width: 10rem;
-}
-section#projects .project .content .slider {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateY(100%);
-  transition: transform 0.5s ease-in-out;
-}
-section#projects .project .content .slider[opened] {
-  transform: translateY(0);
-}
-section#projects .project .content .slider .title .close-btn-wrapper {
-  padding-right: 1rem;
-}
-section#projects .project .content .slider .title .close-btn-wrapper .close > svg {
-  width: 0.75rem;
-  height: auto;
-}
-@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  section#projects .project .content .slider .title .close-btn-wrapper .close {
-    height: 0;
-    width: 1.1rem;
-    padding-top: 1.1rem;
-  }
-  section#projects .project .content .slider .title .close-btn-wrapper .close > svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-section#projects .project .content .slider .body .details {
   padding-left: 1rem;
 }
 section#skills ul.hex-grid {
@@ -6499,4 +6393,113 @@ section {
   to {
     opacity: 1;
   }
+}
+section#projects .projects-container > * {
+  animation: fade-in 1s;
+  animation-play-state: running;
+  position: relative;
+}
+section#projects .projects-container > *.preload {
+  animation-play-state: paused;
+}
+section#projects .award {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  z-index: 1;
+}
+section#projects .award:hover img {
+  transform: translateY(-2px) scale(1.05, 1.05);
+}
+section#projects .award img {
+  height: 6rem;
+  width: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.2s ease-in-out;
+}
+section#projects .project {
+  width: 100%;
+  height: 100%;
+}
+section#projects .project .content .options {
+  transform: translateZ(1px);
+}
+section#projects .project .content .options .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#projects .project .content .options .btn svg {
+  height: 1.1rem;
+  width: auto;
+  transition: 0.5s ease-in-out;
+  transition-property: opacity, transform, height, width;
+}
+@media all and (max-width: 575.98px) {
+  section#projects .project .content .options .btn svg {
+    height: 0.85rem;
+  }
+}
+@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  section#projects .project .content .options .btn svg {
+    width: 1.5rem;
+  }
+}
+section#projects .project .content .options .btn span {
+  display: inline-flex;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: 0.5s ease-in-out;
+  transition-property: max-width;
+}
+section#projects .project .content .options .btn:hover svg {
+  opacity: 0;
+  transform: scale(0, 0);
+  height: 0;
+}
+@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  section#projects .project .content .options .btn:hover svg {
+    width: 0;
+  }
+}
+section#projects .project .content .options .btn:hover span {
+  max-width: 10rem;
+}
+section#projects .project .content .slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+section#projects .project .content .slider[opened] {
+  transform: translateY(0);
+}
+section#projects .project .content .slider .title .close-btn-wrapper {
+  padding-right: 1rem;
+}
+section#projects .project .content .slider .title .close-btn-wrapper .close > svg {
+  width: 0.75rem;
+  height: auto;
+}
+@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  section#projects .project .content .slider .title .close-btn-wrapper .close {
+    height: 0;
+    width: 1.1rem;
+    padding-top: 1.1rem;
+  }
+  section#projects .project .content .slider .title .close-btn-wrapper .close > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+section#projects .project .content .slider .body .details {
+  padding-left: 1rem;
 }
