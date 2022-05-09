@@ -11,11 +11,11 @@ export const Education: EducationData[] = [
         location: 'Richardson, TX, USA',
         degree: 'Master of Science in Computer Science',
         start: 'Spring 2021',
-        end: 'Fall 2022',
+        end: 'Summer 2022',
         credits: {
             total: 33,
-            completed: 15,
-            taking: 9,
+            completed: 27,
+            taking: 6,
         },
         gpa: '4.0',
         notes: [
