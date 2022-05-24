@@ -4,6 +4,22 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
+        name: 'Wedding Seating Chart',
+        color: '#393431',
+        image: 'wedding-seating-chart.jpg',
+        type: 'Side Project',
+        date: 'Summer 2022',
+        award: null,
+        flavor: 'Simple web app for guests to receive a digital escort card.',
+        repo: 'https://github.com/jackson-nestelroad/wedding-seating-chart',
+        external: null,
+        details: [
+            'Implemented with React, TypeScript, and SCSS.',
+            'Fully customizable wedding details and seating chart.',
+            'Flexible searching by first name, last name, full name, or tag.',
+        ],
+    },
+    {
         name: 'DataJoint Core',
         color: '#51A8B9',
         image: 'datajoint-core.jpg',
