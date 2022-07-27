@@ -17,7 +17,7 @@ require('@babel/polyfill');
 // Create a server to view changes
 gulp.task('connect', () => {
 	connect.server({
-		root: '.',
+		root: './out',
 		port: 8080,
 		livereload: true
 	});
@@ -34,7 +34,7 @@ gulp.task('sass', () => {
 
 // Watch HTML for changes to auto-reload change
 gulp.task('html', () => {
-	return gulp.src('./*.html')
+	return gulp.src('./out/index.html')
 		.pipe(connect.reload())
 });
 

@@ -1,8 +1,8 @@
 // Class for a single card in the Projects section
 
-import { ElementFactory } from '../../Definitions/JSX'
-import { DataComponent } from '../Component'
 import { DOM } from '../../Modules/DOM';
+import { DataComponent } from '../Component'
+import { ElementFactory } from '../../Definitions/JSX'
 
 export interface ProjectData {
     name: string,
@@ -23,14 +23,14 @@ export class Project extends DataComponent<ProjectData> {
     private tooltipLeft: boolean = true;
 
     private created(): void {
-        if(this.data.award) {
+        if (this.data.award) {
             window.addEventListener('resize', () => this.checkTooltipSide(), { passive: true });
         }
     }
 
     private mounted(): void {
         // Check tooltip side on initial mount if applicable
-        if(this.data.award) {
+        if (this.data.award) {
             this.checkTooltipSide();
         }
     }
@@ -41,7 +41,7 @@ export class Project extends DataComponent<ProjectData> {
         const tooltipPos = tooltip.getBoundingClientRect().left;
         const screenWidth = DOM.getViewport().width;
 
-        if(this.tooltipLeft !== (tooltipPos >= screenWidth / 2)) {
+        if (this.tooltipLeft !== (tooltipPos >= screenWidth / 2)) {
             this.tooltipLeft = !this.tooltipLeft;
 
             const add = this.tooltipLeft ? 'left' : 'top';
@@ -63,7 +63,7 @@ export class Project extends DataComponent<ProjectData> {
     }
 
     protected update(): void {
-        if(this.infoDisplayed) {
+        if (this.infoDisplayed) {
             this.getReference('slider').setAttribute('opened', '');
         }
         else {
@@ -79,20 +79,20 @@ export class Project extends DataComponent<ProjectData> {
         } as React.CSSProperties;
 
         const imageStyle = {
-            backgroundImage: `url(${`./out/images/Projects/${this.data.image}`})`
+            backgroundImage: `url(${`./images/Projects/${this.data.image}`})`
         }
 
         return (
             <div className="xs-12 sm-6 md-4">
                 {
-                    this.data.award ? 
-                    <div className="award">
-                        <div className="tooltip-container">
-                            <img src="out/images/Projects/award.png"/>
-                            <span ref="tooltip" className="tooltip left is-size-8">{this.data.award}</span>
+                    this.data.award ?
+                        <div className="award">
+                            <div className="tooltip-container">
+                                <img src="./images/Projects/award.png" />
+                                <span ref="tooltip" className="tooltip left is-size-8">{this.data.award}</span>
+                            </div>
                         </div>
-                    </div>
-                    : null
+                        : null
                 }
                 <div className="project card is-theme-secondary elevation-1 is-in-grid hide-overflow" style={inlineStyle}>
                     <div className="image" style={imageStyle}></div>
@@ -112,7 +112,7 @@ export class Project extends DataComponent<ProjectData> {
                                     <div className="close-btn-wrapper xs-x-self-end">
                                         <button className="btn close is-svg is-primary" tabindex="-1" onClick={this.lessInfo.bind(this)}>
                                             <i className="fas fa-times"></i>
-                                        </button> 
+                                        </button>
                                     </div>
                                 </div>
                                 <div className="body">
@@ -131,19 +131,19 @@ export class Project extends DataComponent<ProjectData> {
                             </button>
                             {
                                 this.data.repo ?
-                                <a className="code btn is-primary is-text is-custom" href={this.data.repo} target="_blank" tabindex="0">
-                                    <i className="fas fa-code"></i>
-                                    <span>See Code</span>
-                                </a>
-                                : null
+                                    <a className="code btn is-primary is-text is-custom" href={this.data.repo} target="_blank" tabindex="0">
+                                        <i className="fas fa-code"></i>
+                                        <span>See Code</span>
+                                    </a>
+                                    : null
                             }
                             {
-                                this.data.external ? 
-                                <a className="external btn is-primary is-text is-custom" href={this.data.external} target="_blank" tabindex="0">
-                                    <i className="fas fa-external-link-alt"></i>
-                                    <span>View Online</span>
-                                </a>
-                                : null
+                                this.data.external ?
+                                    <a className="external btn is-primary is-text is-custom" href={this.data.external} target="_blank" tabindex="0">
+                                        <i className="fas fa-external-link-alt"></i>
+                                        <span>View Online</span>
+                                    </a>
+                                    : null
                             }
                         </div>
                     </div>

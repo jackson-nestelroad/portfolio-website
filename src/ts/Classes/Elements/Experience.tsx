@@ -1,7 +1,7 @@
 // Class for a single card in the Experience section
 
-import { ElementFactory } from '../../Definitions/JSX'
 import { DataComponent } from '../Component'
+import { ElementFactory } from '../../Definitions/JSX'
 
 // Format for data
 export interface ExperienceData {
@@ -20,7 +20,7 @@ export interface ExperienceData {
 export class Experience extends DataComponent<ExperienceData> {
 
     protected update(): void { }
-    
+
     public createElement(): HTMLElement {
         return (
             <div className="card is-theme-secondary elevation-1 experience">
@@ -28,7 +28,7 @@ export class Experience extends DataComponent<ExperienceData> {
                     <div className="header">
                         <div className="icon">
                             <a href={this.data.link} target="_blank">
-                                <img src={`./out/images/Experience/${this.data.svg}.svg`}/>
+                                <img src={`./images/Experience/${this.data.svg}.svg`} />
                             </a>
                         </div>
                         <div className="company">
@@ -40,7 +40,7 @@ export class Experience extends DataComponent<ExperienceData> {
                             <p className="date is-size-8 is-italic is-color-light">{`(${this.data.begin} \u2014 ${this.data.end})`}</p>
                         </div>
                     </div>
-                    <hr/>
+                    <hr />
                     <div className="content info">
                         <p className="description is-size-8 is-color-light is-italic is-justified is-quote">{this.data.flavor}</p>
                         <ul className="job is-left-aligned is-size-7 xs-y-padding-between-1">

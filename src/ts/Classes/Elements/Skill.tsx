@@ -1,8 +1,8 @@
 // Class for a single skill in the Skill section
 
-import { SVG } from '../../Modules/SVG'
-import { ElementFactory } from '../../Definitions/JSX'
 import { DataComponent } from '../Component'
+import { ElementFactory } from '../../Definitions/JSX'
+import { SVG } from '../../Modules/SVG'
 
 export enum SkillCategory {
     Programming = 1 << 0,
@@ -34,7 +34,7 @@ export class Skill extends DataComponent<SkillData> {
     protected update(): void { }
 
     private created(): void {
-        SVG.loadSVG(`./out/images/Skills/${this.data.svg}`).then(svg => {
+        SVG.loadSVG(`./images/Skills/${this.data.svg}`).then(svg => {
             svg.setAttribute('class', 'icon');
             const hexagon = this.getReference('hexagon');
             hexagon.parentNode.insertBefore(svg, hexagon);
@@ -42,12 +42,12 @@ export class Skill extends DataComponent<SkillData> {
     }
 
     protected createElement(): HTMLElement {
-        if(!Skill.HexagonSVG) {
+        if (!Skill.HexagonSVG) {
             throw 'Cannot create Skill element without being initialized.';
         }
         return (
             <li className='skill tooltip-container'>
-                <div className='hexagon-container' style={{color: this.data.color}}>
+                <div className='hexagon-container' style={{ color: this.data.color }}>
                     <span className='tooltip top is-size-7'>{this.data.name}</span>
                     {Skill.HexagonSVG.cloneNode(true)}
                 </div>
@@ -59,19 +59,19 @@ export class Skill extends DataComponent<SkillData> {
     public static initialize(): Promise<boolean> {
         return new Promise((resolve, reject) => {
             // Resolve immediately if we already have initialized
-            if(Skill.HexagonSVG) {
+            if (Skill.HexagonSVG) {
                 resolve(true);
             }
             else {
-                SVG.loadSVG('./out/images/Content/Hexagon').then(element => {
+                SVG.loadSVG('./images/Content/Hexagon').then(element => {
                     element.setAttribute('class', 'hexagon');
                     element.setAttribute('ref', 'hexagon');
                     Skill.HexagonSVG = element;
                     resolve(true);
                 })
-                .catch(err => {
-                    resolve(false);
-                });
+                    .catch(err => {
+                        resolve(false);
+                    });
             }
         });
     }

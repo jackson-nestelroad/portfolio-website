@@ -70,7 +70,7 @@ export class Education extends DataComponent<EducationData> {
                     <div className="body">
                         <div className="header flex row sm-wrap md-nowrap xs-x-center">
                             <a className="icon xs-auto" href={this.data.link} target="_blank">
-                                <img src={`out/images/Education/${this.data.image}`} />
+                                <img src={`./images/Education/${this.data.image}`} />
                             </a>
                             <div className="about xs-full">
                                 <div className="institution flex row xs-x-center xs-y-center md-x-begin">
