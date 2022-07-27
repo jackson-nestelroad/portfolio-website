@@ -35,7 +35,7 @@ gulp.task('sass', () => {
 // Watch HTML for changes to auto-reload change
 gulp.task('html', () => {
 	return gulp.src('./*.html')
-	.pipe(connect.reload())
+		.pipe(connect.reload())
 });
 
 // Clean up the transpiled TypeScript files
@@ -54,10 +54,10 @@ gulp.task('typescript', () => {
 // Browserify and merge all JavaScript files together
 gulp.task('browserify', () => {
 	return browserify({
-        entries: glob.sync('out/ts/**/*.js'),
-        debug: true
+		entries: glob.sync('out/ts/**/*.js'),
+		debug: true
 	})
-		.transform('babelify', { 
+		.transform('babelify', {
 			presets: [
 				[
 					'@babel/preset-env',
@@ -71,7 +71,7 @@ gulp.task('browserify', () => {
 		.bundle()
 		.pipe(source('scripts.js'))
 		.pipe(buffer())
-        // .pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe(gulp.dest('out/js'))
 		.pipe(connect.reload());
 });
