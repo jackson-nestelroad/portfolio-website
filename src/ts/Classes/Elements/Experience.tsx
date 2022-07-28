@@ -111,7 +111,7 @@ export class Experience extends DataComponent<ExperienceData> {
                             <div className="toggle-wrapper is-color-light" onClick={this.toggleAccordion.bind(this)}>
                                 <button type="button"
                                     className="toggle btn is-svg is-primary is-center-sligned is-size-6">
-                                    <i className="fas fa-chevron-down"></i>
+                                    <i className="fa-solid fa-chevron-down"></i>
                                 </button>
                             </div>
                         </div>

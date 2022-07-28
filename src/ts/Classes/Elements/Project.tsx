@@ -111,7 +111,7 @@ export class Project extends DataComponent<ProjectData> {
                                     <p className="is-size-6 is-bold-weight">Details</p>
                                     <div className="close-btn-wrapper xs-x-self-end">
                                         <button className="btn close is-svg is-primary" tabindex="-1" onClick={this.lessInfo.bind(this)}>
-                                            <i className="fas fa-times"></i>
+                                            <i className="fa-solid fa-times"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -126,13 +126,13 @@ export class Project extends DataComponent<ProjectData> {
                         </div>
                         <div className="options is-theme-secondary xs-x-margin-between-1">
                             <button className="info btn is-primary is-text is-custom" onClick={this.toggleInfo.bind(this)}>
-                                <i className="fas fa-info"></i>
+                                <i className="fa-solid fa-info"></i>
                                 <span ref="infoText">More Info</span>
                             </button>
                             {
                                 this.data.repo ?
                                     <a className="code btn is-primary is-text is-custom" href={this.data.repo} target="_blank" tabindex="0">
-                                        <i className="fas fa-code"></i>
+                                        <i className="fa-solid fa-code"></i>
                                         <span>See Code</span>
                                     </a>
                                     : null
@@ -140,7 +140,7 @@ export class Project extends DataComponent<ProjectData> {
                             {
                                 this.data.external ?
                                     <a className="external btn is-primary is-text is-custom" href={this.data.external} target="_blank" tabindex="0">
-                                        <i className="fas fa-external-link-alt"></i>
+                                        <i className="fa-solid fa-external-link-alt"></i>
                                         <span>View Online</span>
                                     </a>
                                     : null

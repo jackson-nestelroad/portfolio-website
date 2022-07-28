@@ -15,7 +15,7 @@ export const Social: SocialData[] = [
     },
     {
         name: 'Email',
-        faClass: 'fas fa-envelope',
+        faClass: 'fa-solid fa-envelope',
         link: 'mailto:jackson@nestelroad.com'
     }
 ];

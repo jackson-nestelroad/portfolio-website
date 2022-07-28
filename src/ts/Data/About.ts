@@ -1,4 +1,4 @@
 // Flavor text for About section
 
-export const AboutMe: string = 
-"I am an aspiring web developer and software engineer chasing my passion for working with technology and programming at the University of Texas at Dallas. I crave the opportunity to contribute to meaningful projects that employ my current gifts and interests while also shoving me out of my comfort zone to learn new skills. My goal is to maximize every experience as an opportunity for personal, professional, and technical growth.";
+export const AboutMe: string =
+    "I am a software engineer excited about using technology to empower the world. Over the years, I have gained experience with a wide range technologies, from full-stack web applications to low-level systems. I have an eye for efficiency, organization, and technical details, and I love working within and across teams to design and build things that advance the beautiful, turbulent field of technology."
