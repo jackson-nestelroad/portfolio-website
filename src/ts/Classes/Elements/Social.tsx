@@ -1,7 +1,7 @@
 // Class for a single social media icon in the Connect section
 
-import { ElementFactory } from '../../Definitions/JSX'
 import { DataComponent } from '../Component'
+import { ElementFactory } from '../../Definitions/JSX'
 
 export interface SocialData {
     name: string,

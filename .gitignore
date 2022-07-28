@@ -2,3 +2,5 @@ node_modules
 setup.txt
 gulpfile-old.js
 src/_old
+out/css
+out/js

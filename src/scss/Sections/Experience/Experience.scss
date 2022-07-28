@@ -91,7 +91,7 @@ section#experience {
                     text-align: right;
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
+                    justify-content: flex-start;
                     align-items: flex-end;
                     width: 100%;
 
@@ -112,6 +112,30 @@ section#experience {
 
                 .job {
                     padding-left: 1rem;
+                }
+            }
+
+            .accordion {
+                .toggle-wrapper {
+                    width: 100%;
+                    margin: 0 auto;
+                    cursor: pointer;
+
+                    .toggle {
+                        margin: 0 auto;
+                    }
+                }
+
+                > .panel {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.2s ease-out;
+                }
+                
+                &[open] {
+                    .toggle {
+                        transform: rotate(180deg);
+                    }
                 }
             }
         }
