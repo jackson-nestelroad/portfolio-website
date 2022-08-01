@@ -1,19 +1,19 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Jackson Nestelroad",
+    "short_name": "Jackson Nestelroad",
     "icons": [
         {
-            "src": "/out/images/icons/android-chrome-192x192.png",
+            "src": "android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/out/images/icons/android-chrome-256x256.png",
-            "sizes": "256x256",
+            "src": "android-chrome-512x512.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#29ab87",
+    "background_color": "#29ab87",
     "display": "standalone"
 }
