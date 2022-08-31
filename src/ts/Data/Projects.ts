@@ -65,7 +65,7 @@ export const Projects: ProjectData[] = [
         external: null,
         details: [
             'Implemented with TypeScript, discord.js, Sequelize, and Panda.',
-            'Deployed with a PostgreSQL database to Heroku.',
+            'Deployed to Google Compute Engine, connected to a PostgreSQL server hosted on DigitalOcean.',
             'Generates a random pattern of the Pokémon Spinda from 4,294,967,295 possibilities, matching the behavior of the mainline Pok\u{00E9}mon games',
             'Server-specific, highly-programmable custom commands.',
         ],
