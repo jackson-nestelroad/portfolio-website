@@ -87,7 +87,7 @@ export class Experience extends DataComponent<ExperienceData> {
 
     public createElement(): HTMLElement {
         return (
-            <div className="card is-theme-secondary elevation-1 experience">
+            <div className="card is-theme-secondary elevation-1 hover-elevation-10 experience">
                 <div className="content padding-2">
                     <div className="header">
                         <div className="icon">

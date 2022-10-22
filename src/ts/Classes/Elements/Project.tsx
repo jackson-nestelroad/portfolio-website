@@ -94,7 +94,7 @@ export class Project extends DataComponent<ProjectData> {
                         </div>
                         : null
                 }
-                <div className="project card is-theme-secondary elevation-1 is-in-grid hide-overflow" style={inlineStyle}>
+                <div className="project card is-theme-secondary elevation-1 hover-elevation-10 is-in-grid hide-overflow" style={inlineStyle}>
                     <div className="image" style={imageStyle}></div>
                     <div className="content padding-2">
                         <div className="title">

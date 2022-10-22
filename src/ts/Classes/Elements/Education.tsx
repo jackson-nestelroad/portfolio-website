@@ -65,7 +65,7 @@ export class Education extends DataComponent<EducationData> {
         } as React.CSSProperties;
 
         return (
-            <div className="education card is-theme-secondary elevation-1" style={inlineStyle}>
+            <div className="education card is-theme-secondary elevation-1 hover-elevation-10" style={inlineStyle}>
                 <div className="content padding-2">
                     <div className="body">
                         <div className="header flex row sm-wrap md-nowrap xs-x-center">

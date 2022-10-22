@@ -6,4 +6,15 @@
   .elevation-#{$i} {
     @include elevation($i);
   }
+
+  .hover-elevation-#{$i} {
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+      @include elevation($i);
+      z-index: 1;
+    }
+  }
 }
