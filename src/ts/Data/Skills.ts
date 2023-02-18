@@ -36,7 +36,7 @@ export const Skills: SkillData[] = [
     {
         name: 'Docker',
         svg: 'docker',
-        color: '#22B9EC',
+        color: '#2496ED',
         category: SkillCategory.DevOps,
     },
     {
