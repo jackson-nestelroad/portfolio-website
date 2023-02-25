@@ -8,6 +8,7 @@ export interface ExperienceData {
     collapse?: boolean,
     svg: string,
     link: string,
+    disableLink?: boolean,
     company: string,
     team: string,
     location: string,
@@ -85,18 +86,28 @@ export class Experience extends DataComponent<ExperienceData> {
         );
     }
 
+    private createIcon(): HTMLElement {
+        return <img src={`./images/Experience/${this.data.svg}.svg`} />;
+    }
+
     public createElement(): HTMLElement {
         return (
             <div className="card is-theme-secondary elevation-1 experience">
                 <div className="content padding-2">
                     <div className="header">
                         <div className="icon">
-                            <a href={this.data.link} target="_blank">
-                                <img src={`./images/Experience/${this.data.svg}.svg`} />
-                            </a>
+                            {this.data.disableLink
+                                ? <div>{this.createIcon()}</div>
+                                : <a href={this.data.link} target="_blank">{this.createIcon()}</a>
+                            }
                         </div>
                         <div className="company">
-                            <a href={this.data.link} target="_blank" className="name is-size-6 is-bold-weight is-colored-link">{this.data.company}</a>
+                            <p className="name is-size-6 is-bold-weight is-colored-link">
+                                {this.data.disableLink
+                                    ? <div>{this.data.company}</div>
+                                    : <a href={this.data.link} target="_blank">{this.data.company}</a>
+                                }
+                            </p>
                             <p className="team is-size-7 is-bold-weight is-color-light">{this.data.team}</p>
                             <p className="location is-size-8 is-italic is-color-light">{this.data.location}</p>
                         </div>

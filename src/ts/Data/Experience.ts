@@ -54,6 +54,7 @@ export const Experience: ExperienceData[] = [
         collapse: true,
         svg: 'medit',
         link: 'https://medit.online',
+        disableLink: true,
         company: 'Medit',
         team: 'Web Development',
         location: 'Dublin, Ireland',
