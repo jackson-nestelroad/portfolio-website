@@ -4,6 +4,24 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
+        name: 'DailyBread',
+        color: '#E87D1B',
+        image: 'daily-bread.jpg',
+        type: 'NPM Package',
+        date: 'Winter 2023',
+        award: null,
+        flavor: 'TypeScript library for reading the Bible and verse of the day.',
+        repo: 'https://github.com/jackson-nestelroad/daily-bread',
+        external: 'https://www.npmjs.com/package/daily-bread',
+        details: [
+            'Implemented with TypeScript and Mocha.',
+            'Usable in multiple JavaScript environments (Node.js or the browser).',
+            'Reads one or more passages of the Bible using Bible Gateway.',
+            'Customizable formatting, multi-version, and multi-lingual support.',
+            'Command-line interface for reading passages, obtaining book information, and reading the verse of the day.',
+        ],
+    },
+    {
         name: 'Wedding Seating Chart',
         color: '#393431',
         image: 'wedding-seating-chart.jpg',
