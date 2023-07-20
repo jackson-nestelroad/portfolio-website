@@ -4,6 +4,24 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
+        name: 'Christ-Centered 2.0',
+        color: '#16BCA3',
+        image: 'christ-centered-new.jpg',
+        type: 'Browser Extension',
+        date: 'Summer 2023',
+        award: null,
+        flavor: 'Browser extension to deliver the Bible Verse of the Day to your new tab.',
+        repo: 'https://github.com/jackson-nestelroad/christ-centered-new',
+        external: 'https://chrome.google.com/webstore/detail/christ-centered/adcoobhgdcnpbmkhajkabmkcfdekdibo',
+        details: [
+            'Implemented with React, TypeScript, and SCSS.',
+            'Available on Chrome and Firefox.',
+            'Displays verses, chapters, or entire books of the Bible in 10 different languages using DailyBread.',
+            'Gives current weather for user\'s location via the OpenWeatherMap API.',
+            'Persistent data synchronization between Redux and browser storage.'
+        ],
+    },
+    {
         name: 'DailyBread',
         color: '#E87D1B',
         image: 'daily-bread.jpg',
