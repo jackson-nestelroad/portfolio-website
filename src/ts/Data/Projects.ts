@@ -11,7 +11,7 @@ export const Projects: ProjectData[] = [
         date: 'Summer 2023',
         award: null,
         flavor: 'Browser extension to deliver the Bible Verse of the Day to your new tab.',
-        repo: 'https://github.com/jackson-nestelroad/christ-centered-new',
+        repo: 'https://github.com/jackson-nestelroad/christ-centered-2.0',
         external: 'https://chrome.google.com/webstore/detail/christ-centered/adcoobhgdcnpbmkhajkabmkcfdekdibo',
         details: [
             'Implemented with React, TypeScript, and SCSS.',
