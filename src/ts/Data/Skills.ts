@@ -84,7 +84,7 @@ export const Skills: SkillData[] = [
     {
         name: 'GNU Bash',
         svg: 'bash',
-        color: '#4EAA25',
+        color: '#2B3539',
         category: SkillCategory.Scripting,
     },
     {
