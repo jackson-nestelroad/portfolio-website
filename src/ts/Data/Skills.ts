@@ -76,16 +76,16 @@ export const Skills: SkillData[] = [
         category: SkillCategory.Programming,
     },
     {
-        name: 'Go',
-        svg: 'go',
-        color: '#00ADD8',
-        category: SkillCategory.Programming | SkillCategory.Server,
-    },
-    {
         name: 'GNU Bash',
         svg: 'bash',
         color: '#2B3539',
         category: SkillCategory.Scripting,
+    },
+    {
+        name: 'Go',
+        svg: 'go',
+        color: '#00ADD8',
+        category: SkillCategory.Programming | SkillCategory.Server,
     },
     {
         name: 'Google Cloud Platform',
