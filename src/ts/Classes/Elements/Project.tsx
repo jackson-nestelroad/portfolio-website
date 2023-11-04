@@ -14,6 +14,8 @@ export interface ProjectData {
     flavor: string,
     repo: string | null,
     external: string | null,
+    chrome?: string,
+    firefox?: string,
     details: string[]
 }
 
@@ -142,6 +144,22 @@ export class Project extends DataComponent<ProjectData> {
                                     <a className="external btn is-primary is-text is-custom" href={this.data.external} target="_blank" tabindex="0">
                                         <i className="fa-solid fa-external-link-alt"></i>
                                         <span>View Online</span>
+                                    </a>
+                                    : null
+                            }
+                            {
+                                this.data.chrome ?
+                                    <a className="external btn is-primary is-text is-custom" href={this.data.chrome} target="_blank" tabindex="0">
+                                        <i className="fa-brands fa-chrome"></i>
+                                        <span>For Chrome</span>
+                                    </a>
+                                    : null
+                            }
+                            {
+                                this.data.firefox ?
+                                    <a className="external btn is-primary is-text is-custom" href={this.data.firefox} target="_blank" tabindex="0">
+                                        <i className="fa-brands fa-firefox-browser"></i>
+                                        <span>For Firefox</span>
                                     </a>
                                     : null
                             }
