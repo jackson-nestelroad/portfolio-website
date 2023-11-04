@@ -9,7 +9,7 @@ namespace Components {
             }
         }
 
-        export function attachInterface(_this: Component, name: string) {
+        export function attachInterface(_this: Component, name: keyof typeof Interface) {
             Reflect.defineProperty(_this, name, {
                 value: Interface[name],
                 configurable: false,

@@ -17,29 +17,27 @@ export namespace ElementFactory {
 
         const element = document.createElement(tagName);
         if(attributes) {
-            for(const key of Object.keys(attributes)) {
-                const attributeValue = attributes[key];
-
+            for(const [key, value] of Object.entries(attributes)) {
                 if(key === 'className') {
-                    element.setAttribute('class', attributeValue);
+                    element.setAttribute('class', value);
                 }
                 else if(key === 'style') {
-                    if(typeof attributeValue === 'object') {
-                        element.setAttribute('style', JStoCSS(attributeValue));
+                    if(typeof value === 'object') {
+                        element.setAttribute('style', JStoCSS(value));
                     }
                     else {
-                        element.setAttribute('style', attributeValue);
+                        element.setAttribute('style', value);
                     }
                 }
-                else if(key.startsWith('on') && typeof attributeValue === 'function') {
-                    element.addEventListener(key.substring(2).toLowerCase(), attributeValue);
+                else if(key.startsWith('on') && typeof value === 'function') {
+                    element.addEventListener(key.substring(2).toLowerCase(), value);
                 }
                 else {
-                    if(typeof attributeValue === 'boolean' && attributeValue) {
+                    if(typeof value === 'boolean' && value) {
                         element.setAttribute(key, '');
                     }
                     else {
-                        element.setAttribute(key, attributeValue);
+                        element.setAttribute(key, value);
                     }
                 }
             }
@@ -78,11 +76,10 @@ export namespace ElementFactory {
 
     function JStoCSS(cssObject: CSSStyleDeclaration): string {
         let cssString: string = "";
-        let rule: string;
         let rules = Object.keys(cssObject);
         for(let i = 0; i < rules.length; i++, cssString += ' ') {
-            rule = rules[i];
-            cssString += `${rule.replace(/([A-Z])/g, upper => `-${upper[0].toLowerCase()}`)}: ${cssObject[rule]};`;
+            let rule = rules[i];
+            cssString += `${rule.replace(/([A-Z])/g, upper => `-${upper[0].toLowerCase()}`)}: ${cssObject[rule as any]};`;
         }
         return cssString;
     }

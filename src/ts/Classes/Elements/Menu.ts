@@ -49,9 +49,9 @@ export class Menu extends Events.EventDispatcher {
     }
 
     private getBackgroundColor(): number[] {
-        const elementsFromPoint: string = document.elementsFromPoint ? 'elementsFromPoint' : 'msElementsFromPoint';
+        const elementsFromPoint = document.elementsFromPoint ? 'elementsFromPoint' : 'msElementsFromPoint';
         const { top, left } = this.Hamburger.getBoundingClientRect();
-        let elements: HTMLElement[] = document[elementsFromPoint](left, top);
+        let elements: Element[] = document[elementsFromPoint as 'elementsFromPoint'](left, top);
         
         const length = elements.length;
         let RGB: number[] = [];
