@@ -4,6 +4,23 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
+        name: 'Battler',
+        color: '#FF8946',
+        image: 'battler.jpg',
+        type: 'Rust Crate',
+        date: 'Fall 2023 - Present',
+        award: null,
+        flavor: 'Pokémon battle engine and simulator for Rust.',
+        repo: 'https://github.com/jackson-nestelroad/battler',
+        external: null,
+        details: [
+            'Singles, doubles, and multi battles.',
+            'High level of customization for rules, Mons, moves, abilities, and more.',
+            'Team validation and Team Preview fully implemented.',
+            'Ongoing implementation for moves and effects.',
+        ],
+    },
+    {
         name: 'zone-alloc',
         color: '#00B086',
         image: 'zone-alloc.jpg',
