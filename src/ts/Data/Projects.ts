@@ -4,6 +4,24 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
+        name: 'zone-alloc',
+        color: '#00B086',
+        image: 'zone-alloc.jpg',
+        type: 'Rust Crate',
+        date: 'Fall 2023',
+        award: null,
+        flavor: 'Rust crate for containers for zone-based data allocation.',
+        repo: 'https://github.com/jackson-nestelroad/zone-alloc',
+        external: 'https://crates.io/crates/zone_alloc',
+        details: [
+            '"Arena" for arena allocation for values of a given type.',
+            '"Registry" for integer handles for allocated data.',
+            '"StrongRegistry" for strongly-typed handles for allocated data.',
+            '"KeyedRegistry" for mantaining a mapping of keys to allocated values.',
+            'Runtime immutable and mutable borrow checking.',
+        ],
+    },
+    {
         name: 'Christ-Centered 2.0',
         color: '#16BCA3',
         image: 'christ-centered-new.jpg',
