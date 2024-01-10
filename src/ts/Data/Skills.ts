@@ -247,6 +247,12 @@ export const NonSkills: SkillData[] = [
         category: SkillCategory.Other,
     },
     {
+        name: 'Chick-fil-A',
+        svg: 'chickfila',
+        color: '#DD0031',
+        category: SkillCategory.Other,
+    },
+    {
         name: 'Coca-Cola',
         svg: 'cocacola',
         color: '#D00013',
