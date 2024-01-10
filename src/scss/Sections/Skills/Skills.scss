@@ -15,5 +15,16 @@ section#skills {
         margin: 0 auto 1rem;
         width: 100%;
         max-width: 320px;
+
+        .filter-title {
+            text-decoration-line: underline;
+            text-decoration-style: dotted;
+            text-decoration-color: transparent;
+            transition: 0.2s;
+            transition-property: text-decoration-color;
+            &:hover {
+                text-decoration-color: inherit;
+            }
+        }
     }
 }
