@@ -12,8 +12,13 @@ export const Experience: ExperienceData[] = [
         position: 'Software Engineer',
         begin: 'August 2022',
         end: 'Present',
-        flavor: 'Google is a multinational technology company that provides a wide variety of Internet-related products and services. As one of the largest technology companies in the world, Google continues to lead the web in innovation and creativity.',
-        roles: [],
+        flavor: 'Google is a multinational technology company that provides a wide variety of Internet-related products and services. As one of the largest technology companies in the world, Google continues to lead the web in innovation and creativity. I currently work on Google\'s internal cluster management system and Google Cloud, increasing the efficiency, reliability, and scalability of our cluster infrastructure. My goal is to prepare our infrastructure for future use cases and bring the efficiencies of internal workloads to open-source containers.',
+        roles: [
+            'TL for multi-platform workload API for 1P and 3P ML serving use cases. Designed a robust, fault-tolerant, replicated C++ service, generating and guiding work streams implemented by three other engineers over multiple quarters. Owned cross-team collaboration for API design.',
+            'Contributed to efficient container-scheduling service for Google Cloud. Reduced container start time by two minutes. Wrote new node agent component for dynamic identity proxying in Go. Owned control plane API design, integration testing, and several hardening efforts that significantly increased service reliability.',
+            'Led several widespread refactors of Google\'s internal cluster node agent, reducing technical debt, increasing reliability, and saving memory and CPU cycles across the compute fleet.',
+            'Contributed 750+ code changes over 1.5 years, deleting 62K lines of code and adding 80K lines of code.',
+        ],
     },
     {
         svg: 'google',
@@ -24,7 +29,7 @@ export const Experience: ExperienceData[] = [
         position: 'Software Engineering Intern',
         begin: 'May 2021',
         end: 'August 2021',
-        flavor: 'Google is a multinational technology company that provides a wide variety of Internet-related products and services. As one of the largest technology companies in the world, Google continues to lead the web in innovation and creativity. I worked remotely in Cloud Technical Infrastructure on the internal cluster management system that empowers all of Google at scale.',
+        flavor: 'Google is a multinational technology company that provides a wide variety of Internet-related products and services. As one of the largest technology companies in the world, Google continues to lead the web in innovation and creativity. I worked remotely in Cloud Technical Infrastructure on the internal cluster management system that powers all of Google at scale.',
         roles: [
             'Designed and implemented running OCI containers in Google\'s large-scale cluster manager using modern C++, Go, and Protobuf, helping bridge the growing gap between the open source stack and internal stack.',
             'Developed internal changes to on-machine package lifecycle, allowing packages to be directly tied to the lifetime of dependent tasks.',
