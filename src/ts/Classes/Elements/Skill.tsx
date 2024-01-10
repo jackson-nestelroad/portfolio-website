@@ -31,6 +31,10 @@ export class Skill extends DataComponent<SkillData> {
         return this.data.category;
     }
 
+    public getName(): string {
+        return this.data.name;
+    }
+
     protected update(): void { }
 
     private created(): void {

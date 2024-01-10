@@ -2,9 +2,9 @@
 
 import { ElementFactory } from '../../Definitions/JSX'
 import { DOM } from '../../Modules/DOM'
-import { Skill, SkillData, SkillCategory } from './Skill'
-import { SkillsGrid, ScrollHook } from '../../Modules/WebPage'
-import { Skills } from '../../Data/Skills'
+import { Skill, SkillCategory, SkillData } from './Skill'
+import { SkillsGrid, ScrollHook, KeyCodeCombos } from '../../Modules/WebPage'
+import { NonSkills, Skills } from '../../Data/Skills'
 
 // Class for managing SkillsFilter dropdown
 export class SkillsFilter {
@@ -14,6 +14,8 @@ export class SkillsFilter {
     private maxHeight: number = 224;
     private optionElements: Map<HTMLElement, number> = new Map();
     private skillElements: Skill[] = [];
+    private nonSkillsToAdd: number = 1;
+    private nonSkillsNotAdded: SkillData[] = NonSkills;
 
     private usingArrowKeys: boolean = false;
     private lastSelected: HTMLElement = null;
@@ -65,6 +67,18 @@ export class SkillsFilter {
         for (const skill of Skills) {
             this.skillElements.push(new Skill(skill));
         }
+    }
+
+    private addRandomNonSkillElement(): void {
+        if (this.nonSkillsNotAdded.length === 0) {
+            return;
+        }
+        let index = Math.floor(Math.random() * this.nonSkillsNotAdded.length);
+        let nonSkillsToAdd = this.nonSkillsNotAdded.splice(index, this.nonSkillsToAdd);
+        this.nonSkillsToAdd *= 2;
+        this.skillElements.push(...nonSkillsToAdd.map(nonSkill => new Skill(nonSkill)));
+        this.skillElements.sort((a, b) => a.getName().localeCompare(b.getName()));
+        this.update();
     }
 
     private update(): void {
@@ -154,6 +168,10 @@ export class SkillsFilter {
         },
         {
             passive: true,
+        });
+
+        KeyCodeCombos.subscribe(this.Container, () => {
+            this.addRandomNonSkillElement();
         });
     }
 

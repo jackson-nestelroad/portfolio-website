@@ -4,6 +4,7 @@ import { DOM } from './DOM'
 import Section from '../Classes/Elements/Section'
 import { Menu } from '../Classes/Elements/Menu'
 import { SkillsFilter } from '../Classes/Elements/SkillsFilter'
+import { KeyCodeComboDetector } from '../Classes/Elements/KeyCodeComboDetector';
 
 // Body tag
 export const Body: HTMLElement = DOM.getFirstElement('body');
@@ -57,3 +58,6 @@ export const SkillsGrid: HTMLElement = DOM.getFirstElement('section#skills .hex-
 
 // Grid to draw social media icons onto
 export const SocialGrid: HTMLElement = DOM.getFirstElement('section#connect .social-icons');
+
+// Event dispatcher for key combos
+export const KeyCodeCombos: KeyCodeComboDetector = new KeyCodeComboDetector();
