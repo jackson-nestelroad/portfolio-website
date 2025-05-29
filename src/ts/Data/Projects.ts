@@ -4,7 +4,24 @@ import { ProjectData } from '../Classes/Elements/Project'
 
 export const Projects: ProjectData[] = [
     {
-        name: 'Battler',
+        name: 'battler-wamp',
+        color: '#E53AA4',
+        image: 'battler-wamp.jpg',
+        type: 'Rust Crate',
+        date: 'Fall 2024 - Present',
+        award: null,
+        flavor: 'Rust implementation of the Web Application Message Protocol (WAMP).',
+        repo: 'https://github.com/jackson-nestelroad/battler',
+        external: 'https://crates.io/crates/battler-wamp',
+        details: [
+            'Basic and advanced RPC support: progressive call results, cancellation, pattern-based registration, shared registration.',
+            'Basic and advanced pub/sub features: block-/allow-listing, pattern-based subscription.',
+            'Salted Challenge Response Authentication (WAMP-SCRAM).',
+            'Robust peer framework with reconnection and typing support (battler-wamprat).',
+            'Code generation framework for services (battler-wamprat-schema).',
+        ],
+    },{
+        name: 'battler',
         color: '#FF8946',
         image: 'battler.jpg',
         type: 'Rust Crate',
